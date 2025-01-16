@@ -3,25 +3,22 @@
 
 Makes it easier to know what we need to do
 
-## Links
+## Overview
 
-- Overview: <https://canvas.oregonstate.edu/courses/1987844/assignments/9927615>
-- Proposal: <https://canvas.oregonstate.edu/courses/1987844/assignments/9941406>
-- Idea Presentation and Report: <https://canvas.oregonstate.edu/courses/1987844/assignments/9908939>
-- Requirements Elicitation: <https://canvas.oregonstate.edu/courses/1987844/assignments/9941654>
+[🌐Link](https://canvas.oregonstate.edu/courses/1987844/assignments/9927615)
 
-## Checklist
+- 🚧
 
-## Proposal 📅2025-01-14
+## Proposal 📅2025-01-14 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9941406)
 
 - [x] Make Document
   - [x] Upload to github
 
-## TA meeting 📅~2025-01-21
+## TA meeting 📅~01-21
 
 - [ ] TA meeting about project proposal
 
-## Idea Presentation 📅2025-01-21 [🌐Breakdown](https://canvas.oregonstate.edu/courses/1987844/assignments/9908939)
+## Idea Presentation 📅01-21 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9908939)
 
 - [ ] Update Living document if needed
   - [ ] mk pdf and zip with pdf of presentation 🚚canvas
@@ -32,7 +29,7 @@ Makes it easier to know what we need to do
   - [x] Create repository @Flameis
   - [x] mk reports/ dir
 
-## Project Requirements Elicitation 📅2025-01-21 [🌐Breakdown](https://canvas.oregonstate.edu/courses/1987844/assignments/9941654) ⚠️(Not listed in modules for some reason)
+## Requirements Elicitation 📅01-21 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9941654) ⚠️NotYetListedInModules(for some reason even though says due in the next week)
 
 - [ ] add new sections to living document
   - [ ] Use Cases (Functional Requirements)
@@ -42,3 +39,23 @@ Makes it easier to know what we need to do
   - [ ] External Requirements
   - [ ] Team process description
 - [ ] mk pdf and zip with pdf of presentation 🚚canvas
+
+## Architecture and Design 📅02-04 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9943333)
+
+- 🚧
+
+## Implementation and Documentation 📅02-18 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9943771)
+
+- 🚧
+
+## Testing and Continuous Integration 📅02-21 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9943857)
+
+- 🚧
+
+## Beta Release 📅03-04 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9943858)
+
+- 🚧
+
+## Final Release 📅03-09 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9943948)
+
+- 🚧
