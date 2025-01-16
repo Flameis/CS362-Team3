@@ -28,13 +28,13 @@ Makes it easier to know what we need to do
 - [ ] Create a 4-page slideshow presentation
   - [ ] mk pdf and zip with pdf of current report 🚚canvas
 - [ ] Create a PM board on Trello for your team
-- [ ] Create your team’s GitHub repository
+- [x] Create your team’s GitHub repository
   - [x] Create repository @Flameis
   - [x] mk reports/ dir
 
 ## Project Requirements Elicitation 📅2025-01-21 [🌐Breakdown](https://canvas.oregonstate.edu/courses/1987844/assignments/9941654)
 
-- [ ] add new sections to livving document
+- [ ] add new sections to living document
   - [ ] Use Cases (Functional Requirements)
     - [ ] one each
   - [ ] Non-functional Requirements
