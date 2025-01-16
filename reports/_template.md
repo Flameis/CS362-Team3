@@ -16,14 +16,14 @@
 
 <!-- The second subsection reports on progress and issues: what you did, what worked, what you learned, where you had trouble, and where you are stuck -->
 
-- 
+-
 
 ### Goals
 
 <!-- The third subsection should outline your plans and goals for the following week. Each bullet point should include a measurable task and a time estimate. You may use nested bullet points for parts of a larger task. No bottom-level time estimate should be greater than 3 days. If a task would be larger, think about a logical way to break it down and to have insight into progress. If tasks from one week aren’t yet complete, they should roll over into tasks for the next week, with an updated estimate for time to completion.
 For the weekly report, this third subsection should be higher-level and indicate who is responsible for what tasks. Also, it’s good to include longer-term goals in this list as well, to keep the bigger picture in mind and plan beyond just the next week.  -->
 
-- 
+-
 
 ## Contributions of Individual Team Members
 
@@ -39,31 +39,31 @@ For the weekly report, this third subsection should be higher-level and indicate
 
 Anshu Avinash
 
-- 
+-
 
 William Brennan
 
-- 
+-
 
 Kathryn Butler
 
-- 
+-
 
 Finlay Curtiss
 
-- 
+-
 
 Adison Daggett
 
-- 
+-
 
 Luke Scovel (@Flameis)
 
-- 
+-
 
 Jake Thompson
 
-- 
+-
 
 ### Individual Goals
 
@@ -72,28 +72,28 @@ For the weekly report, this third subsection should be higher-level and indicate
 
 Anshu Avinash
 
-- 
+-
 
 William Brennan
 
-- 
+-
 
 Kathryn Butler
 
-- 
+-
 
 Finlay Curtiss
 
-- 
+-
 
 Adison Daggett
 
-- 
+-
 
 Luke Scovel
 
-- 
+-
 
 Jake Thompson
 
-- 
+-
