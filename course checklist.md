@@ -16,7 +16,7 @@ Makes it easier to know what we need to do
 
 ## TA meeting 📅~01-21
 
-- [ ] TA meeting about project proposal
+- [ ] TA meeting about project proposal @william-osu
 
 ## Idea Presentation 📅01-21 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9908939)
 
@@ -24,7 +24,7 @@ Makes it easier to know what we need to do
   - [ ] mk pdf and zip with pdf of presentation 🚚canvas
 - [ ] Create a 4-page slideshow presentation
   - [ ] mk pdf and zip with pdf of current report 🚚canvas
-- [ ] Create a PM board on Trello for your team
+- [x] Create a PM board on Trello for your team @Jake-Thompson
 - [x] Create your team’s GitHub repository
   - [x] Create repository @Flameis
   - [x] mk reports/ dir
