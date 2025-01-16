@@ -9,7 +9,7 @@ Makes it easier to know what we need to do
 
 - 🚧
 
-## Proposal 📅2025-01-14 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9941406)
+## Proposal 📅2025-01-14 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9941406){:target="_blank"}
 
 - [x] Make Document
   - [x] Upload to github
@@ -18,7 +18,7 @@ Makes it easier to know what we need to do
 
 - [ ] TA meeting about project proposal
 
-## Idea Presentation 📅01-21 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9908939)
+## Idea Presentation 📅01-21 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9908939){:target="_blank"}
 
 - [ ] Update Living document if needed
   - [ ] mk pdf and zip with pdf of presentation 🚚canvas
