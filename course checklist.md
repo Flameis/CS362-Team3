@@ -32,7 +32,7 @@ Makes it easier to know what we need to do
   - [x] Create repository @Flameis
   - [x] mk reports/ dir
 
-## Project Requirements Elicitation 📅2025-01-21 [🌐Breakdown](https://canvas.oregonstate.edu/courses/1987844/assignments/9941654)
+## Project Requirements Elicitation 📅2025-01-21 [🌐Breakdown](https://canvas.oregonstate.edu/courses/1987844/assignments/9941654) ⚠️(Not listed in modules for some reason)
 
 - [ ] add new sections to living document
   - [ ] Use Cases (Functional Requirements)
