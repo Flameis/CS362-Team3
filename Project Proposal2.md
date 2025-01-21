@@ -56,7 +56,7 @@ Rules:
 
 ## Effects
 
-
+The target audience of Plant Map will be botany students at OSU. With this software they will be able to easily look up and find plants around the OSU campus. This will save them time looking around to identify a plant and it will also help them study various plant types at OSU. Additionally, this software will help entertain visitors and regular students of OSU by giving them a tool to find cool plants around campus that they may not have otherwise known existed.
 
 ## Technical Approach
 
