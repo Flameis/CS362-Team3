@@ -63,7 +63,6 @@ The idea is to use a SQL database that holds each plant identified by the users.
 ## Major Features
 
 
-
 * 
 
 ## Stretch Goals
