@@ -1,4 +1,4 @@
-# Plant Map 0000
+# OSU Plant Map 0000
 
 
 # Team Info
@@ -64,7 +64,7 @@ The target audience of Plant Map will be botany students at OSU. With this softw
 
 ## Risks
 
-
+One of the largests risks with developing OSU Plant Map software is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database. With the large amount of plants and people we will need to make sure our software can be scaled up to allow for more information. This will be difficult as we will have to think ahead and design our system carefully. To mitigate this risk our team will research early on how to make our system scalable so that we always code with the expectation of scalability.
 
 ## Major Features
 
