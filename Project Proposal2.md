@@ -40,6 +40,7 @@ Rules:
 
 ## Abstract
 
+This project is a plant identification app for the Oregon State University campus. Users will take pictures of plants around campus, identify them, and upload them to a website that will show a map of campus with the locations of each identified plant. There will be layers to the map for each season, so users can see what plants are in bloom at any given time. Each plant, when clicked on, will show details of the plant that the user provides. The website will have a social media aspect with features such as commenting and liking plants.
 
 
 ## Goal
@@ -63,6 +64,7 @@ The target audience of Plant Map will be botany students at OSU. With this softw
 
 ## Technical Approach
 
+The idea is to use a SQL database that holds each plant identified by the users. The website will display a map and overlay each plants location using google maps API and querying the database through code. We are still deciding on how exactly we will build the website.
 
 
 ## Risks
@@ -71,12 +73,12 @@ One of the largests risks with developing OSU Plant Map software is in making su
 
 ## Major Features
 
-
-
-* 
+* Movable map interface that displayes plant locations
+* Seasonal layers on the map
+* Plant descriptions and details
+* Social media features such as commenting and liking plants
 
 ## Stretch Goals
 
-
-
-* 
+* User profiles and leaderboards
+* Plant identification AI integration
