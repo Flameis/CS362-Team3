@@ -44,6 +44,7 @@ This project is a plant identification app for the Oregon State University campu
 
 ## Novelty
 
+The novelty of this project is that it will be a social media plant identification app specifically for the Oregon State University campus. The botany department curretly has a [tree inventory map](https://www.arcgis.com/apps/instant/basic/index.html?appid=097214a28e934a7681e229b41c9e0d29), but it is specific to trees and is simply a inventory system. Our app will be a user driven plant identification system that will allow users to identify and map plants on campus themselves, as well as drive social interaction based around the plants. 
 
 
 ## Effects
