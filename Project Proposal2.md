@@ -43,8 +43,8 @@ Rules:
 
 
 ## Goal
-
-
+Our end goal is to allow any student at OSU the ability to look-up and identify plants around the OSU campus. We will not be able to complete this goal within the 10 week term.
+Our goal for this software before the end of the term is to create a map of 10 plants on campus and allow for users to upload pictures and descriptions of plants to OSU Plant Map's database.
 
 ## Current Practice
 
@@ -55,7 +55,6 @@ Rules:
 
 
 ## Effects
-
 The target audience of Plant Map will be botany students at OSU. With this software they will be able to easily look up and find plants around the OSU campus. This will save them time looking around to identify a plant and it will also help them study various plant types at OSU. Additionally, this software will help entertain visitors and regular students of OSU by giving them a tool to find cool plants around campus that they may not have otherwise known existed.
 
 ## Technical Approach
@@ -63,7 +62,6 @@ The target audience of Plant Map will be botany students at OSU. With this softw
 
 
 ## Risks
-
 One of the largests risks with developing OSU Plant Map software is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database. With the large amount of plants and people we will need to make sure our software can be scaled up to allow for more information. This will be difficult as we will have to think ahead and design our system carefully. To mitigate this risk our team will research early on how to make our system scalable so that we always code with the expectation of scalability.
 
 ## Major Features
