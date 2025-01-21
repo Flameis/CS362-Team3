@@ -51,9 +51,9 @@ Our end goal is to allow any student at OSU the ability to look-up and identify 
 
 ## Current Practice
 
-* The botany department curretly has a [tree inventory map](https://www.arcgis.com/apps/instant/basic/index.html?appid=097214a28e934a7681e229b41c9e0d29), but it is specific to trees and is simply a inventory system.
-* The website Pl@ntNet has a [global plant map](https://identify.plantnet.org/), but it only show broad regional areas of where plants grow.
-* The website OregonFlora has a [Oregon plant map](https://oregonflora.org/checklists/dynamicmap.php?interface=key), but it can be hard to search through and is unhelpful to non-Botanists.
+* The botany department currently has a [tree inventory map](https://www.arcgis.com/apps/instant/basic/index.html?appid=097214a28e934a7681e229b41c9e0d29), but it is specific to trees and is simply an inventory system.
+* The website Pl@ntNet has a [global plant map](https://identify.plantnet.org/), but it only shows broad regional areas of where plants grow.
+* The website OregonFlora has a [Oregon plant map](https://oregonflora.org/checklists/dynamicmap.php?interface=key), but it can be hard to search through and is unhelpful to non-botanists.
 
 ## Novelty
 
@@ -70,7 +70,7 @@ The idea is to use a SQL database that holds each plant identified by the users.
 
 ## Risks
 
-One of the largests risks with developing OSU Plant Map software is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database. With the large amount of plants and people we will need to make sure our software can be scaled up to allow for more information. This will be difficult as we will have to think ahead and design our system carefully. To mitigate this risk our team will research early on how to make our system scalable so that we always code with the expectation of scalability.
+One of the largests risks with developing OSU Plant Map software is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database. With the large amount of plants and people we will need to make sure our software can be scaled up to allow for more information. This will be difficult as we will have to think ahead and design our system carefully. To mitigate this risk, our team will research early on how to make our system scalable so that we always code with the expectation of scalability.
 
 ## Major Features
 
