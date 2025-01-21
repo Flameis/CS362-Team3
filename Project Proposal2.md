@@ -31,6 +31,7 @@
 
 ## Abstract
 
+This project is a plant identification app for the Oregon State University campus. Users will take pictures of plants around campus, identify them, and upload them to a website that will show a map of campus with the locations of each identified plant. There will be layers to the map for each season, so users can see what plants are in bloom at any given time. Each plant, when clicked on, will show details of the plant that the user provides. The website will have a social media aspect with features such as commenting and liking plants.
 
 
 ## Goal
