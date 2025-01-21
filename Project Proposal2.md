@@ -1,4 +1,4 @@
-# OSU Plant Map 0000
+# OSU Plant Map
 
 
 # Team Info
@@ -24,6 +24,7 @@
 [Trello](https://trello.com/invite/b/67889462677f5d65a4989b33/ATTIe0f43054cfcbbfb3830f98380cd77a4bFBE38CB3/pt3-backups-made-simple)
 
 ## Communication Channel and Rules
+
 Communications Channels:
 * MS Teams
 * Text group chat
@@ -56,7 +57,7 @@ Our end goal is to allow any student at OSU the ability to look-up and identify 
 
 ## Novelty
 
-The novelty of this project is that it will be a social media plant identification app specifically for the Oregon State University campus. The botany department curretly has a [tree inventory map](https://www.arcgis.com/apps/instant/basic/index.html?appid=097214a28e934a7681e229b41c9e0d29), but it is specific to trees and is simply a inventory system. Our app will be a user driven plant identification system that will allow users to identify and map plants on campus themselves, as well as drive social interaction based around the plants. 
+The novelty of this project is that it will be a social media plant identification app specifically for the Oregon State University campus. Making our app restricted to the OSU campus will allow us to make the plant map more "zoomed in" on an area. This is novel because most maps of plants that are out there are catalogs of plants in a region, which don't allow users to find more specific locations of plants. Our app will be a user driven plant identification system that will allow users to identify and map plants on campus themselves, as well as drive social interaction based around the plants. 
 
 ## Effects
 
