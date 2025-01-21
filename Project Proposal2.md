@@ -53,6 +53,7 @@ The novelty of this project is that it will be a social media plant identificati
 
 ## Technical Approach
 
+The idea is to use a SQL database that holds each plant identified by the users. The website will display a map and overlay each plants location using google maps API and querying the database through code. We are still deciding on how exactly we will build the website.
 
 
 ## Risks
