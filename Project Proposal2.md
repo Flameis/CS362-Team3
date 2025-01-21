@@ -44,14 +44,14 @@ Rules:
 
 ## Goal
 
-Our end goal is to allow any student at OSU the ability to look-up and identify plants around the OSU campus. We will not be able to complete this goal within the 10 week term.
 Our goal for this software before the end of the term is to create a map of 10 plants on campus and allow for users to upload pictures and descriptions of plants to OSU Plant Map's database.
+Our end goal is to allow any student at OSU the ability to look-up and identify plants around the OSU campus.
 
 ## Current Practice
 
-The botany department curretly has a [tree inventory map](https://www.arcgis.com/apps/instant/basic/index.html?appid=097214a28e934a7681e229b41c9e0d29), but it is specific to trees and is simply a inventory system.
-The website Pl@ntNet has a [global plant map](https://identify.plantnet.org/), but it only show broad regional areas of where plants grow.
-The website OregonFlora has a [Oregon plant map](https://oregonflora.org/checklists/dynamicmap.php?interface=key), but it can be hard to search through and is unhelpful to non-Botanists.
+* The botany department curretly has a [tree inventory map](https://www.arcgis.com/apps/instant/basic/index.html?appid=097214a28e934a7681e229b41c9e0d29), but it is specific to trees and is simply a inventory system.
+* The website Pl@ntNet has a [global plant map](https://identify.plantnet.org/), but it only show broad regional areas of where plants grow.
+* The website OregonFlora has a [Oregon plant map](https://oregonflora.org/checklists/dynamicmap.php?interface=key), but it can be hard to search through and is unhelpful to non-Botanists.
 
 ## Novelty
 
