@@ -62,11 +62,12 @@ The idea is to use a SQL database that holds each plant identified by the users.
 
 ## Major Features
 
-
-* 
+* Movable map interface that displayes plant locations
+* Seasonal layers on the map
+* Plant descriptions and details
+* Social media features such as commenting and liking plants
 
 ## Stretch Goals
 
-
-
-* 
+* User profiles and leaderboards
+* Plant identification AI integration
