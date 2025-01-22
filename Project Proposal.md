@@ -1,4 +1,4 @@
-# OSU Plant Map
+# OSU Plant Map - Beaver Botanica
 
 
 # Team Info
