@@ -175,17 +175,34 @@ Postconditions: The application displays a map view with any locations for the p
 Extensions: The user might not choose to receive directions to the plant’s location, instead navigating by themselves.   
 Exceptions: A plant might not have a location associated with it, in which case the map would not display any locations and the user would not be able to get directions. The mapping service we use might also be down, which would cause no map to be displayed to the user, meaning they couldn’t get directions.
 
-### Viewing Seasonal Layers - Jake
-Actors: An OSU Student  
-Goal: To view what plants are in bloom in a given season  
-Trigger: 0000  
-Preconditions: 0000  
-Steps:
-* 0000  
+### Filtering the Map - Jake
+Actors: An OSU Student
+Goal: To view the locations of all plants in a specific Genus that are in season
+Triggers: The user clicks the filter button
+Preconditions: The user is on the Map page and has a specific Genus in mind they want to see locations for plants that are in season.
+Postconditions: The map shows the locations of all plants that match the given filter.
+Steps: 
+* The user clicks the filter button
+* The system displays the filter sidebar (this will hide the add or Info sidebars)
+* The user either selects the desired Genus from the Genus dropdown or starts typing in the dropdown to find it faster (for got what this input type is actually called) 
+* * The system should then fill higher level taxonomy filters
+* The user checks the box in season
+* The System Filters the map based on the set filters
+Extensions/variations:
+* The user changes their mind and wants to clear the filters this can be done with the clear all button
+* The user decides they actually wanted a different genus in the same family
+* * Now they just select the genus dropdown and it should only show genus in that family
+* * Should also clear all taxonomy filters below genus.
+* The user decides they actually wanted to see the whole Family
+* * The user clicks the clear button for Genus
+Exceptions:
+* The user can’t find the desidered genus in the drop down
+* * This should mean that there are no plants in that genus in the database.
+* * Maybe suggest Advanced Search as the result might be missfiled.
+* There is nothing on the map
+* * This means that no plants of that genus are in season.
+* * Should display a message that no plants are in season for a given filter and recommend turning off the in season filter.
 
-Postconditions: 0000  
-Extensions: 0000  
-Exceptions: 0000  
 
 ## Non-Functional Requirements
 ### Dark Mode and High-Contrast Mode
