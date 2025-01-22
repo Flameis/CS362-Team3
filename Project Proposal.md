@@ -5,23 +5,29 @@
 0000 Specify and justify the software toolset you will use.
 
 ## Members
-* Adison Daggett - Front End Designer and Developer
-  * The role of the front-end designer has two parts: designing the front end and implementing it. This role allows for consistent design and implementation of an agreed-upon front end for the software. 
-* Kathryn Butler - Technical Documentation and Developer
-  * Technical documentation is an incredibly important role in software engineering. Our team needs this designated role to clarify the process for adding and verifying plants, detail the system’s database integration, and outline user features such as the search and map functionality. Kathryn is suited for this role due to her strong communication skills developed from her leadership roles in film production and peer tutoring. She also structures documentation effectively, making it easy for others to navigate and use as a reference.
-* Luke Scovel - Developer
-  * For a team to function, it has to be a collaborative effort with everyone on the same track. To disseminate important information and reiterate what tasks need to be done without multiple voices clamoring over each other, a coordinator is needed. More developers are needed to bounce ideas off of each other and do the grunt work of coding.
-* William Brennan - Developer
-  * A developer is someone who designs and writes the code to be implemented in the software. This role is needed for this project because we need someone to design and program the database and logic controller for the software. William Brennan is suited for this role because he is a computer science student and he has taken courses in web development.
-* Anshu Avinash - Front End Designer
-  * 0000 Why does your team need this role filled? Why is a specific team member suited for this role?
-* Finlay Curtiss - Developer
-  * Multiple developers are needed to ensure that all features are implemented properly and in a reasonable time frame. Finlay has experience with developing and can contribute their knowledge and perspective to the technical implementation of the software. Technical documentation is also necessary, for the development team, users, and any developers who wish to work on this software in the future. Finlay has experience with technical writing from their classes and job.
-* Jake Thompson - Developer
-  * 0000 Why does your team need this role filled? Why is a specific team member suited for this role?
+### Adison Daggett - Front End Designer and Developer
+The role of the front-end designer has two parts: designing the front end and implementing it. This role allows for consistent design and implementation of an agreed-upon front end for the software.
+
+### Kathryn Butler - Technical Documentation and Developer
+Technical documentation is an incredibly important role in software engineering. Our team needs this designated role to clarify the process for adding and verifying plants, detail the system’s database integration, and outline user features such as the search and map functionality. Kathryn is suited for this role due to her strong communication skills developed from her leadership roles in film production and peer tutoring. She also structures documentation effectively, making it easy for others to navigate and use as a reference.
+
+### Luke Scovel - Developer
+For a team to function, it has to be a collaborative effort with everyone on the same track. To disseminate important information and reiterate what tasks need to be done without multiple voices clamoring over each other, a coordinator is needed. More developers are needed to bounce ideas off of each other and do the grunt work of coding.
+
+### William Brennan - Developer
+A developer is someone who designs and writes the code to be implemented in the software. This role is needed for this project because we need someone to design and program the database and logic controller for the software. William Brennan is suited for this role because he is a computer science student and he has taken courses in web development.
+
+### Anshu Avinash - Front End Designer
+0000 Why does your team need this role filled? Why is a specific team member suited for this role?  
+
+### Finlay Curtiss - Developer
+Multiple developers are needed to ensure that all features are implemented properly and in a reasonable time frame. Finlay has experience with developing and can contribute their knowledge and perspective to the technical implementation of the software. Technical documentation is also necessary, for the development team, users, and any developers who wish to work on this software in the future. Finlay has experience with technical writing from their classes and job. 
+
+### Jake Thompson - Developer
+0000 Why does your team need this role filled? Why is a specific team member suited for this role?
 
 ## GitHub Repository and Trello
-[Github](https://github.com/Flameis/CS362-Team3)
+[Github](https://github.com/Flameis/CS362-Team3)  
 [Trello](https://trello.com/invite/b/67889462677f5d65a4989b33/ATTIe0f43054cfcbbfb3830f98380cd77a4bFBE38CB3/pt3-backups-made-simple)
 
 ## Communication Channel and Rules
@@ -34,7 +40,6 @@ Rules:
 * All members must check MS Teams once a day and respond within a day of a message being sent.
 * A texting group chat will be used for conveying time-sensitive information. If a problem has to be addressed within a day then it is considered time-sensitive.
 * All member must be able to receive and respond to a text message within 4 hours of it being sent.
-
 
 # Product Description
 ## Abstract
@@ -62,7 +67,7 @@ The target audience of Plant Map will be botany students and other such interest
 The idea is to use a SQL database that holds each plant identified by the users. The website will display a map and overlay each plant's location using the Google Maps API and querying the database through code. We are still deciding on how exactly we will build the website.
 
 ## Risks
-One of the largests risks with developing OSU Plant Map software is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database. 
+One of the largests risks with developing OSU Plant Map software is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database.  
 
 With the large amount of plants and people we will need to make sure our software can be scaled up to allow for more information. This will be difficult as we will have to think ahead and design our system carefully. To mitigate this risk, our team will research early on how to make our system scalable so that we always code with the expectation of scalability.
 
@@ -79,33 +84,34 @@ With the large amount of plants and people we will need to make sure our softwar
 # Requirements
 ## Funtional Requirements
 ### Searching for a Plant - Adison
-Actors: A OSU Student
-Goal: To search for a plant 
-Triggers: The user can recognize the plant based on the image displayed after filtering the results.
-Preconditions: the user searches for the plant by sorting through media results.
-Step: The user sorts the media by taxonomic classification.
-Postconditions: The comment is now displayed for all users on the post.
-Extensions: The user is unable to find the plant they are looking for, but is able to change that by registering it into the software.
-Exceptions: The plant does not show up because it has yet to be catalogued.
+Actors: A OSU Student  
+Goal: To search for a plant  
+Triggers: The user can recognize the plant based on the image displayed after filtering the results.  
+Preconditions: the user searches for the plant by sorting through media results.  
+Step: The user sorts the media by taxonomic classification.  
+Postconditions: The comment is now displayed for all users on the post.  
+Extensions: The user is unable to find the plant they are looking for, but is able to change that by registering it into the software.  
+Exceptions: The plant does not show up because it has yet to be catalogued.  
 
 ### Adding a Known Plant to the Database - Kathryn
-Actors: A OSU student or faculty member.
-Goal: To add a plant instance to the database. The plant type is already in the database.
-Trigger: The user fills out all plant information and clicks the “submit” button.
-Preconditions: the user searches for the plant by sorting through media results.
+Actors: A OSU student or faculty member.  
+Goal: To add a plant instance to the database. The plant type is already in the database.  
+Trigger: The user fills out all plant information and clicks the “submit” button.  
+Preconditions: the user searches for the plant by sorting through media results.  
 Steps:
 * The user begins to add the plant, through clicking on an “Add plant” button.
 * The user inputs the common name and scientific name of the plant.
 * The user is prompted to take a picture of the plant.
 * The user is asked to give a location on a map where this plant was found.
-Postconditions: The plant instance is added to the database with a label of “unverified” or a similar marking to avoid mislabeling plants. The map is updated to add the plant instance.
-Extensions: The user could decline to take a picture of the plant, which could still go though as a successfully added plant instance. The user might also stop in the middle of adding a plant, in which case the software would either save the progress or discard it.
+
+Postconditions: The plant instance is added to the database with a label of “unverified” or a similar marking to avoid mislabeling plants. The map is updated to add the plant instance.  
+Extensions: The user could decline to take a picture of the plant, which could still go though as a successfully added plant instance. The user might also stop in the middle of adding a plant, in which case the software would either save the progress or discard it.  
 Exceptions: The user may not find the plant they’re looking for, in which case they would be directed to a form requesting the addition of a new plant.
 
 ### Commenting on a Post - Luke
-Actors: A OSU Student
-Triggers: The user fills out a comment box with text (maybe with images?) and clicks submit.
-Preconditions: The user is logged in to the website and on the map page. At least one post has been made.
+Actors: A OSU Student  
+Triggers: The user fills out a comment box with text (maybe with images?) and clicks submit.  
+Preconditions: The user is logged in to the website and on the map page. At least one post has been made.  
 Steps: 
 * The user clicks on the desired plant post on the map
 * The system displays the plant details page
@@ -113,13 +119,15 @@ Steps:
 * The user enters text into the comment box
 * The user clicks the submit button
 * The system refreshes the page and displays the comment at the end of the comment chain for all users.
-Postconditions: The comment is now displayed for all users on the post.
+
+Postconditions: The comment is now displayed for all users on the post.  
 Extensions: 
 * The user can cancel their comment by clicking on the cancel button or by navigating away from the page.
 * The user times out
 * The user saves the comment as a draft
-* The user is an administrator and pins the comment 
-Exceptions:
+* The user is an administrator and pins the comment
+
+Exceptions: 
 * The text contains invalid characters
 * The text contains a spam link
 * No text is provided
@@ -127,53 +135,57 @@ Exceptions:
 * The post is deleted before the comment is posted
 
 ### Verifying User-Added Plant Entries - William
-Actors: Beaver Botanica moderator
-Trigger: The user clicks on the verify button
-Preconditions: A plant entry with the unverified property is in the database.
+Actors: Beaver Botanica moderator  
+Trigger: The user clicks on the verify button  
+Preconditions: A plant entry with the unverified property is in the database.  
 Steps:
 * The user logs in using their moderator account.
 * The user clicks on one of the plants on the map.
 * The user can scroll through the description of the plant to check its attributes.
 * If the plant is unverified the user can click on a verify button to verify it.
-Postconditions: The plant entry that had the unverified property gets the verified property.
-Extensions: In the case that a moderator clicks on a plant entry and does not verify it as correct/incorrect, the plant entry retains the same property it originally held.
+
+Postconditions: The plant entry that had the unverified property gets the verified property.  
+Extensions: In the case that a moderator clicks on a plant entry and does not verify it as correct/incorrect, the plant entry retains the same property it originally held.  
 Exceptions: In the event that clicking on a verify button does not add the verified property to a plant, the user will receive a message notifying them that the plant was unsuccessfully updated. 
 
 ### Editing a Plant’s Details - Anshu
-Actors: 0000
-Goal: 0000
-Trigger: 0000
-Preconditions: 0000
+Actors: 0000  
+Goal: 0000  
+Trigger: 0000  
+Preconditions: 0000  
 Steps:
-* 0000
-Postconditions: 0000
-Extensions: 0000
-Exceptions: 0000
+* 0000  
+
+Postconditions: 0000  
+Extensions: 0000  
+Exceptions: 0000  
 
 ### Navigating to a Plant’s Location - Finlay
-Actors: A user of the Beaver Botanica app.
-Goal: The user should be able to find the locations of a certain plant on the OSU campus and get directions to the plant’s location.
-Triggers: The user is viewing a specific plant after searching and then presses the button that opens the map view. The user then selects a location and chooses to get directions to it.
-Preconditions: At least one plant is in the database and that plant has at least one location placed on the map.
-Steps:
+Actors: A user of the Beaver Botanica app.  
+Goal: The user should be able to find the locations of a certain plant on the OSU campus and get directions to the plant’s location.  
+Triggers: The user is viewing a specific plant after searching and then presses the button that opens the map view. The user then selects a location and chooses to get directions to it.  
+Preconditions: At least one plant is in the database and that plant has at least one location placed on the map.  
+Steps:  
 * Selects a plant after entering a search query
 * Open the map view for that plant to view all locations of the plant
 * Select one location marker and click the “Get Directions” button
-* The application will then display directions to reach the selected location
-Postconditions: The application displays a map view with any locations for the plant displayed as markers.
-Extensions: The user might not choose to receive directions to the plant’s location, instead navigating by themselves. 
+* The application will then display directions to reach the selected location  
+
+Postconditions: The application displays a map view with any locations for the plant displayed as markers.  
+Extensions: The user might not choose to receive directions to the plant’s location, instead navigating by themselves.   
 Exceptions: A plant might not have a location associated with it, in which case the map would not display any locations and the user would not be able to get directions. The mapping service we use might also be down, which would cause no map to be displayed to the user, meaning they couldn’t get directions.
 
 ### Viewing Seasonal Layers - Jake
-Actors: An OSU Student
-Goal: To view what plants are in bloom in a given season
-Trigger: 0000
-Preconditions: 0000
+Actors: An OSU Student  
+Goal: To view what plants are in bloom in a given season  
+Trigger: 0000  
+Preconditions: 0000  
 Steps:
-* 0000
-Postconditions: 0000
-Extensions: 0000
-Exceptions: 0000
+* 0000  
+
+Postconditions: 0000  
+Extensions: 0000  
+Exceptions: 0000  
 
 ## Non-Functional Requirements
 ### Dark Mode and High-Contrast Mode
@@ -199,53 +211,64 @@ This software should be well-designed and have a robust number of bug-free featu
 
 ## Timeline
 ### Week 3 - Planning and Foundation
-Goals: Finalize requirements, set up basic infrastructure, and assign roles.
+Goals: Finalize requirements, set up basic infrastructure, and assign roles.  
 Tasks:
 * Finalize the app's functional requirements.
 * Break down tasks into use cases.
 * Assign roles to team members (e.g., developer, UI/UX designer, documentation).
 * Set up the development environment (e.g., version control, frameworks, initial database setup).
 * Design a basic database schema to store plant information and user data.
-* Begin wireframing the user interface (UI).
+* Begin wireframing the user interface (UI).  
+
 Deliverables:
 * Completed technical documentation of functional requirements.
 * Development environment ready.
 * Wireframe drafts for key screens.
-Week 4 - Map and Database
-Goals: Develop the interactive map and basic database functionality.
+
+### Week 4 - Map and Database
+Goals: Develop the interactive map and basic database functionality.  
 Tasks:
 * Implement a basic campus map.
 * Enable users to view plants pinned on the map.
 * Create the database structure for plant information, including taxonomic classification, images, and locations.
 * Integrate the database with the map to display plant data dynamically.
-* Continue refining wireframes based on feedback.
-Deliverables:
+* Continue refining wireframes based on feedback.  
+
+Deliverables:  
 * Functional campus map with placeholders for plants.
 * Database connected to the map.
 
-Week 5 - Plant Identification and Upload
-Goals: Implementation of information and file upload.
-Tasks:
+### Week 5 - Plant Identification and Upload
+Goals: Implementation of information and file upload.  
+Tasks:  
 * Allow for a user to upload a photo.
 * Allow someone to identify a plant based on the photo.
 * Allow a user to add information to an identified plant.
-* Seamless updates to the system when a plant is uploaded, updated, or deleted.
-Deliverables:
-* Updated Database.
+* Seamless updates to the system when a plant is uploaded, updated, or deleted.  
+
+Deliverables:  
+* Updated Database. 
 * Functional plant identification system
-Week 6 - User Authentication and Basic Social Features
-Goal: Implement social features and user authentication for the software
-Tasks:
+
+### Week 6 - User Authentication and Basic Social Features
+Goal: Implement social features and user authentication for the software  
+Tasks:  
 * Allow a user to sign in and out of the system
-* Implement social features such as liking an identification
-Deliverables:
+* Implement social features such as liking an identification  
+
+Deliverables:  
 * Functional authentication system
 * Function Social Features
-Week 7 - Advanced Map Features
-0000
-Week 8 - Testing and Refinement
-0000
-Week 9 - Finalizing Additional Features
-0000
-Week 10 - Final Testing and Launch
-0000
+
+### Week 7 - Advanced Map Features
+0000  
+
+### Week 8 - Testing and Refinement
+0000  
+
+### Week 9 - Finalizing Additional Features
+0000  
+
+### Week 10 - Final Testing and Launch
+0000  
+
