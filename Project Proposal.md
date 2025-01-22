@@ -240,35 +240,63 @@ Deliverables:
 * Database connected to the map.
 
 ### Week 5 - Plant Identification and Upload
-Goals: Implementation of information and file upload.  
+Goals: Implement plant identification prompts and the information and file upload features.  
 Tasks:  
 * Allow for a user to upload a photo.
 * Allow someone to identify a plant based on the photo.
 * Allow a user to add information to an identified plant.
-* Seamless updates to the system when a plant is uploaded, updated, or deleted.  
+* Add prompts to help users identify plants.
+* Seamless updates to the system when a plant is uploaded, updated, or deleted.
+* Design the UI for adding plants.  
 
 Deliverables:  
 * Updated Database. 
-* Functional plant identification system
+* Functional plant upload and identification system.
 
 ### Week 6 - User Authentication and Basic Social Features
-Goal: Implement social features and user authentication for the software  
+Goals: Implement social features and user authentication for the software.  
 Tasks:  
-* Allow a user to sign in and out of the system
-* Implement social features such as liking an identification  
+* Allow a user to sign in and out of the system.
+* Add account creation.
+* Implement social features such as liking an identification.  
 
 Deliverables:  
-* Functional authentication system
-* Function Social Features
+* Functional authentication system.
+* Functional social features.
 
-### Week 7 - Advanced Map Features
-0000  
+### Week 7 - Advanced Map Features and Seasonal Layers
+Goals: Add and improve map features and create seasonal layers.  
+Tasks: 
+* Add layers to the map for different seasons, so users can see which plants are active in which season.
+* Implement map search functionality, including sorting plants by name, location, or type (e.g. trees, flowers).
+* Test the map with fake plant and seasonal data.
+
+Deliverables:
+* Seasonal layers on the map.
+* Search functionality.
 
 ### Week 8 - Testing and Refinement
-0000  
+Goals: Make sure all core features work as expected, and refine them based on user feedback.  
+Tasks:  
+* Conduct user testing with students, faculty, and/or others.
+* Fix bugs and usability issues found from tests.
+* Improve the UI/UX design based on feedback.
+* Make sure the database can handle edge cases (e.g. duplicate entries, incomplete data?).
+
+Deliverables: 
+* Refined app with fewer bugs and a smoother interface.
+* Feedback report from user testing.
 
 ### Week 9 - Finalizing Additional Features
-0000  
+Goals: Complete non-functional features and continue refining the software.  
+Tasks:
+* Implement the non-functional features.
+* Test that the non-functional features don't interfere with the core features of the software.
+* Continue to improve the UI/UX based on feedback and integrate the non-functional features.
+
+Deliverables:
+* Completed non-functional features in the software.
+* Fully-functional app ready for final testing.
 
 ### Week 10 - Final Testing and Launch
 0000  
