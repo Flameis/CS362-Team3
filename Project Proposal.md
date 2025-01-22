@@ -185,23 +185,23 @@ Steps:
 * The user clicks the filter button
 * The system displays the filter sidebar (this will hide the add or Info sidebars)
 * The user either selects the desired Genus from the Genus dropdown or starts typing in the dropdown to find it faster (for got what this input type is actually called) 
-* * The system should then fill higher level taxonomy filters
+  * The system should then fill higher level taxonomy filters
 * The user checks the box in season
 * The System Filters the map based on the set filters
 Extensions/variations:
 * The user changes their mind and wants to clear the filters this can be done with the clear all button
 * The user decides they actually wanted a different genus in the same family
-* * Now they just select the genus dropdown and it should only show genus in that family
-* * Should also clear all taxonomy filters below genus.
+  * Now they just select the genus dropdown and it should only show genus in that family
+  * Should also clear all taxonomy filters below genus.
 * The user decides they actually wanted to see the whole Family
-* * The user clicks the clear button for Genus
+  * The user clicks the clear button for Genus
 Exceptions:
 * The user can’t find the desidered genus in the drop down
-* * This should mean that there are no plants in that genus in the database.
-* * Maybe suggest Advanced Search as the result might be missfiled.
+  * This should mean that there are no plants in that genus in the database.
+  * Maybe suggest Advanced Search as the result might be missfiled.
 * There is nothing on the map
-* * This means that no plants of that genus are in season.
-* * Should display a message that no plants are in season for a given filter and recommend turning off the in season filter.
+  * This means that no plants of that genus are in season.
+  * Should display a message that no plants are in season for a given filter and recommend turning off the in season filter.
 
 
 ## Non-Functional Requirements
