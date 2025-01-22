@@ -11,7 +11,7 @@ The role of the front-end designer has two parts: designing the front end and im
 ### Kathryn Butler - Technical Documentation and Developer
 Technical documentation is an incredibly important role in software engineering. Our team needs this designated role to clarify the process for adding and verifying plants, detail the system’s database integration, and outline user features such as the search and map functionality. Kathryn is suited for this role due to her strong communication skills developed from her leadership roles in film production and peer tutoring. She also structures documentation effectively, making it easy for others to navigate and use as a reference.
 
-### Luke Scovel - Developer
+### Luke Scovel - Team Coordinator and Developer
 For a team to function, it has to be a collaborative effort with everyone on the same track. To disseminate important information and reiterate what tasks need to be done without multiple voices clamoring over each other, a coordinator is needed. More developers are needed to bounce ideas off of each other and do the grunt work of coding.
 
 ### William Brennan - Developer
@@ -20,7 +20,7 @@ A developer is someone who designs and writes the code to be implemented in the 
 ### Anshu Avinash - Front End Designer
 0000 Why does your team need this role filled? Why is a specific team member suited for this role?  
 
-### Finlay Curtiss - Developer
+### Finlay Curtiss - Developer and Technical Documentation
 Multiple developers are needed to ensure that all features are implemented properly and in a reasonable time frame. Finlay has experience with developing and can contribute their knowledge and perspective to the technical implementation of the software. Technical documentation is also necessary, for the development team, users, and any developers who wish to work on this software in the future. Finlay has experience with technical writing from their classes and job. 
 
 ### Jake Thompson - Developer
