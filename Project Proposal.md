@@ -83,3 +83,46 @@ One of the largests risks with developing OSU Plant Map software is in making su
 
 * User profiles and leaderboards
 * Plant identification AI integration
+
+# Requirements
+
+## Funtional Requirements
+
+### Commenting on a Post - Luke
+#### Actors: A OSU Student
+#### Triggers: The user fills out a comment box with text (maybe with images?) and clicks submit.
+#### Preconditions: The user is logged in to the website and on the map page. At least one post has been made.
+#### Postconditions: The comment is now displayed for all users on the post.
+List of steps: 
+* The user clicks on the desired plant post on the map
+* The system displays the plant details page
+* The user clicks on the comment button
+* The user enters text into the comment box
+* The user clicks the submit button
+* The system refreshes the page and displays the comment at the end of the comment chain for all users.
+#### Extensions/variations: 
+* The user can cancel their comment by clicking on the cancel button or by navigating away from the page.
+* The user times out
+* The user saves the comment as a draft
+* The user is an administrator and pins the comment 
+#### Exceptions:
+* The text contains invalid characters
+* The text contains a spam link
+* No text is provided
+* An image is the wrong format
+* The post is deleted before the comment is posted
+
+
+## External Requirements
+
+### Error-Free
+The software needs to be able to prevent errors and crashes from occurring. This can be done by being able to look out for common system errors such as no results popping up when a user searches for something, invalid inputs, and failure to save things. Certain types of input such as images with an unknown format or non-valid characters will be sanitized or fully blocked to prevent errors.
+
+### Installable
+The website will be accessible to a range of devices, allowing more users to access the service. A mobile version of the website is absolutely necessary since users will be walking around with it on their phones. The URL will be publicly available.
+
+### Buildable
+The software should have up-to-date documentation that allows other developers to set it up, allowing the project to extend to other colleges campuses or locations. The software should also allow developers to customize their version of the application by doing things like using a different map, different plants, or any other changes to features.
+
+### Scope
+This software should be well-designed and have a robust number of bug-free features, indicating that the full team of seven worked on it.
