@@ -24,7 +24,8 @@ A developer is someone who designs and writes the code to be implemented in the 
 Multiple developers are needed to ensure that all features are implemented properly and in a reasonable time frame. Finlay has experience with developing and can contribute their knowledge and perspective to the technical implementation of the software. Technical documentation is also necessary, for the development team, users, and any developers who wish to work on this software in the future. Finlay has experience with technical writing from their classes and job. 
 
 ### Jake Thompson - Developer
-0000 Why does your team need this role filled? Why is a specific team member suited for this role?
+We need many devolopers due to the timeline of the Project and the scope of what is needed to be implimented. Without developers nothing gets made.
+Jake has experience with developing database design and other skills needed for this project.
 
 ## GitHub Repository and Trello
 [Github](https://github.com/Flameis/CS362-Team3)  
