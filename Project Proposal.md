@@ -17,8 +17,8 @@ For a team to function, it has to be a collaborative effort with everyone on the
 ### William Brennan - Developer
 A developer is someone who designs and writes the code to be implemented in the software. This role is needed for this project because we need someone to design and program the database and logic controller for the software. William Brennan is suited for this role because he is a computer science student and he has taken courses in web development.
 
-### Anshu Avinash - Front End Designer
-0000 Why does your team need this role filled? Why is a specific team member suited for this role?  
+### Anshu Avinash - Front-End Designer
+By bridging the gap between functionality and user experience, a front-end designer makes sure that the user interface's implementation and design meet the needs of both users and business objectives. Also, it streamlines the handoff between design and coding, improving productivity for the entire team.
 
 ### Finlay Curtiss - Developer and Technical Documentation
 Multiple developers are needed to ensure that all features are implemented properly and in a reasonable time frame. Finlay has experience with developing and can contribute their knowledge and perspective to the technical implementation of the software. Technical documentation is also necessary, for the development team, users, and any developers who wish to work on this software in the future. Finlay has experience with technical writing from their classes and job. 
