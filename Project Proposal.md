@@ -222,7 +222,7 @@ Tasks:
 * Begin wireframing the user interface (UI).  
 
 Deliverables:
-* Completed technical documentation of functional requirements.
+* Project Requirements Elicitation.
 * Development environment ready.
 * Wireframe drafts for key screens.
 
@@ -236,6 +236,7 @@ Tasks:
 * Continue refining wireframes based on feedback.  
 
 Deliverables:  
+* Project Architecture and Design Specifications.
 * Functional campus map with placeholders for plants.
 * Database connected to the map.
 
@@ -272,6 +273,7 @@ Tasks:
 * Test the map with fake plant and seasonal data.
 
 Deliverables:
+* Project Implementation.
 * Seasonal layers on the map.
 * Search functionality.
 
@@ -284,6 +286,7 @@ Tasks:
 * Make sure the database can handle edge cases (e.g. duplicate entries, incomplete data?).
 
 Deliverables: 
+* Project Testing and Beta Release.
 * Refined app with fewer bugs and a smoother interface.
 * Feedback report from user testing.
 
@@ -299,5 +302,14 @@ Deliverables:
 * Fully-functional app ready for final testing.
 
 ### Week 10 - Final Testing and Launch
-0000  
+Goals: Test the app and prepare for the official launch.  
+Tasks: 
+* Conduct thourough end-to-end testing of all features.
+* Fix any remaining bugs and performance issues.
+* Prepare our final project presentation/demo.
+* Deploy the app for public use.
 
+Deliverables: 
+* Project Final Release.
+* Fully tested and deployed app.
+* Final presentation/demo.
