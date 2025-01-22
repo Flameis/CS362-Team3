@@ -190,11 +190,12 @@ Exceptions: 0000
 ## Non-Functional Requirements
 ### Dark Mode and High-Contrast Mode
 Both modes improve user accessibility by providing alternative color schemes, such as dark mode for low-light environments and high-contrast mode for users with visual impairments or color blindness. They must load without impacting software speed, and may automatically adjust based on the user’s device settings. The user must be able to activate dark or high-contrast mode in no more than four clicks. The colors used in high-contrast mode must be tested to comply with industry standards.
-### 0000 Name of Non-Functional Requirement 2
-Some sort of non-functional requirement, e.g., related to scalability, usability, security and privacy, etc.
-### 0000 Name of Non-Functional Requirement 3
-Some sort of non-functional requirement, e.g., related to scalability, usability, security and privacy, etc.
 
+### Expandability
+The software should be able to store and display all plants on the OSU campus (2000+) and also allow them to be searched. With the software allowing more plants to be added, it enables the users to add plants that aren't already in the system so they can all be catalogued.
+
+### Incorrect/Malicious Entry Prevention
+The software should prevent users from creating incorrect or malicious entries for plants and/or their locations. It should be built in a way that totally prevents these entries being displayed as correct information or removes it from the database and software quickly. 
 
 ## External Requirements
 ### Error-Free
@@ -204,10 +205,10 @@ The software needs to be able to prevent errors and crashes from occurring. This
 The website will be accessible to a range of devices, allowing more users to access the service. A mobile version of the website is absolutely necessary since users will be walking around with it on their phones. The URL will be publicly available.
 
 ### Buildable
-The software should have up-to-date documentation that allows other developers to set it up, allowing the project to extend to other colleges campuses or locations. The software should also allow developers to customize their version of the application by doing things like using a different map, different plants, or any other changes to features.
+The software should have up-to-date documentation that allows other developers to set it up, allowing the project to extend to other college campuses or locations. The software should also allow developers to customize their version of the application by doing things like using a different map, different plants, or any other changes to features.
 
 ### Scope
-This software should be well-designed and have a robust number of bug-free features, indicating that the full team of seven worked on it.
+This software should be well-designed and have a robust number of bug-free features, as listed in the functional and non-functional section of the Project Proposal document.
 
 ## Timeline
 ### Week 3 - Planning and Foundation
