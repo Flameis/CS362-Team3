@@ -176,10 +176,15 @@ Extensions: The user might not choose to receive directions to the plant’s loc
 Exceptions: A plant might not have a location associated with it, in which case the map would not display any locations and the user would not be able to get directions. The mapping service we use might also be down, which would cause no map to be displayed to the user, meaning they couldn’t get directions.
 
 ### Filtering the Map - Jake
+
 Actors: An OSU Student
+
 Goal: To view the locations of all plants in a specific Genus that are in season
+
 Triggers: The user clicks the filter button
+
 Preconditions: The user is on the Map page and has a specific Genus in mind they want to see locations for plants that are in season.
+
 Postconditions: The map shows the locations of all plants that match the given filter.
 
 Steps:
