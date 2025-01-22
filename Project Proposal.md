@@ -90,7 +90,7 @@ Goal: To search for a plant
 Triggers: The user can recognize the plant based on the image displayed after filtering the results.  
 Preconditions: the user searches for the plant by sorting through media results.  
 Step: The user sorts the media by taxonomic classification.  
-Postconditions: The plant they are looking for will be displayed with a detailed description of what it is.
+Postconditions: The plant they are looking for will be displayed with a detailed description of what it is.  
 Extensions: The user is unable to find the plant they are looking for, but is able to change that by registering it into the software.  
 Exceptions: The plant does not show up because it has yet to be catalogued.  
 
