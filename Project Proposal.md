@@ -137,17 +137,18 @@ Exceptions:
 
 ### Verifying User-Added Plant Entries - William
 Actors: Beaver Botanica moderator  
-Trigger: The user clicks on the verify button  
+Trigger: The user clicks on the verify button on a plant post.  
 Preconditions: A plant entry with the unverified property is in the database.  
 Steps:
 * The user logs in using their moderator account.
 * The user clicks on one of the plants on the map.
 * The user can scroll through the description of the plant to check its attributes.
-* If the plant is unverified the user can click on a verify button to verify it.
+* If the plant is unverified the user clicks on a verify button to verify it.
 
 Postconditions: The plant entry that had the unverified property gets the verified property.  
-Extensions: In the case that a moderator clicks on a plant entry and does not verify it as correct/incorrect, the plant entry retains the same property it originally held.  
-Exceptions: In the event that clicking on a verify button does not add the verified property to a plant, the user will receive a message notifying them that the plant was unsuccessfully updated. 
+Extensions: In the case that a moderator clicks on a plant entry and does not want to verify it, they can remove the plant entry by clicking on the delete post button. This will remove the plant entry from the database and map.</br>
+Exceptions: In the event that clicking on a verify button does not add the verified property to a plant, the user will receive a message notifying them that the plant was unsuccessfully verified.
+If a plant was already verified then clicking on the verify button will not change the property of the plant, and the user will receive a message notifying them the plant was already verified.
 
 ### Editing a Plant’s Details - Anshu
 Actors: 0000  
