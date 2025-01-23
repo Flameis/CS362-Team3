@@ -124,16 +124,20 @@ Exceptions: In the event that clicking on a verify button does not add the verif
 If a plant was already verified then clicking on the verify button will not change the property of the plant, and the user will receive a message notifying them the plant was already verified.
 
 ### Editing a Plant’s Details - Anshu
-Actors: 0000  
-Goal: 0000  
-Trigger: 0000  
-Preconditions: 0000  
+Actors: OSU Student or faculty member. 
+Goal: To edit the details of the plant entry in the database.
+Trigger: On the plant's detail page, the user selects the "Edit Plant" button.   
+Preconditions: The user might be the original submitter and has the authority to change the plant data. 
 Steps:
-* 0000  
+* The user accesses the information page of the plant.
+* The user selects the "Edit Plant" button.
+* The system shows a form with the current plant information already filled in (e.g., common name, scientific name, description, location, image).
+* The user changes the desired fields, like adding a new image or changing the plant's name and description.
+* User clicks on the "save change" button to confirm the edits.
 
-Postconditions: 0000  
-Extensions: 0000  
-Exceptions: 0000  
+Postconditions: New plant details have been added to the data. The plant details page reflects the uploaded information.  
+Extensions: By using the "cancel" option, the user can edit, remove the modifications, and return to the plant's information page. If a user uploads an image in a format that isn't supported, the system will prompt them to upload an image in a format that is accepted such as JPEG or PNG. 
+Exceptions: When a user leaves a mandatory field empty, the system indicates an error and asks them to fill it up. When the user enters an incorrect value, such as a special character in the plant name, then the system verifies the information and displays an error notification.   
 
 ### Navigating to a Plant’s Location - Finlay
 Actors: A user of the Beaver Botanica app.  
