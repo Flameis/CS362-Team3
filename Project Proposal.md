@@ -1,41 +1,5 @@
 # Beaver Botanica: The OSU Plant Map
 
-# Team Process
-## Software Toolset
-* MS Teams - Communication and file sharing.
-* Trello - Task tracking and assignment.
-* Git/GitHub - Version control and project management.
-* OSU Engineering Server - Hosting the web application.
-* MySQL - Database management.
-* Node.js - Backend development.
-* HTML/CSS/JavaScript - Frontend development.
-* Google Maps API - Map integration.
-
-All of these are necessary for the development of the software since all together they will allow us to communicate, track progress, and develop the software collaboratively.
-
-## Members
-### Adison Daggett - Front End Designer and Developer
-The role of the front-end designer has two parts: designing the front end and implementing it. This role allows for consistent design and implementation of an agreed-upon front end for the software.
-
-### Kathryn Butler - Technical Documentation and Developer
-Technical documentation is an incredibly important role in software engineering. Our team needs this designated role to clarify the process for adding and verifying plants, detail the system’s database integration, and outline user features such as the search and map functionality. Kathryn is suited for this role due to her strong communication skills developed from her leadership roles in film production and peer tutoring. She also structures documentation effectively, making it easy for others to navigate and use as a reference.
-
-### Luke Scovel - Team Coordinator and Developer
-For a team to function, it has to be a collaborative effort with everyone on the same track. To disseminate important information and reiterate what tasks need to be done without multiple voices clamoring over each other, a coordinator is needed. More developers are needed to bounce ideas off of each other and do the grunt work of coding.
-
-### William Brennan - Developer
-A developer is someone who designs and writes the code to be implemented in the software. This role is needed for this project because we need someone to design and program the database and logic controller for the software. William Brennan is suited for this role because he is a computer science student and he has taken courses in web development.
-
-### Anshu Avinash - Front-End Designer
-By bridging the gap between functionality and user experience, a front-end designer makes sure that the user interface's implementation and design meet the needs of both users and business objectives. Also, it streamlines the handoff between design and coding, improving productivity for the entire team.
-
-### Finlay Curtiss - Developer and Technical Documentation
-Multiple developers are needed to ensure that all features are implemented properly and in a reasonable time frame. Finlay has experience with developing and can contribute their knowledge and perspective to the technical implementation of the software. Technical documentation is also necessary, for the development team, users, and any developers who wish to work on this software in the future. Finlay has experience with technical writing from their classes and job. 
-
-### Jake Thompson - Developer
-We need many devolopers due to the timeline of the Project and the scope of what is needed to be implimented. Without developers nothing gets made.
-Jake has experience with developing database design and other skills needed for this project.
-
 ## GitHub Repository and Trello
 [Github](https://github.com/Flameis/CS362-Team3)  
 [Trello](https://trello.com/invite/b/67889462677f5d65a4989b33/ATTIe0f43054cfcbbfb3830f98380cd77a4bFBE38CB3/pt3-backups-made-simple)
@@ -92,7 +56,7 @@ With the large amount of plants and people we will need to make sure our softwar
 * Plant identification AI integration
 
 # Requirements
-## Funtional Requirements
+## Functional Requirements
 ### Searching for a Plant - Adison
 Actors: A OSU Student  
 Goal: To search for a plant  
@@ -243,10 +207,39 @@ The software should have up-to-date documentation that allows other developers t
 ### Scope
 This software should be well-designed and have a robust number of bug-free features, as listed in the functional and non-functional section of the Project Proposal document.
 
-## Software
+# Team Process
+## Members
+### Adison Daggett - Front End Designer and Developer
+The role of the front-end designer has two parts: designing the front end and implementing it. This role allows for consistent design and implementation of an agreed-upon front end for the software.
+
+### Kathryn Butler - Technical Documentation and Developer
+Technical documentation is an incredibly important role in software engineering. Our team needs this designated role to clarify the process for adding and verifying plants, detail the system’s database integration, and outline user features such as the search and map functionality. Kathryn is suited for this role due to her strong communication skills developed from her leadership roles in film production and peer tutoring. She also structures documentation effectively, making it easy for others to navigate and use as a reference.
+
+### Luke Scovel - Team Coordinator and Developer
+For a team to function, it has to be a collaborative effort with everyone on the same track. To disseminate important information and reiterate what tasks need to be done without multiple voices clamoring over each other, a coordinator is needed. More developers are needed to bounce ideas off of each other and do the grunt work of coding.
+
+### William Brennan - Developer
+A developer is someone who designs and writes the code to be implemented in the software. This role is needed for this project because we need someone to design and program the database and logic controller for the software. William Brennan is suited for this role because he is a computer science student and he has taken courses in web development.
+
+### Anshu Avinash - Front-End Designer
+By bridging the gap between functionality and user experience, a front-end designer makes sure that the user interface's implementation and design meet the needs of both users and business objectives. Also, it streamlines the handoff between design and coding, improving productivity for the entire team.
+
+### Finlay Curtiss - Developer and Technical Documentation
+Multiple developers are needed to ensure that all features are implemented properly and in a reasonable time frame. Finlay has experience with developing and can contribute their knowledge and perspective to the technical implementation of the software. Technical documentation is also necessary, for the development team, users, and any developers who wish to work on this software in the future. Finlay has experience with technical writing from their classes and job. 
+
+### Jake Thompson - Developer
+We need many devolopers due to the timeline of the Project and the scope of what is needed to be implimented. Without developers nothing gets made.
+Jake has experience with developing database design and other skills needed for this project.
+
+## Software Toolset
 
 We will be building Beaver Botanica as a web application hosted on OSU's engr server.
 We will use the following frontend and backend software to achieve this goal.
+
+Development Tools:
+* MS Teams - Communication and file sharing.
+* Trello - Task tracking and assignment.
+* Git/GitHub - Version control and project management.
 
 Frontend:
 * HTML - Will be used for all the text on the website. We need this to have plant names and descriptions.
