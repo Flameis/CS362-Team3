@@ -1,21 +1,6 @@
 # Beaver Botanica: The OSU Plant Map
 
 # Team Process
-## Software
-
-We will be building Beaver Botanica as a web application hosted on OSU's engr server.
-We will use the following frontend and backend software to achieve this goal.
-
-Frontend:
-* HTML - Will be used for all the text on the website. We need this to have plant names and descriptions.
-* CSS - Will be used for styling the website. We need this to make the website have a consistent theme.
-* JavaScript - Will be used for making the website interactable. We need this to be able to click on plants to learn more about them.
-
-Backend:
-* SQLite or MySQL - Will be used for creating the database. We need this to have a database full of plant names and their properties.
-* Node JS - Will be used for managing the database and handling requests. We need this to process plant entries and add them to the database.
-
-
 ## Members
 ### Adison Daggett - Front End Designer and Developer
 The role of the front-end designer has two parts: designing the front end and implementing it. This role allows for consistent design and implementation of an agreed-upon front end for the software.
@@ -245,6 +230,20 @@ The software should have up-to-date documentation that allows other developers t
 
 ### Scope
 This software should be well-designed and have a robust number of bug-free features, as listed in the functional and non-functional section of the Project Proposal document.
+
+## Software
+
+We will be building Beaver Botanica as a web application hosted on OSU's engr server.
+We will use the following frontend and backend software to achieve this goal.
+
+Frontend:
+* HTML - Will be used for all the text on the website. We need this to have plant names and descriptions.
+* CSS - Will be used for styling the website. We need this to make the website have a consistent theme.
+* JavaScript - Will be used for making the website interactable. We need this to be able to click on plants to learn more about them.
+
+Backend:
+* SQLite or MySQL - Will be used for creating the database. We need this to have a database full of plant names and their properties.
+* Node JS - Will be used for managing the database and handling requests. We need this to process plant entries and add them to the database.
 
 ## Timeline
 ### Week 3 - Planning and Foundation
