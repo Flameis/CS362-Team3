@@ -147,6 +147,7 @@ Steps:
 
 Postconditions: The plant entry that had the unverified property gets the verified property.  
 Extensions: In the case that a moderator clicks on a plant entry and does not want to verify it, they can remove the plant entry by clicking on the delete post button. This will remove the plant entry from the database and map.
+
 Exceptions: In the event that clicking on a verify button does not add the verified property to a plant, the user will receive a message notifying them that the plant was unsuccessfully verified. If a plant was already verified then clicking on the verify button will not change the property of the plant, and the user will receive a message notifying them the plant was already verified.
 
 ### Editing a Plant’s Details - Anshu
