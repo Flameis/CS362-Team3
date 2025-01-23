@@ -366,3 +366,11 @@ Backend:
 * **User Engagement**: Another risk is the potential lack of user engagement. If users do not participate in uploading and verifying plant data, the app will not reach its full potential. We will address this by incorporating peer-to-peer interaction elements to encourage use.
 
 * **Technical Challenges**: Developing this application involves overcoming various challenges such as integrating the Google Maps API, ensuring cross-platform compatibility, and maintaining a responsive design. To mitigate this, we will allocate time for testing and debugging and seek assistance if needed.
+
+## External Feedback
+We will be getting external feedback in week 6. All of the core features will be done by then so testers will be able to give useful feedback while still leaving us time to refine our product. We have dedicated week 7 to testing and refinement based on feedback. We will get this feedback by giving a botany major our software to test. We will later interview them by asking them the following questions.
+
+* What aspects of Beaver Botanica did you like or not like?
+* What would you like to see added or removed from Beaver Botanica?
+* If there was one change you could make to Beaver Botanica, what would it be?
+* How can Beaver Botanica better support your learning?
