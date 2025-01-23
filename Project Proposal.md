@@ -218,9 +218,22 @@ Tasks:
 * Finalize the app's functional requirements.
 * Break down tasks into use cases.
 * Assign roles to team members (e.g., developer, UI/UX designer, documentation).
-* Set up the development environment (e.g., version control, frameworks, initial database setup).
+
+Backend Team:
+
 * Design a basic database schema to store plant information and user data.
-* Begin wireframing the user interface (UI).  
+    Measureable Goal: Have plant table, and user tables.
+* Set up the development environment (e.g., version control, frameworks, initial database setup).
+    Measureable Goal: Have all things needed installed and folder structor created
+
+Front End Team:
+
+* Begin wireframing the user interface (UI).
+    Measureable Goal: Have all pages designed so can get feedback start of next week.
+
+Interaction Team (Front end to Back End Interaction Team):
+
+* Help out the other teams.
 
 Deliverables:
 * Project Requirements Elicitation.
@@ -230,11 +243,22 @@ Deliverables:
 ### Week 4 - Map and Database
 Goals: Develop the interactive map and basic database functionality.  
 Tasks:
+
+Backend Team:
+
+* Create the database structure for plant information, including taxonomic classification, images, and locations.
+
+Front End Team:
+
+* Continue refining wireframes based on feedback.  
 * Implement a basic campus map.
 * Enable users to view plants pinned on the map.
-* Create the database structure for plant information, including taxonomic classification, images, and locations.
+
+Interaction Team:
+
+* Enable users to view plants pinned on the map.
 * Integrate the database with the map to display plant data dynamically.
-* Continue refining wireframes based on feedback.  
+
 
 Deliverables:  
 * Project Architecture and Design Specifications.
@@ -242,14 +266,28 @@ Deliverables:
 * Database connected to the map.
 
 ### Week 5 - Plant Identification and Upload
+
 Goals: Implement plant identification prompts and the information and file upload features.  
 Tasks:  
+
+
+Backend Team:
+
+* Allow for the database to store photos
+
+Front End Team:
+
+* Design the UI for adding plants.
 * Allow for a user to upload a photo.
 * Allow someone to identify a plant based on the photo.
 * Allow a user to add information to an identified plant.
 * Add prompts to help users identify plants.
+
+Interaction Team:
+
+* Allow for photos to be uploaded.
+* Allow for plant data to be added and deleted.
 * Seamless updates to the system when a plant is uploaded, updated, or deleted.
-* Design the UI for adding plants.  
 
 Deliverables:  
 * Updated Database. 
@@ -258,9 +296,23 @@ Deliverables:
 ### Week 6 - User Authentication and Basic Social Features
 Goals: Implement social features and user authentication for the software.  
 Tasks:  
+
+Backend Team:
+
+* make sure user table works
+* add likes table.
+
+Front End Team:
+
+* make sign in form
+* make account creation form
+* make logged in indicators
+* Implement social features such as liking an identification.
+
+Interaction Team:
+
 * Allow a user to sign in and out of the system.
-* Add account creation.
-* Implement social features such as liking an identification.  
+* Handle account creation.
 
 Deliverables:  
 * Functional authentication system.
@@ -269,24 +321,56 @@ Deliverables:
 ### Week 7 - Advanced Map Features and Seasonal Layers
 Goals: Add and improve map features and create seasonal layers.  
 Tasks: 
-* Add layers to the map for different seasons, so users can see which plants are active in which season.
-* Implement map search functionality, including sorting plants by name, location, or type (e.g. trees, flowers).
+
+Backend Team:
+
+* make sure database can hadle filtering and search.
+
+Front End Team:
+
+* Build Map filter form.
+* Build Advanced search page including sorting plants by name, location, or type (e.g. trees, flowers)
+
+Interaction Team:
+
+* Impliment Map filters api calls
+
+* Implement advanced search functionality.
+
+Test Team:
+
 * Test the map with fake plant and seasonal data.
 
 Deliverables:
+
 * Project Implementation.
-* Seasonal layers on the map.
+* Map filter functionality
 * Search functionality.
 
 ### Week 8 - Testing and Refinement
 Goals: Make sure all core features work as expected, and refine them based on user feedback.  
 Tasks:  
-* Conduct user testing with students, faculty, and/or others.
+
+Backend Team:
+
 * Fix bugs and usability issues found from tests.
-* Improve the UI/UX design based on feedback.
 * Make sure the database can handle edge cases (e.g. duplicate entries, incomplete data?).
 
-Deliverables: 
+Front End Team:
+
+* Fix bugs and usability issues found from tests.
+* Improve the UI/UX design based on feedback.
+
+Interaction Team:
+
+* Fix bugs and usability issues found from tests.
+* Make sure the database can handle edge cases (e.g. duplicate entries, incomplete data?).
+
+Test Team:
+
+* Conduct user testing with students, faculty, and/or others.
+
+Deliverables:  
 * Project Testing and Beta Release.
 * Refined app with fewer bugs and a smoother interface.
 * Feedback report from user testing.
@@ -294,23 +378,56 @@ Deliverables:
 ### Week 9 - Finalizing Additional Features
 Goals: Complete non-functional features and continue refining the software.  
 Tasks:
+
+Backend Team:
+
 * Implement the non-functional features.
-* Test that the non-functional features don't interfere with the core features of the software.
+
+Front End Team:
+
 * Continue to improve the UI/UX based on feedback and integrate the non-functional features.
 
-Deliverables:
+Interaction Team:
+
+* Implement the non-functional features.
+
+Test Team:
+
+* Test that the non-functional features don't interfere with the core features of the software.
+
+
+Deliverables:  
 * Completed non-functional features in the software.
 * Fully-functional app ready for final testing.
 
 ### Week 10 - Final Testing and Launch
 Goals: Test the app and prepare for the official launch.  
-Tasks: 
-* Conduct thourough end-to-end testing of all features.
+Tasks:  
+
+Backend Team:
+
 * Fix any remaining bugs and performance issues.
+
+Front End Team:
+
+* Fix any remaining bugs and performance issues.
+
+Interaction Team:
+
+* Fix any remaining bugs and performance issues.
+
+Test Team:
+
+Documentation Team:
+
+* Finalize Documentaion
+
+All:
+
 * Prepare our final project presentation/demo.
 * Deploy the app for public use.
 
-Deliverables: 
+Deliverables:  
 * Project Final Release.
 * Fully tested and deployed app.
 * Final presentation/demo.
