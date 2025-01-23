@@ -1,0 +1,1 @@
+node marked/bin/marked -i "../Project Proposal.md" -o "../Project Proposal.html"
