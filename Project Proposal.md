@@ -2,7 +2,13 @@
 
 # Team Process
 ## Software
-0000 Specify and justify the software toolset you will use.
+
+* SQLite or MySQL - For the database backend
+* HTML - For display
+* JavaScript - For user actions
+* CSS - For styling
+* node JS - For server side request handling
+* Host on the engr server
 
 ## Members
 ### Adison Daggett - Front End Designer and Developer
@@ -179,16 +185,11 @@ Exceptions: A plant might not have a location associated with it, in which case 
 
 ### Filtering the Map - Jake
 
-Actors: An OSU Student
-
-Goal: To view the locations of all plants in a specific Genus that are in season
-
-Triggers: The user clicks the filter button
-
-Preconditions: The user is on the Map page and has a specific Genus in mind they want to see locations for plants that are in season.
-
-Postconditions: The map shows the locations of all plants that match the given filter.
-
+Actors: An OSU Student  
+Goal: To view the locations of all plants in a specific Genus that are in season  
+Triggers: The user clicks the filter button  
+Preconditions: The user is on the Map page and has a specific Genus in mind they want to see locations for plants that are in season.  
+Postconditions: The map shows the locations of all plants that match the given filter.  
 Steps:
 
 * The user clicks the filter button
