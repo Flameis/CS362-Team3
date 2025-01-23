@@ -1,0 +1,442 @@
+<h1>Beaver Botanica: The OSU Plant Map</h1>
+<h2>GitHub Repository and Trello</h2>
+<p><a href="https://github.com/Flameis/CS362-Team3">Github</a><br><a href="https://trello.com/invite/b/67889462677f5d65a4989b33/ATTIe0f43054cfcbbfb3830f98380cd77a4bFBE38CB3/pt3-backups-made-simple">Trello</a></p>
+<h2>Communication Channel and Rules</h2>
+<p>Communications Channels:</p>
+<ul>
+<li>MS Teams</li>
+<li>Text group chat</li>
+</ul>
+<p>Rules:</p>
+<ul>
+<li>MS Teams will be used for non-imperative communication. Non-imperative communication includes questions, discussions, or helpful status updates regarding the group project.</li>
+<li>All members must check MS Teams once a day and respond within a day of a message being sent.</li>
+<li>A texting group chat will be used for conveying time-sensitive information. If a problem has to be addressed within a day then it is considered time-sensitive.</li>
+<li>All member must be able to receive and respond to a text message within 4 hours of it being sent.</li>
+</ul>
+<h1>Product Description</h1>
+<h2>Abstract</h2>
+<p>The campus of OSU is home to a wide diversity of plants contributed by talented botanists over the years. It is hard for new botany students to know where all these plants are. They are left with little option save for asking for help from professors or exploring the campus themselves. Our goal is to help these botany students by providing them an online map that can tell them where plants lie on OSU’s campus. This project is a plant identification app for the Oregon State University campus. Users will take pictures of plants around campus, identify them, and upload them to a website that will show a map of campus with the locations of each identified plant. There will be layers to the map for each season, so users can see what plants are in bloom at any given time. Each plant, when clicked on, will show details of the plant that the user provides.</p>
+<h2>Goal</h2>
+<p>Our goal for this software before the end of the term is to create a map of plants on campus and allow for users to upload pictures and descriptions of plants to OSU Plant Map&#39;s database. Our end goal is to allow any student at OSU the ability to look-up and identify plants around the OSU campus.</p>
+<h2>Current Practice</h2>
+<p>Plants are everywhere in Oregon. In this state alone, forests cover 30.5 million acres, or almost half the state. With how important plants are in our day-to-day lives, these resources below are some of the only ways we can learn about our local flora:</p>
+<ul>
+<li>The botany department currently has a <a href="https://www.arcgis.com/apps/instant/basic/index.html?appid=097214a28e934a7681e229b41c9e0d29">tree inventory map</a>, but it is specific to trees and is simply an inventory system.</li>
+<li>The website Pl@ntNet has a <a href="https://identify.plantnet.org/">global plant map</a>, but it only shows broad regional areas of where plants grow.</li>
+<li>The website OregonFlora has a <a href="https://oregonflora.org/checklists/dynamicmap.php?interface=key">Oregon plant map</a>, but it can be hard to search through and is unhelpful to non-botanists.</li>
+</ul>
+<p>It’s because of this that we want to be able to create something that is both in-depth and local to what we live with here at OSU. An application like this can increase awareness and education about local flora while keeping it open for anyone to use regardless of their background in botany.</p>
+<h2>Novelty</h2>
+<p>The novelty of this project is that it will be a social media plant identification app specifically for the Oregon State University campus. Making our app restricted to the OSU campus will allow us to make the plant map more &quot;zoomed in&quot; on an area. This is novel because most maps of plants that are out there are catalogs of plants in a region, which don&#39;t allow users to find more specific locations of plants. Our app will be a user driven plant identification system that will allow users to identify and map plants on campus themselves, as well as drive social interaction based around the plants. </p>
+<h2>Effects</h2>
+<p>The target audience of Plant Map will be botany students and other such interested parties at OSU. With this software they will be able to easily look up and find plants around the OSU campus. This will save them time looking around to identify a plant and it will also help them study various plant types at OSU. Additionally, this software will help entertain visitors and regular students of OSU by giving them a tool to find cool plants around campus that they may not have otherwise known existed.</p>
+<h2>Technical Approach</h2>
+<p>The idea is to use a SQL database that holds each plant identified by the users. The website will display a map and overlay each plant&#39;s location using the Google Maps API and querying the database through code. We are still deciding on how exactly we will build the website.</p>
+<h2>Risks</h2>
+<p>One of the largests risks with developing OSU Plant Map software is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database.  </p>
+<p>With the large amount of plants and people we will need to make sure our software can be scaled up to allow for more information. This will be difficult as we will have to think ahead and design our system carefully. To mitigate this risk, our team will research early on how to make our system scalable so that we always code with the expectation of scalability.</p>
+<h2>Major Features</h2>
+<ul>
+<li>Movable map interface that displayes plant locations</li>
+<li>Seasonal layers on the map</li>
+<li>Plant descriptions and details</li>
+<li>Social media features such as commenting and liking plants</li>
+</ul>
+<h2>Stretch Goals</h2>
+<ul>
+<li>User profiles and leaderboards</li>
+<li>Plant identification AI integration</li>
+</ul>
+<h1>Requirements</h1>
+<h2>Functional Requirements</h2>
+<h3>Searching for a Plant - Adison</h3>
+<p>Actors: A OSU Student<br>Goal: To search for a plant<br>Triggers: The user can recognize the plant based on the image displayed after filtering the results.<br>Preconditions: the user searches for the plant by sorting through media results.<br>Step: The user sorts the media by taxonomic classification.<br>Postconditions: The plant they are looking for will be displayed with a detailed description of what it is.<br>Extensions: The user is unable to find the plant they are looking for, but is able to change that by registering it into the software.<br>Exceptions: The plant does not show up because it has yet to be catalogued.  </p>
+<h3>Adding a Known Plant to the Database - Kathryn</h3>
+<p>Actors: A OSU student or faculty member.<br>Goal: To add a plant instance to the database. The plant type is already in the database.<br>Trigger: The user fills out all plant information and clicks the “submit” button.<br>Preconditions: the user searches for the plant by sorting through media results.<br>Steps:</p>
+<ul>
+<li>The user begins to add the plant, through clicking on an “Add plant” button.</li>
+<li>The user inputs the common name and scientific name of the plant.</li>
+<li>The user is prompted to take a picture of the plant.</li>
+<li>The user is asked to give a location on a map where this plant was found.</li>
+</ul>
+<p>Postconditions: The plant instance is added to the database with a label of “unverified” or a similar marking to avoid mislabeling plants. The map is updated to add the plant instance.<br>Extensions: The user could decline to take a picture of the plant, which could still go though as a successfully added plant instance. The user might also stop in the middle of adding a plant, in which case the software would either save the progress or discard it.<br>Exceptions: The user may not find the plant they’re looking for, in which case they would be directed to a form requesting the addition of a new plant.</p>
+<h3>Commenting on a Post - Luke</h3>
+<p>Actors: A OSU Student<br>Triggers: The user fills out a comment box with text (maybe with images?) and clicks submit.<br>Preconditions: The user is logged in to the website and on the map page. At least one post has been made.<br>Steps: </p>
+<ul>
+<li>The user clicks on the desired plant post on the map</li>
+<li>The system displays the plant details page</li>
+<li>The user clicks on the comment button</li>
+<li>The user enters text into the comment box</li>
+<li>The user clicks the submit button</li>
+<li>The system refreshes the page and displays the comment at the end of the comment chain for all users.</li>
+</ul>
+<p>Postconditions: The comment is now displayed for all users on the post.<br>Extensions: </p>
+<ul>
+<li>The user can cancel their comment by clicking on the cancel button or by navigating away from the page.</li>
+<li>The user times out</li>
+<li>The user saves the comment as a draft</li>
+<li>The user is an administrator and pins the comment</li>
+</ul>
+<p>Exceptions: </p>
+<ul>
+<li>The text contains invalid characters</li>
+<li>The text contains a spam link</li>
+<li>No text is provided</li>
+<li>An image is the wrong format</li>
+<li>The post is deleted before the comment is posted</li>
+</ul>
+<h3>Verifying User-Added Plant Entries - William</h3>
+<p>Actors: Beaver Botanica moderator<br>Trigger: The user clicks on the verify button on a plant post.<br>Preconditions: A plant entry with the unverified property is in the database.<br>Steps:</p>
+<ul>
+<li>The user logs in using their moderator account.</li>
+<li>The user clicks on one of the plants on the map.</li>
+<li>The user can scroll through the description of the plant to check its attributes.</li>
+<li>If the plant is unverified the user clicks on a verify button to verify it.</li>
+</ul>
+<p>Postconditions: The plant entry that had the unverified property gets the verified property.<br>Extensions: In the case that a moderator clicks on a plant entry and does not want to verify it, they can remove the plant entry by clicking on the delete post button. This will remove the plant entry from the database and map.</br>
+Exceptions: In the event that clicking on a verify button does not add the verified property to a plant, the user will receive a message notifying them that the plant was unsuccessfully verified.
+If a plant was already verified then clicking on the verify button will not change the property of the plant, and the user will receive a message notifying them the plant was already verified.</p>
+<h3>Editing a Plant’s Details - Anshu</h3>
+<p>Actors: OSU Student or faculty member. 
+Goal: To edit the details of the plant entry in the database.
+Trigger: On the plant&#39;s detail page, the user selects the &quot;Edit Plant&quot; button.<br>Preconditions: The user might be the original submitter and has the authority to change the plant data. 
+Steps:</p>
+<ul>
+<li>The user accesses the information page of the plant.</li>
+<li>The user selects the &quot;Edit Plant&quot; button.</li>
+<li>The system shows a form with the current plant information already filled in (e.g., common name, scientific name, description, location, image).</li>
+<li>The user changes the desired fields, like adding a new image or changing the plant&#39;s name and description.</li>
+<li>User clicks on the &quot;save change&quot; button to confirm the edits.</li>
+</ul>
+<p>Postconditions: New plant details have been added to the data. The plant details page reflects the uploaded information.<br>Extensions: By using the &quot;cancel&quot; option, the user can edit, remove the modifications, and return to the plant&#39;s information page. If a user uploads an image in a format that isn&#39;t supported, the system will prompt them to upload an image in a format that is accepted such as JPEG or PNG. 
+Exceptions: When a user leaves a mandatory field empty, the system indicates an error and asks them to fill it up. When the user enters an incorrect value, such as a special character in the plant name, then the system verifies the information and displays an error notification.   </p>
+<h3>Navigating to a Plant’s Location - Finlay</h3>
+<p>Actors: A user of the Beaver Botanica app.<br>Goal: The user should be able to find the locations of a certain plant on the OSU campus and get directions to the plant’s location.<br>Triggers: The user is viewing a specific plant after searching and then presses the button that opens the map view. The user then selects a location and chooses to get directions to it.<br>Preconditions: At least one plant is in the database and that plant has at least one location placed on the map.<br>Steps:  </p>
+<ul>
+<li>Selects a plant after entering a search query</li>
+<li>Open the map view for that plant to view all locations of the plant</li>
+<li>Select one location marker and click the “Get Directions” button</li>
+<li>The application will then display directions to reach the selected location</li>
+</ul>
+<p>Postconditions: The application displays a map view with any locations for the plant displayed as markers.<br>Extensions: The user might not choose to receive directions to the plant’s location, instead navigating by themselves.<br>Exceptions: A plant might not have a location associated with it, in which case the map would not display any locations and the user would not be able to get directions. The mapping service we use might also be down, which would cause no map to be displayed to the user, meaning they couldn’t get directions.</p>
+<h3>Filtering the Map - Jake</h3>
+<p>Actors: An OSU Student<br>Goal: To view the locations of all plants in a specific Genus that are in season<br>Triggers: The user clicks the filter button<br>Preconditions: The user is on the Map page and has a specific Genus in mind they want to see locations for plants that are in season.<br>Postconditions: The map shows the locations of all plants that match the given filter.<br>Steps:</p>
+<ul>
+<li>The user clicks the filter button</li>
+<li>The system displays the filter sidebar (this will hide the add or Info sidebars)</li>
+<li>The user either selects the desired Genus from the Genus dropdown or starts typing in the dropdown to find it faster (for got what this input type is actually called) <ul>
+<li>The system should then fill higher level taxonomy filters</li>
+</ul>
+</li>
+<li>The user checks the box in season</li>
+<li>The System Filters the map based on the set filters</li>
+</ul>
+<p>Extensions/variations:</p>
+<ul>
+<li>The user changes their mind and wants to clear the filters this can be done with the clear all button</li>
+<li>The user decides they actually wanted a different genus in the same family<ul>
+<li>Now they just select the genus dropdown and it should only show genus in that family</li>
+<li>Should also clear all taxonomy filters below genus.</li>
+</ul>
+</li>
+<li>The user decides they actually wanted to see the whole Family<ul>
+<li>The user clicks the clear button for Genus</li>
+</ul>
+</li>
+</ul>
+<p>Exceptions:</p>
+<ul>
+<li>The user can’t find the desidered genus in the drop down<ul>
+<li>This should mean that there are no plants in that genus in the database.</li>
+<li>Maybe suggest Advanced Search as the result might be missfiled.</li>
+</ul>
+</li>
+<li>There is nothing on the map<ul>
+<li>This means that no plants of that genus are in season.</li>
+<li>Should display a message that no plants are in season for a given filter and recommend turning off the in season filter.</li>
+</ul>
+</li>
+</ul>
+<h2>Non-Functional Requirements</h2>
+<h3>Dark Mode and High-Contrast Mode</h3>
+<p>Both modes improve user accessibility by providing alternative color schemes, such as dark mode for low-light environments and high-contrast mode for users with visual impairments or color blindness. They must load without impacting software speed, and may automatically adjust based on the user’s device settings. The user must be able to activate dark or high-contrast mode in no more than four clicks. The colors used in high-contrast mode must be tested to comply with industry standards.</p>
+<h3>Expandability</h3>
+<p>The software should be able to store and display all plants on the OSU campus (2000+) and also allow them to be searched. With the software allowing more plants to be added, it enables the users to add plants that aren&#39;t already in the system so they can all be catalogued.</p>
+<h3>Incorrect/Malicious Entry Prevention</h3>
+<p>The software should prevent users from creating incorrect or malicious entries for plants and/or their locations. It should be built in a way that totally prevents these entries being displayed as correct information or removes it from the database and software quickly. </p>
+<h2>External Requirements</h2>
+<h3>Error-Free</h3>
+<p>The software needs to be able to prevent errors and crashes from occurring. This can be done by being able to look out for common system errors such as no results popping up when a user searches for something, invalid inputs, and failure to save things. Certain types of input such as images with an unknown format or non-valid characters will be sanitized or fully blocked to prevent errors.</p>
+<h3>Installable</h3>
+<p>The website will be accessible to a range of devices, allowing more users to access the service. A mobile version of the website is absolutely necessary since users will be walking around with it on their phones. The URL will be publicly available.</p>
+<h3>Buildable</h3>
+<p>The software should have up-to-date documentation that allows other developers to set it up, allowing the project to extend to other college campuses or locations. The software should also allow developers to customize their version of the application by doing things like using a different map, different plants, or any other changes to features.</p>
+<h3>Scope</h3>
+<p>This software should be well-designed and have a robust number of bug-free features, as listed in the functional and non-functional section of the Project Proposal document.</p>
+<h2>Timeline</h2>
+<h3>Week 3 - Planning and Foundation</h3>
+<p>Goals: Finalize requirements, set up basic infrastructure, and assign roles.<br>Tasks:</p>
+<ul>
+<li>Finalize the app&#39;s functional requirements.</li>
+<li>Break down tasks into use cases.</li>
+<li>Assign roles to team members (e.g., developer, UI/UX designer, documentation).</li>
+</ul>
+<p>Backend Team:</p>
+<ul>
+<li>Design a basic database schema to store plant information and user data.
+  Measureable Goal: Have plant table, and user tables.</li>
+<li>Set up the development environment (e.g., version control, frameworks, initial database setup).
+  Measureable Goal: Have all things needed installed and folder structor created</li>
+</ul>
+<p>Front End Team:</p>
+<ul>
+<li>Begin wireframing the user interface (UI).
+  Measureable Goal: Have all pages designed so can get feedback start of next week.</li>
+</ul>
+<p>Interaction Team (Front end to Back End Interaction Team):</p>
+<ul>
+<li>Help out the other teams.</li>
+</ul>
+<p>Deliverables:</p>
+<ul>
+<li>Project Requirements Elicitation.</li>
+<li>Development environment ready.</li>
+<li>Wireframe drafts for key screens.</li>
+</ul>
+<h3>Week 4 - Map and Database</h3>
+<p>Goals: Develop the interactive map and basic database functionality.<br>Tasks:</p>
+<p>Backend Team:</p>
+<ul>
+<li>Create the database structure for plant information, including taxonomic classification, images, and locations.</li>
+</ul>
+<p>Front End Team:</p>
+<ul>
+<li>Continue refining wireframes based on feedback.  </li>
+<li>Implement a basic campus map.</li>
+<li>Enable users to view plants pinned on the map.</li>
+</ul>
+<p>Interaction Team:</p>
+<ul>
+<li>Enable users to view plants pinned on the map.</li>
+<li>Integrate the database with the map to display plant data dynamically.</li>
+</ul>
+<p>Deliverables:  </p>
+<ul>
+<li>Project Architecture and Design Specifications.</li>
+<li>Functional campus map with placeholders for plants.</li>
+<li>Database connected to the map.</li>
+</ul>
+<h3>Week 5 - Plant Identification and Upload</h3>
+<p>Goals: Implement plant identification prompts and the information and file upload features.<br>Tasks:  </p>
+<p>Backend Team:</p>
+<ul>
+<li>Allow for the database to store photos</li>
+</ul>
+<p>Front End Team:</p>
+<ul>
+<li>Design the UI for adding plants.</li>
+<li>Allow for a user to upload a photo.</li>
+<li>Allow someone to identify a plant based on the photo.</li>
+<li>Allow a user to add information to an identified plant.</li>
+<li>Add prompts to help users identify plants.</li>
+</ul>
+<p>Interaction Team:</p>
+<ul>
+<li>Allow for photos to be uploaded.</li>
+<li>Allow for plant data to be added and deleted.</li>
+<li>Seamless updates to the system when a plant is uploaded, updated, or deleted.</li>
+</ul>
+<p>Deliverables:  </p>
+<ul>
+<li>Updated Database. </li>
+<li>Functional plant upload and identification system.</li>
+</ul>
+<h3>Week 6 - User Authentication and Basic Social Features</h3>
+<p>Goals: Implement social features and user authentication for the software.<br>Tasks:  </p>
+<p>Backend Team:</p>
+<ul>
+<li>make sure user table works</li>
+<li>add likes table.</li>
+</ul>
+<p>Front End Team:</p>
+<ul>
+<li>make sign in form</li>
+<li>make account creation form</li>
+<li>make logged in indicators</li>
+<li>Implement social features such as liking an identification.</li>
+</ul>
+<p>Interaction Team:</p>
+<ul>
+<li>Allow a user to sign in and out of the system.</li>
+<li>Handle account creation.</li>
+</ul>
+<p>Deliverables:  </p>
+<ul>
+<li>Functional authentication system.</li>
+<li>Functional social features.</li>
+</ul>
+<h3>Week 7 - Advanced Map Features and Seasonal Layers</h3>
+<p>Goals: Add and improve map features and create seasonal layers.<br>Tasks: </p>
+<p>Backend Team:</p>
+<ul>
+<li>make sure database can hadle filtering and search.</li>
+</ul>
+<p>Front End Team:</p>
+<ul>
+<li>Build Map filter form.</li>
+<li>Build Advanced search page including sorting plants by name, location, or type (e.g. trees, flowers)</li>
+</ul>
+<p>Interaction Team:</p>
+<ul>
+<li><p>Impliment Map filters api calls</p>
+</li>
+<li><p>Implement advanced search functionality.</p>
+</li>
+</ul>
+<p>Test Team:</p>
+<ul>
+<li>Test the map with fake plant and seasonal data.</li>
+</ul>
+<p>Deliverables:</p>
+<ul>
+<li>Project Implementation.</li>
+<li>Map filter functionality</li>
+<li>Search functionality.</li>
+</ul>
+<h3>Week 8 - Testing and Refinement</h3>
+<p>Goals: Make sure all core features work as expected, and refine them based on user feedback.<br>Tasks:  </p>
+<p>Backend Team:</p>
+<ul>
+<li>Fix bugs and usability issues found from tests.</li>
+<li>Make sure the database can handle edge cases (e.g. duplicate entries, incomplete data?).</li>
+</ul>
+<p>Front End Team:</p>
+<ul>
+<li>Fix bugs and usability issues found from tests.</li>
+<li>Improve the UI/UX design based on feedback.</li>
+</ul>
+<p>Interaction Team:</p>
+<ul>
+<li>Fix bugs and usability issues found from tests.</li>
+<li>Make sure the database can handle edge cases (e.g. duplicate entries, incomplete data?).</li>
+</ul>
+<p>Test Team:</p>
+<ul>
+<li>Conduct user testing with students, faculty, and/or others.</li>
+</ul>
+<p>Deliverables:  </p>
+<ul>
+<li>Project Testing and Beta Release.</li>
+<li>Refined app with fewer bugs and a smoother interface.</li>
+<li>Feedback report from user testing.</li>
+</ul>
+<h3>Week 9 - Finalizing Additional Features</h3>
+<p>Goals: Complete non-functional features and continue refining the software.<br>Tasks:</p>
+<p>Backend Team:</p>
+<ul>
+<li>Implement the non-functional features.</li>
+</ul>
+<p>Front End Team:</p>
+<ul>
+<li>Continue to improve the UI/UX based on feedback and integrate the non-functional features.</li>
+</ul>
+<p>Interaction Team:</p>
+<ul>
+<li>Implement the non-functional features.</li>
+</ul>
+<p>Test Team:</p>
+<ul>
+<li>Test that the non-functional features don&#39;t interfere with the core features of the software.</li>
+</ul>
+<p>Deliverables:  </p>
+<ul>
+<li>Completed non-functional features in the software.</li>
+<li>Fully-functional app ready for final testing.</li>
+</ul>
+<h3>Week 10 - Final Testing and Launch</h3>
+<p>Goals: Test the app and prepare for the official launch.<br>Tasks:  </p>
+<p>Backend Team:</p>
+<ul>
+<li>Fix any remaining bugs and performance issues.</li>
+</ul>
+<p>Front End Team:</p>
+<ul>
+<li>Fix any remaining bugs and performance issues.</li>
+</ul>
+<p>Interaction Team:</p>
+<ul>
+<li>Fix any remaining bugs and performance issues.</li>
+</ul>
+<p>Test Team:</p>
+<p>Documentation Team:</p>
+<ul>
+<li>Finalize Documentaion</li>
+</ul>
+<p>All:</p>
+<ul>
+<li>Prepare our final project presentation/demo.</li>
+<li>Deploy the app for public use.</li>
+</ul>
+<p>Deliverables:  </p>
+<ul>
+<li>Project Final Release.</li>
+<li>Fully tested and deployed app.</li>
+<li>Final presentation/demo.</li>
+</ul>
+<h1>Team Process</h1>
+<h2>Members</h2>
+<h3>Adison Daggett - Front End Designer and Developer</h3>
+<p>The role of the front-end designer has two parts: designing the front end and implementing it. This role allows for consistent design and implementation of an agreed-upon front end for the software.</p>
+<h3>Kathryn Butler - Technical Documentation and Developer</h3>
+<p>Technical documentation is an incredibly important role in software engineering. Our team needs this designated role to clarify the process for adding and verifying plants, detail the system’s database integration, and outline user features such as the search and map functionality. Kathryn is suited for this role due to her strong communication skills developed from her leadership roles in film production and peer tutoring. She also structures documentation effectively, making it easy for others to navigate and use as a reference.</p>
+<h3>Luke Scovel - Team Coordinator and Developer</h3>
+<p>For a team to function, it has to be a collaborative effort with everyone on the same track. To disseminate important information and reiterate what tasks need to be done without multiple voices clamoring over each other, a coordinator is needed. More developers are needed to bounce ideas off of each other and do the grunt work of coding.</p>
+<h3>William Brennan - Developer</h3>
+<p>A developer is someone who designs and writes the code to be implemented in the software. This role is needed for this project because we need someone to design and program the database and logic controller for the software. William Brennan is suited for this role because he is a computer science student and he has taken courses in web development.</p>
+<h3>Anshu Avinash - Front-End Designer</h3>
+<p>By bridging the gap between functionality and user experience, a front-end designer makes sure that the user interface&#39;s implementation and design meet the needs of both users and business objectives. Also, it streamlines the handoff between design and coding, improving productivity for the entire team.</p>
+<h3>Finlay Curtiss - Developer and Technical Documentation</h3>
+<p>Multiple developers are needed to ensure that all features are implemented properly and in a reasonable time frame. Finlay has experience with developing and can contribute their knowledge and perspective to the technical implementation of the software. Technical documentation is also necessary, for the development team, users, and any developers who wish to work on this software in the future. Finlay has experience with technical writing from their classes and job. </p>
+<h3>Jake Thompson - Developer</h3>
+<p>We need many devolopers due to the timeline of the Project and the scope of what is needed to be implimented. Without developers nothing gets made.
+Jake has experience with developing database design and other skills needed for this project.</p>
+<h2>Software Toolset</h2>
+<p>We will be building Beaver Botanica as a web application hosted on OSU&#39;s engr server.
+We will use the following frontend and backend software to achieve this goal.</p>
+<p>Development Tools:</p>
+<ul>
+<li>MS Teams - Communication and file sharing.</li>
+<li>Trello - Task tracking and assignment.</li>
+<li>Git/GitHub - Version control and project management.</li>
+</ul>
+<p>Frontend:</p>
+<ul>
+<li>HTML - Will be used for all the text on the website. We need this to have plant names and descriptions.</li>
+<li>CSS - Will be used for styling the website. We need this to make the website have a consistent theme.</li>
+<li>JavaScript - Will be used for making the website interactable. We need this to be able to click on plants to learn more about them.</li>
+</ul>
+<p>Backend:</p>
+<ul>
+<li>SQLite or MySQL - Will be used for creating the database. We need this to have a database full of plant names and their properties.</li>
+<li>Node JS - Will be used for managing the database and handling requests. We need this to process plant entries and add them to the database.</li>
+</ul>
+<h2>Risks</h2>
+<ul>
+<li><p><strong>Scalability</strong>: One of the largest risks with developing Beaver Botanica is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database.</p>
+</li>
+<li><p><strong>Data Accuracy</strong>: Ensuring the accuracy of plant data uploaded by users is a significant risk. Incorrect or misleading information could reduce the app&#39;s reliability and usefulness. To mitigate this, we will implement a verification process for user-submitted data.</p>
+</li>
+<li><p><strong>User Engagement</strong>: Another risk is the potential lack of user engagement. If users do not participate in uploading and verifying plant data, the app will not reach its full potential. We will address this by incorporating peer-to-peer interaction elements to encourage use.</p>
+</li>
+<li><p><strong>Technical Challenges</strong>: Developing this application involves overcoming various challenges such as integrating the Google Maps API, ensuring cross-platform compatibility, and maintaining a responsive design. To mitigate this, we will allocate time for testing and debugging and seek assistance if needed.</p>
+</li>
+</ul>
+<h2>External Feedback</h2>
+<p>We will be getting external feedback in week 6. All of the core features will be done by then so testers will be able to give useful feedback while still leaving us time to refine our product. We have dedicated week 7 to testing and refinement based on feedback. We will get this feedback by giving a fellow student in CS 362 our software. We will later interview them by asking them the following questions.</p>
+<ul>
+<li>What aspects of Beaver Botanica did you like or not like? Why?</li>
+<li>What would you like to see added or removed from Beaver Botanica?</li>
+<li>If there was one change you could make to Beaver Botanica, what would it be?</li>
+<li>Did you find Beaver Botanica useful and will you use Beaver Botanica in the future?</li>
+</ul>
