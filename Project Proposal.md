@@ -3,12 +3,18 @@
 # Team Process
 ## Software
 
-* SQLite or MySQL - For the database backend
-* HTML - For display
-* JavaScript - For user actions
-* CSS - For styling
-* node JS - For server side request handling
-* Host on the engr server
+We will be building Beaver Botanica as a web application hosted on OSU's engr server.
+We will use the following frontend and backend software to achieve this goal.
+
+Frontend:
+* HTML - Will be used for all the text on the website. We need this to have plant names and descriptions.
+* CSS - Will be used for styling the website. We need this to make the website have a consistent theme.
+* JavaScript - Will be used for making the website interactable. We need this to be able to click on plants to learn more about them.
+
+Backend:
+* SQLite or MySQL - Will be used for creating the database. We need this to have a database full of plant names and their properties.
+* Node JS - Will be used for managing the database and handling requests. We need this to process plant entries and add them to the database.
+
 
 ## Members
 ### Adison Daggett - Front End Designer and Developer
