@@ -1,6 +1,18 @@
 # Beaver Botanica: The OSU Plant Map
 
 # Team Process
+## Software Toolset
+* MS Teams - Communication and file sharing.
+* Trello - Task tracking and assignment.
+* Git/GitHub - Version control and project management.
+* OSU Engineering Server - Hosting the web application.
+* MySQL - Database management.
+* Node.js - Backend development.
+* HTML/CSS/JavaScript - Frontend development.
+* Google Maps API - Map integration.
+
+All of these are necessary for the development of the software since all together they will allow us to communicate, track progress, and develop the software collaboratively.
+
 ## Members
 ### Adison Daggett - Front End Designer and Developer
 The role of the front-end designer has two parts: designing the front end and implementing it. This role allows for consistent design and implementation of an agreed-upon front end for the software.
