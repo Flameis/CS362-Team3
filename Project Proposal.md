@@ -211,8 +211,8 @@ The software should have up-to-date documentation that allows other developers t
 ### Scope
 This software should be well-designed and have a robust number of bug-free features, as listed in the functional and non-functional section of the Project Proposal document.
 
-## Timeline
-### Week 3 - Planning and Foundation
+# Timeline
+## Week 3 - Planning and Foundation
 Goals: Finalize requirements, set up basic infrastructure, and assign roles.  
 Tasks:
 * Finalize the app's functional requirements.
@@ -240,7 +240,7 @@ Deliverables:
 * Development environment ready.
 * Wireframe drafts for key screens.
 
-### Week 4 - Map and Database
+## Week 4 - Map and Database
 Goals: Develop the interactive map and basic database functionality.  
 Tasks:
 
@@ -265,7 +265,7 @@ Deliverables:
 * Functional campus map with placeholders for plants.
 * Database connected to the map.
 
-### Week 5 - Plant Identification and Upload
+## Week 5 - Plant Identification and Upload
 
 Goals: Implement plant identification prompts and the information and file upload features.  
 Tasks:  
@@ -293,7 +293,7 @@ Deliverables:
 * Updated Database. 
 * Functional plant upload and identification system.
 
-### Week 6 - User Authentication and Basic Social Features
+## Week 6 - User Authentication and Basic Social Features
 Goals: Implement social features and user authentication for the software.  
 Tasks:  
 
@@ -318,7 +318,7 @@ Deliverables:
 * Functional authentication system.
 * Functional social features.
 
-### Week 7 - Advanced Map Features and Seasonal Layers
+## Week 7 - Advanced Map Features and Seasonal Layers
 Goals: Add and improve map features and create seasonal layers.  
 Tasks: 
 
@@ -347,7 +347,7 @@ Deliverables:
 * Map filter functionality
 * Search functionality.
 
-### Week 8 - Testing and Refinement
+## Week 8 - Testing and Refinement
 Goals: Make sure all core features work as expected, and refine them based on user feedback.  
 Tasks:  
 
@@ -375,7 +375,7 @@ Deliverables:
 * Refined app with fewer bugs and a smoother interface.
 * Feedback report from user testing.
 
-### Week 9 - Finalizing Additional Features
+## Week 9 - Finalizing Additional Features
 Goals: Complete non-functional features and continue refining the software.  
 Tasks:
 
@@ -400,7 +400,7 @@ Deliverables:
 * Completed non-functional features in the software.
 * Fully-functional app ready for final testing.
 
-### Week 10 - Final Testing and Launch
+## Week 10 - Final Testing and Launch
 Goals: Test the app and prepare for the official launch.  
 Tasks:  
 
@@ -484,7 +484,41 @@ Backend:
 
 * **Technical Challenges**: Developing this application involves overcoming various challenges such as integrating the Google Maps API, ensuring cross-platform compatibility, and maintaining a responsive design. To mitigate this, we will allocate time for testing and debugging and seek assistance if needed.
 
-## External Feedback
+# Project Architecture and Design
+## Software Architecture
+### Components
+0000 Identify and describe the major software components and their functionality at a conceptual level.
+
+0000 Specify the interfaces between components.
+
+### Data
+0000 Describe in detail what data your system stores, and how. If it uses a database, give the high level database schema. If not, describe how you are storing the data and its organization.
+
+### Assumptions
+0000 If there are particular assumptions underpinning your chosen architecture, identify and describe them.
+
+### Decision 1: <Name of Decision 1>
+0000 For each of two decisions pertaining to your software architecture, identify and briefly describe an alternative. For each of the two alternatives, discuss its pros and cons compared to your choice.
+
+0000 This is a small sentence for the decision we made. This is the basic reasoning why we decided on this decision. This is an alternative to our decision.
+
+* Pros: 0000
+* Cons: 0000
+
+0000 This is a concluding sentence analyzing our alternative and why we made the decision we did.
+
+### Decision 2: <Name of Decision 2>
+For each of two decisions pertaining to your software architecture, identify and briefly describe an alternative. For each of the two alternatives, discuss its pros and cons compared to your choice.
+
+0000 This is a small sentence for the decision we made. This is the basic reasoning why we decided on this decision. This is an alternative to our decision.
+
+* Pros: 0000
+* Cons: 0000
+
+0000 This is a concluding sentence analyzing our alternative and why we made the decision we did.
+
+
+# Feedback
 We will be getting external feedback in week 6. All of the core features will be done by then so testers will be able to give useful feedback while still leaving us time to refine our product. We have dedicated week 7 to testing and refinement based on feedback. We will get this feedback by giving a fellow student in CS 362 our software. We will later interview them by asking them the following questions.
 
 * What aspects of Beaver Botanica did you like or not like? Why?
