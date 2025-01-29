@@ -13,7 +13,7 @@ Rules:
 * MS Teams will be used for non-imperative communication. Non-imperative communication includes questions, discussions, or helpful status updates regarding the group project.
 * All members must check MS Teams once a day and respond within a day of a message being sent.
 * A texting group chat will be used for conveying time-sensitive information. If a problem has to be addressed within a day then it is considered time-sensitive.
-* All member must be able to receive and respond to a text message within 4 hours of it being sent.
+* All members must be able to receive and respond to a text message within 4 hours of it being sent.
 
 # Product Description
 ## Abstract
@@ -46,7 +46,7 @@ One of the largests risks with developing OSU Plant Map software is in making su
 With the large amount of plants and people we will need to make sure our software can be scaled up to allow for more information. This will be difficult as we will have to think ahead and design our system carefully. To mitigate this risk, our team will research early on how to make our system scalable so that we always code with the expectation of scalability.
 
 ## Major Features
-* Movable map interface that displayes plant locations
+* Movable map interface that displays plant locations
 * Seasonal layers on the map
 * Plant descriptions and details
 * Social media features such as commenting and liking plants
@@ -182,7 +182,7 @@ Extensions/variations:
 Exceptions:
 * The user can’t find the desidered genus in the drop down
   * This should mean that there are no plants in that genus in the database.
-  * Maybe suggest Advanced Search as the result might be missfiled.
+  * Maybe suggest Advanced Search as the result might be misfiled.
 * There is nothing on the map
   * This means that no plants of that genus are in season.
   * Should display a message that no plants are in season for a given filter and recommend turning off the in season filter.
@@ -222,14 +222,14 @@ Tasks:
 Backend Team:
 
 * Design a basic database schema to store plant information and user data.
-    Measureable Goal: Have plant table, and user tables.
+    Measurable Goal: Have a plant table, and user tables.
 * Set up the development environment (e.g., version control, frameworks, initial database setup).
-    Measureable Goal: Have all things needed installed and folder structor created
+    Measurable Goal: Have all things needed installed and folder structure created
 
 Front End Team:
 
 * Begin wireframing the user interface (UI).
-    Measureable Goal: Have all pages designed so can get feedback start of next week.
+    Measurable Goal: Have all pages designed so we can get feedback at the start of next week.
 
 Interaction Team (Front end to Back End Interaction Team):
 
@@ -324,7 +324,7 @@ Tasks:
 
 Backend Team:
 
-* make sure database can hadle filtering and search.
+* make sure the database can handle filtering and search.
 
 Front End Team:
 
@@ -333,7 +333,7 @@ Front End Team:
 
 Interaction Team:
 
-* Impliment Map filters api calls
+* Implement Map filters api calls
 
 * Implement advanced search functionality.
 
@@ -420,7 +420,7 @@ Test Team:
 
 Documentation Team:
 
-* Finalize Documentaion
+* Finalize Documentation
 
 All:
 
@@ -537,7 +537,7 @@ We need another risk!!! For example, don’t merely state as a risk, “we might
 0000 Explicitly state how this has changed since you submitted your Requirements document.
 
 ## Project Schedule
-0000 Identify milestones (external and internal), define tasks along with effort estimates (at granularity no coarser than 1-person-week units), and identify dependences among them. (What has to be complete before you can begin implementing component X? What has to be complete before you can start testing component X? What has to be complete before you can run an entire (small) use case?) This should reflect your actual plan of work, possibly including items your team has already completed. To build a schedule, start with your major milestones (tend to be noun-like) and fill in the tasks (tend to start with a verb) that will allow you to achieve them. A simple table is sufficient for this size of a project.
+0000 Identify milestones (external and internal), define tasks along with effort estimates (at granularity no coarser than 1-person-week units), and identify dependencies among them. (What has to be complete before you can begin implementing component X? What has to be complete before you can start testing component X? What has to be complete before you can run an entire (small) use case?) This should reflect your actual plan of work, possibly including items your team has already completed. To build a schedule, start with your major milestones (tend to be noun-like) and fill in the tasks (tend to start with a verb) that will allow you to achieve them. A simple table is sufficient for this size of a project.
 
 ## Team Structure
 ### Adison Daggett - Front End Designer and Developer
@@ -559,7 +559,7 @@ By bridging the gap between functionality and user experience, a front-end desig
 Multiple developers are needed to ensure that all features are implemented properly and in a reasonable time frame. Finlay has experience with developing and can contribute their knowledge and perspective to the technical implementation of the software. Technical documentation is also necessary, for the development team, users, and any developers who wish to work on this software in the future. Finlay has experience with technical writing from their classes and job. 
 
 ### Jake Thompson - Developer
-We need many devolopers due to the timeline of the Project and the scope of what is needed to be implimented. Without developers nothing gets made.
+We need many developers due to the timeline of the Project and the scope of what is needed to be implemented. Without developers nothing gets made.
 Jake has experience with developing database design and other skills needed for this project.
 
 ## Software Toolset
