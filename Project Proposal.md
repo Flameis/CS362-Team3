@@ -433,7 +433,113 @@ Deliverables:
 * Final presentation/demo.
 
 # Team Process
-## Members
+## Risk Assessment
+Here are the top five risks to the successful completion of our project:
+
+### 1. Scalability
+One of the largest risks with developing Beaver Botanica is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database.
+
+0000 Likelihood of occurring (high, medium, low).
+
+0000 Impact if it occurs (high, medium, low).
+
+0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+
+0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
+* step 1
+* step 2
+* step 3... etc
+
+0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
+
+0000 Mitigation plan should it occur.
+
+0000 Explicitly state how this has changed since you submitted your Requirements document.
+
+### 2. Data Accuracy
+Ensuring the accuracy of plant data uploaded by users is a significant risk. Incorrect or misleading information could reduce the app's reliability and usefulness. To mitigate this, we will implement a verification process for user-submitted data.
+
+0000 Likelihood of occurring (high, medium, low).
+
+0000 Impact if it occurs (high, medium, low).
+
+0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+
+0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
+* step 1
+* step 2
+* step 3... etc
+
+0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
+
+0000 Mitigation plan should it occur.
+
+0000 Explicitly state how this has changed since you submitted your Requirements document.
+
+### 3. User Engagement
+Another risk is the potential lack of user engagement. If users do not participate in uploading and verifying plant data, the app will not reach its full potential. We will address this by incorporating peer-to-peer interaction elements to encourage use.
+
+0000 Likelihood of occurring (high, medium, low).
+
+0000 Impact if it occurs (high, medium, low).
+
+0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+
+0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
+* step 1
+* step 2
+* step 3... etc
+
+0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
+
+0000 Mitigation plan should it occur.
+
+0000 Explicitly state how this has changed since you submitted your Requirements document.
+
+### 4. Technical Challenges
+Developing this application involves overcoming various challenges such as integrating the Google Maps API, ensuring cross-platform compatibility, and maintaining a responsive design. To mitigate this, we will allocate time for testing and debugging and seek assistance if needed.
+
+0000 Likelihood of occurring (high, medium, low).
+
+0000 Impact if it occurs (high, medium, low).
+
+0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+
+0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
+* step 1
+* step 2
+* step 3... etc
+
+0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
+
+0000 Mitigation plan should it occur.
+
+0000 Explicitly state how this has changed since you submitted your Requirements document.
+
+### 5. 0000
+We need another risk!!! For example, don’t merely state as a risk, “we might fall behind schedule” (another example is “we don’t know the tools”). What factors do you think are most likely to cause schedule slippage for your project? Why do you think those are the parts of the schedule with the greatest potential variance? What have you done, or what do you plan to do, to learn more about how long those particular tasks will really take?
+
+0000 Likelihood of occurring (high, medium, low).
+
+0000 Impact if it occurs (high, medium, low).
+
+0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+
+0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
+* step 1
+* step 2
+* step 3... etc
+
+0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
+
+0000 Mitigation plan should it occur.
+
+0000 Explicitly state how this has changed since you submitted your Requirements document.
+
+## Project Schedule
+0000 Identify milestones (external and internal), define tasks along with effort estimates (at granularity no coarser than 1-person-week units), and identify dependences among them. (What has to be complete before you can begin implementing component X? What has to be complete before you can start testing component X? What has to be complete before you can run an entire (small) use case?) This should reflect your actual plan of work, possibly including items your team has already completed. To build a schedule, start with your major milestones (tend to be noun-like) and fill in the tasks (tend to start with a verb) that will allow you to achieve them. A simple table is sufficient for this size of a project.
+
+## Team Structure
 ### Adison Daggett - Front End Designer and Developer
 The role of the front-end designer has two parts: designing the front end and implementing it. This role allows for consistent design and implementation of an agreed-upon front end for the software.
 
@@ -475,14 +581,11 @@ Backend:
 * SQLite or MySQL - Will be used for creating the database. We need this to have a database full of plant names and their properties.
 * Node JS - Will be used for managing the database and handling requests. We need this to process plant entries and add them to the database.
 
-## Risks
-* **Scalability**: One of the largest risks with developing Beaver Botanica is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database.
+## Test Plan & Bugs
+0000 Describe what aspects of your system you plan to test and why they are sufficient, as well as how specifically you plan to test those aspects in a disciplined way. Describe a strategy for each of unit testing, system (integration) testing, and usability testing, along with any specific test suites identified to capture the requirements. We require that you use GitHub Issues to track bugs that occur during use and testing.
 
-* **Data Accuracy**: Ensuring the accuracy of plant data uploaded by users is a significant risk. Incorrect or misleading information could reduce the app's reliability and usefulness. To mitigate this, we will implement a verification process for user-submitted data.
-
-* **User Engagement**: Another risk is the potential lack of user engagement. If users do not participate in uploading and verifying plant data, the app will not reach its full potential. We will address this by incorporating peer-to-peer interaction elements to encourage use.
-
-* **Technical Challenges**: Developing this application involves overcoming various challenges such as integrating the Google Maps API, ensuring cross-platform compatibility, and maintaining a responsive design. To mitigate this, we will allocate time for testing and debugging and seek assistance if needed.
+## Documentation Plan
+0000 Outline a plan for developing documentation that you plan to deliver with the system, e.g., user guides, admin guides, developer guides, man pages, help menus, wikis, etc.
 
 # Project Architecture and Design
 ## Software Architecture
@@ -516,6 +619,17 @@ For each of two decisions pertaining to your software architecture, identify and
 * Cons: 0000
 
 0000 This is a concluding sentence analyzing our alternative and why we made the decision we did.
+
+## Software Design
+0000 Provide a detailed definition of each of the software components you identified above.
+
+0000 What packages, classes, or other units of abstraction form these components?
+
+0000 What are the responsibilities of each of those parts of a component?
+
+
+## Coding Guideline
+0000 For each programming language that you will use in the implementation of your project, provide a link to a pre-existing coding style guideline that the members of your project will follow. Do not try to make up your own guidelines. Briefly state why you chose those guidelines and how you plan to enforce them.
 
 
 # Feedback
