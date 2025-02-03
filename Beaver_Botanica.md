@@ -437,24 +437,20 @@ Deliverables:
 Here are the top five risks to the successful completion of our project:
 
 ### 1. Scalability
-One of the largest risks with developing Beaver Botanica is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database.
+One of the largest risks with developing Beaver Botanica is in making sure the system is scalable. As a seven-person team, we will not be able to map out all the plants spanning the whole OSU campus. Our solution is to allow users of OSU Plant Map to upload pictures and information to the database.
 
-0000 Likelihood of occurring (high, medium, low).
+The likelihood of this occurring is high, and the impact if this occurs is also high. We know this from our research into Oregon State University’s existing Department of Horticulture website, landscapeplants.oregonstate.edu. This website documents the over 1800 landscape plant species found across Oregon, which is a feat much larger than the scope of our project. Additionally, OSU’s campus is extensive, which makes it impractical for a small team to catalogue all plant life. Giving users the ability to add plant instances is crucial to the success of our project, but comes with its own unique challenges. User-generated plant findings can provide broad campus coverage, but can introduce issues like data inconsistency and quality control.
 
-0000 Impact if it occurs (high, medium, low).
+The following provides a list of steps we will take to increase the scalability of our project:
+* Implement a verification system where plant uploads are reviewed by moderators or verified users before being added to the main database.
+* Allow community-driven validation by providing users with the ability to flag plant inaccuracies.
+* Conduct initial research to determine the species of common plants on OSU’s campus.
 
-0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+Our plan to detect this problem is to monitor submission frequency and quality using automated scripts and fact-checking. We can implement automated scripts that can detect duplicate submissions, and we may be able to determine if a submission is bad based on user input. For instance, if a user inputs a plant that is known to be under 2 feet tall at full growth, but labels it as 14 feet tall. We can also implement community feedback mechanisms, such as upvoting correct entries.
 
-0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
-* step 1
-* step 2
-* step 3... etc
+If this problem of too much unverified plant data occurs, our mitigation plan is to introduce a system that only allows confirmed, trusted users to add plant data to the system. Additionally, we could create a small tutorial to guide users through the correct usage of the website.
 
-0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
-
-0000 Mitigation plan should it occur.
-
-0000 Explicitly state how this has changed since you submitted your Requirements document.
+Since submitting our Requirements document, we expanded our original paragraph to include reasoning for this problem, as well as a detection and mitigation plan. We also introduced a concrete plan in the case of too much incorrect information.
 
 ### 2. Data Accuracy
 Ensuring the accuracy of plant data uploaded by users is a significant risk. Incorrect or misleading information could reduce the app's reliability and usefulness. To mitigate this, we will implement a verification process for user-submitted data.
