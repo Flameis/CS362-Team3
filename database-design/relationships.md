@@ -19,6 +19,8 @@
 * avg_rating: Average rating of the plant
 * date_added: Date the plant was added
 * date_updated: Date the plant was updated
+* x_coordinate: X coordinate of the plant's location
+* y_coordinate: Y coordinate of the plant's location
 
 ### Taxonomy
 * taxo_id (Primary Key): Unique identifier for each species.
@@ -78,7 +80,7 @@ Has - One to Many relationship between Plants and Ratings
 ### Plants
 * Create: 
   ```sql
-  INSERT INTO Plants (plant_id, taxo_id, image_id, common_name, type, description, location, season, avg_rating, date_added, date_updated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+  INSERT INTO Plants (plant_id, taxo_id, image_id, common_name, type, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
   ```
 * Read: 
   ```sql
@@ -86,7 +88,7 @@ Has - One to Many relationship between Plants and Ratings
   ```
 * Update: 
   ```sql
-  UPDATE Plants SET taxo_id = ?, image_id = ?, common_name = ?, type = ?, description = ?, location = ?, season = ?, avg_rating = ?, date_added = ?, date_updated = ? WHERE plant_id = ?;
+  UPDATE Plants SET taxo_id = ?, image_id = ?, common_name = ?, type = ?, description = ?, location = ?, season = ?, avg_rating = ?, date_added = ?, date_updated = ?, x_coordinate = ?, y_coordinate = ? WHERE plant_id = ?;
   ```
 * Delete: 
   ```sql
