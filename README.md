@@ -4,13 +4,13 @@
 
 ## Members
 
-* Adison Daggett - Front End Designer
-* Kathryn Butler - Technical Documentation
-* Luke Scovel - Developer
-* William Brennan - Developer
-* Anshu Avinash - Front End Designer
-* Finlay Curtiss - Developer
-* Jake Thompson - Developer
+* Adison Daggett - Front End Designer and Developer
+* Kathryn Butler - Technical Documentation and Front End Developer
+* Luke Scovel - Back End Developer
+* William Brennan - Back End Developer
+* Anshu Avinash - Front End Designer and Developer
+* Finlay Curtiss - Technical Documentation and Front End Developer
+* Jake Thompson - Back End Developer
 
 
 ## Repository and Trello
