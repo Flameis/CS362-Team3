@@ -52,12 +52,12 @@
 
 ## Potential Relationships
 
-Created by - One to Many relationship between User and Plants
-Posted by - One to Many relationship between User and Comments
-Rated by - One to Many relationship between User and Ratings
-Belongs to - One to One relationship between Plants and Taxonomy
-Has - One to Many relationship between Plants and Images
-Has - One to Many relationship between Plants and Comments
+Created by - One to Many relationship between User and Plants\
+Posted by - One to Many relationship between User and Comments\
+Rated by - One to Many relationship between User and Ratings\
+Belongs to - One to One relationship between Plants and Taxonomy\
+Has - One to Many relationship between Plants and Images\
+Has - One to Many relationship between Plants and Comments\
 Has - One to Many relationship between Plants and Ratings
 
 ## CRUD (Create, Read, Update, Delete)
