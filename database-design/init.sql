@@ -8,8 +8,12 @@ CREATE TABLE User (
 CREATE TABLE Taxonomy (
     taxo_id INTEGER PRIMARY KEY,
     scientific_name TEXT NOT NULL,
+    division TEXT NOT NULL,
+    class TEXT NOT NULL,
+    order TEXT NOT NULL,
     family TEXT NOT NULL,
-    genus TEXT NOT NULL
+    genus TEXT NOT NULL,
+    species TEXT NOT NULL
 );
 
 CREATE TABLE Plants (
@@ -17,7 +21,6 @@ CREATE TABLE Plants (
     taxo_id INTEGER,
     image_id INTEGER,
     common_name TEXT NOT NULL,
-    type TEXT NOT NULL,
     description TEXT,
     location TEXT NOT NULL,
     season TEXT,
