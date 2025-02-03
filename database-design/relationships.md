@@ -11,8 +11,7 @@
 * plant_id (Primary Key): Unique identifier for each plant.
 * taxo_id (Foreign Key): Unique identifier for each species
 * image_id (Foreign Key): Unique identifier for each image
-* common_name: Name of the plant
-* type: Type of the plant (e.g. tree, shrub, flower)
+* common_name: Name of the plan
 * description: Description of the plant
 * location: Location of the plant
 * season: Season of the plant
@@ -25,8 +24,12 @@
 ### Taxonomy
 * taxo_id (Primary Key): Unique identifier for each species.
 * scientific_name: Scientific name of the species
-* family: Family of the species
-* genus: Genus of the species
+* division: Flowering/non-flowering species
+* class: Group of similar orders
+* order: Group of similar families
+* family: Group of similar genera
+* genus: Group of similar species
+* species: Group of similar plants that can reproduce
 
 ### Images
 * image_id (Primary Key): Unique identifier for each image.
@@ -80,7 +83,7 @@ Has - One to Many relationship between Plants and Ratings
 ### Plants
 * Create: 
   ```sql
-  INSERT INTO Plants (plant_id, taxo_id, image_id, common_name, type, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+  INSERT INTO Plants (plant_id, taxo_id, image_id, common_name, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
   ```
 * Read: 
   ```sql
@@ -88,7 +91,7 @@ Has - One to Many relationship between Plants and Ratings
   ```
 * Update: 
   ```sql
-  UPDATE Plants SET taxo_id = ?, image_id = ?, common_name = ?, type = ?, description = ?, location = ?, season = ?, avg_rating = ?, date_added = ?, date_updated = ?, x_coordinate = ?, y_coordinate = ? WHERE plant_id = ?;
+  UPDATE Plants SET taxo_id = ?, image_id = ?, common_name = ?, description = ?, location = ?, season = ?, avg_rating = ?, date_added = ?, date_updated = ?, x_coordinate = ?, y_coordinate = ? WHERE plant_id = ?;
   ```
 * Delete: 
   ```sql
@@ -98,7 +101,7 @@ Has - One to Many relationship between Plants and Ratings
 ### Taxonomy
 * Create: 
   ```sql
-  INSERT INTO Taxonomy (taxo_id, scientific_name, family, genus) VALUES (?, ?, ?, ?);
+  INSERT INTO Taxonomy (taxo_id, scientific_name, division, class, order, family, genus, species) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
   ```
 * Read: 
   ```sql
@@ -106,7 +109,7 @@ Has - One to Many relationship between Plants and Ratings
   ```
 * Update: 
   ```sql
-  UPDATE Taxonomy SET scientific_name = ?, family = ?, genus = ? WHERE taxo_id = ?;
+  UPDATE Taxonomy SET scientific_name = ?, division = ?, class = ?, order = ?, family = ?, genus = ?, species = ? WHERE taxo_id = ?;
   ```
 * Delete: 
   ```sql
