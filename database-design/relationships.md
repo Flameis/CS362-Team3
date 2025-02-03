@@ -24,12 +24,12 @@
 ### Taxonomy
 * taxo_id (Primary Key): Unique identifier for each species.
 * scientific_name: Scientific name of the species
-* division: Flowering/non-flowering species
-* class: Group of similar orders
-* order: Group of similar families
-* family: Group of similar genera
-* genus: Group of similar species
-* species: Group of similar plants that can reproduce
+* division: Taxonomic division of the plant
+* class: Taxonomic class of the plant
+* order: Taxonomic order of the plant
+* family: Taxonomic family of the plant
+* genus: Taxonomic genus of the plant
+* species: Taxonomic species of the plant
 
 ### Images
 * image_id (Primary Key): Unique identifier for each image.
