@@ -455,62 +455,43 @@ Since submitting our Requirements document, we expanded our original paragraph t
 ### 2. Data Accuracy
 Ensuring the accuracy of plant data uploaded by users is a significant risk. Incorrect or misleading information could reduce the app's reliability and usefulness. To mitigate this, we will implement a verification process for user-submitted data.
 
-0000 Likelihood of occurring (high, medium, low).
+The likelihood of this occurring is high, and the impact if this occurs is also high. We have gathered from experience and research that crowdsourced data collection often introduces inconsistencies, as seen in similar user-generated content platforms. Because our target audience is the student and faculty population at Oregon State University, users may not be familiar with similar species of plants and may misidentify them due to a general lack of botanical knowledge.
 
-0000 Impact if it occurs (high, medium, low).
+The following are steps to improve data accuracy:
+* Require users to provide images, location, and detailed descriptions for verification.
+* Allow experienced users or moderators to review and approve submissions before they are made public.
+* Provide educational resources to help users correctly identify plants.
 
-0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+To detect potential data inaccuracies, we will monitor flagged entries for potential errors, and track submission patterns to identify users with consistently incorrect inputs. Our mitigation plan to safeguard data accuracy is similar to that of ensuring scalability. Should too many incorrect entries occur, we can implement a trust system where known users can input new plants and the general population can view and comment.
 
-0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
-* step 1
-* step 2
-* step 3... etc
-
-0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
-
-0000 Mitigation plan should it occur.
-
-0000 Explicitly state how this has changed since you submitted your Requirements document.
+This section has been improved since we submitted our Requirements document. We added a mitigation and detection plan, and introduced a verification system for trusted users.
 
 ### 3. User Engagement
 Another risk is the potential lack of user engagement. If users do not participate in uploading and verifying plant data, the app will not reach its full potential. We will address this by incorporating peer-to-peer interaction elements to encourage use.
 
-0000 Likelihood of occurring (high, medium, low).
+We believe that the likelihood of this occurring is medium, while the impact it will have if it occurs is high. Initial feedback from users is mixed, with some claiming that our project “I think you guys have a really good idea moving forward! I think it would be really helpful to have some sort of help for those with not much experience, or providing some sort of "incentive" for people like this to come back and continue to use your app.” Others state, “I feel like your project is too niche, with a potentially large maintenance cost. More specifically, I can rarely think of anyone who may be interested in researching flora and trees around.” Some users are enthusiastic about learning more about OSU’s campus botany, while others are not.
 
-0000 Impact if it occurs (high, medium, low).
+To reduce this impact, we have proposed several steps:
+* Implement a rewards system, such as badges or points for verified contributions.
+* Enable social features, such as user profile viewing and leaderboards.
+* Introduce periodic challenges or community events to maintain interest.
 
-0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+To detect a problem with user engagement, we will conduct surveys and user feedback sessions to identify barriers to engagement. We can also monitor the rate of new user signups and repeated usage. If this occurs, our plan to mitigate it is to increase promotional efforts through campus partnerships. This may include posters with a link to the website on university-approved billboards, adding a post in the campus newsletter, and submitting our website to the Department of Horticulture. We may also simplify the contribution process if it is a challenge listed in the reasons why users are not engaged with our website.
 
-0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
-* step 1
-* step 2
-* step 3... etc
-
-0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
-
-0000 Mitigation plan should it occur.
-
-0000 Explicitly state how this has changed since you submitted your Requirements document.
+This section has been altered from the Requirements document. We improved the detection plan, and added additional details to mitigate user disengagement.
 
 ### 4. Technical Challenges
 Developing this application involves overcoming various challenges such as integrating the Google Maps API, ensuring cross-platform compatibility, and maintaining a responsive design. To mitigate this, we will allocate time for testing and debugging and seek assistance if needed.
 
-0000 Likelihood of occurring (high, medium, low).
+The likelihood of this challenge affecting us is high, and the impact it has is also high. Based on our initial research, integrating third-party APIs like Google Maps often introduces unforeseen complexity, and tends to introduce compatibility and performance issues. Ensuring our app works both in a mobile and website environment requires extensive testing, which will be difficult to conduct in a small time frame.
 
-0000 Impact if it occurs (high, medium, low).
+The following are steps we will take to minimize technical challenges:
+* Conduct thorough research and prototyping before fully integrating the API.
+* Schedule regular debugging sessions and maintain clear documentation.
 
-0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+To detect an issue with integrating the API, we can use logging and error-tracking tools. We can also conduct usability testing on various devices to ensure compatibility across platforms. If we have issues with integration, we can allocate additional time and resources for debugging and adjustments. We can also seek assistance from OSU faculty or online developer communities if problems persist.
 
-0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
-* step 1
-* step 2
-* step 3... etc
-
-0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
-
-0000 Mitigation plan should it occur.
-
-0000 Explicitly state how this has changed since you submitted your Requirements document.
+We have added to this section extensively since  our last submission of the Requirements document. We initially acknowledged technical risks but have now outlined specific detection and mitigation strategies. We also added a focus on automated performance testing to improve early issue detection.
 
 ### 5. 0000
 We need another risk!!! For example, don’t merely state as a risk, “we might fall behind schedule” (another example is “we don’t know the tools”). What factors do you think are most likely to cause schedule slippage for your project? Why do you think those are the parts of the schedule with the greatest potential variance? What have you done, or what do you plan to do, to learn more about how long those particular tasks will really take?
