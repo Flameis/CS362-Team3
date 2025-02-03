@@ -509,7 +509,35 @@ In order to detect unauthorized access, we can monitor access logs for suspiciou
 This section has been created since the submission of the Requirements document. We previously hadn’t considered that a data breach or security was an issue, but after careful consideration we decided that even though our application will not need sensitive information, data security is an important priority.
 
 ## Project Schedule
-0000 Identify milestones (external and internal), define tasks along with effort estimates (at granularity no coarser than 1-person-week units), and identify dependencies among them. (What has to be complete before you can begin implementing component X? What has to be complete before you can start testing component X? What has to be complete before you can run an entire (small) use case?) This should reflect your actual plan of work, possibly including items your team has already completed. To build a schedule, start with your major milestones (tend to be noun-like) and fill in the tasks (tend to start with a verb) that will allow you to achieve them. A simple table is sufficient for this size of a project.
+| **Week** | **Milestone** | **Tasks** | **Dependencies** | **Effort Estimate** |
+|---------|--------------|-----------|-----------------|-------------------|
+| **Week 3** | Planning and Foundation | Finalize requirements, assign roles, set up infrastructure | None | 1 week |
+|  |  | Design database schema | None | 1 week |
+|  |  | Set up development environment | None | 1 week |
+|  |  | Wireframe UI | None | 1 week |
+| **Week 4** | Map and Database | Develop database for plant data | Database schema | 1 week |
+|  |  | Refine wireframes | Initial wireframes | 1 week |
+|  |  | Implement basic campus map | Wireframes | 1 week |
+|  |  | Integrate database with map | Map implementation, Database | 1 week |
+| **Week 5** | Plant Identification and Upload | Store plant photos in database | Database setup | 1 week |
+|  |  | Create UI for adding plants | Wireframes | 1 week |
+|  |  | Implement plant upload & identification | UI, Database | 1 week |
+| **Week 6** | User Authentication and Social Features | Implement user authentication | Database setup | 1 week |
+|  |  | Create login & account forms | UI, Authentication | 1 week |
+|  |  | Implement social features (liking, commenting) | Authentication | 1 week |
+| **Week 7** | Advanced Map Features | Enable filtering and search | Database setup | 1 week |
+|  |  | Implement advanced search UI | Wireframes | 1 week |
+|  |  | Integrate API for filters | Map and Database | 1 week |
+| **Week 8** | Testing and Refinement | Conduct user testing | Core features complete | 1 week |
+|  |  | Fix bugs and usability issues | Testing feedback | 1 week |
+|  |  | Improve UI based on feedback | Testing feedback | 1 week |
+| **Week 9** | Finalizing Additional Features | Implement non-functional features | Core features complete | 1 week |
+|  |  | Continue UI improvements | User feedback | 1 week |
+|  |  | Test non-functional features | Feature completion | 1 week |
+| **Week 10** | Final Testing and Launch | Final bug fixes | All prior development | 1 week |
+|  |  | Final documentation | Feature completion | 1 week |
+|  |  | Final presentation preparation | Feature completion | 1 week |
+|  |  | Deploy app | All development & testing complete | 1 week |
 
 ## Team Structure
 ### Adison Daggett - Front End Designer and Developer
@@ -554,7 +582,12 @@ Backend:
 * Node JS - Will be used for managing the database and handling requests. We need this to process plant entries and add them to the database.
 
 ## Test Plan & Bugs
-0000 Describe what aspects of your system you plan to test and why they are sufficient, as well as how specifically you plan to test those aspects in a disciplined way. Describe a strategy for each of unit testing, system (integration) testing, and usability testing, along with any specific test suites identified to capture the requirements. We require that you use GitHub Issues to track bugs that occur during use and testing.
+### Unit Testing
+We plan to use unit testing to verify that individual components are working in isolation. Our scope is backend functions, frontend components, and plant identification and data upload features. We plan on using [Jest](https://jestjs.io/) and the [React testing Library](https://testing-library.com/docs/react-testing-library/intro/) for frontend unit testing. If we decide to create our backend code using Python, we will likely use [Pytest](https://docs.pytest.org/) to conduct backend testing.
+### System Testing
+Our system testing will verify that each component works together correctly. This includes database interaction with the front end, Google Maps API integration, and user authentication and sessions. We will likely use the free version of [Postman API testing](https://www.postman.com/) to validate our API usage. We will also try out [Cypress](https://www.cypress.io/) to conduct end-to-end testing and frontend-backend interactions. We will also test how the website handles large-scale plant data uploads.
+### Usability Testing
+We will conduct usability testing to ensure our website is both informative and engaging. This includes UI/UX design, accessibility compliance, and ease of use. An easy way to test if a user enjoys our website is to conduct beta testing with students and faculty at OSU. We also can use Google Lighthouse to test performance and accessibility. From this testing, we can ensure the website works smoothly on desktop and mobile, and identify any confusing UI elements that need to be fixed. For each of these tests, we will use GitHub to log, track, and resolve bugs.
 
 ## Documentation Plan
 0000 Outline a plan for developing documentation that you plan to deliver with the system, e.g., user guides, admin guides, developer guides, man pages, help menus, wikis, etc.
