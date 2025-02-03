@@ -590,7 +590,33 @@ Our system testing will verify that each component works together correctly. Thi
 We will conduct usability testing to ensure our website is both informative and engaging. This includes UI/UX design, accessibility compliance, and ease of use. An easy way to test if a user enjoys our website is to conduct beta testing with students and faculty at OSU. We also can use Google Lighthouse to test performance and accessibility. From this testing, we can ensure the website works smoothly on desktop and mobile, and identify any confusing UI elements that need to be fixed. For each of these tests, we will use GitHub to log, track, and resolve bugs.
 
 ## Documentation Plan
-0000 Outline a plan for developing documentation that you plan to deliver with the system, e.g., user guides, admin guides, developer guides, man pages, help menus, wikis, etc.
+### User Documentation
+The purpose of user documentation is to teach users how to navigate through the website effectively. This includes a User Guide, either in PDF or as a web version. It will include: 
+* How to register, log in, and manage an account.
+* How to search for plants and filter by location, season, or type.
+* How to add, edit, and verify plant information.
+* How to upload and identify plants.
+* How to use social features (liking, flagging, commenting).
+
+We will also implement a small help guide within the website itself. It will contain contextual help within the site, tooltips that explain features, and an FAQ section explaining common issues.
+### Admin Documentation
+Admin documentation is important to include to assist administrators in managing data, moderating content, and overseeing system security. We will provide a PDF or website version of an Admin Guide, which will include:
+* How to verify and moderate user submissions.
+* How to handle flagged content.
+* Managing user roles and permissions.
+* How to monitor server performance and logs.
+* How to troubleshoot common system issues.
+
+### Developer Documentation
+We plan to include developer documentation so future developers can maintain and expand the website. This includes a Developer Guide, which will include:
+* API Documentation - expected inputs/outputs, and authentication details.
+* Example API calls and responses.
+* Project architecture overview.
+* Code structure and key files/modules.
+* How to set up the development environment.
+* Database schema and relationships.
+* How to run unit and integration tests.
+* Common debugging techniques.
 
 # Project Architecture and Design
 ## Software Architecture
