@@ -493,25 +493,20 @@ To detect an issue with integrating the API, we can use logging and error-tracki
 
 We have added to this section extensively since  our last submission of the Requirements document. We initially acknowledged technical risks but have now outlined specific detection and mitigation strategies. We also added a focus on automated performance testing to improve early issue detection.
 
-### 5. 0000
-We need another risk!!! For example, don’t merely state as a risk, “we might fall behind schedule” (another example is “we don’t know the tools”). What factors do you think are most likely to cause schedule slippage for your project? Why do you think those are the parts of the schedule with the greatest potential variance? What have you done, or what do you plan to do, to learn more about how long those particular tasks will really take?
+### 5. Data Security and Privacy
+Because users will be submitting plant data, including images and descriptions, we must make sure their data is secure and private. This is a major risk because mishandling user data could lead to privacy concerns, loss of trust, and potential violations of OSU’s data policies. Additionally, if user-uploaded images or location data are exposed without proper security measures, there’s a risk of unauthorized access or misuse. 
 
-0000 Likelihood of occurring (high, medium, low).
+The likelihood of a true data breach is medium, while the impact it has is high. From our research, we’ve found that many crowdsourced platforms have experienced data breaches. This is especially true when the data is not encrypted or secured in some way. We also know from experience that storing images and geolocation data is considered pseudo-sensitive information, and introduces potential vulnerabilities that can be exploited. While we do not encourage our users to post personally-relevant information, there is a chance they might.
 
-0000 Impact if it occurs (high, medium, low).
+In order to reduce the likelihood of a data breach occurring, we can follow these steps:
+* Implement secure authentication to prevent unauthorized access.
+* Store only necessary data and avoid collecting personally identifiable information.
+* Use HTTPS for all connections to protect data transmission.
+* Regularly review and update security protocols based on OSU’s data security guidelines.
 
-0000 Evidence upon which you base your estimates, such as what information you have already gathered or what experiments you have done.
+In order to detect unauthorized access, we can monitor access logs for suspicious activity, such as multiple unauthorized data access attempts. To detect and limit the likelihood of a data breach, we can conduct periodic security checks and vulnerability assessments. We can also ask users to use a different password for our website than they normally do, to ensure that if there is a data breach, users will not have their “regular” passwords compromised. If a vulnerability is detected, we can mitigate it by patching the affected components and updating security measures. In the event of a data breach, we will notify affected users and follow OSU’s data protection response protocols.
 
-0000 Steps you are taking to reduce the likelihood or impact, and steps to permit better estimates:
-* step 1
-* step 2
-* step 3... etc
-
-0000 Plan for detecting the problem (trivial example: running automated tests to determine that a file format has changed);
-
-0000 Mitigation plan should it occur.
-
-0000 Explicitly state how this has changed since you submitted your Requirements document.
+This section has been created since the submission of the Requirements document. We previously hadn’t considered that a data breach or security was an issue, but after careful consideration we decided that even though our application will not need sensitive information, data security is an important priority.
 
 ## Project Schedule
 0000 Identify milestones (external and internal), define tasks along with effort estimates (at granularity no coarser than 1-person-week units), and identify dependencies among them. (What has to be complete before you can begin implementing component X? What has to be complete before you can start testing component X? What has to be complete before you can run an entire (small) use case?) This should reflect your actual plan of work, possibly including items your team has already completed. To build a schedule, start with your major milestones (tend to be noun-like) and fill in the tasks (tend to start with a verb) that will allow you to achieve them. A simple table is sufficient for this size of a project.
