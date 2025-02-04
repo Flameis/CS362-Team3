@@ -622,8 +622,18 @@ We plan to include developer documentation so future developers can maintain and
 ## Software Architecture
 ### Components
 0000 Identify and describe the major software components and their functionality at a conceptual level.
+Beaver Botanica will be a website, with the intention of it being used on mobile devices as users will likely want to use it while walking around on campus. The three main components of the software are:
+* Client side web page
+* Server
+* Database
+The web page will be the users’ method of interacting with the data stored in our database, allowing them to view, edit, and add entries that can be viewed by others. The data will be displayed in a user-friendly format that is abstracted away from the actual database and server architecture. User input that will query the database could be search criteria or selecting a plant.
+
+The website’s server will be hosted on a personal OSU webpage, which will simplify the networking requirements from our team to ensure any user can access it at any time. The server will interface with the database by taking a user’s input, converting it to an SQL query, querying the database, then sending the necessary data to the user’s browser, which will then display the data through the website.
+
+The database will be stored on a computer that can be accessed by the server through queries. More information on the database’s structure and design are in the Data section below.
 
 0000 Specify the interfaces between components.
+The website serves as an interface with the server, which in turn interfaces with the database. The website will serve as the main method of interacting with both of the other components, as it has a graphical interface that allows editing and viewing data from the database. The server’s interface with the website and database are not graphical, but rather HTTP requests with the website and 0000 with the database.
 
 ### Data
 0000 Describe in detail what data your system stores, and how. If it uses a database, give the high level database schema. If not, describe how you are storing the data and its organization.
