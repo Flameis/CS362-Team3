@@ -13,7 +13,6 @@
 * image_id (Foreign Key): Unique identifier for each image
 * description: Description of the plant
 * location: Location of the plant
-* season: Season of the plant
 * avg_rating: Average rating of the plant
 * date_added: Date the plant was added
 * date_updated: Date the plant was updated
@@ -30,6 +29,7 @@
 * genus: Taxonomic genus of the plant
 * species: Taxonomic species of the plant
 * common_name: Name of the plant
+* season: Season of the plant
 
 ### Images
 * image_id (Primary Key): Unique identifier for each image.
