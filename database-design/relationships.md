@@ -11,7 +11,6 @@
 * plant_id (Primary Key): Unique identifier for each plant.
 * taxo_id (Foreign Key): Unique identifier for each species
 * image_id (Foreign Key): Unique identifier for each image
-* common_name: Name of the plan
 * description: Description of the plant
 * location: Location of the plant
 * season: Season of the plant
@@ -30,6 +29,7 @@
 * family: Taxonomic family of the plant
 * genus: Taxonomic genus of the plant
 * species: Taxonomic species of the plant
+* common_name: Name of the plant
 
 ### Images
 * image_id (Primary Key): Unique identifier for each image.
