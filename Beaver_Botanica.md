@@ -641,8 +641,8 @@ The Beaver Botanica database will store information about individual plants, tax
 
 ### Assumptions
 1. We will assume that our architecture will later be built upon and updated in the future.
-2. We will assume that that users will not break any student or user conduct rules and that they will correctly submit plant entries. While the rating system we are implementing can be used to determine the accuracy of plant entries, we don’t have the resources to moderate posts and comments, or to create an automatic content moderation system.
-3. We will assume that the number of users on our site will be small as botany is a niche interest. While testing and developing, there will likely be a maximum of 10 users. Attempting to make the software handle hundreds or even thousands of users well would provide additional complications.
+2. We will assume that our users will not break any student or user conduct rules and that they will correctly submit plant entries. While the rating system we are implementing can be used to determine the accuracy of plant entries, we don’t have the resources to moderate posts and comments, or to create an automatic content moderation system.
+3. We will assume that the number of users on our site will be small, as botany is a niche interest. While testing and developing, there will likely be a maximum of 10 users. Attempting to make the software handle hundreds or even thousands of users well would provide additional complications.
 
 ### Decision 1: Static Image or Mapping Software API
 For displaying the locations of plants on campus, we had to decide between using a static image to represent a map of campus, or using a mapping software’s API. 
