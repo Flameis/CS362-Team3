@@ -640,30 +640,36 @@ The Beaver Botanica database will store information about individual plants, tax
 
 
 ### Assumptions
-0000 If there are particular assumptions underpinning your chosen architecture, identify and describe them.
 1. We will assume that our architecture will later be built upon and updated in the future.
-2. We will assume that our users will behave themselves and avoid spreading misinformation.
-3. We will assume that the number of users on our site will be small. This is because botany is a niche interest.
+2. We will assume that that users will not break any student or user conduct rules and that they will correctly submit plant entries. While the rating system we are implementing can be used to determine the accuracy of plant entries, we don’t have the resources to moderate posts and comments, or to create an automatic content moderation system.
+3. We will assume that the number of users on our site will be small as botany is a niche interest. While testing and developing, there will likely be a maximum of 10 users. Attempting to make the software handle hundreds or even thousands of users well would provide additional complications.
 
-### Decision 1: <Name of Decision 1>
-0000 For each of two decisions pertaining to your software architecture, identify and briefly describe an alternative. For each of the two alternatives, discuss its pros and cons compared to your choice.
+### Decision 1: Static Image or Mapping Software API
+For displaying the locations of plants on campus, we had to decide between using a static image to represent a map of campus, or using a mapping software’s API. 
 
-0000 This is a small sentence for the decision we made. This is the basic reasoning why we decided on this decision. This is an alternative to our decision.
+#### Static image
+* Pros: Much simpler to implement
+* Cons: Lacks some features, more complicated to determine geographic coordinates
 
-* Pros: 0000
-* Cons: 0000
+#### Mapping Software API
+* Pros: More features (navigation, coordinates, map layers, scalability)
+* Cons: Much more complicated to implement, most features are unnecessary
 
-0000 This is a concluding sentence analyzing our alternative and why we made the decision we did.
+In the end, we decided to use a static image so we could focus our time developing and documenting other parts of our software, rather than learning how to implement an API. In addition, many of the features of using mapping software aren’t necessary, so the extra work wouldn’t provide much benefit.
 
-### Decision 2: <Name of Decision 2>
-For each of two decisions pertaining to your software architecture, identify and briefly describe an alternative. For each of the two alternatives, discuss its pros and cons compared to your choice.
+### Decision 2: Website or Mobile App
+For the implementation of our software, we decided between creating a website or a mobile app.
 
-0000 This is a small sentence for the decision we made. This is the basic reasoning why we decided on this decision. This is an alternative to our decision.
+#### Website
+* Pros: Our team has more experience with developing one, works cross-platform
+* Cons: May require more testing to ensure it works on many devices
 
-* Pros: 0000
-* Cons: 0000
+#### Mobile App
+* Pros: Is optimized for mobile devices
+* Cons: Our team has limited experience developing one, more work to port to different OSes and devices
 
-0000 This is a concluding sentence analyzing our alternative and why we made the decision we did.
+The pros of a website largely outweighed any cons, so we decided to build Beaver Botanica as a website. Being able to use our previous experience with developing websites helps us focus on implementing the features we want, while the cross platform functionality reduces work during implementation and testing.
+
 
 ## Software Design
 0000 Provide a detailed definition of each of the software components you identified above.
