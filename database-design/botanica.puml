@@ -1,21 +1,21 @@
 @startuml Beaver Botanica DB
 
 entity User {
-    * user_id (PK)
+    * user_id : INTEGER (PK)
     __
-    * username : VARCHAR()
+    * username : TEXT()
     * date_joined : DATE
-    * role: VARCHAR()
+    * role: TEXT()
 }
 
 entity Plant {
-    * plant_id (PK)
+    * plant_id : INTEGER (PK)
     __
-    * taxo_id (FK)
-    * image_id (FK)
-    * description : VARCHAR()
-    * location : VARCHAR()
-    * avg_rating : FLOAT(4, 2)
+    * taxo_id : INTEGER (FK)
+    * image_id : INTEGER (FK)
+    * description : TEXT()
+    * location : TEXT()
+    * avg_rating : REAL
     * date_added : DATE
     * date_updated : DATETIME()
     * x_coordinate : FLOAT(9, 6)
@@ -23,42 +23,42 @@ entity Plant {
 }
 
 entity Taxonomy {
-    * taxo_id (PK)
+    * taxo_id : INTEGER (PK)
     __
-    * scientific_name : VARCHAR()
-    * division : VARCHAR()
-    * class : VARCHAR()
-    * order : VARCHAR()
-    * family : VARCHAR()
-    * genus : VARCHAR()
-    * species : VARCHAR()
-    * common_name : VARCHAR()
-    * season : VARCHAR()
+    * scientific_name : TEXT()
+    * division : TEXT()
+    * class : TEXT()
+    * order : TEXT()
+    * family : TEXT()
+    * genus : TEXT()
+    * species : TEXT()
+    * common_name : TEXT()
+    * season : TEXT()
 }
 
 entity Image {
-    * image_id (PK)
+    * image_id : INTEGER (PK)
     __
-    * plant_id (FK)
-    * image_url : VARCHAR()
+    * plant_id : INTEGER (FK)
+    * image_url : TEXT()
     * date_uploaded : DATETIME()
 }
 
 entity Comment {
-    * comment_id (PK)
+    * comment_id : INTEGER (PK)
     __
-    * plant_id (FK)
-    * user_id (FK)
-    * comment : VARCHAR()
+    * plant_id : INTEGER (FK)
+    * user_id INTEGER (FK)
+    * comment : TEXT()
     * date_posted : DATETIME()
 }
 
 entity Rating {
-    * rating_id (PK)
+    * rating_id : INTEGER (PK)
     __
-    * plant_id (FK)
-    * user_id (FK)
-    * rating : FLOAT(4, 2)
+    * plant_id : INTEGER (FK)
+    * user_id : INTEGER (FK)
+    * rating : REAL
 }
 
 User ||--|{ Plant
