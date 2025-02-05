@@ -6,22 +6,22 @@ CREATE TABLE User (
 );
 
 -- Properties of a whole plant species
-CREATE TABLE Taxonomy (
-    taxo_id INTEGER PRIMARY KEY,
+CREATE TABLE Species (
+    species_id INTEGER PRIMARY KEY,
     common_name TEXT NOT NULL,
-    scientific_name TEXT NOT NULL,
-    division TEXT NOT NULL,
-    class TEXT NOT NULL,
-    order TEXT NOT NULL,
-    family TEXT NOT NULL,
+    -- scientific_name TEXT NOT NULL, -- generate this
+    species TEXT NOT NULL,
     genus TEXT NOT NULL,
-    species TEXT NOT NULL
+    family TEXT NOT NULL,
+    order TEXT NOT NULL,
+    class TEXT NOT NULL,
+    division TEXT NOT NULL, -- related to phylum
 );
 
 -- Properties of plant instances
 CREATE TABLE Plants (
     plant_id INTEGER PRIMARY KEY,
-    taxo_id INTEGER,
+    species_id INTEGER,
     image_id INTEGER,
     description TEXT,
     location TEXT NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE Plants (
     date_updated DATE,
     x_coordinate INTEGER NOT NULL,
     y_coordinate INTEGER NOT NULL,
-    FOREIGN KEY (taxo_id) REFERENCES Taxonomy(taxo_id),
+    FOREIGN KEY (species_id) REFERENCES Species(species_id),
     FOREIGN KEY (image_id) REFERENCES Images(image_id)
 );
 
