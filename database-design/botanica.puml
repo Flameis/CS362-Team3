@@ -1,0 +1,72 @@
+@startuml Beaver Botanica DB
+
+entity User {
+    * user_id (PK)
+    __
+    * username : VARCHAR()
+    * date_joined : DATE
+    * role: VARCHAR()
+}
+
+entity Plant {
+    * plant_id (PK)
+    __
+    * taxo_id (FK)
+    * image_id (FK)
+    * description : VARCHAR()
+    * location : VARCHAR()
+    * avg_rating : FLOAT(4, 2)
+    * date_added : DATE
+    * date_updated : DATETIME()
+    * x_coordinate : FLOAT(9, 6)
+    * y_coordinate : FLOAT(9, 6)
+}
+
+entity Taxonomy {
+    * taxo_id (PK)
+    __
+    * scientific_name : VARCHAR()
+    * division : VARCHAR()
+    * class : VARCHAR()
+    * order : VARCHAR()
+    * family : VARCHAR()
+    * genus : VARCHAR()
+    * species : VARCHAR()
+    * common_name : VARCHAR()
+    * season : VARCHAR()
+}
+
+entity Image {
+    * image_id (PK)
+    __
+    * plant_id (FK)
+    * image_url : VARCHAR()
+    * date_uploaded : DATETIME()
+}
+
+entity Comment {
+    * comment_id (PK)
+    __
+    * plant_id (FK)
+    * user_id (FK)
+    * comment : VARCHAR()
+    * date_posted : DATETIME()
+}
+
+entity Rating {
+    * rating_id (PK)
+    __
+    * plant_id (FK)
+    * user_id (FK)
+    * rating : FLOAT(4, 2)
+}
+
+User ||--|{ Plant
+User ||--|{ Comment
+User ||--|{ Rating
+
+Taxonomy ||--|{ Plant
+
+Plant ||--|{ Image
+Plant ||--|{ Comment
+Plant ||--|{ Rating
