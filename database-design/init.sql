@@ -5,6 +5,7 @@ CREATE TABLE User (
     role TEXT NOT NULL
 );
 
+-- Properties of a whole plant species
 CREATE TABLE Taxonomy (
     taxo_id INTEGER PRIMARY KEY,
     common_name TEXT NOT NULL,
@@ -17,6 +18,7 @@ CREATE TABLE Taxonomy (
     species TEXT NOT NULL
 );
 
+-- Properties of plant instances
 CREATE TABLE Plants (
     plant_id INTEGER PRIMARY KEY,
     taxo_id INTEGER,
