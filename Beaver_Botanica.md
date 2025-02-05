@@ -636,7 +636,7 @@ The website serves as an interface with the server, which in turn interfaces wit
 ### Data
 The Beaver Botanica database will store information about individual plants, taxonomies of plants, images of plants, user profiles, post ratings, and comments. The schema below contains more information.
 
-! [Schema of the Beaver Botanica Database, showing the tables and their interactions] (https://github.com/Flameis/CS362-Team3/blob/main/database-design/beaver_botanica_db.png?raw=true)
+![Schema of the Beaver Botanica Database, showing the tables and their interactions](https://github.com/Flameis/CS362-Team3/blob/main/database-design/beaver_botanica_db.png?raw=true)
 
 
 ### Assumptions
