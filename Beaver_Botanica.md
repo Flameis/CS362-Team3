@@ -623,23 +623,26 @@ We plan to include developer documentation so future developers can maintain and
 ### Components
 0000 Identify and describe the major software components and their functionality at a conceptual level.
 Beaver Botanica will be a website, with the intention of it being used on mobile devices as users will likely want to use it while walking around on campus. The three main components of the software are:
-* Client side web page
+* Client-side web page
 * Server
 * Database
 The web page will be the users’ method of interacting with the data stored in our database, allowing them to view, edit, and add entries that can be viewed by others. The data will be displayed in a user-friendly format that is abstracted away from the actual database and server architecture. User input that will query the database could be search criteria or selecting a plant.
 
-The website’s server will be hosted on a personal OSU webpage, which will simplify the networking requirements from our team to ensure any user can access it at any time. The server will interface with the database by taking a user’s input, converting it to an SQL query, querying the database, then sending the necessary data to the user’s browser, which will then display the data through the website.
+The website’s server will be hosted on a personal OSU webpage, which will simplify the networking requirements from our team to ensure any user can access it at any time. The server will interface with the database by taking a user’s input, converting it to an SQL query, querying the database, and then sending the necessary data to the user’s browser, which will then display the data through the website.
 
-The database will be stored on a computer that can be accessed by the server through queries. More information on the database’s structure and design are in the Data section below.
+The database will be stored on a computer that can be accessed by the server through queries. More information on the database’s structure and design is in the Data section below.
 
 0000 Specify the interfaces between components.
-The website serves as an interface with the server, which in turn interfaces with the database. The website will serve as the main method of interacting with both of the other components, as it has a graphical interface that allows editing and viewing data from the database. The server’s interface with the website and database are not graphical, but rather HTTP requests with the website and 0000 with the database.
+The website serves as an interface with the server, which in turn interfaces with the database. The website will serve as the main method of interacting with both of the other components, as it has a graphical interface that allows editing and viewing data from the database. The server’s interface with the website and database is not graphical, but rather HTTP requests with the website and 0000 with the database.
 
 ### Data
 0000 Describe in detail what data your system stores, and how. If it uses a database, give the high level database schema. If not, describe how you are storing the data and its organization.
 
 ### Assumptions
 0000 If there are particular assumptions underpinning your chosen architecture, identify and describe them.
+1. We will assume that our architecture will later be built upon and updated in the future.
+2. We will assume that our users will behave themselves and avoid spreading misinformation.
+3. We will assume that the number of users on our site will be small. This is because botany is a niche interest.
 
 ### Decision 1: <Name of Decision 1>
 0000 For each of two decisions pertaining to your software architecture, identify and briefly describe an alternative. For each of the two alternatives, discuss its pros and cons compared to your choice.
@@ -670,8 +673,16 @@ For each of two decisions pertaining to your software architecture, identify and
 
 
 ## Coding Guideline
-0000 For each programming language that you will use in the implementation of your project, provide a link to a pre-existing coding style guideline that the members of your project will follow. Do not try to make up your own guidelines. Briefly state why you chose those guidelines and how you plan to enforce them.
+For each programming language that you will use in the implementation of your project, provide a link to a pre-existing coding style guideline that the members of your project will follow. Do not try to make up your own guidelines. Briefly state why you chose those guidelines and how you plan to enforce them.
 
+SQL: https://docs.telemetry.mozilla.org/concepts/sql_style
+We decided on the Mozilla Style Guide for two reasons. The main reason is for the sake of readability. The second reason is that it is similar in style to how our backend developers write SQL. Because of that, the adjustment to the style guide would be minimal. We hope to enforce the usage of the style guide by reading over each other's work to make sure that the guide is being used. If it is not being used in some way, then we can edit it or ask the contributor to edit it themselves.
+
+Javascript: https://google.github.io/styleguide/jsguide.html
+We decided to choose the Google Javascript Style for two reasons. The first reason was a lack of adjustment for the developers as we already program Javascript in a similar style. The second reason is for the sake of readability for those who wish to read over the code at a later date. We plan on enforcing the style guide by reading each other's code and making adjustments when needed if the other person forgets a rule.
+
+HTML/CSS: https://google.github.io/styleguide/htmlcssguide.html
+We chose the Google Style guidelines because the majority of us already use a similar style of programming in HTML and CSS. The lack of adjustment will make abiding by these guidelines easier for the front-end developers. We plan on enforcing the style guide by reading each other's code and making adjustments when needed if the other person forgets a rule.
 
 # Feedback
 We will be getting external feedback in week 6. All of the core features will be done by then so testers will be able to give useful feedback while still leaving us time to refine our product. We have dedicated week 7 to testing and refinement based on feedback. We will get this feedback by giving a fellow student in CS 362 our software. We will later interview them by asking them the following questions.
