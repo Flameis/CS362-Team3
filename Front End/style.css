@@ -1,0 +1,11 @@
+body{
+  padding: 25px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.title {
+	color: #7BB578;
+}
+
+.loginButton {
+   padding: 10px 20px;
+}
