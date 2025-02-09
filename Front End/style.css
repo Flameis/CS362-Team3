@@ -1,11 +1,19 @@
-body{
-  padding: 25px;
-  font-family: 'Times New Roman', Times, serif;
-}
-.title {
-	color: #7BB578;
+body {
+    padding: 25px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.loginButton {
-   padding: 10px 20px;
+.menuBtn {
+    text-align: left;
 }
+
+.title {
+    color: #7bb578;
+    text-align: center;
+}
+
+
+.loginButton {
+    padding: 10px 20px;
+}
+
