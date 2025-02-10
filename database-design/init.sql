@@ -1,24 +1,29 @@
-CREATE TABLE User (
+DROP TABLE IF EXISTS Ratings;
+DROP TABLE IF EXISTS Comments;
+DROP TABLE IF EXISTS Images;
+DROP TABLE IF EXISTS Plants;
+DROP TABLE IF EXISTS Species;
+DROP TABLE IF EXISTS Users;
+
+CREATE TABLE Users (
     user_id INTEGER PRIMARY KEY,
     username TEXT NOT NULL,
     date_joined DATE NOT NULL,
     role TEXT NOT NULL
 );
 
--- Properties of a whole plant species
 CREATE TABLE Species (
     species_id INTEGER PRIMARY KEY,
     common_name TEXT NOT NULL,
-    -- scientific_name TEXT NOT NULL, -- generate this
+--     scientific_name TEXT NOT NULL, -- generate this
     species TEXT NOT NULL,
     genus TEXT NOT NULL,
     family TEXT NOT NULL,
-    order TEXT NOT NULL,
+    ordo TEXT NOT NULL,
     class TEXT NOT NULL,
-    division TEXT NOT NULL, -- related to phylum
+    division TEXT NOT NULL -- related to phylum
 );
 
--- Properties of plant instances
 CREATE TABLE Plants (
     plant_id INTEGER PRIMARY KEY,
     species_id INTEGER,
@@ -31,8 +36,7 @@ CREATE TABLE Plants (
     date_updated DATE,
     x_coordinate INTEGER NOT NULL,
     y_coordinate INTEGER NOT NULL,
-    FOREIGN KEY (species_id) REFERENCES Species(species_id),
-    FOREIGN KEY (image_id) REFERENCES Images(image_id)
+    FOREIGN KEY (species_id) REFERENCES Species(species_id)
 );
 
 CREATE TABLE Images (
@@ -50,7 +54,7 @@ CREATE TABLE Comments (
     comment TEXT NOT NULL,
     date_posted DATE NOT NULL,
     FOREIGN KEY (plant_id) REFERENCES Plants(plant_id),
-    FOREIGN KEY (user_id) REFERENCES User(user_id)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Ratings (
@@ -59,5 +63,5 @@ CREATE TABLE Ratings (
     user_id INTEGER,
     rating INTEGER NOT NULL,
     FOREIGN KEY (plant_id) REFERENCES Plants(plant_id),
-    FOREIGN KEY (user_id) REFERENCES User(user_id)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
