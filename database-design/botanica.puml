@@ -11,7 +11,7 @@ entity User {
 entity Plant {
     * plant_id : INTEGER (PK)
     __
-    * taxo_id : INTEGER (FK)
+    * species_id : INTEGER (FK)
     * image_id : INTEGER (FK)
     * description : TEXT()
     * location : TEXT()
@@ -22,8 +22,8 @@ entity Plant {
     * y_coordinate : FLOAT(9, 6)
 }
 
-entity Taxonomy {
-    * taxo_id : INTEGER (PK)
+entity Species {
+    * species_id : INTEGER (PK)
     __
     * scientific_name : TEXT()
     * division : TEXT()
@@ -65,8 +65,9 @@ User ||--|{ Plant
 User ||--|{ Comment
 User ||--|{ Rating
 
-Taxonomy ||--|{ Plant
+Species ||--|{ Plant
 
 Plant ||--|{ Image
 Plant ||--|{ Comment
 Plant ||--|{ Rating
+@enduml
