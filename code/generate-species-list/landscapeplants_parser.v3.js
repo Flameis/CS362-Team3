@@ -35,6 +35,7 @@ async function parseLetter(letter,full_list) {
         let a = itm.querySelector('a');
         let data = {genus:undefined,species:undefined,other_subtype:undefined};
         [data.genus,data.species,data.other_subtype] = [...a.querySelectorAll('em')].map(x=>x.textContent.trim());
+        data.genus = data.genus[0].toLowerCase()+data.genus.slice(1);
         try {
             data.other_text = textContentNonRecursive(a).trim();
             data.cultivar = textContentNonRecursive(a).trim().match(/'(.+)'/)[1];
