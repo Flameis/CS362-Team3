@@ -13,7 +13,7 @@ POST: /api/plants/edit
 
 POST: /api/plants/delete
     * must be authenticated
-    * for non mods force=true is an error
+    * for non mods force=true is an error  #? maybe also for restore=true # maybe the only the user who flagged it can restore it? (mods can always restore)
     * for mods to full delete must also send force=true.
         * this way mods can still flag for delete if needed
     + force=false   sets delete flag   (default)
