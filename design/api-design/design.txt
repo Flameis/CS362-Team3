@@ -1,0 +1,37 @@
+GET:  /api/plants/{id}
+    ->  {status: int, data: data}
+
+POST: /api/plants/add
+    <-  data  # fields that can be null can be left undefined
+    ->  {status: int, id: int}
+    * must be authenticated
+
+POST: /api/plants/edit
+    <-  data  # only changed data if no change then undefined  # "only changed" this might be useful if we decide to stage changes for moderation
+    ->  {status: int, data: updated_data}  # all data is returned with the updates applied
+    * must be authenticated
+
+POST: /api/plants/delete
+    <-  {id: int, force: bool|undefined, restore: bool|undefined }
+    ->  {status: int}
+    * must be authenticated
+    * for non mods force=true is an error  #? maybe also for restore=true # maybe the only the user who flagged it can restore it? (mods can always restore)
+    * for mods to full delete must also send force=true.
+        * this way mods can still flag for delete if needed
+    + force=false   sets delete flag   (default)
+    + force=true    fully deletes
+    + restore=true  removes delete flag  (implied default is false)
+    + force==true && restore==true is an error
+    # 💡 could call "force" "destroy" # might be clearer?
+
+# ❔ should it be /plants/ or /plant/
+
+# ❔ which syntax is better
+# /api/plants/{id}/edit   <- data
+# /api/plants/edit/{id}   <- data
+# /api/plants/edit  <- {id: int, data: data}
+# /api/plants/edit  <- data    # or could put id in the data
+
+Note: for any status there can also be msg: or maybe name it message: # probably only set for errors or could always set it?
+Note: data and updated_data are of type "javascript Object"
+Note: data will not be returned on error
