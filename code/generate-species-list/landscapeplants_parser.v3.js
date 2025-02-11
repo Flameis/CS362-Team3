@@ -3,6 +3,7 @@
     // check that this does not mess with the <em> order of: genus,species,(subspecies/variety/forma),(subspecies/variety/forma)
     //  by possibly denoting: species × other_species
 // todo:  still does not handle the 1 instance of a variety of a subspecies (still has "var.  " in other_text)
+    // warn: its also using the wrong one for subspecies (uses the variety name for subspecies)
 // todo:  does not handle trademarked names (currently in other_text)
 
 
@@ -43,15 +44,15 @@ async function parseLetter(letter,full_list) {
         }
         if (data.other_subtype!==undefined)
             if (data.other_text && data.other_text.includes('subsp.')) {
-                data.other_text = data.other_text.replace('subsp.','') || undefined
+                data.other_text = data.other_text.replace('subsp.','').trim() || undefined
                 data.subspecies = data.other_subtype;
                 delete data.other_subtype;
             } else if (data.other_text && data.other_text.includes('var.')) {
-                data.other_text = data.other_text.replace('var.','') || undefined
+                data.other_text = data.other_text.replace('var.','').trim() || undefined
                 data.variety = data.other_subtype;
                 delete data.other_subtype;
             } else if (data.other_text && data.other_text.includes('f.')) {
-                data.other_text = data.other_text.replace('f.','') || undefined
+                data.other_text = data.other_text.replace('f.','').trim() || undefined
                 data.forma = data.other_subtype;
                 delete data.other_subtype;
             }
