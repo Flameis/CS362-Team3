@@ -1,0 +1,9 @@
+GET:  /api/plants/{id}      ->  data                            <-  N/A
+
+POST: /api/plants/add       ->  id                              <-  data (fields that can be null can be left undefined)
+
+POST: /api/plants/edit      ->  ? (maybe data after changes)    <-  only changed data if no change then undefined
+
+POST: /api/plants/delete    ->  status                          <-  id
+
+
