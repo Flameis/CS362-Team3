@@ -26,10 +26,11 @@ async function parseLetter(letter,full_list) {
         let a = itm.querySelector('a');
         let data = {genus:undefined,species:undefined};
         [data.genus,data.species] = [...a.querySelectorAll('em')].map(x=>x.textContent.trim());
+        data.genus = data.genus[0].toLowerCase()+data.genus.slice(1)
         try {
-            data.sub_species = textContentNonRecursive(a).trim().match(/'(.+)'/)[1];
+            data.cultivar = textContentNonRecursive(a).trim().match(/'(.+)'/)[1];
         } catch (error) {
-            // console.log(a.textContent+' has bad sub_species');
+            // console.log(a.textContent+' has bad cultivar');
         }
         try {
             data.common_name = a.querySelector('span.common-name').textContent.match(/\((.+)\)/)[1].trim();
@@ -38,20 +39,24 @@ async function parseLetter(letter,full_list) {
         }
         data.href = a.href;
         let sci_name = `${data.genus} - ${data.species}`
+
+        if (!data.species) {
+            console.log(`no species for  ${data.genus} - ${data.species} - ${data.cultivar} - ${data.common_name}`)
+        }
         
         if (!(sci_name in data_by_sci_name)) {
             data_by_sci_name[sci_name] = {genus: data.genus,
                 species: data.species};
         }
 
-        if ('sub_species' in data) {
+        if ('cultivar' in data) {
             delete data.genus
             delete data.species
             try {
-                data_by_sci_name[sci_name].sub_species.push(data);
+                data_by_sci_name[sci_name].cultivars.push(data);
             } catch (error) {
-                data_by_sci_name[sci_name].sub_species = [];
-                data_by_sci_name[sci_name].sub_species.push(data);
+                data_by_sci_name[sci_name].cultivars = [];
+                data_by_sci_name[sci_name].cultivars.push(data);
             }
         } else {
             data_by_sci_name[sci_name] = {
@@ -59,7 +64,7 @@ async function parseLetter(letter,full_list) {
                 species: data.species,
                 common_name: data.common_name,
                 href: data.href,
-                sub_species: data_by_sci_name[sci_name].sub_species
+                cultivars: data_by_sci_name[sci_name].cultivars
             };
         }
     }
