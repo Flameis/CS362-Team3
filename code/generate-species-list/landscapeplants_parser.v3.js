@@ -7,6 +7,8 @@
 // todo:  does not handle trademarked names (currently in other_text)
 
 
+// Note: yes i know that Genuses are suposed to be capitalized but for lookup reasons I lowercased it.
+
 const fs = require('fs');
 const {JSDOM} = require('jsdom');
 
