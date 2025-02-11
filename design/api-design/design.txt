@@ -23,7 +23,8 @@ POST: /api/plants/delete
     + restore=true  removes delete flag  (implied default is false)
     + force==true && restore==true is an error
     # 💡 could call "force" "destroy" # might be clearer?
-    
+
+# ❔ should it be /plants/ or /plant/
 
 Note: for any status there can also be msg: or maybe name it message: # probably only set for errors or could always set it?
 Note: data and updated_data are of type "javascript Object"
