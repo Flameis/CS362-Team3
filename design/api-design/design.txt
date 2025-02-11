@@ -2,16 +2,19 @@ GET:  /api/plants/{id}
     ->  {status: int, data: data}
 
 POST: /api/plants/add
-    * must be authenticated
     <-  data  # fields that can be null can be left undefined
     ->  {status: int, id: int}
+    * must be authenticated
 
 POST: /api/plants/edit
-    * must be authenticated
     <-  data  # only changed data if no change then undefined
     ->  {status: int, data: updated_data}
+    * must be authenticated
+    
 
 POST: /api/plants/delete
+    <-  {id: int, force: bool|undefined, restore: bool|undefined }
+    ->  {status: int}
     * must be authenticated
     * for non mods force=true is an error  #? maybe also for restore=true # maybe the only the user who flagged it can restore it? (mods can always restore)
     * for mods to full delete must also send force=true.
@@ -20,8 +23,7 @@ POST: /api/plants/delete
     + force=true    fully deletes
     + restore=true  removes delete flag  (implied default is false)
     + force==true && restore==true is an error
-    <-  {id: int, force: bool|undefined, restore: bool|undefined }
-    ->  {status: int}
+    
 
 Note: for any status there can also be msg: or maybe name it message:  (probably only set for errors? or could always set it)
 Note: data and updated_data are of type "javascript Object"
