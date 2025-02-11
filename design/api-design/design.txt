@@ -26,6 +26,12 @@ POST: /api/plants/delete
 
 # ❔ should it be /plants/ or /plant/
 
+# ❔ which syntax is better
+# /api/plants/{id}/edit   <- data
+# /api/plants/edit/{id}   <- data
+# /api/plants/edit  <- {id: int, data: data}
+# /api/plants/edit  <- data    # or could put id in the data
+
 Note: for any status there can also be msg: or maybe name it message: # probably only set for errors or could always set it?
 Note: data and updated_data are of type "javascript Object"
 Note: data will not be returned on error
