@@ -7,7 +7,7 @@ POST: /api/plants/add
     * must be authenticated
 
 POST: /api/plants/edit
-    <-  data  # only changed data if no change then undefined
+    <-  data  # only changed data if no change then undefined  # "only changed" this will be useful if we decide to stage changes for moderation
     ->  {status: int, data: updated_data}  # all data is returned with the updates applied
     * must be authenticated
 
