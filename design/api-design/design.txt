@@ -1,26 +1,26 @@
 GET:  /api/plants/{id}
-    ->  data or maybe status and data
-        data  or  {status: , data: data}
+    ->  {status: int, data: data}
 
 POST: /api/plants/add
     * must be authenticated
-    <-  data (fields that can be null can be left undefined)
-    ->  id/status
-        {status: , id: }
+    <-  data  # fields that can be null can be left undefined
+    ->  {status: int, id: int}
 
 POST: /api/plants/edit
     * must be authenticated
-    <-  only changed data if no change then undefined
-    ->  ? (maybe data after changes)
-        {status: , data: }  or  {status: , updated_data: }
+    <-  data  # only changed data if no change then undefined
+    ->  {status: int, data: updated_data}
 
 POST: /api/plants/delete
     * must be authenticated
     * for non mods force=true is an error
     * for mods to full delete must also send force=true.
         * this way mods can still flag for delete if needed
-    + force=false  sets delete flag   (default)
-    + force=true   fully deletes
-    <-  {id: int, force: bool}
-    ->  status
-        {status: }
+    + force=false   sets delete flag   (default)
+    + force=true    fully deletes
+    + restore=true  removes delete flag  (implied default is false)
+    + force==true && restore==true is an error
+    <-  {id: int, force: bool|undefined, restore: bool|undefined }
+    ->  {status: int}
+
+Note: for any status there can also be msg: or maybe name it message:  (probably only set for errors? or could always set it)
