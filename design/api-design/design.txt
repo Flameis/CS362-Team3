@@ -1,9 +1,17 @@
-GET:  /api/plants/{id}      ->  data                            <-  N/A
+GET:  /api/plants/{id}
+    <-  N/A
+    ->  data
 
-POST: /api/plants/add       ->  id                              <-  data (fields that can be null can be left undefined)
+POST: /api/plants/add
+    <-  data (fields that can be null can be left undefined)
+    ->  id
 
-POST: /api/plants/edit      ->  ? (maybe data after changes)    <-  only changed data if no change then undefined
+POST: /api/plants/edit
+    <-  only changed data if no change then undefined
+    ->  ? (maybe data after changes)
 
-POST: /api/plants/delete    ->  status                          <-  id
+POST: /api/plants/delete
+    <-  id
+    ->  status
 
 
