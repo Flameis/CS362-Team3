@@ -8,9 +8,8 @@ POST: /api/plants/add
 
 POST: /api/plants/edit
     <-  data  # only changed data if no change then undefined
-    ->  {status: int, data: updated_data}
+    ->  {status: int, data: updated_data}  # all data is returned with the updates applied
     * must be authenticated
-    
 
 POST: /api/plants/delete
     <-  {id: int, force: bool|undefined, restore: bool|undefined }
