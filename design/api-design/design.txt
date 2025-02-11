@@ -1,17 +1,19 @@
 GET:  /api/plants/{id}
     <-  N/A
-    ->  data
+    ->  data or maybe status and data
+        data  or  {status: , data: data}
 
 POST: /api/plants/add
     <-  data (fields that can be null can be left undefined)
-    ->  id
+    ->  id/status
+        {status: , id: }
 
 POST: /api/plants/edit
     <-  only changed data if no change then undefined
     ->  ? (maybe data after changes)
+        {status: , data: }  or  {status: , updated_data: }
 
 POST: /api/plants/delete
     <-  id
     ->  status
-
-
+        {status: }
