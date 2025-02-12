@@ -1,14 +1,22 @@
-import express from 'express';
-import mysql from 'mysql';
+require('dotenv').config();
+const express = require('express');
+const mysql = require('mysql');
 const app = express();
 const port = process.env.PORT || 3306;
 
+// Print environment variables to ensure they are correct
+console.log('Environment Variables:');
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_USER:', process.env.DB_USER);
+console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
+console.log('DB_NAME:', process.env.DB_NAME);
+
 // Connect to the database
 const db = mysql.createConnection({
-    host: process.env.CS362_DB_HOST,
-    user: process.env.CS362_DB_USER,
-    password: process.env.CS362_DB_PASSWORD,
-    database: process.env.CS362_DB_NAME
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
 
 db.connect((err) => {
@@ -21,6 +29,11 @@ db.connect((err) => {
 
 // Parse JSON bodies
 app.use(express.json());
+
+// Root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the Beaver Botanica API');
+});
 
 // Script to get all users
 app.get('/users', (req, res) => {

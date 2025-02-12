@@ -1,0 +1,19 @@
+{
+  "name": "cs362-team3",
+  "version": "1.0.0",
+  "description": "CS362 Team 3 Project",
+  "main": "code/database-link/database-link.js",
+  "scripts": {
+    "start": "node code/database-link/database-link.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "dotenv": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "CS362 Team 3",
+  "license": "MIT"
+}
