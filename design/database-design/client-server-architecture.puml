@@ -1,0 +1,38 @@
+@startuml Client-Server Architecture
+
+skinparam package {
+    BackgroundColor LightSkyBlue
+    BorderColor DarkBlue
+    FontSize 14
+    FontStyle bold
+}
+
+skinparam rectangle {
+    BackgroundColor LightYellow
+    BorderColor DarkGreen
+    FontSize 12
+    FontStyle bold
+}
+
+left to right direction
+
+package "Client" {
+    rectangle "Web Browser" as WebBrowser
+}
+
+together {
+    package "Server" {
+        rectangle "Web Server" as WebServer
+    }
+    
+    package "Backend" {
+        rectangle "Database" as Database
+    }
+}
+
+WebBrowser --> WebServer : HTTP Requests
+WebServer --> Database : SQL Queries
+Database --> WebServer : Query Results
+WebServer --> WebBrowser : HTTP Responses
+
+@enduml
