@@ -16,14 +16,14 @@ Makes it easier to know what we need to do
 
 ## TA meeting 📅~01-21
 
-- [ ] TA meeting about project proposal @william-osu
+- [X] TA meeting about project proposal @william-osu
 
 ## Idea Presentation 📅01-21 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9908939)
 
-- [ ] Update Living document if needed
-  - [ ] mk pdf and zip with pdf of presentation 🚚canvas
-- [ ] Create a 4-page slideshow presentation
-  - [ ] mk pdf and zip with pdf of current report 🚚canvas
+- [X] Update Living document if needed
+  - [X] mk pdf and zip with pdf of presentation 🚚canvas
+- [X] Create a 4-page slideshow presentation
+  - [X] mk pdf and zip with pdf of current report 🚚canvas
 - [x] Create a PM board on Trello for your team @Jake-Thompson
 - [x] Create your team’s GitHub repository
   - [x] Create repository @Flameis
@@ -31,14 +31,14 @@ Makes it easier to know what we need to do
 
 ## Requirements Elicitation 📅01-21 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9941654) ⚠️NotYetListedInModules(for some reason even though says due in the next week)
 
-- [ ] add new sections to living document
-  - [ ] Use Cases (Functional Requirements)
-    - [ ] one each
-  - [ ] Non-functional Requirements
-    - [ ] three total
-  - [ ] External Requirements
-  - [ ] Team process description
-- [ ] mk pdf and zip with pdf of presentation 🚚canvas
+- [X] add new sections to living document
+  - [X] Use Cases (Functional Requirements)
+    - [X] one each
+  - [X] Non-functional Requirements
+    - [X] three total
+  - [X] External Requirements
+  - [X] Team process description
+- [X] mk pdf and zip with pdf of presentation 🚚canvas
 
 ## Architecture and Design 📅02-04 [🌐](https://canvas.oregonstate.edu/courses/1987844/assignments/9943333)
 
