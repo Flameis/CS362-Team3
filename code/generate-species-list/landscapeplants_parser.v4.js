@@ -1,3 +1,33 @@
+/**
+ * Program Name: Species List Parser
+ * Description:
+ * This program fetches and parses the species list from the
+ * landscapeplants.oregonstate.edu website. The goal is to extract
+ * relevant botanical information for each species, including genus,
+ * species, subspecies, variety, forma, common name, trademarked name,
+ * and hybrid status. The parsed data is then saved in JSON format,
+ * with the extra types sorted under their species.
+ *
+ * Main Features:
+ * - Fetches HTML content for each letter of the alphabet from the specified URL.
+ * - Extracts botanical information, including handling special cases for
+ *   subspecies, variety, forma, trademarked names, and hybrids.
+ * - Marks entries with a hybrid flag if they are hybrids.
+ * - Logs warnings if there are unprocessed content or unexpected data.
+ *
+ * Note: The genus names are intentionally lowercase for lookup purposes,
+ *       despite the botanical convention of capitalizing genus names.
+ *
+ * Usage:
+ * - The program outputs the parsed data to 'landscapeplants.json'.
+ *
+ * Author: Jake Thompson
+ * Date: 2025-02-12
+ *
+ * Program description written by: Microsoft Copilot
+ * Edited a bit by Jake.
+ */
+
 const fs = require('fs');
 const {JSDOM} = require('jsdom');
 
