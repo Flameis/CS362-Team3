@@ -2,9 +2,9 @@
   "name": "cs362-team3",
   "version": "1.0.0",
   "description": "CS362 Team 3 Project",
-  "main": "code/database-link/database-link.js",
+  "main": "code/database-link/database-apoi.js",
   "scripts": {
-    "start": "node code/database-link/database-link.js"
+    "start": "node code/database-link/database-api.js"
   },
   "dependencies": {
     "express": "^4.17.1",
