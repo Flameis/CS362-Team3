@@ -5,8 +5,8 @@
       "genus": "abelia",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Edward Goucher",
+          "hybrid": true,
           "common_name": "Edward Goucher Abelia",
           "href": "/plants/abelia-edward-goucher"
         }
@@ -19,20 +19,20 @@
       "href": "/plants/abelia-grandiflora",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Francis Mason",
+          "hybrid": true,
           "common_name": "Francis Mason Glossy Abelia",
           "href": "/plants/abelia-grandiflora-francis-mason"
         },
         {
-          "other_text": "×",
           "cultivar": "Kaleidoscope",
+          "hybrid": true,
           "common_name": "Kaleidoscope Glossy Abelia",
           "href": "/plants/abelia-grandiflora-kaleidoscope"
         },
         {
-          "other_text": "×",
           "cultivar": "Sunrise",
+          "hybrid": true,
           "common_name": "Sunrise Glossy Abelia",
           "href": "/plants/abelia-grandiflora-sunrise"
         }
@@ -363,14 +363,14 @@
       "href": "/plants/acer-freemanii-sienna-glen",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Armstrong",
+          "hybrid": true,
           "common_name": "Armstrong Maple",
           "href": "/plants/acer-freemanii-armstrong"
         },
         {
-          "other_text": "×",
           "cultivar": "Morgan",
+          "hybrid": true,
           "common_name": "Morgan Maple",
           "href": "/plants/acer-freemanii-morgan"
         }
@@ -836,8 +836,8 @@
       "href": "/plants/aesculus-carnea",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "O'Neill Red",
+          "hybrid": true,
           "common_name": "O'Neill Red Horsechestnut",
           "href": "/plants/aesculus-carnea-oneill-red"
         }
@@ -1094,8 +1094,8 @@
       "href": "/plants/amelanchier-grandiflora-autumn-brilliance",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Forest Prince",
+          "hybrid": true,
           "common_name": "Forest Prince Serviceberry",
           "href": "/plants/amelanchier-grandiflora-forest-prince"
         }
@@ -1195,8 +1195,8 @@
       "genus": "arctostaphylos",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Austin Griffiths",
+          "hybrid": true,
           "common_name": "Austin Griffiths Manzanita",
           "href": "/plants/arctostaphylos-austin-griffiths"
         },
@@ -1548,8 +1548,8 @@
       "species": "gladwynensis",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "William Penn",
+          "hybrid": true,
           "common_name": "William Penn Barberry",
           "href": "/plants/berberis-gladwynensis-william-penn"
         }
@@ -1604,14 +1604,14 @@
       "href": "/plants/berberis-stenophylla",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Irwinii",
+          "hybrid": true,
           "common_name": "Irwin Rosemary Barberry",
           "href": "/plants/berberis-stenophylla-irwinii"
         },
         {
-          "other_text": "×",
           "cultivar": "Nana",
+          "hybrid": true,
           "common_name": "Dwarf Rosemary Barberry",
           "href": "/plants/berberis-stenophylla-nana"
         }
@@ -1647,8 +1647,8 @@
           "href": "/plants/berberis-thunbergii-var-atropurpurea-rose-glow"
         },
         {
-          "other_text": "Royal Burgundy™",
           "variety": "atropurpurea",
+          "trademarked_name": "Royal Burgundy™",
           "common_name": "Royal Burgundy Barberry",
           "href": "/plants/berberis-thunbergii-var-atropurpurea-royal-burgundy"
         }
@@ -1819,8 +1819,8 @@
       "genus": "buddleia",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Blue Chip",
+          "hybrid": true,
           "common_name": "Blue Chip Buddleia",
           "href": "/plants/buddleia-blue-chip"
         }
@@ -1843,8 +1843,8 @@
       "species": "weyeriana",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Honeycomb",
+          "hybrid": true,
           "common_name": "Honeycomb Butterfly Bush",
           "href": "/plants/buddleia-weyeriana-honeycomb"
         }
@@ -2030,8 +2030,8 @@
       "genus": "calycanthus",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Aphrodite",
+          "hybrid": true,
           "common_name": "Aphrodite Sweetshrub",
           "href": "/plants/calycanthus-aphrodite"
         }
@@ -2054,8 +2054,8 @@
       "species": "raulstonii",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Hartlage Wine",
+          "hybrid": true,
           "common_name": "Hartlage Wine Sweetbush",
           "href": "/plants/calycanthus-raulstonii-hartlage-wine"
         }
@@ -2228,8 +2228,8 @@
       "species": "erubescens",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Purpurea",
+          "hybrid": true,
           "common_name": "Purple Catalpa",
           "href": "/plants/catalpa-erubescens-purpurea"
         }
@@ -2286,8 +2286,8 @@
       "species": "delilianus",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Henri Desfosse",
+          "hybrid": true,
           "common_name": "Henri Desfosse Ceanothus",
           "href": "/plants/ceanothus-delilianus-henri-desfosse"
         }
@@ -2925,8 +2925,8 @@
       "species": "dewitteana",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Aztec Pearl",
+          "hybrid": true,
           "common_name": "Aztec Pearl Choisya",
           "href": "/plants/choisya-dewitteana-aztec-pearl"
         }
@@ -3021,8 +3021,8 @@
       "species": "crispatus",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Warley Rose",
+          "hybrid": true,
           "common_name": "Warley Rose Rockrose",
           "href": "/plants/cistus-crispatus-warley-rose"
         }
@@ -3033,8 +3033,8 @@
       "species": "dansereaui",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Decumbens",
+          "hybrid": true,
           "common_name": "Decumbens Rockrose",
           "href": "/plants/cistus-dansereaui-decumbens"
         }
@@ -3045,8 +3045,8 @@
       "species": "florentinus",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Fontfroide",
+          "hybrid": true,
           "common_name": "Fontfroide Rockrose",
           "href": "/plants/cistus-florentinus-fontfroide"
         }
@@ -3075,8 +3075,8 @@
       "species": "pulverulentus",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Sunset",
+          "hybrid": true,
           "common_name": "Sunset Rockrose",
           "href": "/plants/cistus-pulverulentus-sunset"
         }
@@ -3399,8 +3399,8 @@
           "href": "/plants/cornus-sericea-subsp-sericea-hessei"
         },
         {
-          "other_text": "Ivory Halo™",
           "subspecies": "sericea",
+          "trademarked_name": "Ivory Halo™",
           "common_name": "Ivory Halo Dogwood",
           "href": "/plants/cornus-sericea-subsp-sericea-ivory-halo"
         },
@@ -3645,8 +3645,8 @@
       "species": "suecicus",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Coral Beauty",
+          "hybrid": true,
           "common_name": "Coral Beauty Cotoneaster",
           "href": "/plants/cotoneaster-suecicus-coral-beauty"
         }
@@ -3933,14 +3933,14 @@
       "href": "/plants/daphne-burkwoodii",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Briggs Moonlight",
+          "hybrid": true,
           "common_name": "Briggs Moonlight Burkwood Daphne",
           "href": "/plants/daphne-burkwoodii-briggs-moonlight"
         },
         {
-          "other_text": "×",
           "cultivar": "Carol Mackie",
+          "hybrid": true,
           "common_name": "Carol Mackie Burkwood Daphne",
           "href": "/plants/daphne-burkwoodii-carol-mackie"
         }
@@ -4129,8 +4129,8 @@
       "genus": "distylium",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Vintage Jade",
+          "hybrid": true,
           "common_name": "Vintage Jade Evergreen Witch Hazel",
           "href": "/plants/distylium-vintage-jade"
         }
@@ -4173,8 +4173,8 @@
       "href": "/plants/elaeagnus-ebbingei",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Gilt Edge",
+          "hybrid": true,
           "common_name": "Gild Edge Silverberry",
           "href": "/plants/elaeagnus-ebbingei-gilt-edge"
         }
@@ -4306,14 +4306,14 @@
       "href": "/plants/escallonia-langleyensis",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Apple Blossom",
+          "hybrid": true,
           "common_name": "Apple Blossom Escallonia",
           "href": "/plants/escallonia-langleyensis-apple-blossom"
         },
         {
-          "other_text": "×",
           "cultivar": "Pride of Donard",
+          "hybrid": true,
           "common_name": "Pride of Donard Escallonia",
           "href": "/plants/escallonia-langleyensis-pride-donard"
         }
@@ -4455,8 +4455,8 @@
       "species": "kiautschovicus",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Manhattan",
+          "hybrid": true,
           "common_name": "Manhattan Spreading Euonymus",
           "href": "/plants/euonymus-kiautschovicus-manhattan"
         }
@@ -4467,8 +4467,8 @@
       "species": "macrantha",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "The Bride",
+          "hybrid": true,
           "common_name": "The Bride Pearlbush",
           "href": "/plants/exochorda-macrantha-bride"
         }
@@ -4943,8 +4943,8 @@
       "genus": "grevillea",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Pink Pearl",
+          "hybrid": true,
           "common_name": "Pink Pearl Grevillea",
           "href": "/plants/grevillea-pink-pearl"
         }
@@ -4993,26 +4993,26 @@
       "href": "/plants/hamamelis-intermedia",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Arnold Promise",
+          "hybrid": true,
           "common_name": "Arnold Promise Witchhazel",
           "href": "/plants/hamamelis-intermedia-arnold-promise"
         },
         {
-          "other_text": "×",
           "cultivar": "Diane",
+          "hybrid": true,
           "common_name": "Diane Witchhazel",
           "href": "/plants/hamamelis-intermedia-diane"
         },
         {
-          "other_text": "×",
           "cultivar": "Jelena",
+          "hybrid": true,
           "common_name": "Jelena Witchhazel",
           "href": "/plants/hamamelis-intermedia-jelena"
         },
         {
-          "other_text": "×",
           "cultivar": "Primivera",
+          "hybrid": true,
           "common_name": "Primivera Witchhazel",
           "href": "/plants/hamamelis-intermedia-primivera"
         }
@@ -5358,8 +5358,8 @@
       "species": "attenuata",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Foster #2",
+          "hybrid": true,
           "common_name": "Foster's #2 Holly",
           "href": "/plants/ilex-attenuata-foster-2"
         }
@@ -6261,8 +6261,8 @@
           "href": "/plants/loropetalum-chinense-var-rubrum-daybreaks-flame"
         },
         {
-          "other_text": "Plum Delight™",
           "variety": "rubrum",
+          "trademarked_name": "Plum Delight™",
           "common_name": "Plum Delight Fringe-flower",
           "href": "/plants/loropetalum-chinense-var-rubrum-plum-delight"
         }
@@ -6384,8 +6384,8 @@
       "href": "/plants/magnolia-loebneri",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Leonard Messel",
+          "hybrid": true,
           "common_name": "Leonard Messel Magnolia",
           "href": "/plants/magnolia-loebneri-leonard-messel"
         }
@@ -6486,8 +6486,8 @@
       "species": "media",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Arthur Menzies",
+          "hybrid": true,
           "common_name": "Arthur Menzies Mahonia",
           "href": "/plants/mahonia-media-arthur-menzies"
         }
@@ -7075,14 +7075,14 @@
       "href": "/plants/philadelphus-virginalis",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Miniature Snowflake",
+          "hybrid": true,
           "common_name": "Miniature Snowflake Mockorange",
           "href": "/plants/philadelphus-virginalis-miniature-snowflake"
         },
         {
-          "other_text": "×",
           "cultivar": "Natchez",
+          "hybrid": true,
           "common_name": "Natchez Mockorange",
           "href": "/plants/philadelphus-virginalis-natchez"
         }
@@ -8552,8 +8552,8 @@
       "href": "/plants/prunus-yedoensis",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Akebono",
+          "hybrid": true,
           "common_name": "Akebono Yoshino Cherry",
           "href": "/plants/prunus-yedoensis-akebono"
         }
@@ -9531,8 +9531,8 @@
           "href": "/plants/rhododendron-arboreum-subsp-cinnamomeum"
         },
         {
-          "other_text": "var.",
-          "subspecies": "roseum",
+          "variety": "roseum",
+          "subspecies": "cinnamomeum",
           "common_name": "R. a. ssp. c. var. roseum (no commnon name)",
           "href": "/plants/rhododendron-arboreum-var-roseum-subsp-cinnamomeum"
         }
@@ -10747,8 +10747,8 @@
       "href": "/plants/spiraea-vanhouttei",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Pink Ice",
+          "hybrid": true,
           "common_name": "Pink Ice Spirea",
           "href": "/plants/spiraea-vanhouttei-pink-ice"
         }
@@ -10847,8 +10847,8 @@
       "href": "/plants/symphoricarpos-doorenbosii",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Magic Berry",
+          "hybrid": true,
           "common_name": "Magic Berry Snowberry",
           "href": "/plants/symphoricarpos-doorenbosii-magic-berry"
         }
@@ -10885,8 +10885,8 @@
       "href": "/plants/syringa-chinensis",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Lilac Sunday",
+          "hybrid": true,
           "common_name": "Lilac Sunday Lilac",
           "href": "/plants/syringa-chinensis-lilac-sunday"
         }
@@ -10899,14 +10899,14 @@
       "href": "/plants/syringa-hyacinthiflora",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Maiden's Blush",
+          "hybrid": true,
           "common_name": "Maiden's Blush (Early Flowering) Lilac",
           "href": "/plants/syringa-hyacinthiflora-maidens-blush"
         },
         {
-          "other_text": "×",
           "cultivar": "Mount Baker",
+          "hybrid": true,
           "common_name": "Mount Baker (Early Flowering) Lilac",
           "href": "/plants/syringa-hyacinthiflora-mount-baker"
         }
@@ -10976,8 +10976,8 @@
       "href": "/plants/syringa-prestoniae",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "James Macfarlane",
+          "hybrid": true,
           "common_name": "James Macfarlane Lilac",
           "href": "/plants/syringa-prestoniae-james-macfarlane"
         }
@@ -11141,20 +11141,20 @@
       "href": "/plants/taxus-media",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Bean Pole",
+          "hybrid": true,
           "common_name": "Bean Pole Hybrid Yew",
           "href": "/plants/taxus-media-bean-pole"
         },
         {
-          "other_text": "×",
           "cultivar": "Hicksii",
+          "hybrid": true,
           "common_name": "Hicks Hybrid Yew",
           "href": "/plants/taxus-media-hicksii"
         },
         {
-          "other_text": "×",
           "cultivar": "Tautonii",
+          "hybrid": true,
           "common_name": "Tauntonii Hybrid Yew",
           "href": "/plants/taxus-media-tautonii"
         }
@@ -11436,8 +11436,8 @@
       "href": "/node/2117",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Frontier",
+          "hybrid": true,
           "common_name": "Frontier Elm",
           "href": "/plants/ulmus-frontier"
         },
@@ -11465,8 +11465,8 @@
           "href": "/plants/ulmus-davidiana-var-davidiana"
         },
         {
-          "other_text": "Emerald Sunshine®",
           "variety": "japonica",
+          "trademarked_name": "Emerald Sunshine®",
           "common_name": "Emerald Sunshine Elm",
           "href": "/plants/ulmus-davidiana-var-japonica-emerald-sunshine"
         },
@@ -11625,8 +11625,8 @@
       "species": "bodnantense",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Dawn",
+          "hybrid": true,
           "common_name": "Dawn Bodnantense Viburnum",
           "href": "/plants/viburnum-bodnantense-dawn"
         }
@@ -11645,8 +11645,8 @@
       "href": "/plants/viburnum-burkwoodii",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": "Conoy",
+          "hybrid": true,
           "common_name": "Conoy Viburnum",
           "href": "/plants/viburnum-burkwoodii-conoy"
         }
@@ -11824,8 +11824,8 @@
           "href": "/plants/viburnum-plicatum-var-plicatum"
         },
         {
-          "other_text": "Newport™",
           "variety": "plicatum",
+          "trademarked_name": "Newport™",
           "common_name": "Newport Japanese Snowball",
           "href": "/plants/viburnum-plicatum-var-plicatum-newport"
         },
@@ -11938,8 +11938,8 @@
       "species": "californica × vinifera",
       "cultivars": [
         {
-          "other_text": "×",
           "cultivar": " Rogers Red",
+          "hybrid": true,
           "common_name": "Rogers Red Grape",
           "href": "/plants/vitis-californica-vinifera-rogers-red"
         }
