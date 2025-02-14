@@ -7,9 +7,10 @@
     "start": "node code/database-link/database-api.js"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
-    "dotenv": "^10.0.0"
+    "react": "^19.0.0"
   },
   "engines": {
     "node": ">=14.0.0"
