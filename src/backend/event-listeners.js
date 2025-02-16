@@ -1,5 +1,5 @@
 const EventEmitter = require('events');
-const dbLink = require('./database-api');
+const dbLink = require('./api');
 const eventEmitter = new EventEmitter();
 
 // Database connection
