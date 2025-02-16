@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="mydiv"></div>
+
+    <script type="text/babel">
+      import React, { useState, useEffect } from 'react';
+      import ReactDOM from 'react-dom';
+
+      function PlantsTable() {
+          const [plants, setPlants] = useState([]);
+      
+          useEffect(() => {
+              fetch('/api/plants')
+                  .then(response => response.json())
+                  .then(data => setPlants(data))
+                  .catch(error => console.error('Error fetching plants:', error));
+          }, []);
+      
+          return (
+              <div>
+                  <h1>Plants</h1>
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Species ID</th>
+                              <th>Image ID</th>
+                              <th>Description</th>
+                              <th>Location</th>
+                              <th>Season</th>
+                              <th>Average Rating</th>
+                              <th>Date Added</th>
+                              <th>Date Updated</th>
+                              <th>X Coordinate</th>
+                              <th>Y Coordinate</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {plants.map(plant => (
+                              <tr key={plant.species_id}>
+                                  <td>{plant.species_id}</td>
+                                  <td>{plant.image_id}</td>
+                                  <td>{plant.description}</td>
+                                  <td>{plant.location}</td>
+                                  <td>{plant.season}</td>
+                                  <td>{plant.avg_rating}</td>
+                                  <td>{plant.date_added}</td>
+                                  <td>{plant.date_updated}</td>
+                                  <td>{plant.x_coordinate}</td>
+                                  <td>{plant.y_coordinate}</td>
+                              </tr>
+                          ))}
+                      </tbody>
+                  </table>
+              </div>
+          );
+      }
+
+      ReactDOM.render(<PlantsTable />, document.getElementById('root'));
+    </script>
+
+  </body>
+</html>
