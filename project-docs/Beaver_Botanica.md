@@ -17,33 +17,34 @@ Rules:
 
 # Product Description
 ## Abstract
-The campus of OSU is home to a wide diversity of plants contributed by talented botanists over the years. It is hard for new botany students to know where all these plants are. They are left with little option save for asking for help from professors or exploring the campus themselves. Our goal is to help these botany students by providing them an online map that can tell them where plants lie on OSU’s campus. This project is a plant identification app for the Oregon State University campus. Users will take pictures of plants around campus, identify them, and upload them to a website that will show a map of campus with the locations of each identified plant. There will be layers to the map for each season, so users can see what plants are in bloom at any given time. Each plant, when clicked on, will show details of the plant that the user provides.
+The campus of OSU is home to a wide diversity of plants contributed by talented botanists over the years. It is hard for new botany students to know where all these plants are. They are left with little option save to ask for help from professors or explore the campus themselves. Our goal is to help these botany students by providing them with an online map that can tell them where plants lie on OSU’s campus. 
+
+This project is a plant identification app for the Oregon State University campus. Users will take pictures of plants around campus, identify them, and upload them to a website that will show a map of campus with the locations of each identified plant. There will be layers to the map for each season, so users can see what plants are in bloom at any given time. Each plant, when clicked on, will show details of the plant that the user provides.
+
 
 ## Goal
 Our goal for this software before the end of the term is to create a map of plants on campus and allow for users to upload pictures and descriptions of plants to OSU Plant Map's database. Our end goal is to allow any student at OSU the ability to look-up and identify plants around the OSU campus.
 
-## Current Practice
-Plants are everywhere in Oregon. In this state alone, forests cover 30.5 million acres, or almost half the state. With how important plants are in our day-to-day lives, these resources below are some of the only ways we can learn about our local flora:
 
-* The botany department currently has a [tree inventory map](https://www.arcgis.com/apps/instant/basic/index.html?appid=097214a28e934a7681e229b41c9e0d29), but it is specific to trees and is simply an inventory system.
-* The website Pl@ntNet has a [global plant map](https://identify.plantnet.org/), but it only shows broad regional areas of where plants grow.
-* The website OregonFlora has a [Oregon plant map](https://oregonflora.org/checklists/dynamicmap.php?interface=key), but it can be hard to search through and is unhelpful to non-botanists.
+## The Problem with Current Software
+There are three major problems that plague botanical software. These are poor design, broad location size, and overly scientific nomenclature. For example, while Oregon State University does offer plant identification software, it encapsulates the entire state of Oregon and only uses the scientific names of these plants. A student with a passing interest in botany would not be able to understand what they are looking for without having to do their research. Educational resources deserve to be easy to use and understandable to someone uneducated on the subject. 
 
-It’s because of this that we want to be able to create something that is both in-depth and local to what we live with here at OSU. An application like this can increase awareness and education about local flora while keeping it open for anyone to use regardless of their background in botany.
 
-## Novelty
-The novelty of this project is that it will be a social media plant identification app specifically for the Oregon State University campus. Making our app restricted to the OSU campus will allow us to make the plant map more "zoomed in" on an area. This is novel because most maps of plants that are out there are catalogs of plants in a region, which don't allow users to find more specific locations of plants. Our app will be a user driven plant identification system that will allow users to identify and map plants on campus themselves, as well as drive social interaction based around the plants. 
+## Our Solution - Beaver Botanica
+Beaver Botanica is a plant identification software by students of Oregon State, for the students of Oregon State. Unlike most identification software, Beaver Botanica only encapsulates the Oregon State University campus. Our software will be a web app based on HTML, CSS, and Javascript using the React.JS library. The backend of our software will be built in MySQL and Javascript using the Node.js and Express libraries. We have chosen all these languages mainly because everyone on the team has experience with them and can therefore competently make their changes or give their feedback if need be. The goal of Beaver Botanica is to be a community-driven plant identification app that is user-friendly and allows people of all backgrounds to engage with botany. 
 
-## Effects
-The target audience of Plant Map will be botany students and other such interested parties at OSU. With this software they will be able to easily look up and find plants around the OSU campus. This will save them time looking around to identify a plant and it will also help them study various plant types at OSU. Additionally, this software will help entertain visitors and regular students of OSU by giving them a tool to find cool plants around campus that they may not have otherwise known existed.
+## Testing Our Solution
+We’ll be testing our solution in three areas: User Experience, Performance, and Reliability. In terms of user experience, we want our website to be intuitive for all users, regardless of their botany knowledge. To test this, we’ll have students and faculty use the platform and provide feedback. This will help us create an engaging platform that makes finding and identifying plants easy and enjoyable.
 
-## Technical Approach
-The idea is to use a SQL database that holds each plant identified by the users. The website will display a map and overlay each plant's location using the Google Maps API and querying the database through code. We are still deciding on how exactly we will build the website.
+Since Beaver Botanica will be used while walking around campus, it needs to be fast and responsive. We’ll conduct real-world testing around OSU’s campus to check how well the site functions under different network conditions. This will meet our goal of creating a fast learning website that students can use on the go.
 
-## Risks
-One of the largests risks with developing OSU Plant Map software is in making sure the system is scalable. We, as a 7 person team, will not be able to map out all the plants spanning the whole OSU campus. Our solution to this will be allowing users of OSU Plant Map to upload pictures and information to the database.  
+Plant identification is a core function of our platform, so we’ll test the reliability of our platform by determining whether users can correctly identify and label plants using our system. This includes comparing user-submitted data to verified sources, and adjusting our search features to improve accuracy. This will help make Beaver Botanica a reliable resource for learning and discovery.
 
-With the large amount of plants and people we will need to make sure our software can be scaled up to allow for more information. This will be difficult as we will have to think ahead and design our system carefully. To mitigate this risk, our team will research early on how to make our system scalable so that we always code with the expectation of scalability.
+To test for reliability, we need a reliable dataset. OSU’s Department of Horticulture has a database of over 1,800 landscape plants, which will provide a strong foundation of verified plant species and will ensure that our database starts off with accurate information. Since Beaver Botanica is a community-driven platform, users will play a key role in expanding our dataset. Students and faculty will be able to identify plants, share their observations, and contribute new data points. Over time, this will help build a dynamic and ever-growing map of OSU’s plant life.
+
+To measure the success of Beaver Botanica, we will evaluate two metrics: identification accuracy and user experience. Since plant identification is at the core of our platform, we need to ensure that the information users submit is reliable. We will compare user-submitted plant identifications with verified sources from the OSU Department of Horticulture. This will help us assess how well the platform guides users in correctly identifying plants.
+
+Beyond being functional, Beaver Botanica should be engaging and easy to use. To measure this, we will gather feedback through user surveys and track engagement metrics, such as how often users return to the platform and contribute new plant observations. By analyzing these metrics, we can ensure Beaver Botanica makes learning about plants on campus an enjoyable experience.
 
 ## Major Features
 * Movable map interface that displays plant locations
@@ -54,6 +55,149 @@ With the large amount of plants and people we will need to make sure our softwar
 ## Stretch Goals
 * User profiles and leaderboards
 * Plant identification AI integration
+
+
+# Software Architecture
+## Components
+Beaver Botanica will be a website with the intention of it being used on mobile devices as users will likely want to use it while walking around on campus. The three main components of the software are the client-side web page, the server-side web page, and the database. 
+
+The client-side web page will be the users’ method of interacting with the data stored in our database, allowing them to view, edit, and add entries that can be viewed by others. The data will be displayed in a user-friendly format that is abstracted away from the actual database and server architecture. User input that will query the database could be search criteria or selecting a plant.
+
+The website’s server will be hosted on a personal OSU webpage, which will simplify the networking requirements from our team to ensure any user can access it at any time. The server will interface with the database by taking a user’s input, converting it to an SQL query, querying the database, then sending the necessary data to the user’s browser, which will then display the data through the website.
+
+The database will be stored on a Bluehost server that can be accessed by the server through queries. More information on the database’s structure and design is in the Data section below.
+
+The website serves as an interface with the server, which in turn interfaces with the database. The website will serve as the main method of interacting with both of the other components, as it has a graphical interface that allows editing and viewing data from the database. The server’s interface with the website and database is not graphical, but rather JS queries with the website and SQL queries with the database.
+
+## Data
+The Beaver Botanica database will store information about individual plants, taxonomies of plants, images of plants, user profiles, post ratings, and comments. This structure will ensure that all plant data and user interactions are organized efficiently.
+
+![Schema of the Beaver Botanica Database, showing the tables and their interactions](https://github.com/Flameis/CS362-Team3/blob/main/database-design/beaver_botanica_db.png?raw=true)
+
+## Assumptions
+We will assume that our architecture will later be built upon and updated in the future.
+We will also assume that our users will not break any student or user conduct rules and that they will correctly submit plant entries. While the rating system we are implementing can be used to determine the accuracy of plant entries, we don’t have the resources to moderate posts and comments, or to create an automatic content moderation system.
+
+We will assume that the number of users on our site will be small, as botany is a niche interest. While testing and developing, there will likely be a maximum of 10 users. Attempting to make the software handle hundreds or even thousands of users well would provide additional complications.
+
+## Decision 1: Static Image or Mapping Software API
+For displaying the locations of plants on campus, we had to decide between using a static image to represent a map of campus or using a mapping software’s API. Static images are simpler to implement, but lack some features and are more complicated to determine geographic coordinates. A Mapping Software API contains more features (navigation, coordinates, map layers, scalability), but are much more complicated to implement, and most features are unnecessary for our purposes.
+
+In the end, we decided to use a static image so we could focus our time on developing and documenting other parts of our software, rather than learning how to implement an API. In addition, many of the features of using mapping software aren’t necessary, so the extra work wouldn’t provide much benefit.
+
+## Decision 2: Website or Mobile App
+For the implementation of our software, we decided between creating a website or a mobile app. Our team has more experience with a mobile website, and it works cross-platform. It may require additional testing on different devices. A mobile app would be optimized for mobile devices, but our team has limited experience. Additionally, more work would be required to port to other devices and operating systems, which is very limiting given the time we have to complete our platform.
+
+The pros of a website largely outweighed any cons, so we decided to build Beaver Botanica as a website. Being able to use our previous experience with developing websites helps us focus on implementing the features we want, while the cross platform functionality reduces work during implementation and testing.
+
+# Software Design
+## Client-Side Web Page
+The interface will be developed using React.js with HTML and CSS to create an interactive, mobile-friendly platform. The UI will consist of various reusable components, including a navigation bar, forms for plant searches and submissions, and a map component that displays plant data. The navigation bar will allow for easy navigation around the website. The form components will allow users to quickly search for plants and input plant data effectively. The map component will display plants dynamically and allow for users to locate the plants around campus. These components will work together to make plant identification accessible and engaging for users.
+## Server-Side Web Page
+The server-side of the application will be written using JavaScript through the express.js and node.js libraries. These server-side JavaScript libraries will handle incoming requests from the client by performing database operations and handling authentication. These libraries will decide what gets served to whom. When an event is sent to the server, the listener will route the operation to the correct JS function to handle whatever internal processing needs to happen.
+## Database
+We will be using MySQL to set up and run the database. The database will be hosted on an external Bluehost domain and managed through the MySQL Workbench application. It consists of the following six tables:
+* Users: Stores user information such as user ID, username, date joined, and role.
+* Species: Stores plant species information including species ID, common name, scientific name, and taxonomic classification.
+ * One-to-Many relationship with Plants
+* Plants: Stores individual plant instances with details like plant ID, species ID, image ID, description, location, and coordinates.
+* Many-to-One relationship with Users
+ * Images: Stores images of plants with image ID, plant ID, image URL, and date uploaded.
+ * Many-to-One relationship with Plants
+* Comments: Stores user comments on plants with comment ID, plant ID, user ID, comment text, and date posted.
+ * Many-to-One relationship with Plants
+ * Many-to-One relationship with Users
+* Ratings: Stores user ratings for plants with rating ID, plant ID, user ID, and rating value.
+ * Many-to-One relationship with Plants
+ * Many-to-One relationship with Users
+
+The SQL server will be responsible for storing, receiving, and delivering data to and from the server when prompted through SQL CRUD operations.
+
+## Coding Guideline
+### SQL
+We decided on the Mozilla Style Guide for two reasons. The main reason is for the sake of readability. The second reason is that it is similar in style to how our backend developers write SQL. Because of that, the adjustment to the style guide would be minimal. We hope to enforce the usage of the style guide by reading over each other's work to make sure that the guide is being used. If it is not being used in some way, then we can edit it or ask the contributor to edit it themselves.
+### Javascript
+We decided to choose the Google Javascript Style for two reasons. The first reason was a lack of adjustment for the developers as we already program Javascript in a similar style. The second reason is for the sake of readability for those who wish to read over the code at a later date. We plan on enforcing the style guide by reading each other's code and making adjustments when needed if the other person forgets a rule.
+### HTML/CSS
+We chose the Google Style Guidelines because the majority of us already use a similar style of programming in HTML and CSS. The lack of adjustment will make abiding by these guidelines easier for the front-end developers. We plan on enforcing the style guide by reading each other's code and making adjustments when needed if the other person forgets a rule.
+
+
+# Process Description (Risk Assessment)
+The following are the top five risks to the successful completion of our project:
+## 1. Scalability
+One of the largest risks with developing Beaver Botanica is in making sure the system is scalable. As a seven-person team, we will not be able to map out all the plants spanning the whole OSU campus. Our solution is to allow users of OSU Plant Map to upload pictures and information to the database.
+
+The likelihood of this occurring is high, and the impact if this occurs is also high. We know this from our research into Oregon State University’s existing Department of Horticulture website. This website documents the over 1800 landscape plant species found across Oregon, which is a feat much larger than the scope of our project. Additionally, OSU’s campus is extensive, which makes it impractical for a small team to catalog all plant life. Giving users the ability to add plant instances is crucial to the success of our project, but comes with its own unique challenges. User-generated plant findings can provide broad campus coverage but can introduce issues like data inconsistency and quality control.
+
+The following provides a list of steps we will take to increase the scalability of our project:
+
+* Implement a verification system where plant uploads are reviewed by moderators or verified users before being added to the main database.
+* Allow community-driven validation by providing users with the ability to flag plant inaccuracies.
+* Conduct initial research to determine the species of common plants on OSU’s campus.
+
+Our plan to detect this problem is to monitor submission frequency and quality using automated scripts and fact-checking. We can implement automated scripts that can detect duplicate submissions, and we may be able to determine if a submission is bad based on user input. For instance, if a user inputs a plant that is known to be under 2 feet tall at full growth, but labels it as 14 feet tall. We can also implement community feedback mechanisms, such as upvoting correct entries.
+
+If this problem of too much-unverified plant data occurs, our mitigation plan is to introduce a system that only allows confirmed, trusted users to add plant data to the system. Additionally, we could create a small tutorial to guide users through the correct usage of the website.
+
+Since submitting our Requirements document, we expanded our original paragraph to include reasoning for this problem, as well as a detection and mitigation plan. We also introduced a concrete plan in the case of too much incorrect information.
+
+## 2. Data Accuracy
+Ensuring the accuracy of plant data uploaded by users is a significant risk. Incorrect or misleading information could reduce the app's reliability and usefulness. To mitigate this, we will implement a verification process for user-submitted data.
+
+The likelihood of this occurring is high, and the impact if this occurs is also high. We have gathered from experience and research that crowdsourced data collection often introduces inconsistencies, as seen in similar user-generated content platforms. Because our target audience is the student and faculty population at Oregon State University, users may not be familiar with similar species of plants and may misidentify them due to a general lack of botanical knowledge.
+
+The following are steps to improve data accuracy:
+
+* Require users to provide images, location, and detailed descriptions for verification.
+* Allow experienced users or moderators to review and approve submissions before they are made public.
+* Provide educational resources to help users correctly identify plants.
+
+To detect potential data inaccuracies, we will monitor flagged entries for potential errors, and track submission patterns to identify users with consistently incorrect inputs. Our mitigation plan to safeguard data accuracy is similar to that of ensuring scalability. Should too many incorrect entries occur, we can implement a trust system where known users can input new plants, and the general population can view and comment.
+
+This section has been improved since we submitted our Requirements document. We added a mitigation and detection plan and introduced a verification system for trusted users.
+
+## 3. User Engagement
+Another risk is the potential lack of user engagement. If users do not participate in uploading and verifying plant data, the app will not reach its full potential. We will address this by incorporating peer-to-peer interaction elements to encourage use.
+
+We believe that the likelihood of this occurring is medium, while the impact it will have if it occurs is high. Initial feedback from users is mixed, with some claiming that our project “I think you guys have a really good idea moving forward! I think it would be really helpful to have some sort of help for those with not much experience.” Others state, “I feel like your project is too niche, with a potentially large maintenance cost. More specifically, I can rarely think of anyone who may be interested in researching flora and trees around.” Some users are enthusiastic about learning more about OSU’s campus botany, while others are not.
+
+To reduce this impact, we have proposed several steps:
+
+* Implement a rewards system, such as badges or points for verified contributions.
+* Enable social features, such as user profile viewing and leaderboards.
+* Introduce periodic challenges or community events to maintain interest.
+
+To detect a problem with user engagement, we will conduct surveys and user feedback sessions to identify barriers to engagement. We can also monitor the rate of new user signups and repeated usage. If this occurs, our plan to mitigate it is to increase promotional efforts through campus partnerships. This may include posters with a link to the website on university-approved billboards, adding a post in the campus newsletter, and submitting our website to the Department of Horticulture. We may also simplify the contribution process if it is a challenge listed in the reasons why users are not engaged with our website.
+
+This section has been altered from the Requirements document. We improved the detection plan and added additional details to mitigate user disengagement.
+
+## 4. Content Moderation
+Allowing user submitted information to be displayed through our application creates the risk of offensive content being created. The likelihood of this occurring is high and the impact is also high. If offensive and inappropriate content is shown on our website, users will stop using the site, and OSU might make us shut down our software unless users are moderated. 
+
+We can attempt to negate this risk by implementing the following features:
+* Clear guidelines for commenting and posting
+* Comment and post reporting
+* Moderators to manually check comments and posts
+* Word filters to check for inappropriate and offensive words
+
+The steps above should help to detect the issue as it arises, both automatically and manually by users and moderators. If detected automatically, the flagged comment or post should be prevented from being submitted, requiring less work from moderators to review the content. Should a post or comment get past the automatic filter, reports and searching by moderators will find it. Moderators will have the ability to delete the content, or ban users who repeatedly break our guidelines or create an especially egregious post. 
+
+## 5. Data Security and Privacy
+Because users will be submitting plant data, including images and descriptions, we must make sure their data is secure and private. This is a major risk because mishandling user data could lead to privacy concerns, loss of trust, and potential violations of OSU’s data policies. Additionally, if user-uploaded images or location data are exposed without proper security measures, there’s a risk of unauthorized access or misuse.
+
+The likelihood of a true data breach is relatively low, while the impact it has is high. From our research, we’ve found that many crowdsourced platforms have experienced data breaches. This is especially true when the data is not encrypted or secured in some way. We also know from experience that storing images and geolocation data is considered pseudo-sensitive information, and introduces potential vulnerabilities that can be exploited. While we do not encourage our users to post personally relevant information, there is a chance they might.
+
+In order to reduce the likelihood of a data breach occurring, we can follow these steps:
+
+* Implement secure authentication to prevent unauthorized access.
+* Store only necessary data and avoid collecting personally identifiable information.
+* Use HTTPS for all connections to protect data transmission.
+* Regularly review and update security protocols based on OSU’s data security guidelines.
+
+In order to detect unauthorized access, we can monitor access logs for suspicious activity, such as multiple unauthorized data access attempts. To detect and limit the likelihood of a data breach, we can conduct periodic security checks and vulnerability assessments. We can also ask users to use a different password for our website than they normally do, to ensure that if there is a data breach, users will not have their “regular” passwords compromised. If a vulnerability is detected, we can mitigate it by patching the affected components and updating security measures. In the event of a data breach, we will notify affected users and follow OSU’s data protection response protocols.
+
+This section has been created since the submission of the Requirements document. We previously hadn’t considered that a data breach or security was an issue, but after careful consideration, we decided that even though our application will not need sensitive information, data security is an important priority.
+
 
 # Requirements
 ## Functional Requirements
@@ -200,16 +344,17 @@ The software should prevent users from creating incorrect or malicious entries f
 
 ## External Requirements
 ### Error-Free
-The software needs to be able to prevent errors and crashes from occurring. This can be done by being able to look out for common system errors such as no results popping up when a user searches for something, invalid inputs, and failure to save things. Certain types of input such as images with an unknown format or non-valid characters will be sanitized or fully blocked to prevent errors.
+Beaver Botanica must prevent common errors and crashes from occurring. The website should provide clear messages and suggestions when handling cases such as no search results. Invalid inputs, including non-text characters in search fields or unsupported image formats, must be sanitized or blocked before processing. Additionally, failures in data submission or retrieval should be detected, with proper error messages and retry methods available.
 
 ### Installable
-The website will be accessible to a range of devices, allowing more users to access the service. A mobile version of the website is absolutely necessary since users will be walking around with it on their phones. The URL will be publicly available.
+Since users will be actively exploring OSU’s campus, Beaver Botanica must be fully mobile-friendly. The website must be responsive, and must adapt to different screen sizes and touch interactions. The publicly accessible URL should allow users to open the platform easily without requiring special installations. Features such as location-based search and interactive map navigation should be optimized for mobile devices.
 
 ### Buildable
-The software should have up-to-date documentation that allows other developers to set it up, allowing the project to extend to other college campuses or locations. The software should also allow developers to customize their version of the application by doing things like using a different map, different plants, or any other changes to features.
+The software should have up-to-date documentation that allows other developers to help developers set up, modify, and expand the project to other college campuses or locations. The software should also allow developers to customize their version of the application by using a different map, different plants, or other changes to features.
 
 ### Scope
-This software should be well-designed and have a robust number of bug-free features, as listed in the functional and non-functional section of the Project Proposal document.
+Beaver Botanica must be robust, reliable, and bug-free. It should provide all essential features outlined in the functional and nonfunctional requirement sections. This includes plant identification, user-generated submissions, an interactive map, and community engagement tools such as comments and ratings.
+
 
 # Timeline
 ## Week 3 - Planning and Foundation
@@ -433,81 +578,6 @@ Deliverables:
 * Final presentation/demo.
 
 # Team Process
-## Risk Assessment
-Here are the top five risks to the successful completion of our project:
-
-### 1. Scalability
-One of the largest risks with developing Beaver Botanica is in making sure the system is scalable. As a seven-person team, we will not be able to map out all the plants spanning the whole OSU campus. Our solution is to allow users of OSU Plant Map to upload pictures and information to the database.
-
-The likelihood of this occurring is high, and the impact if this occurs is also high. We know this from our research into Oregon State University’s existing Department of Horticulture website, landscapeplants.oregonstate.edu. This website documents the over 1800 landscape plant species found across Oregon, which is a feat much larger than the scope of our project. Additionally, OSU’s campus is extensive, which makes it impractical for a small team to catalogue all plant life. Giving users the ability to add plant instances is crucial to the success of our project, but comes with its own unique challenges. User-generated plant findings can provide broad campus coverage, but can introduce issues like data inconsistency and quality control.
-
-The following provides a list of steps we will take to increase the scalability of our project:
-* Implement a verification system where plant uploads are reviewed by moderators or verified users before being added to the main database.
-* Allow community-driven validation by providing users with the ability to flag plant inaccuracies.
-* Conduct initial research to determine the species of common plants on OSU’s campus.
-
-Our plan to detect this problem is to monitor submission frequency and quality using automated scripts and fact-checking. We can implement automated scripts that can detect duplicate submissions, and we may be able to determine if a submission is bad based on user input. For instance, if a user inputs a plant that is known to be under 2 feet tall at full growth, but labels it as 14 feet tall. We can also implement community feedback mechanisms, such as upvoting correct entries.
-
-If this problem of too much unverified plant data occurs, our mitigation plan is to introduce a system that only allows confirmed, trusted users to add plant data to the system. Additionally, we could create a small tutorial to guide users through the correct usage of the website.
-
-Since submitting our Requirements document, we expanded our original paragraph to include reasoning for this problem, as well as a detection and mitigation plan. We also introduced a concrete plan in the case of too much incorrect information.
-
-### 2. Data Accuracy
-Ensuring the accuracy of plant data uploaded by users is a significant risk. Incorrect or misleading information could reduce the app's reliability and usefulness. To mitigate this, we will implement a verification process for user-submitted data.
-
-The likelihood of this occurring is high, and the impact if this occurs is also high. We have gathered from experience and research that crowdsourced data collection often introduces inconsistencies, as seen in similar user-generated content platforms. Because our target audience is the student and faculty population at Oregon State University, users may not be familiar with similar species of plants and may misidentify them due to a general lack of botanical knowledge.
-
-The following are steps to improve data accuracy:
-* Require users to provide images, location, and detailed descriptions for verification.
-* Allow experienced users or moderators to review and approve submissions before they are made public.
-* Provide educational resources to help users correctly identify plants.
-
-To detect potential data inaccuracies, we will monitor flagged entries for potential errors, and track submission patterns to identify users with consistently incorrect inputs. Our mitigation plan to safeguard data accuracy is similar to that of ensuring scalability. Should too many incorrect entries occur, we can implement a trust system where known users can input new plants and the general population can view and comment.
-
-This section has been improved since we submitted our Requirements document. We added a mitigation and detection plan, and introduced a verification system for trusted users.
-
-### 3. User Engagement
-Another risk is the potential lack of user engagement. If users do not participate in uploading and verifying plant data, the app will not reach its full potential. We will address this by incorporating peer-to-peer interaction elements to encourage use.
-
-We believe that the likelihood of this occurring is medium, while the impact it will have if it occurs is high. Initial feedback from users is mixed, with some claiming that our project “I think you guys have a really good idea moving forward! I think it would be really helpful to have some sort of help for those with not much experience, or providing some sort of "incentive" for people like this to come back and continue to use your app.” Others state, “I feel like your project is too niche, with a potentially large maintenance cost. More specifically, I can rarely think of anyone who may be interested in researching flora and trees around.” Some users are enthusiastic about learning more about OSU’s campus botany, while others are not.
-
-To reduce this impact, we have proposed several steps:
-* Implement a rewards system, such as badges or points for verified contributions.
-* Enable social features, such as user profile viewing and leaderboards.
-* Introduce periodic challenges or community events to maintain interest.
-
-To detect a problem with user engagement, we will conduct surveys and user feedback sessions to identify barriers to engagement. We can also monitor the rate of new user signups and repeated usage. If this occurs, our plan to mitigate it is to increase promotional efforts through campus partnerships. This may include posters with a link to the website on university-approved billboards, adding a post in the campus newsletter, and submitting our website to the Department of Horticulture. We may also simplify the contribution process if it is a challenge listed in the reasons why users are not engaged with our website.
-
-This section has been altered from the Requirements document. We improved the detection plan, and added additional details to mitigate user disengagement.
-
-### 4. Technical Challenges
-Developing this application involves overcoming various challenges such as integrating the Google Maps API, ensuring cross-platform compatibility, and maintaining a responsive design. To mitigate this, we will allocate time for testing and debugging and seek assistance if needed.
-
-The likelihood of this challenge affecting us is high, and the impact it has is also high. Based on our initial research, integrating third-party APIs like Google Maps often introduces unforeseen complexity, and tends to introduce compatibility and performance issues. Ensuring our app works both in a mobile and website environment requires extensive testing, which will be difficult to conduct in a small time frame.
-
-The following are steps we will take to minimize technical challenges:
-* Conduct thorough research and prototyping before fully integrating the API.
-* Schedule regular debugging sessions and maintain clear documentation.
-
-To detect an issue with integrating the API, we can use logging and error-tracking tools. We can also conduct usability testing on various devices to ensure compatibility across platforms. If we have issues with integration, we can allocate additional time and resources for debugging and adjustments. We can also seek assistance from OSU faculty or online developer communities if problems persist.
-
-We have added to this section extensively since  our last submission of the Requirements document. We initially acknowledged technical risks but have now outlined specific detection and mitigation strategies. We also added a focus on automated performance testing to improve early issue detection.
-
-### 5. Data Security and Privacy
-Because users will be submitting plant data, including images and descriptions, we must make sure their data is secure and private. This is a major risk because mishandling user data could lead to privacy concerns, loss of trust, and potential violations of OSU’s data policies. Additionally, if user-uploaded images or location data are exposed without proper security measures, there’s a risk of unauthorized access or misuse. 
-
-The likelihood of a true data breach is medium, while the impact it has is high. From our research, we’ve found that many crowdsourced platforms have experienced data breaches. This is especially true when the data is not encrypted or secured in some way. We also know from experience that storing images and geolocation data is considered pseudo-sensitive information, and introduces potential vulnerabilities that can be exploited. While we do not encourage our users to post personally-relevant information, there is a chance they might.
-
-In order to reduce the likelihood of a data breach occurring, we can follow these steps:
-* Implement secure authentication to prevent unauthorized access.
-* Store only necessary data and avoid collecting personally identifiable information.
-* Use HTTPS for all connections to protect data transmission.
-* Regularly review and update security protocols based on OSU’s data security guidelines.
-
-In order to detect unauthorized access, we can monitor access logs for suspicious activity, such as multiple unauthorized data access attempts. To detect and limit the likelihood of a data breach, we can conduct periodic security checks and vulnerability assessments. We can also ask users to use a different password for our website than they normally do, to ensure that if there is a data breach, users will not have their “regular” passwords compromised. If a vulnerability is detected, we can mitigate it by patching the affected components and updating security measures. In the event of a data breach, we will notify affected users and follow OSU’s data protection response protocols.
-
-This section has been created since the submission of the Requirements document. We previously hadn’t considered that a data breach or security was an issue, but after careful consideration we decided that even though our application will not need sensitive information, data security is an important priority.
-
 ## Project Schedule
 | **Week** | **Milestone** | **Tasks** | **Dependencies** | **Effort Estimate** |
 |---------|--------------|-----------|-----------------|-------------------|
@@ -599,6 +669,7 @@ The purpose of user documentation is to teach users how to navigate through the 
 * How to use social features (liking, flagging, commenting).
 
 We will also implement a small help guide within the website itself. It will contain contextual help within the site, tooltips that explain features, and an FAQ section explaining common issues.
+
 ### Admin Documentation
 Admin documentation is important to include to assist administrators in managing data, moderating content, and overseeing system security. We will provide a PDF or website version of an Admin Guide, which will include:
 * How to verify and moderate user submissions.
@@ -618,81 +689,8 @@ We plan to include developer documentation so future developers can maintain and
 * How to run unit and integration tests.
 * Common debugging techniques.
 
-# Project Architecture and Design
-## Software Architecture
-### Components
-Beaver Botanica will be a website, with the intention of it being used on mobile devices as users will likely want to use it while walking around on campus. The three main components of the software are:
-* Client side web page
-* Server side web page
-* Database
-The web page will be the users’ method of interacting with the data stored in our database, allowing them to view, edit, and add entries that can be viewed by others. The data will be displayed in a user-friendly format that is abstracted away from the actual database and server architecture. User input that will query the database could be search criteria or selecting a plant.
-
-The website’s server will be hosted on a personal OSU webpage, which will simplify the networking requirements from our team to ensure any user can access it at any time. The server will interface with the database by taking a user’s input, converting it to an SQL query, querying the database, then sending the necessary data to the user’s browser, which will then display the data through the website.
-
-The database will be stored on a Bluehost server that can be accessed by the server through queries. More information on the database’s structure and design are in the Data section below.
-
-The website serves as an interface with the server, which in turn interfaces with the database. The website will serve as the main method of interacting with both of the other components, as it has a graphical interface that allows editing and viewing data from the database. The server’s interface with the website and database are not graphical, but rather JS queries with the website and SQL queries with the database.
-
-### Data
-The Beaver Botanica database will store information about individual plants, taxonomies of plants, images of plants, user profiles, post ratings, and comments. The schema below contains more information.
-
-![Schema of the Beaver Botanica Database, showing the tables and their interactions](https://github.com/Flameis/CS362-Team3/blob/main/database-design/beaver_botanica_db.png?raw=true)
-
-
-### Assumptions
-1. We will assume that our architecture will later be built upon and updated in the future.
-2. We will assume that our users will not break any student or user conduct rules and that they will correctly submit plant entries. While the rating system we are implementing can be used to determine the accuracy of plant entries, we don’t have the resources to moderate posts and comments, or to create an automatic content moderation system.
-3. We will assume that the number of users on our site will be small, as botany is a niche interest. While testing and developing, there will likely be a maximum of 10 users. Attempting to make the software handle hundreds or even thousands of users well would provide additional complications.
-
-### Decision 1: Static Image or Mapping Software API
-For displaying the locations of plants on campus, we had to decide between using a static image to represent a map of campus, or using a mapping software’s API. 
-
-#### Static image
-* Pros: Much simpler to implement
-* Cons: Lacks some features, more complicated to determine geographic coordinates
-
-#### Mapping Software API
-* Pros: More features (navigation, coordinates, map layers, scalability)
-* Cons: Much more complicated to implement, most features are unnecessary
-
-In the end, we decided to use a static image so we could focus our time developing and documenting other parts of our software, rather than learning how to implement an API. In addition, many of the features of using mapping software aren’t necessary, so the extra work wouldn’t provide much benefit.
-
-### Decision 2: Website or Mobile App
-For the implementation of our software, we decided between creating a website or a mobile app.
-
-#### Website
-* Pros: Our team has more experience with developing one, works cross-platform
-* Cons: May require more testing to ensure it works on many devices
-
-#### Mobile App
-* Pros: Is optimized for mobile devices
-* Cons: Our team has limited experience developing one, more work to port to different OSes and devices
-
-The pros of a website largely outweighed any cons, so we decided to build Beaver Botanica as a website. Being able to use our previous experience with developing websites helps us focus on implementing the features we want, while the cross platform functionality reduces work during implementation and testing.
-
-
-## Software Design
-0000 Provide a detailed definition of each of the software components you identified above.
-
-0000 What packages, classes, or other units of abstraction form these components?
-
-0000 What are the responsibilities of each of those parts of a component?
-
-
-## Coding Guideline
-For each programming language that you will use in the implementation of your project, provide a link to a pre-existing coding style guideline that the members of your project will follow. Do not try to make up your own guidelines. Briefly state why you chose those guidelines and how you plan to enforce them.
-
-SQL: https://docs.telemetry.mozilla.org/concepts/sql_style
-We decided on the Mozilla Style Guide for two reasons. The main reason is for the sake of readability. The second reason is that it is similar in style to how our backend developers write SQL. Because of that, the adjustment to the style guide would be minimal. We hope to enforce the usage of the style guide by reading over each other's work to make sure that the guide is being used. If it is not being used in some way, then we can edit it or ask the contributor to edit it themselves.
-
-Javascript: https://google.github.io/styleguide/jsguide.html
-We decided to choose the Google Javascript Style for two reasons. The first reason was a lack of adjustment for the developers as we already program Javascript in a similar style. The second reason is for the sake of readability for those who wish to read over the code at a later date. We plan on enforcing the style guide by reading each other's code and making adjustments when needed if the other person forgets a rule.
-
-HTML/CSS: https://google.github.io/styleguide/htmlcssguide.html
-We chose the Google Style guidelines because the majority of us already use a similar style of programming in HTML and CSS. The lack of adjustment will make abiding by these guidelines easier for the front-end developers. We plan on enforcing the style guide by reading each other's code and making adjustments when needed if the other person forgets a rule.
-
 # Feedback
-We will be getting external feedback in week 6. All of the core features will be done by then so testers will be able to give useful feedback while still leaving us time to refine our product. We have dedicated week 7 to testing and refinement based on feedback. We will get this feedback by giving a fellow student in CS 362 our software. We will later interview them by asking them the following questions.
+We will be getting external feedback in week 6. All of the core features will be done by then so testers will be able to give useful feedback while still leaving us time to refine our product. We have dedicated week 7 to testing and refinement based on feedback. We will get this feedback by giving a fellow student in CS362 our software. We will later interview them by asking them the following questions.
 
 * What aspects of Beaver Botanica did you like or not like? Why?
 * What would you like to see added or removed from Beaver Botanica?
