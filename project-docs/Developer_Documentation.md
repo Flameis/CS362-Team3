@@ -50,16 +50,21 @@ Before beginning, ensure that you have Node and npm installed, which can be done
 Clone the Github repository to your local machine, open a command line and navigate to the directory you created.
 
 Enter the following to install all needed modules:
+
 ```npm install```
 
 Once this finishes, make sure your IP has been whitelisted for access to the database and you have the necessary environment variables file in your project repository. More information on this process can be found here: 0000 WORK IN PROGRESS.
 
 To connect to the database, enter the following command:
+
 ```node --env-file=[codeDirectoryPath]/.env [codeDirectoryPath]/src/backend/api.js```
+
 where [codeDirectoryPath] is the absolute path to your project directory.
 
 To run the frontend, ensure you are not connected to the database and run the following:
+
 ```node -r dotenv/config [codeDirectoryPath]/src/frontend/server.js```
+
 where [codeDirectoryPath] is the absolute path to your project directory.
 
 
