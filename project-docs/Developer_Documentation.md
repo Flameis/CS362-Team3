@@ -10,7 +10,13 @@ Thankfully, all the code is located right here in GitHub! To obtain it, navigate
 
 
 ## Directory Structure
-0000 The layout of your directory structure. What do the various directories (folders) contain, and where to find source files, tests, documentation, data files, etc.
+### Home
+The home directory contains the design, project-docs, src, and weekly-reports folders, which are elaborated on below. It also contains the .gitignore file, the README.md file, package-lock.json, and package.json. The .gitignore file conteins files that git should ignore when committing and pushing, in order to save data across multiple workspaces.
+
+The README.md file contains 0000.
+
+The package-lock.json and package.json files do 0000.
+
 
 ### Design
 0000 work in progress
@@ -35,11 +41,7 @@ In our styles folder, we have styles.css. This provides style guidelines for our
 
 
 ### Weekly-Reports
-0000
-
-
-### Other Files
-0000
+The weekly reports folder contains our weekly reports and progress updates from 1.15.25 to 3.19.25, the span of out 11-week timeline. Each report contains team and individual progress we've made on our goals for the past week, and our goals for the upcoming week.
 
 
 ## Building Beaver Botanica

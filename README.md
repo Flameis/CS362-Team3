@@ -5,6 +5,8 @@
 
 [Developer Documentation](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/Developer_Documentation.md)
 
+[Living Document](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/Beaver_Botanica.md)
+
 
 ## Repository and Trello
 [Github](https://github.com/Flameis/CS362-Team3)
