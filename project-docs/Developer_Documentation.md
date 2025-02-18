@@ -45,7 +45,22 @@ The weekly reports folder contains our weekly reports and progress updates from 
 
 
 ## Building Beaver Botanica
-0000 How to build the software. Provide clear instructions for how to use your project’s build system to build all system components.
+### This is currently a work in progress and is subject to change. The information here works as of 2/17/2025.
+Before beginning, ensure that you have Node and npm installed, which can be done by following [this guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+Clone the Github repository to your local machine, open a command line and navigate to the directory you created.
+
+Enter the following to install all needed modules:
+```npm install```
+
+Once this finishes, make sure your IP has been whitelisted for access to the database and you have the necessary environment variables file in your project repository. More information on this process can be found here: 0000 WORK IN PROGRESS.
+
+To connect to the database, enter the following command:
+```node --env-file=[codeDirectoryPath]/.env [codeDirectoryPath]/src/backend/api.js```
+where [codeDirectoryPath] is the absolute path to your project directory.
+
+To run the frontend, ensure you are not connected to the database and run the following:
+```node -r dotenv/config [codeDirectoryPath]/src/frontend/server.js```
+where [codeDirectoryPath] is the absolute path to your project directory.
 
 
 ## Testing Beaver Botanica
