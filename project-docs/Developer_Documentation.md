@@ -55,12 +55,14 @@ Enter the following to install all needed modules:
 
 Once this finishes, make sure your IP has been whitelisted for access to the database and you have the necessary environment variables file in your project repository. More information on this process can be found here: 0000 WORK IN PROGRESS.
 
+### Connecting to DB
 To connect to the database, enter the following command:
 
 ```node --env-file=[codeDirectoryPath]/.env [codeDirectoryPath]/src/backend/api.js```
 
 where [codeDirectoryPath] is the absolute path to your project directory.
 
+### Running Beaver Botanica's Frontend
 To run the frontend, ensure you are not connected to the database and run the following:
 
 ```node -r dotenv/config [codeDirectoryPath]/src/frontend/server.js```
