@@ -22,8 +22,11 @@ When reporting a new bug, please use the following template (removing all conten
 
 ### Bug Report Template
 Title: <give a brief description of the error, such as “Cannot comment on a post for a David Maple”>
+
 Date of error: <include the date and time (if possible) when you encountered the error>
+
 Steps to reproduce error: <list the steps you went through to cause the error. Try to add as many relevant details as possible, such as information you submitted, page(s) where the error occurs, browser, and device type and brand. Organizing the steps in a list helps show the logical flow of actions.>
+
 Description of error: <explain what the error is. This can include descriptions of unexpected data, error messages, and screenshots.>
 
 ### Known Bugs
