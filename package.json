@@ -2,10 +2,10 @@
   "name": "cs362-team3",
   "version": "1.0.0",
   "description": "CS362 Team 3 Project",
-  "main": "code/database-link/database-api.js",
+  "main": "[codeDirectoryPath]/backend/api.js",
   "scripts": {
-    "start": "node code/database-link/database-api.js",
-    "start-frontend": "node -r dotenv/config code/frontend/server.js"
+    "start": "node --env-file=[codeDirectoryPath]/.env [codeDirectoryPath]/src/backend/api.js",
+    "start-frontend": "node -r dotenv/config [codeDirectoryPath]/src/frontend/server.js"
   },
   "dependencies": {
     "concurrently": "^9.1.2",

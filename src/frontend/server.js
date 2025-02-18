@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname)));
 
 // Serve the display-plants.html file
 app.get('/plants', (req, res) => {
-    res.sendFile(path.join(__dirname, 'display-plants.html'));
+    res.sendFile(path.join(__dirname, '/pages/display-plants.html'));
 });
 
 // Start the server
