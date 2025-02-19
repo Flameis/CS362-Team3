@@ -1,8 +1,7 @@
 # User Documentation
 
-## Overview (Kate)
-A high-level description. What does the system do and why would a user want to use it.
-
+## Overview 
+The OSU Plant Map is a web application designed to help users identify and locate plants on the Oregon State University campus. Users can identify plants by taking pictures of them and uploading the images to a database that shows the locations of plants on campus. The platform has a movable map interface with seasonal layers, enabling users to explore which plants are in bloom at different times of the year. Botany students can quickly find and study plants without the need to explore the campus kindly. Visitors and nature enthusiasts can discover and learn about the unique flora around OSU. Faculty and researchers can use it to track plant diversity and contribute data. General users can engage through social media features such as commenting and liking plant posts. 
 
 ## How to Install Beaver Botanica
 How to install the software. If your system has prerequisites (e.g., tools, libraries, emulators, third-party applications, etc.), your instructions should list all of them and indicate how to install and configure them. Make sure to indicate what specific version requirements these prerequisites must satisfy. If running the system requires the installation of, e.g., a virtual machine, a database, or an emulator, make sure to provide clear step-by-step instructions.
