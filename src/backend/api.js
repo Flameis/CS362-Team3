@@ -1,8 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql');
+const path = require('path');
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3306;
 
 // Print environment variables to ensure they are correct
 console.log('Environment Variables:');
@@ -23,7 +24,7 @@ function handleConnection() {
     db.connect((err) => {
         if (err) {
             console.error('Error connecting to the database:', err.message);
-            setTimeout(handleDisconnect, 2000); // Reconnect after 2 seconds
+            setTimeout(handleConnection, 2000); // Reconnect after 2 seconds
         } else {
             console.log('Connected to the Beaver Botanica database.');
         }
@@ -46,6 +47,9 @@ const db = handleConnection();
 
 // Parse JSON
 app.use(express.json());
+
+// Serve the static files from the frontend directory
+app.use(express.static(path.join(__dirname, '../../frontend')));
 
 // Root route
 app.get('/api', (req, res) => {
@@ -206,6 +210,19 @@ app.get('/api/species/:id', (req, res) => {
             data: result
         });
     });
+});
+
+// Serve the display-plants.html file
+app.get('/plants', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/pages/display-plants.html'));
+});
+
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '../../frontend/react-app/build')));
+
+// Serve the React app for any unknown routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/react-app/build', 'index.html'));
 });
 
 // Start the server
