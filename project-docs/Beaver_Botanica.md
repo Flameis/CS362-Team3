@@ -122,7 +122,23 @@ We decided to choose the Google Javascript Style for two reasons. The first reas
 We chose the Google Style Guidelines because the majority of us already use a similar style of programming in HTML and CSS. The lack of adjustment will make abiding by these guidelines easier for the front-end developers. We plan on enforcing the style guide by reading each other's code and making adjustments when needed if the other person forgets a rule.
 
 
-# Process Description (Risk Assessment)
+# Process Description
+0000 Your test-automation infrastructure (e.g., JUnit, Mocha, Pytest, etc).
+
+0000 A brief justification for why you chose that test-automation infrastructure.
+
+0000 How to add a new test to the code base.
+
+0000 Your CI service and how your project repository is linked to it.
+
+A brief justification for why you chose that CI service.
+
+0000 A pros/cons matrix for at least three CI services that you considered.
+
+0000 Which tests will be executed in a CI build.
+
+0000 Which development actions trigger a CI build.
+
 The following are the top five risks to the successful completion of our project:
 ## 1. Scalability
 One of the largest risks with developing Beaver Botanica is in making sure the system is scalable. As a seven-person team, we will not be able to map out all the plants spanning the whole OSU campus. Our solution is to allow users of OSU Plant Map to upload pictures and information to the database.
