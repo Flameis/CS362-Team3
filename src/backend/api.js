@@ -48,9 +48,6 @@ const db = handleConnection();
 // Parse JSON
 app.use(express.json());
 
-// Serve the static files from the frontend directory
-app.use(express.static(path.join(__dirname, '../../frontend')));
-
 // Root route
 app.get('/api', (req, res) => {
     res.send('Welcome to the Beaver Botanica API');
@@ -212,17 +209,340 @@ app.get('/api/species/:id', (req, res) => {
     });
 });
 
+// Script to add a new plant
+app.post('/plants', (req, res) => {
+    const { species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
+    const sql = `
+        INSERT INTO Plants (
+            species_id,
+            image_id,
+            description,
+            location,
+            season,
+            avg_rating,
+            date_added,
+            date_updated,
+            x_coordinate,
+            y_coordinate
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+    const params = [species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            id: result.insertId
+        });
+    });
+});
+
+// Script to update a plant
+app.put('/plants/:id', (req, res) => {
+    const { species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
+    const sql = `
+        UPDATE Plants
+        SET
+            species_id = ?,
+            image_id = ?,
+            description = ?,
+            location = ?,
+            season = ?,
+            avg_rating = ?,
+            date_added = ?,
+            date_updated = ?,
+            x_coordinate = ?,
+            y_coordinate = ?
+        WHERE
+            plant_id = ?
+    `;
+    const params = [species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate, req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            changes: result.affectedRows
+        });
+    });
+});
+
+// Script to delete a plant
+app.delete('/plants/:id', (req, res) => {
+    const sql = `
+        DELETE FROM Plants
+        WHERE plant_id = ?
+    `;
+    const params = [req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'deleted',
+            changes: result.affectedRows
+        });
+    });
+});
+
+// Script to add a new user
+app.post('/users', (req, res) => {
+    const { username, date_joined, role } = req.body;
+    const sql = `
+        INSERT INTO Users (username, date_joined, role)
+        VALUES (?, ?, ?)
+    `;
+    const params = [username, date_joined, role];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            id: result.insertId
+        });
+    });
+});
+
+// Script to update a user
+app.put('/users/:id', (req, res) => {
+    const { username, date_joined, role } = req.body;
+    const sql = `
+        UPDATE Users
+        SET username = ?, date_joined = ?, role = ?
+        WHERE user_id = ?
+    `;
+    const params = [username, date_joined, role, req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            changes: result.affectedRows
+        });
+    });
+});
+
+// Script to delete a user
+app.delete('/users/:id', (req, res) => {
+    const sql = `
+        DELETE FROM Users
+        WHERE user_id = ?
+    `;
+    const params = [req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'deleted',
+            changes: result.affectedRows
+        });
+    });
+});
+
+// Script to add a new comment
+app.post('/comments', (req, res) => {
+    const { plant_id, user_id, comment, date_posted } = req.body;
+    const sql = `
+        INSERT INTO Comments (plant_id, user_id, comment, date_posted)
+        VALUES (?, ?, ?, ?)
+    `;
+    const params = [plant_id, user_id, comment, date_posted];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            id: result.insertId
+        });
+    });
+});
+
+// Script to update a comment
+app.put('/comments/:id', (req, res) => {
+    const { plant_id, user_id, comment, date_posted } = req.body;
+    const sql = `
+        UPDATE Comments
+        SET plant_id = ?, user_id = ?, comment = ?, date_posted = ?
+        WHERE comment_id = ?
+    `;
+    const params = [plant_id, user_id, comment, date_posted, req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            changes: result.affectedRows
+        });
+    });
+});
+
+// Script to delete a comment
+app.delete('/comments/:id', (req, res) => {
+    const sql = `
+        DELETE FROM Comments
+        WHERE comment_id = ?
+    `;
+    const params = [req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'deleted',
+            changes: result.affectedRows
+        });
+    });
+});
+
+// Script to add a new image
+app.post('/images', (req, res) => {
+    const { plant_id, image_url, date_uploaded } = req.body;
+    const sql = `
+        INSERT INTO Images (plant_id, image_url, date_uploaded)
+        VALUES (?, ?, ?)
+    `;
+    const params = [plant_id, image_url, date_uploaded];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            id: result.insertId
+        });
+    });
+});
+
+// Script to update an image
+app.put('/images/:id', (req, res) => {
+    const { plant_id, image_url, date_uploaded } = req.body;
+    const sql = `
+        UPDATE Images
+        SET plant_id = ?, image_url = ?, date_uploaded = ?
+        WHERE image_id = ?
+    `;
+    const params = [plant_id, image_url, date_uploaded, req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            changes: result.affectedRows
+        });
+    });
+});
+
+// Script to delete an image
+app.delete('/images/:id', (req, res) => {
+    const sql = `
+        DELETE FROM Images
+        WHERE image_id = ?
+    `;
+    const params = [req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'deleted',
+            changes: result.affectedRows
+        });
+    });
+});
+
+// Script to add a new species
+app.post('/species', (req, res) => {
+    const { scientific_name, division, class: className, order, family, genus, species, common_name, season } = req.body;
+    const sql = `
+        INSERT INTO Species (scientific_name, division, class, order, family, genus, species, common_name, season)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+    const params = [scientific_name, division, className, order, family, genus, species, common_name, season];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            id: result.insertId
+        });
+    });
+});
+
+// Script to update a species
+app.put('/species/:id', (req, res) => {
+    const { scientific_name, division, class: className, order, family, genus, species, common_name, season } = req.body;
+    const sql = `
+        UPDATE Species
+        SET scientific_name = ?, division = ?, class = ?, order = ?, family = ?, genus = ?, species = ?, common_name = ?, season = ?
+        WHERE species_id = ?
+    `;
+    const params = [scientific_name, division, className, order, family, genus, species, common_name, season, req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: req.body,
+            changes: result.affectedRows
+        });
+    });
+});
+
+// Script to delete a species
+app.delete('/species/:id', (req, res) => {
+    const sql = `
+        DELETE FROM Species
+        WHERE species_id = ?
+    `;
+    const params = [req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'deleted',
+            changes: result.affectedRows
+        });
+    });
+});
+
 // Serve the display-plants.html file
 app.get('/plants', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/pages/display-plants.html'));
-});
-
-// Serve the static files from the React app
-app.use(express.static(path.join(__dirname, '../../frontend/react-app/build')));
-
-// Serve the React app for any unknown routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/react-app/build', 'index.html'));
 });
 
 // Start the server
