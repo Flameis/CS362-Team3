@@ -48,6 +48,28 @@ const db = handleConnection();
 // Parse JSON
 app.use(express.json());
 
+// Middleware to verify user or admin
+function verifyUserOrAdmin(req, res, next) {
+    const userId = req.user.id;
+    const userRole = req.user.role;
+    const resourceId = req.params.id;
+
+    if (userRole === 'admin') {
+        return next();
+    }
+
+    const sql = 'SELECT user_id FROM Users WHERE user_id = ?';
+    db.query(sql, [resourceId], (err, results) => {
+        if (err) {
+            return res.status(400).json({ error: err.message });
+        }
+        if (results.length === 0 || results[0].user_id !== userId) {
+            return res.status(403).json({ error: 'Forbidden' });
+        }
+        next();
+    });
+}
+
 // Root route
 app.get('/api', (req, res) => {
     res.send('Welcome to the Beaver Botanica API');
@@ -241,7 +263,7 @@ app.post('/plants', (req, res) => {
 });
 
 // Script to update a plant
-app.put('/plants/:id', (req, res) => {
+app.put('/plants/:id', verifyUserOrAdmin, (req, res) => {
     const { species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
     const sql = `
         UPDATE Plants
@@ -274,7 +296,7 @@ app.put('/plants/:id', (req, res) => {
 });
 
 // Script to delete a plant
-app.delete('/plants/:id', (req, res) => {
+app.delete('/plants/:id', verifyUserOrAdmin, (req, res) => {
     const sql = `
         DELETE FROM Plants
         WHERE plant_id = ?
@@ -314,7 +336,7 @@ app.post('/users', (req, res) => {
 });
 
 // Script to update a user
-app.put('/users/:id', (req, res) => {
+app.put('/users/:id', verifyUserOrAdmin, (req, res) => {
     const { username, date_joined, role } = req.body;
     const sql = `
         UPDATE Users
@@ -336,7 +358,7 @@ app.put('/users/:id', (req, res) => {
 });
 
 // Script to delete a user
-app.delete('/users/:id', (req, res) => {
+app.delete('/users/:id', verifyUserOrAdmin, (req, res) => {
     const sql = `
         DELETE FROM Users
         WHERE user_id = ?
@@ -376,7 +398,7 @@ app.post('/comments', (req, res) => {
 });
 
 // Script to update a comment
-app.put('/comments/:id', (req, res) => {
+app.put('/comments/:id', verifyUserOrAdmin, (req, res) => {
     const { plant_id, user_id, comment, date_posted } = req.body;
     const sql = `
         UPDATE Comments
@@ -398,7 +420,7 @@ app.put('/comments/:id', (req, res) => {
 });
 
 // Script to delete a comment
-app.delete('/comments/:id', (req, res) => {
+app.delete('/comments/:id', verifyUserOrAdmin, (req, res) => {
     const sql = `
         DELETE FROM Comments
         WHERE comment_id = ?
@@ -438,7 +460,7 @@ app.post('/images', (req, res) => {
 });
 
 // Script to update an image
-app.put('/images/:id', (req, res) => {
+app.put('/images/:id', verifyUserOrAdmin, (req, res) => {
     const { plant_id, image_url, date_uploaded } = req.body;
     const sql = `
         UPDATE Images
@@ -460,7 +482,7 @@ app.put('/images/:id', (req, res) => {
 });
 
 // Script to delete an image
-app.delete('/images/:id', (req, res) => {
+app.delete('/images/:id', verifyUserOrAdmin, (req, res) => {
     const sql = `
         DELETE FROM Images
         WHERE image_id = ?
@@ -500,7 +522,7 @@ app.post('/species', (req, res) => {
 });
 
 // Script to update a species
-app.put('/species/:id', (req, res) => {
+app.put('/species/:id', verifyUserOrAdmin, (req, res) => {
     const { scientific_name, division, class: className, order, family, genus, species, common_name, season } = req.body;
     const sql = `
         UPDATE Species
@@ -522,7 +544,7 @@ app.put('/species/:id', (req, res) => {
 });
 
 // Script to delete a species
-app.delete('/species/:id', (req, res) => {
+app.delete('/species/:id', verifyUserOrAdmin, (req, res) => {
     const sql = `
         DELETE FROM Species
         WHERE species_id = ?
