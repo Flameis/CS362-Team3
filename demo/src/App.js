@@ -1,33 +1,26 @@
+// client/src/App.js
+
+import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img
-                    src={logo}
-                    className="App-logo"
-                    alt="logo" />
-                <p>A simple React app.....</p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Learn React
-                </a>
-                <form
-                    action="../../post"
-                    method="post"
-                    className="form">
-                    <button type="submit">
-                        Connected?
-                    </button>
-                </form>
-            </header>
-        </div>
-    );
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("/api/plants")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>{!data ? "Loading..." : data}</p>
+      </header>
+    </div>
+  );
 }
 
 export default App;
