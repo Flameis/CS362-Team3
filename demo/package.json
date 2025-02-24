@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "CS362 Team 3 Project",
   "main": "./backend/api.js",
+  "proxy": "http://localhost:8080",
   "scripts": {
-    "start": "node --env-file=./.env ./src/backend/api.js",
+    "start": "node --env-file=./.env ./app.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
