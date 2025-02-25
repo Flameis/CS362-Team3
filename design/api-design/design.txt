@@ -91,6 +91,3 @@ DELETE: /api/species/{id}
 Note: for any status there can also be msg: or maybe name it message: # probably only set for errors or could always set it?
 Note: data and updated_data are of type "javascript Object"
 Note: data will not be returned on error
-
-GET:  /api/species/{id}
-    ->  {status: int, data: data}
