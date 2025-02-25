@@ -2,9 +2,13 @@ const path = require('path');
 const express = require("express");
 const app = express();
 const mysql = require('mysql');
+const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 const port = process.env.API_PORT || 8081;
+
+// Middleware to parse JSON bodies
+app.use(express.json());
 
 // Print environment variables to ensure they are correct
 console.log('Environment Variables:');
@@ -307,23 +311,54 @@ app.delete('/plants/:id', verifyUserOrAdmin, (req, res) => {
     });
 });
 
-// Script to add a new user
-app.post('/users', (req, res) => {
-    const { username, date_joined, role } = req.body;
-    const sql = `
-        INSERT INTO Users (username, date_joined, role)
-        VALUES (?, ?, ?)
-    `;
-    const params = [username, date_joined, role];
-    db.query(sql, params, (err, result) => {
+// Script to add a new user with hashed password
+app.post('/api/users', async (req, res) => {
+    const { username, password, date_joined, role } = req.body;
+    try {
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const sql = `
+            INSERT INTO Users (username, password_hash, date_joined, role)
+            VALUES (?, ?, ?, ?)
+        `;
+        const params = [username, hashedPassword, date_joined, role];
+        db.query(sql, params, (err, result) => {
+            if (err) {
+                res.status(400).json({ error: err.message });
+                return;
+            }
+            res.json({
+                message: 'success',
+                data: req.body,
+                id: result.insertId
+            });
+        });
+    } catch (err) {
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Script to handle user login
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body;
+    const sql = 'SELECT * FROM Users WHERE username = ?';
+    db.query(sql, [username], async (err, results) => {
         if (err) {
             res.status(400).json({ error: err.message });
             return;
         }
+        if (results.length === 0) {
+            res.status(401).json({ error: 'Invalid username or password' });
+            return;
+        }
+        const user = results[0];
+        const isMatch = await bcrypt.compare(password, user.password_hash);
+        if (!isMatch) {
+            res.status(401).json({ error: 'Invalid username or password' });
+            return;
+        }
         res.json({
             message: 'success',
-            data: req.body,
-            id: result.insertId
+            data: { user_id: user.user_id, username: user.username, role: user.role }
         });
     });
 });

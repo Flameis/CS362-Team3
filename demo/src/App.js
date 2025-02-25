@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import DisplayPlants from "./pages/DisplayPlants";
+import Login from "./pages/Login";
+import Account from "./pages/Account";
+import Register from "./pages/Register"; // Import Register page
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/plants")
-      .then((res) => res.json())
-      .then((data) => setData(data.data)); // Adjusted to access the correct data field
-  }, []);
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : JSON.stringify(data)}</p>
-      </header>
+      <Routes>
+        <Route path="/display-plants" element={<DisplayPlants />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/register" element={<Register />} /> {/* Add Register route */}
+      </Routes>
     </div>
   );
 }
