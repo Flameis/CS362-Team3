@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie'
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -20,6 +21,7 @@ function Login() {
       });
       const data = await response.json();
       if (response.ok) {
+        Cookies.set('bb_uid', data.data.user_id, { expires: 7 });
         navigate("/account");
       } else {
         setError(data.error || "Invalid username or password");

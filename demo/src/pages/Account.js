@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Cookies from 'js-cookie'
 
 function Account() {
   const [accountInfo, setAccountInfo] = useState(null);
@@ -7,11 +8,11 @@ function Account() {
   useEffect(() => {
     const fetchAccountInfo = async () => {
       try {
-        const userId = 6; // Replace with the actual user ID
-        const response = await fetch(`/api/user/:${userId}`);
+        const userId = Cookies.get('bb_uid');
+        const response = await fetch(`/api/users/${userId}`);
         const data = await response.json();
         if (response.ok) {
-          setAccountInfo(data);
+          setAccountInfo(data.data);
         } else {
           setError(data.error || "Failed to fetch account information");
         }
