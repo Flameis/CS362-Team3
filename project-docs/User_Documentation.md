@@ -9,12 +9,16 @@ Luckily for you, there's no need to install any software! All you need to do is 
 (0000 replace the name of the website with the actual website)
 
 
-## How to Run Beaver Botanica (Finlay)
-How to run the software. How to start up the system?
+## How to Run Beaver Botanica
+Beaver Botanica can be accessed by going to this URL: [BeaverBotanica.com](about:blank)
+
+(0000 replace the URL and name of website above when we have a URL!)
 
 ## How to Use Beaver Botanica (Finlay)
 How to use the software. You can assume that your user is familiar with your particular platform (e.g., use of a Web browser, desktop applications, or mobile applications). For missing functionality, your documentation should simply indicate that this functionality is work in progress.
 
+<Work in progress>
+(I'll add screenshots and a step-by-step guide as we get the front end implemented)
 
 ## How to Report a Bug
 To report a bug, you can access the [Issues section of the Beaver Botanica Github repository](https://github.com/Flameis/CS362-Team3/issues). Once at this page, press the “New issue” button in the top right of the page. 
