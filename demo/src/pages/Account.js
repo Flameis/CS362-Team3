@@ -16,7 +16,7 @@ function Account() {
             'Authorization': `Bearer ${token}` // Include the token in the request headers
           },
         });
-        const data = await response.json();
+        const res_data = await response.json();
         if (response.ok) {
           setAccountInfo(res_data.data);
         } else {
