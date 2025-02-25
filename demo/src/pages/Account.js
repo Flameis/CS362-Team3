@@ -10,11 +10,11 @@ function Account() {
       try {
         const userId = Cookies.get('bb_uid');
         const response = await fetch(`/api/users/${userId}`);
-        const data = await response.json();
+        const res_data = await response.json();
         if (response.ok) {
-          setAccountInfo(data.data);
+          setAccountInfo(res_data.data);
         } else {
-          setError(data.error || "Failed to fetch account information");
+          setError(res_data.error || "Failed to fetch account information");
         }
       } catch (err) {
         setError("An error occurred. Please try again.");

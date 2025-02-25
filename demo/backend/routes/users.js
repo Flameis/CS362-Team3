@@ -28,10 +28,14 @@ router.get('/:id', (req, res) => {
             res.status(400).json({ error: err.message });
             return;
         }
-        res.json({
-            message: 'success',
-            data: result
-        });
+        if (result.length > 0) {
+            res.json({
+                message: 'success',
+                data: result[0]
+            });
+        } else {
+            res.status(404).json({ error: "User not found" });
+        }
     });
 });
 
