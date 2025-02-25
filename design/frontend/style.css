@@ -40,3 +40,8 @@ ul li{
   justify-content: flex-start;
   cursor: pointer;
 }
+
+ul li img{
+  width: 30px;
+  margin-right: 10px;
+}
