@@ -4,7 +4,7 @@ const app = express();
 const mysql = require('mysql');
 require('dotenv').config();
 
-const port = process.env.PORT || 8080;
+const port = process.env.API_PORT || 8081;
 
 // Print environment variables to ensure they are correct
 console.log('Environment Variables:');
@@ -553,4 +553,8 @@ app.delete('/species/:id', verifyUserOrAdmin, (req, res) => {
             changes: result.affectedRows
         });
     });
+});
+
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
 });
