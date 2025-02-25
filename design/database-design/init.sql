@@ -69,11 +69,11 @@ CREATE TABLE Ratings (
 -- AI-Generated test data for now
 -- Insert test data into Users table
 INSERT INTO Users (username, password_hash, date_joined, role) VALUES
-    ('user1', 'password1', '2023-01-01', 'student'),
-    ('user2', 'password2', '2023-01-02', 'student'),
-    ('user3', 'password3', '2023-01-03', 'faculty'),
-    ('user4', 'password4', '2023-01-04', 'student'),
-    ('user5', 'password5', '2023-01-05', 'student');
+    ('user1', '$2b$10$N9qo8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-01', 'student'),
+    ('user2', '$2b$10$7Q7u8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-02', 'student'),
+    ('user3', '$2b$10$8Q8u8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-03', 'faculty'),
+    ('user4', '$2b$10$9Q9u8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-04', 'student'),
+    ('user5', '$2b$10$0Q0u8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-05', 'student');
 
 -- Insert test data into Species table
 INSERT INTO Species (common_name, species, genus, family, ordo, class, division) VALUES

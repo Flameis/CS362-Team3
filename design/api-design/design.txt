@@ -24,6 +24,62 @@ POST: /api/plants/delete
     + force==true && restore==true is an error
     # 💡 could call "force" "destroy" # might be clearer?
 
+POST: /api/users
+    <-  {username: string, date_joined: date, role: string}
+    ->  {status: int, id: int}
+    * must be authenticated
+
+PUT: /api/users/{id}
+    <-  {username: string, date_joined: date, role: string}
+    ->  {status: int, data: updated_data}
+    * must be authenticated
+
+DELETE: /api/users/{id}
+    ->  {status: int}
+    * must be authenticated
+
+POST: /api/comments
+    <-  {plant_id: int, user_id: int, comment: string, date_posted: datetime}
+    ->  {status: int, id: int}
+    * must be authenticated
+
+PUT: /api/comments/{id}
+    <-  {plant_id: int, user_id: int, comment: string, date_posted: datetime}
+    ->  {status: int, data: updated_data}
+    * must be authenticated
+
+DELETE: /api/comments/{id}
+    ->  {status: int}
+    * must be authenticated
+
+POST: /api/images
+    <-  {plant_id: int, image_url: string, date_uploaded: datetime}
+    ->  {status: int, id: int}
+    * must be authenticated
+
+PUT: /api/images/{id}
+    <-  {plant_id: int, image_url: string, date_uploaded: datetime}
+    ->  {status: int, data: updated_data}
+    * must be authenticated
+
+DELETE: /api/images/{id}
+    ->  {status: int}
+    * must be authenticated
+
+POST: /api/species
+    <-  {scientific_name: string, division: string, class: string, order: string, family: string, genus: string, species: string, common_name: string, season: string}
+    ->  {status: int, id: int}
+    * must be authenticated
+
+PUT: /api/species/{id}
+    <-  {scientific_name: string, division: string, class: string, order: string, family: string, genus: string, species: string, common_name: string, season: string}
+    ->  {status: int, data: updated_data}
+    * must be authenticated
+
+DELETE: /api/species/{id}
+    ->  {status: int}
+    * must be authenticated
+
 # ❔ should it be /plants/ or /plant/
 
 # ❔ which syntax is better

@@ -1,5 +1,41 @@
+const express = require('express');
+const router = express.Router();
+const db = require('../db'); // Adjust the path as needed
+const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
+
+// Script to get all plants
+router.get('/', (req, res) => {
+    const sql = 'SELECT * FROM Plants';
+    db.query(sql, (err, results) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: results
+        });
+    });
+});
+
+// Script to get a specific plant by ID
+router.get('/:id', (req, res) => {
+    const sql = 'SELECT * FROM Plants WHERE plant_id = ?';
+    const params = [req.params.id];
+    db.query(sql, params, (err, result) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: result
+        });
+    });
+});
+
 // Script to add a new plant
-app.post('/plants', (req, res) => {
+router.post('/', (req, res) => {
     const { species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
     const sql = `
         INSERT INTO Plants (
@@ -30,7 +66,7 @@ app.post('/plants', (req, res) => {
 });
 
 // Script to update a plant
-app.put('/plants/:id', (req, res) => {
+router.put('/:id', verifyUserOrAdmin, (req, res) => {
     const { species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
     const sql = `
         UPDATE Plants
@@ -63,7 +99,7 @@ app.put('/plants/:id', (req, res) => {
 });
 
 // Script to delete a plant
-app.delete('/plants/:id', (req, res) => {
+router.delete('/:id', verifyUserOrAdmin, (req, res) => {
     const sql = `
         DELETE FROM Plants
         WHERE plant_id = ?
@@ -80,3 +116,5 @@ app.delete('/plants/:id', (req, res) => {
         });
     });
 });
+
+module.exports = router;
