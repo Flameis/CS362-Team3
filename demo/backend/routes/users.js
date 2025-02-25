@@ -61,32 +61,6 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Script to handle user login
-router.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    const sql = 'SELECT * FROM Users WHERE username = ?';
-    db.query(sql, [username], async (err, results) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        if (results.length === 0) {
-            res.status(401).json({ error: 'Invalid username or password' });
-            return;
-        }
-        const user = results[0];
-        const isMatch = await bcrypt.compare(password, user.password_hash);
-        if (!isMatch) {
-            res.status(401).json({ error: 'Invalid username or password' });
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: { user_id: user.user_id, username: user.username, role: user.role }
-        });
-    });
-});
-
 // Script to update a user
 router.put('/:id', verifyUserOrAdmin, (req, res) => {
     const { username, date_joined, role } = req.body;
