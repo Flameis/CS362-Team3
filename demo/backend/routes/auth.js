@@ -38,7 +38,10 @@ router.get('/me', authenticate, (req, res) => {
         if (result.length === 0) {
             return res.status(404).json({ error: 'User not found' });
         }
-        res.json(result[0]); // Return the full user information
+        res.json({
+            message: 'success',
+            data: result[0]
+        }); // Return the full user information
     });
 });
 
