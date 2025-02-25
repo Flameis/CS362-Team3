@@ -3,6 +3,22 @@ const router = express.Router();
 const db = require('../db'); // Adjust the path as needed
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
 
+// Script to get all comments
+router.get('/', (req, res) => {
+    const sql = 'SELECT * FROM Comments';
+    const params = [];
+    db.query(sql, params, (err, results) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: results
+        });
+    });
+});
+
 // Script to get a user's comments
 router.get('/user/:id', (req, res) => {
     const sql = 'SELECT * FROM Comments WHERE user_id = ?';

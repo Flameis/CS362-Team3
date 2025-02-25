@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -12,7 +12,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/api/auth', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ function Login() {
       });
       const data = await response.json();
       if (response.ok) {
-        Cookies.set('bb_uid', data.data.user_id, { expires: 7 });
+        Cookies.set('token', data.token, { expires: rememberMe ? 7 : 1 }); // Set the token as a cookie with expiration
         navigate("/account");
       } else {
         setError(data.error || "Invalid username or password");

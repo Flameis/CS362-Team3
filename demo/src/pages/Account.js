@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 function Account() {
   const [accountInfo, setAccountInfo] = useState(null);
@@ -8,9 +8,15 @@ function Account() {
   useEffect(() => {
     const fetchAccountInfo = async () => {
       try {
-        const userId = Cookies.get('bb_uid');
-        const response = await fetch(`/api/users/${userId}`);
-        const res_data = await response.json();
+        const token = Cookies.get('token'); // Get the token from cookies
+        const response = await fetch(`/api/auth/me`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}` // Include the token in the request headers
+          },
+        });
+        const data = await response.json();
         if (response.ok) {
           setAccountInfo(res_data.data);
         } else {
