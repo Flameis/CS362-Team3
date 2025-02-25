@@ -23,12 +23,20 @@ body {
 }
 
 .side-nav {
-  width: 250px;
+  width: 200px;
   height: 100%;
   position: fixed;
-  top: 0;
+  top: 90px;
   left: 0;
   padding: 30px 15px;
-  background: rgba(255, 255, 255, 0.2);
+  background: #CEB7B3;
   backdrop-filter: blur(5px);
+}
+
+ul li{
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
 }
