@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../styles/authentication.css'; // Import the authentication CSS file
+import '../styles/general.css'; // Import the general CSS file
 
 function Register() {
   const [username, setUsername] = useState("");
@@ -47,7 +49,13 @@ function Register() {
       if (response.ok) {
         navigate("/login");
       } else {
-        setError(data.error || "Registration failed");
+        if (data.error === "Email is already in use") {
+          setError("Email is already in use");
+        } else if (data.error === "Username is already in use") {
+          setError("Username is already in use");
+        } else {
+          setError(data.error || "Registration failed");
+        }
       }
     } catch (err) {
       setError("An error occurred. Please try again.");
@@ -55,7 +63,7 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Register</h1>
       {error && <div style={{ color: "red" }}>{error}</div>}
       <form onSubmit={handleSubmit}>

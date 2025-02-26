@@ -42,27 +42,35 @@ router.get('/:id', (req, res) => {
 // Script to add a new user with hashed password
 router.post('/', async (req, res) => {
     const { username, email, password, date_joined, role } = req.body;
-    try {
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const sql = `
-            INSERT INTO Users (username,email, password_hash, date_joined, role)
-            VALUES (?, ?, ?, ?, ?)
-        `;
-        const params = [username, email, hashedPassword, date_joined, role];
-        db.query(sql, params, (err, result) => {
-            if (err) {
-                res.status(400).json({ error: err.message });
-                return;
+
+    // Check if the username or email already exists
+    const checkUserSql = 'SELECT * FROM Users WHERE username = ? OR email = ?';
+    db.query(checkUserSql, [username, email], async (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        if (results.length > 0) {
+            const existingUser = results[0];
+            if (existingUser.username.toUpperCase() === username.toUpperCase()) {
+                return res.status(400).json({ error: 'Username is already in use' });
             }
-            res.json({
-                message: 'success',
-                data: req.body,
-                id: result.insertId
-            });
+            if (existingUser.email.toUpperCase() === email.toUpperCase()) {
+                return res.status(400).json({ error: 'Email is already in use' });
+            }
+        }
+
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Insert the new user into the database
+        const insertUserSql = 'INSERT INTO Users (username, email, password_hash, date_joined, role) VALUES (?, ?, ?, ?, ?)';
+        db.query(insertUserSql, [username, email, hashedPassword, date_joined, role], (err, result) => {
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            res.status(201).json({ message: 'User registered successfully' });
         });
-    } catch (err) {
-        res.status(500).json({ error: 'Internal server error' });
-    }
+    });
 });
 
 // Script to update a user

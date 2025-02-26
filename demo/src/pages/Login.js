@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
+import '../styles/authentication.css'; // Import the authentication CSS file
+import '../styles/general.css'; // Import the general CSS file
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -37,7 +39,7 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Login</h1>
       {error && <div style={{ color: "red" }}>{error}</div>}
       <form onSubmit={handleSubmit}>

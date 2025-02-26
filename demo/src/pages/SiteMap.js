@@ -1,3 +1,5 @@
+import '../styles/general.css'; // Import the general CSS file
+
 function SiteMap() {
   return (
     <div style={{padding:'5px'}}>

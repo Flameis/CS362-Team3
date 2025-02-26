@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import '../styles/general.css'; // Import the general CSS file
 
 function DisplayPlants() {
   const [plants, setPlants] = useState([]);

@@ -1,5 +1,7 @@
 const express = require("express");
 const cookieParser = require('cookie-parser');
+// const fs = require('fs');
+// const https = require('https');
 const app = express();
 
 // Middleware to parse JSON bodies
@@ -27,8 +29,17 @@ app.get('/api', (req, res) => {
     res.send('Welcome to the Beaver Botanica API');
 });
 
+/* // HTTPS options //! Use HTTPS eventually
+const httpsOptions = {
+    key: fs.readFileSync('/path/to/your/private.key'), // Update with the path to your private key
+    cert: fs.readFileSync('/path/to/your/certificate.crt') // Update with the path to your certificate
+}; */
+
 // Listen on port
 const port = process.env.API_PORT || 8081;
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 });
+/* https.createServer(httpsOptions, app).listen(port, () => {
+    console.log(`Server started on port ${port}`);
+}); */

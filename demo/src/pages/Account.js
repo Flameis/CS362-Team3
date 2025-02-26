@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
+import '../styles/general.css'; // Import the general CSS file
 
 function Account() {
   const [accountInfo, setAccountInfo] = useState(null);
