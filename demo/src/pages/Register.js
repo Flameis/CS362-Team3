@@ -38,6 +38,7 @@ function Register() {
           <label>Email:</label>
           <input
             type="text"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -46,6 +47,7 @@ function Register() {
           <label>Username:</label>
           <input
             type="text"
+            name="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -54,6 +56,8 @@ function Register() {
           <label>Password:</label>
           <input
             type="password"
+            name="password"
+            autocomplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
