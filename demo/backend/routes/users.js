@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
 // Script to get a specific user by ID
 router.get('/:id', (req, res) => {
-    const sql = 'SELECT user_id, username, date_joined, role FROM Users WHERE user_id = ?'; // Exclude password_hash
+    const sql = 'SELECT user_id, username, email, date_joined, role FROM Users WHERE user_id = ?'; // Exclude password_hash
     const params = [req.params.id];
     db.query(sql, params, (err, result) => {
         if (err) {

@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
 // Script to get a specific user by token by using authenticate middleware
 router.get('/me', authenticate, (req, res) => {
     console.log('Authenticated user ID:', req.user.id); // Add this line for debugging
-    const sql = 'SELECT user_id, username, date_joined, role FROM Users WHERE user_id = ?'; // Exclude password_hash
+    const sql = 'SELECT user_id, username, email, date_joined, role FROM Users WHERE user_id = ?'; // Exclude password_hash
     const params = [req.user.id];
     db.query(sql, params, (err, result) => {
         if (err) {

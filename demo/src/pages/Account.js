@@ -51,6 +51,7 @@ function Account() {
     <div>
       <h1>Account Page</h1>
       <p>Welcome, {accountInfo.username}!</p>
+      <p>Email: {accountInfo.email}</p>
       <p>Role: {accountInfo.role}</p>
       <p>Date Joined: {accountInfo.date_joined}</p>
       <button onClick={handleLogout}>Logout</button>
