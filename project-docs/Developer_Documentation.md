@@ -48,9 +48,9 @@ The weekly reports folder contains our weekly reports and progress updates from 
 ## Building Beaver Botanica
 ### This is currently a work in progress and is subject to change. The information here works as of 2/17/2025.
 Before beginning, ensure that you have Node and npm installed, which can be done by following [this guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-Clone the Github repository to your local machine, open a command line and navigate to the directory you created.
+Clone the Github repository to your local machine, open a command line and navigate to the demo directory inside of directory you created.
 
-Enter the following to install all needed modules:
+Enter the following command to install all needed modules:
 
 ```npm install```
 
