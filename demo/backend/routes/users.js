@@ -41,14 +41,14 @@ router.get('/:id', (req, res) => {
 
 // Script to add a new user with hashed password
 router.post('/', async (req, res) => {
-    const { username, password, date_joined, role } = req.body;
+    const { username, email, password, date_joined, role } = req.body;
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         const sql = `
-            INSERT INTO Users (username, password_hash, date_joined, role)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO Users (username,email, password_hash, date_joined, role)
+            VALUES (?, ?, ?, ?, ?)
         `;
-        const params = [username, hashedPassword, date_joined, role];
+        const params = [username, email, hashedPassword, date_joined, role];
         db.query(sql, params, (err, result) => {
             if (err) {
                 res.status(400).json({ error: err.message });

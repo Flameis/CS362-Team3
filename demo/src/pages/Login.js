@@ -5,6 +5,7 @@ import Cookies from 'js-cookie';
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function Login() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, email, password }),
       });
       const data = await response.json();
       if (response.ok) {
@@ -36,6 +37,14 @@ function Login() {
       <h1>Login</h1>
       {error && <div style={{ color: "red" }}>{error}</div>}
       <form onSubmit={handleSubmit}>
+        <div>
+          <label>Email:</label>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
         <div>
           <label>Username:</label>
           <input

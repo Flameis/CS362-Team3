@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -15,7 +16,7 @@ function Register() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password, date_joined: new Date(), role: 'user' }),
+        body: JSON.stringify({ username, email, password, date_joined: new Date(), role: 'user' }),
       });
       const data = await response.json();
       if (response.ok) {
@@ -33,6 +34,14 @@ function Register() {
       <h1>Register</h1>
       {error && <div style={{ color: "red" }}>{error}</div>}
       <form onSubmit={handleSubmit}>
+        <div>
+          <label>Email:</label>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
         <div>
           <label>Username:</label>
           <input
