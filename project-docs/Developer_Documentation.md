@@ -22,11 +22,11 @@ The package-lock.json and package.json files do 0000.
 #### This is currently a work in progress and is currently undergoing structural changes. 
 Inside our [source folder](https://github.com/Flameis/CS362-Team3/tree/main/demo), you will find several folders: backend, frontend, generate-species-list[0000 are we keeping this folder?], pages, and styles.
 
-Located in our backend folder is our api.js, event-listener.js, and testing-port.js. Our api.js contains the code that allows us to connect to our database. It also contains scripts to manage and display data from the database, such as getting a specific user by ID or getting all plant species. Our event-listener.js is in charge of - you guessed it - listening to events. It detects errors and can add plants. 
-
-In our frontend folder, we have our server.js. This serves static files from the frontend directory, and displays plants. 0000 there's probably a lot more files that will be added here.
+Located in our backend folder is the api.js. The api.js contains the code that allows us to connect to our database. It also contains scripts to manage and display data from the database, such as getting a specific user by ID or getting all plant species. It also manages posting new entries to the database, updated old ones, or even deleting them.
 
 Our generate-species-list folder includes our landscapeplants.json file, various parser files, and a landscapeplants_plant-page_parser.js file. Our landscapeplants.json file contains the landscape plants parsed from [OSU's horticulture website](https://landscapeplants.oregonstate.edu/). The parser files contain iterations of the landscape plant parser described in landscapeplants_plant-page_parser.js. The parser takes information from the horticulture website and converts it into a json file containing the plant information we need. 
+
+The src folder contains all of the React pages and style sheets. It will contain everything needed to display the pages on the client.
 
 Our pages folder contains display-plants.html, 0000 and other files. The display_plants.html file displays a table of plants and their respective attributes. 0000 there's probably a lot more files that will be added here.
 
@@ -56,20 +56,13 @@ Enter the following to install all needed modules:
 
 Once this finishes, make sure your IP has been whitelisted for access to the database and you have the necessary environment variables file in your project repository. More information on this process can be found here: 0000 WORK IN PROGRESS.
 
-### Connecting to DB
-To connect to the database, enter the following command:
+### Launching the website and api on your local machine
 
-```node --env-file=[codeDirectoryPath]/.env [codeDirectoryPath]/src/backend/api.js```
+Open a terminal in the demo directory and run the following command:
 
-where [codeDirectoryPath] is the absolute path to your project directory.
+```npm start```
 
-### Running Beaver Botanica's Frontend
-To run the frontend, ensure you are not connected to the database and run the following:
-
-```node -r dotenv/config [codeDirectoryPath]/src/frontend/server.js```
-
-where [codeDirectoryPath] is the absolute path to your project directory.
-
+The system will now automatically open up a webpage on your default browser to localhost:3000
 
 ## Testing Beaver Botanica
 ### Running Tests
