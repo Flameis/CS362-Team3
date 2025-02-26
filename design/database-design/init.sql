@@ -7,11 +7,11 @@ DROP TABLE IF EXISTS Users;
 
 CREATE TABLE Users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
-    username TEXT NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
     date_joined DATE NOT NULL,
     role TEXT NOT NULL
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE Species (
     species_id INT PRIMARY KEY AUTO_INCREMENT,
