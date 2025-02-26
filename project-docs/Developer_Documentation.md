@@ -18,20 +18,9 @@ The README.md file contains 0000.
 The package-lock.json and package.json files do 0000.
 
 
-### Design
-0000 work in progress
-
-
-### Project-Docs
-Our project-docs folder contains all the documents and presentations that went into making Beaver Botanica. In md2html, we have a small script that converts a markdown file into a more palatable html file. This was designed to more easily convert our living document iterations into releasable pdfs.
-
-Our presentations folder contains our project idea powerpoint, which we presented to our class to garner interest and potential applicants to our team. The folder also contains our software architecture powerpoint, which was presented to the class and includes details about the high-level architecture of our platform. We also have links to the direct Google Slides and Google Docs that we developed to present.
-
-All other files are located in the main project-docs folder. Beaver_Botanica.md contains our living document, which is updated periodically to maintain accuracy and relevancy as our platform evolves. Our developer documentation is listed here, as well as our user documentation. Our initial project proposal is located here as well, although it is a little outdated and does not reflect our current plans for our project.
-
-
-### Src
-Inside our [source folder](https://github.com/Flameis/CS362-Team3/tree/main/src), you will find several folders: backend, frontend, generate-species-list[0000 are we keeping this folder?], pages, and styles.
+### Demo / Design
+#### This is currently a work in progress and is currently undergoing structural changes. 
+Inside our [source folder](https://github.com/Flameis/CS362-Team3/tree/main/demo), you will find several folders: backend, frontend, generate-species-list[0000 are we keeping this folder?], pages, and styles.
 
 Located in our backend folder is our api.js, event-listener.js, and testing-port.js. Our api.js contains the code that allows us to connect to our database. It also contains scripts to manage and display data from the database, such as getting a specific user by ID or getting all plant species. Our event-listener.js is in charge of - you guessed it - listening to events. It detects errors and can add plants. 
 
@@ -42,6 +31,14 @@ Our generate-species-list folder includes our landscapeplants.json file, various
 Our pages folder contains display-plants.html, 0000 and other files. The display_plants.html file displays a table of plants and their respective attributes. 0000 there's probably a lot more files that will be added here.
 
 In our styles folder, we have styles.css. This provides style guidelines for our platform, and includes details for the body, the sidebar, and various navigation buttons. 0000 there's going to be more styles here.
+
+
+### Project-Docs
+Our project-docs folder contains all the documents and presentations that went into making Beaver Botanica. In md2html, we have a small script that converts a markdown file into a more palatable html file. This was designed to more easily convert our living document iterations into releasable pdfs.
+
+Our presentations folder contains our project idea powerpoint, which we presented to our class to garner interest and potential applicants to our team. The folder also contains our software architecture powerpoint, which was presented to the class and includes details about the high-level architecture of our platform. We also have links to the direct Google Slides and Google Docs that we developed to present.
+
+All other files are located in the main project-docs folder. Beaver_Botanica.md contains our living document, which is updated periodically to maintain accuracy and relevancy as our platform evolves. Our developer documentation is listed here, as well as our user documentation. Our initial project proposal is located here as well, although it is a little outdated and does not reflect our current plans for our project.
 
 
 ### Weekly-Reports
