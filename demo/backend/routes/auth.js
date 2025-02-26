@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
         const token = generateToken(user);
-        // res.cookie('token', token, { httpOnly: true }); // Set the token as a cookie  //! dont do this as it cant be removed by the web server
+        res.cookie('token', token, { httpOnly: true }); // Set the token as a cookie  //! dont do this as it cant be removed by the web server - This shouldn't matter. It expires in 1 hour and nothing in it is secret ~Luke
         res.json({ token });
     });
 });

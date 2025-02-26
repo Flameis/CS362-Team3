@@ -32,6 +32,10 @@ function Login() {
     }
   };
 
+  const handleRegister = () => {
+    navigate("/register"); // Navigate to the registration page
+  };
+
   return (
     <div>
       <h1>Login</h1>
@@ -65,6 +69,7 @@ function Login() {
         </div>
         <button type="submit">Login</button>
       </form>
+      <button onClick={handleRegister}>Register</button> {/* Add a button to navigate to the registration page */}
     </div>
   );
 }

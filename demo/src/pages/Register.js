@@ -8,8 +8,33 @@ function Register() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const validateUsername = (username) => {
+    return username.length >= 3;
+  };
+
+  const validatePassword = (password) => {
+    return password.length >= 6;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateEmail(email)) {
+      setError("Invalid email address");
+      return;
+    }
+    if (!validateUsername(username)) {
+      setError("Username must be at least 3 characters long");
+      return;
+    }
+    if (!validatePassword(password)) {
+      setError("Password must be at least 6 characters long");
+      return;
+    }
     try {
       const response = await fetch('/api/users', {
         method: 'POST',
