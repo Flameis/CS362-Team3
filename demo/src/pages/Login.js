@@ -37,14 +37,14 @@ function Login() {
       <h1>Login</h1>
       {error && <div style={{ color: "red" }}>{error}</div>}
       <form onSubmit={handleSubmit}>
-        <div>
+        {/* <div>
           <label>Email:</label>
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </div>
+        </div> */}
         <div>
           <label>Username:</label>
           <input
