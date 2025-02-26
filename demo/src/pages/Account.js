@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
 
 function Account() {
   const [accountInfo, setAccountInfo] = useState(null);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAccountInfo = async () => {
@@ -30,6 +32,13 @@ function Account() {
     fetchAccountInfo();
   }, []);
 
+  const handleLogout = () => {
+    console.debug("Token before removal:", Cookies.get('token'));
+    Cookies.remove('token', { path: '/' });
+    console.debug("Token after removal:", Cookies.get('token'));
+    navigate("/login");
+  };
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -44,6 +53,7 @@ function Account() {
       <p>Welcome, {accountInfo.username}!</p>
       <p>Role: {accountInfo.role}</p>
       <p>Date Joined: {accountInfo.date_joined}</p>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 }

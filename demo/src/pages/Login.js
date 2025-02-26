@@ -21,7 +21,7 @@ function Login() {
       });
       const data = await response.json();
       if (response.ok) {
-        Cookies.set('token', data.token, { expires: rememberMe ? 7 : 1 }); // Set the token as a cookie with expiration
+        Cookies.set('token', data.token, { expires: rememberMe ? 7 : 1 , path: '/' }); // Set the token as a cookie with expiration
         navigate("/account");
       } else {
         setError(data.error || "Invalid username or password");

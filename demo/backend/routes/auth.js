@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
         const token = generateToken(user);
-        res.cookie('token', token, { httpOnly: true }); // Set the token as a cookie
+        // res.cookie('token', token, { httpOnly: true }); // Set the token as a cookie  //! dont do this as it cant be removed by the web server
         res.json({ token });
     });
 });
