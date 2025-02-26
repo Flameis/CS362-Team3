@@ -1,7 +1,16 @@
 # User Documentation
 
 ## Overview 
-The OSU Plant Map is a web application designed to help users identify and locate plants on the Oregon State University campus. Users can identify plants by taking pictures of them and uploading the images to a database that shows the locations of plants on campus. The platform has a movable map interface with seasonal layers, enabling users to explore which plants are in bloom at different times of the year. Botany students can quickly find and study plants without the need to explore the campus kindly. Visitors and nature enthusiasts can discover and learn about the unique flora around OSU. Faculty and researchers can use it to track plant diversity and contribute data. General users can engage through social media features such as commenting and liking plant posts. 
+Welcome to Beaver Botanica, your new go-to tool for exploring and discovering the amazing plant life at Oregon State University! Whether you're a student, a visitor, or just a plant enthusiast, you’ll find it easy to use our interactive map to locate and learn about the plants around campus.
+
+Getting started is simple! Just take a picture of any plant you come across, upload it to the platform, and watch the map fill in with plant locations across OSU. The best part? You’ll be able to see what’s in bloom throughout the year, thanks to our seasonal map layers. So, no matter when you visit, you can explore plants that are thriving at that time.
+
+If you're a botany student, Beaver Botanica is a huge time-saver! You can easily find and study different plant species without wandering all over campus. And for nature lovers and visitors, this is the perfect way to discover plants you might never have noticed before. You’ll also get to interact with other users through features like liking and commenting on plant posts.
+
+What makes Beaver Botanica unique is that it’s specifically designed for OSU. This means that unlike other general plant maps, you’ll have a focused, detailed look at the plants that grow right here on campus. It's a fun and social way to learn, interact, and share your discoveries with others who love plants just as much as you do.
+
+So, dive in, explore the map, and let Beaver Botanica guide you through OSU’s rich plant life! Whether you're studying for class, enjoying a walk, or just curious about the plants around you, we hope you’ll have fun while you discover something new. Happy exploring!
+
 
 ## How to Install Beaver Botanica
 Luckily for you, there's no need to install any software! All you need to do is navigate to our website, [BeaverBotanica.com](#).
