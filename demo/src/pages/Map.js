@@ -1,10 +1,9 @@
-// import { MapContainer, TileLayer, useMap, Marker,Popup } from 'https://cdn.esm.sh/react-leaflet'
-import { MapContainer, TileLayer, useMap, Marker,Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker,Popup } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css';
 function Map() {
   const position = [51.505, -0.09]
   return (
-    <div>
-      <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+      <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ height: '600px', width: '800px' }}>
         <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -15,7 +14,6 @@ function Map() {
           </Popup>
         </Marker>
       </MapContainer>
-      </div>
   );
 }
 
