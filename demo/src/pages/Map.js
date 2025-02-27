@@ -15,7 +15,7 @@ function Map() {
     iconSize: [30, 41],
     // iconSize: [25, 34],
     iconAnchor: [15, 41], // Center the icon horizontally and adjust vertical anchor
-    // popupAnchor: [0, -68], // Center the popup anchor horizontally
+    popupAnchor: [0, -41], // Center the popup anchor horizontally
     // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
     shadowUrl: 'marker-shadow.png',
     shadowSize: [41, 41],
@@ -49,47 +49,38 @@ function Map() {
     return null;
   }
   return (
-      <MapContainer center={position} zoom={18} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }}>
+      <MapContainer center={position} zoom={19} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }}>
         <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          // url="https://tile.openstreetmap.org/19/{x}/{y}.png"
+          maxNativeZoom={19}
+          maxZoom={20}
         />
         <Marker 
-          position={position}
-          eventHandlers={{
-            click: () => {
-              alert('this is the class room')
-              },
-          }}
-          // icon={L.icon({
-          //   iconUrl: 'plant-pin.png',
-          //   iconSize: [50, 68],
-          //   iconAnchor: [25, 68], // Center the icon horizontally and adjust vertical anchor
-          //   popupAnchor: [0, -68], // Center the popup anchor horizontally
-          //   shadowUrl: 'marker-shadow.png',
-          //   shadowSize: [68, 95],
-          //   shadowAnchor: [22, 94]
-          // })}
-        />
+          position={position}>
+          <Popup>
+            this is the classroom
+          </Popup>
+        </Marker>
 
         <Marker
-          position={[44.567464,-123.283263]}
+          position={[44.56660875784084,-123.28289061784747]}
           // position={position}
           eventHandlers={{
             click: () => {
-              alert('this is a plant')
+              alert('you clicked on a plant (this can be coded to open the side bar)')
               },
-          }} 
+          }}
           icon={plant_icon}
-        >
-          {/* <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup> */}
-          
-        </Marker>
-        {/* <LocationMarker /> */}
+        />
+        {/* <LocationMarker /> this gets your current when you click anywhere on the map, needs to be set to a button */}
         {markers.map((position, idx) => (
-        <Marker key={`marker-${idx}`} position={position} icon={plant_icon} />
+          <Marker key={`marker-${idx}`} position={position} icon={plant_icon}> 
+          <Popup>
+            {position[0]}<br/>{position[1]}
+          </Popup>
+          </Marker>
         ))}
         <ClickHandler addMarker={addMarker} />
       </MapContainer>
