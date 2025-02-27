@@ -15,6 +15,7 @@ body {
     color: #7bb578;
     text-align: center;
     margin-top: 0;
+    margin-bottom: 33px;
     padding-top: 20px;
 }
 
@@ -40,6 +41,7 @@ body {
 }
 
 .content {
+  margin-top: 5px;
   margin-left: 240px;
   display: block;
   overflow: auto;
@@ -66,7 +68,7 @@ ul li{
   cursor: pointer;
 }
 
-ul li:hover{
+.side-nav ul li:hover{
   background: #ac948f;
 }
 
