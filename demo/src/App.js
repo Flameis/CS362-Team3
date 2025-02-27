@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Account from "./pages/Account";
 import Register from "./pages/Register";
 import SiteMap from "./pages/SiteMap";
+import Map from "./pages/Map";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/register" element={<Register />} />
         <Route path="/sitemap" element={<SiteMap />} />
+        <Route path="/map" element={<Map />} />
       </Routes>
     </div>
   );
