@@ -1,5 +1,6 @@
 const db = require('../db'); // Adjust the path as needed
 
+ //! Should be changed
 function verifyUserOrAdmin(req, res, next) {
     const userId = req.user.id; // Access the authenticated user's ID
     const userRole = req.user.role; // Access the authenticated user's role

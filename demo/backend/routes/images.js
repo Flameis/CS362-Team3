@@ -2,36 +2,19 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db'); // Adjust the path as needed
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
+const { executeQuery } = require('../utils/dbUtils'); // Import the utility function
 
 // Script to get all images
 router.get('/', (req, res) => {
     const sql = 'SELECT * FROM Images';
-    db.query(sql, (err, results) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: results
-        });
-    });
+    executeQuery(sql, [], res);
 });
 
 // Script to get a specific image by ID
 router.get('/:id', (req, res) => {
     const sql = 'SELECT * FROM Images WHERE image_id = ?';
     const params = [req.params.id];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: result
-        });
-    });
+    executeQuery(sql, params, res);
 });
 
 // Script to add a new image
@@ -42,17 +25,7 @@ router.post('/', (req, res) => {
         VALUES (?, ?, ?)
     `;
     const params = [plant_id, image_url, date_uploaded];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: req.body,
-            id: result.insertId
-        });
-    });
+    executeQuery(sql, params, res);
 });
 
 // Script to update an image
@@ -64,17 +37,7 @@ router.put('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE image_id = ?
     `;
     const params = [plant_id, image_url, date_uploaded, req.params.id];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: req.body,
-            changes: result.affectedRows
-        });
-    });
+    executeQuery(sql, params, res);
 });
 
 // Script to delete an image
@@ -84,16 +47,7 @@ router.delete('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE image_id = ?
     `;
     const params = [req.params.id];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'deleted',
-            changes: result.affectedRows
-        });
-    });
+    executeQuery(sql, params, res);
 });
 
 module.exports = router;

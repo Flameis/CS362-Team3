@@ -3,40 +3,19 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const db = require('../db'); // Adjust the path as needed
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
+const { executeQuery } = require('../utils/dbUtils'); // Import the utility function
 
 // Script to get all users
 router.get('/', (req, res) => {
     const sql = 'SELECT user_id, username, date_joined, role FROM Users'; // Exclude password_hash
-    db.query(sql, (err, results) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: results
-        });
-    });
+    executeQuery(sql, [], res);
 });
 
 // Script to get a specific user by ID
 router.get('/:id', (req, res) => {
     const sql = 'SELECT user_id, username, email, date_joined, role FROM Users WHERE user_id = ?'; // Exclude password_hash
     const params = [req.params.id];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        if (result.length > 0) {
-            res.json({
-                message: 'success',
-                data: result[0]
-            });
-        } else {
-            res.status(404).json({ error: "User not found" });
-        }
-    });
+    executeQuery(sql, params, res);
 });
 
 // Script to add a new user with hashed password
