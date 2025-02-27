@@ -1,6 +1,10 @@
 body {
-    padding: 25px;
+    /* padding: 25px; */
+    margin: 0;
     font-family: 'Times New Roman', Times, serif;
+    overflow: auto;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .menuBtn {
@@ -10,6 +14,8 @@ body {
 .title {
     color: #7bb578;
     text-align: center;
+    margin-top: 0;
+    padding-top: 20px;
 }
 
 
@@ -18,11 +24,11 @@ body {
 }
 
 .header{
-  width: 100%;
-  height: 100vh;
+  overflow: overlay;
 }
 
 .side-nav {
+  display: table-row;
   width: 200px;
   height: 100%;
   position: fixed;
@@ -33,12 +39,35 @@ body {
   backdrop-filter: blur(5px);
 }
 
+.content {
+  margin-left: 240px;
+  display: block;
+  overflow: auto;
+  text-align: left;
+}
+
+.map {
+  border: 1px solid black; 
+  text-align: center;
+
+  width: 525px;
+  height: 600px;
+}
+
+ul {
+  padding-left: 0px;
+}
+
 ul li{
   margin: 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   cursor: pointer;
+}
+
+ul li:hover{
+  background: #ac948f;
 }
 
 ul li img{
