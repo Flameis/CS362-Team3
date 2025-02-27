@@ -19,9 +19,38 @@ body {
     padding-top: 20px;
 }
 
-
 .loginButton {
     padding: 10px 20px;
+}
+
+#loginContent {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.loginBox {  
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+  border-radius: 8px;
+  width: 20%;
+  height: fit-content;
+  text-align: center;
+}
+
+.loginBox label {
+  display: flex;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.loginBox input {
+  display: flex;
+  text-align: left;
+  margin-bottom: 15px;
 }
 
 .header{
