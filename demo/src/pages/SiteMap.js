@@ -8,6 +8,7 @@ function SiteMap() {
       <a href="/login">/login</a><br />
       <a href="/account">/account</a><br />
       <a href="/register">/register</a><br />
+      <a href="/map">/map</a><br />
       <a href="/sitemap">/sitemap</a><br />
       </p>
     </div>
