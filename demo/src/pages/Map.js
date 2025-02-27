@@ -2,6 +2,7 @@ import { MapContainer, TileLayer, Marker,Popup , useMapEvents } from 'react-leaf
 import { useState } from 'react'
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+
 function Map() {
   const [markers, setMarkers] = useState([]);
 
@@ -13,16 +14,18 @@ function Map() {
     iconUrl: 'plant-pin.png', //<a href="https://www.flaticon.com/free-icons/smart-farm" title="smart farm icons">Smart farm icons created by Vector Stall - Flaticon</a>
     //todo make our own icon or make an attibution page
     iconSize: [30, 41],
-    // iconSize: [25, 34],
-    iconAnchor: [15, 41], // Center the icon horizontally and adjust vertical anchor
-    popupAnchor: [0, -41], // Center the popup anchor horizontally
-    // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconAnchor: [15, 41],
+    popupAnchor: [0, -41],
     shadowUrl: 'marker-shadow.png',
     shadowSize: [41, 41],
     shadowAnchor: [14, 41]
   })
-  const position = [44.566464,-123.283263]
+  
+  const position = [44.566464,-123.283263] // location of the classroom and the starting center of the map
+  
   function LocationMarker() {
+    // a function that puts a pin at your current location
+    // status: not in use right now
     const [position, setPosition] = useState(null)
     const map = useMapEvents({
       click() {
@@ -40,7 +43,9 @@ function Map() {
       </Marker>
     )
   }
+
   function ClickHandler({ addMarker }) {
+    // handles clicks on the map itself, currently adds pins
     useMapEvents({
       click: (e) => {
         addMarker([e.latlng.lat, e.latlng.lng]);
@@ -48,6 +53,7 @@ function Map() {
     });
     return null;
   }
+
   return (
       <MapContainer center={position} zoom={19} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }} 
     //   maxBounds={[
@@ -68,9 +74,8 @@ function Map() {
           </Popup>
         </Marker>
 
-        <Marker
+        <Marker // example marker that shows off that we can add click events
           position={[44.56660875784084,-123.28289061784747]}
-          // position={position}
           eventHandlers={{
             click: () => {
               alert('you clicked on a plant (this can be coded to open the side bar)')
@@ -78,14 +83,18 @@ function Map() {
           }}
           icon={plant_icon}
         />
-        {/* <LocationMarker /> this gets your current when you click anywhere on the map, needs to be set to a button */}
-        {markers.map((position, idx) => (
+
+        {/* <LocationMarker /> this gets your current location when you click anywhere on the map, needs to be set to a button */}
+        
+        
+        {markers.map((position, idx) => ( // handles drawing the added pins
           <Marker key={`marker-${idx}`} position={position} icon={plant_icon}> 
           <Popup>
             {position[0]}<br/>{position[1]}
           </Popup>
           </Marker>
         ))}
+        
         <ClickHandler addMarker={addMarker} />
       </MapContainer>
   );
