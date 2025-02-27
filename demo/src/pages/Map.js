@@ -16,7 +16,7 @@ let plant_icon = L.icon({
 
 function Map() {
   const start_position = [44.566464,-123.283263] // location of the classroom and the starting center of the map
-  const start_zoom = 19 // location of the classroom and the starting center of the map
+  const start_zoom = 19 // starting zoom lvl
   const max_tile_zoom = 19 // 19 is the max lvl that opensteetmaps supports
   const max_zoom = 20 // can over-zoom it just get pixelated
 
