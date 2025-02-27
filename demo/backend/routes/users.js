@@ -3,19 +3,19 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const db = require('../db'); // Adjust the path as needed
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
-const { executeQuery } = require('../utils/dbUtils'); // Import the utility function
+const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
 
 // Script to get all users
 router.get('/', (req, res) => {
     const sql = 'SELECT user_id, username, date_joined, role FROM Users'; // Exclude password_hash
-    executeQuery(sql, [], res);
+    executeSelectQuery(sql, [], res);
 });
 
 // Script to get a specific user by ID
 router.get('/:id', (req, res) => {
     const sql = 'SELECT user_id, username, email, date_joined, role FROM Users WHERE user_id = ?'; // Exclude password_hash
     const params = [req.params.id];
-    executeQuery(sql, params, res);
+    executeSelectQuery(sql, params, res);
 });
 
 // Script to add a new user with hashed password
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
 
         // Insert the new user into the database
         const insertUserSql = 'INSERT INTO Users (username, email, password_hash, date_joined, role) VALUES (?, ?, ?, ?, ?)';
-        executeQuery(insertUserSql, [username, email, hashedPassword, date_joined, role], res);
+        executeInsertQuery(insertUserSql, [username, email, hashedPassword, date_joined, role], res);
     });
 });
 
@@ -56,7 +56,7 @@ router.put('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE user_id = ?
     `;
     const params = [username, date_joined, role, req.params.id];
-    executeQuery(sql, params, res);
+    executeUpdateQuery(sql, params, res);
 });
 
 // Script to delete a user
@@ -66,7 +66,7 @@ router.delete('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE user_id = ?
     `;
     const params = [req.params.id];
-    executeQuery(sql, params, res);
+    executeDeleteQuery(sql, params, res);
 });
 
 module.exports = router;

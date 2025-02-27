@@ -2,19 +2,19 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db'); // Adjust the path as needed
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
-const { executeQuery } = require('../utils/dbUtils'); // Import the utility function
+const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
 
 // Script to get all images
 router.get('/', (req, res) => {
     const sql = 'SELECT * FROM Images';
-    executeQuery(sql, [], res);
+    executeSelectQuery(sql, [], res);
 });
 
 // Script to get a specific image by ID
 router.get('/:id', (req, res) => {
     const sql = 'SELECT * FROM Images WHERE image_id = ?';
     const params = [req.params.id];
-    executeQuery(sql, params, res);
+    executeSelectQuery(sql, params, res);
 });
 
 // Script to add a new image
@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
         VALUES (?, ?, ?)
     `;
     const params = [plant_id, image_url, date_uploaded];
-    executeQuery(sql, params, res);
+    executeInsertQuery(sql, params, res);
 });
 
 // Script to update an image
@@ -37,7 +37,7 @@ router.put('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE image_id = ?
     `;
     const params = [plant_id, image_url, date_uploaded, req.params.id];
-    executeQuery(sql, params, res);
+    executeUpdateQuery(sql, params, res);
 });
 
 // Script to delete an image
@@ -47,7 +47,7 @@ router.delete('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE image_id = ?
     `;
     const params = [req.params.id];
-    executeQuery(sql, params, res);
+    executeDeleteQuery(sql, params, res);
 });
 
 module.exports = router;

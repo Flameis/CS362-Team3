@@ -2,19 +2,19 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db'); // Adjust the path as needed
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
-const { executeQuery } = require('../utils/dbUtils'); // Import the utility function
+const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
 
 // Script to get all plants
 router.get('/', (req, res) => {
     const sql = 'SELECT * FROM Plants';
-    executeQuery(sql, [], res);
+    executeSelectQuery(sql, [], res);
 });
 
 // Script to get a specific plant by ID
 router.get('/:id', (req, res) => {
     const sql = 'SELECT * FROM Plants WHERE plant_id = ?';
     const params = [req.params.id];
-    executeQuery(sql, params, res);
+    executeSelectQuery(sql, params, res);
 });
 
 // Script to add a new plant
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     const params = [species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate];
-    executeQuery(sql, params, res);
+    executeInsertQuery(sql, params, res);
 });
 
 // Script to update a plant
@@ -58,7 +58,7 @@ router.put('/:id', verifyUserOrAdmin, (req, res) => {
             plant_id = ?
     `;
     const params = [species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate, req.params.id];
-    executeQuery(sql, params, res);
+    executeUpdateQuery(sql, params, res);
 });
 
 // Script to delete a plant
@@ -68,7 +68,7 @@ router.delete('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE plant_id = ?
     `;
     const params = [req.params.id];
-    executeQuery(sql, params, res);
+    executeDeleteQuery(sql, params, res);
 });
 
 module.exports = router;

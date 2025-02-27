@@ -2,26 +2,26 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db'); // Adjust the path as needed
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
-const { executeQuery } = require('../utils/dbUtils'); // Import the utility function
+const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
 
 // Script to get all comments
 router.get('/', (req, res) => {
     const sql = 'SELECT * FROM Comments';
-    executeQuery(sql, [], res);
+    executeSelectQuery(sql, [], res);
 });
 
 // Script to get a user's comments
 router.get('/user/:id', (req, res) => {
     const sql = 'SELECT * FROM Comments WHERE user_id = ?';
     const params = [req.params.id];
-    executeQuery(sql, params, res);
+    executeSelectQuery(sql, params, res);
 });
 
 // Script to get a plant's comments
 router.get('/plant/:id', (req, res) => {
     const sql = 'SELECT * FROM Comments WHERE plant_id = ?';
     const params = [req.params.id];
-    executeQuery(sql, params, res);
+    executeSelectQuery(sql, params, res);
 });
 
 // Script to add a new comment
@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
         VALUES (?, ?, ?, ?)
     `;
     const params = [plant_id, user_id, comment, date_posted];
-    executeQuery(sql, params, res);
+    executeInsertQuery(sql, params, res);
 });
 
 // Script to update a comment
@@ -44,7 +44,7 @@ router.put('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE comment_id = ?
     `;
     const params = [plant_id, user_id, comment, date_posted, req.params.id];
-    executeQuery(sql, params, res);
+    executeUpdateQuery(sql, params, res);
 });
 
 // Script to delete a comment
@@ -54,7 +54,7 @@ router.delete('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE comment_id = ?
     `;
     const params = [req.params.id];
-    executeQuery(sql, params, res);
+    executeDeleteQuery(sql, params, res);
 });
 
 module.exports = router;
