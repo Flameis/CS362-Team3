@@ -49,7 +49,12 @@ function Map() {
     return null;
   }
   return (
-      <MapContainer center={position} zoom={19} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }}>
+      <MapContainer center={position} zoom={19} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }} 
+    //   maxBounds={[
+    //     [44.572983170703004,-123.31099748611452], // can use this to keep it on campus
+    //     [44.5572675290618, -123.26951980590822]
+    // ]}
+    >
         <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
