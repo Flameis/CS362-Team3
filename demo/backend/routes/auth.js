@@ -9,10 +9,8 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const { username, password } = req.body;
     const sql = 'SELECT * FROM Users WHERE username = ?';
-    db.query(sql, [username], async (err, results) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
-        }
+    const params = [username];
+    executeQuery(sql, params, res, async (results) => {
         if (results.length === 0) {
             return res.status(401).json({ error: 'Invalid credentials' });
         }

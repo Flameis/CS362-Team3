@@ -25,17 +25,7 @@ router.post('/', (req, res) => {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     const params = [scientific_name, division, className, order, family, genus, species, common_name, season];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: req.body,
-            id: result.insertId
-        });
-    });
+    executeQuery(sql, params, res);
 });
 
 // Script to update a species
@@ -47,17 +37,7 @@ router.put('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE species_id = ?
     `;
     const params = [scientific_name, division, className, order, family, genus, species, common_name, season, req.params.id];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: req.body,
-            changes: result.affectedRows
-        });
-    });
+    executeQuery(sql, params, res);
 });
 
 // Script to delete a species
@@ -67,16 +47,7 @@ router.delete('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE species_id = ?
     `;
     const params = [req.params.id];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'deleted',
-            changes: result.affectedRows
-        });
-    });
+    executeQuery(sql, params, res);
 });
 
 module.exports = router;

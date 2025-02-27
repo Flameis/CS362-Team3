@@ -1,6 +1,6 @@
 const db = require('../db'); // Adjust the path as needed
 
- //! Should be changed
+//! Should be changed
 function verifyUserOrAdmin(req, res, next) {
     const userId = req.user.id; // Access the authenticated user's ID
     const userRole = req.user.role; // Access the authenticated user's role
@@ -11,7 +11,7 @@ function verifyUserOrAdmin(req, res, next) {
     }
 
     const sql = 'SELECT user_id FROM Users WHERE user_id = ?';
-    db.query(sql, [resourceId], (err, results) => {
+    executeQuery(sql, [resourceId], (err, results) => {
         if (err) {
             return res.status(400).json({ error: err.message });
         }

@@ -43,12 +43,7 @@ router.post('/', async (req, res) => {
 
         // Insert the new user into the database
         const insertUserSql = 'INSERT INTO Users (username, email, password_hash, date_joined, role) VALUES (?, ?, ?, ?, ?)';
-        db.query(insertUserSql, [username, email, hashedPassword, date_joined, role], (err, result) => {
-            if (err) {
-                return res.status(500).json({ error: err.message });
-            }
-            res.status(201).json({ message: 'User registered successfully' });
-        });
+        executeQuery(insertUserSql, [username, email, hashedPassword, date_joined, role], res);
     });
 });
 
@@ -61,17 +56,7 @@ router.put('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE user_id = ?
     `;
     const params = [username, date_joined, role, req.params.id];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: req.body,
-            changes: result.affectedRows
-        });
-    });
+    executeQuery(sql, params, res);
 });
 
 // Script to delete a user
@@ -81,16 +66,7 @@ router.delete('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE user_id = ?
     `;
     const params = [req.params.id];
-    db.query(sql, params, (err, result) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-            return;
-        }
-        res.json({
-            message: 'deleted',
-            changes: result.affectedRows
-        });
-    });
+    executeQuery(sql, params, res);
 });
 
 module.exports = router;
