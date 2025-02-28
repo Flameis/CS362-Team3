@@ -1,10 +1,11 @@
-import { MapContainer, TileLayer, Marker,Popup , useMapEvents } from 'react-leaflet'
-import { useState } from 'react'
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
+import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import axios from 'axios';
 
 let plant_icon = L.icon({
-  iconUrl: 'plant-pin.png', //<a href="https://www.flaticon.com/free-icons/smart-farm" title="smart farm icons">Smart farm icons created by Vector Stall - Flaticon</a>
+  iconUrl: 'plant-pin.png',
   //todo make our own icon or make an attibution page
   iconSize: [30, 41],
   iconAnchor: [15, 41],
@@ -12,22 +13,43 @@ let plant_icon = L.icon({
   shadowUrl: 'marker-shadow.png',
   shadowSize: [41, 41],
   shadowAnchor: [14, 41]
-})
+});
 
 function Map() {
-  const start_position = [44.566464,-123.283263] // location of the classroom and the starting center of the map
-  const start_zoom = 19 // starting zoom lvl
-  const max_tile_zoom = 19 // 19 is the max lvl that opensteetmaps supports
-  const max_zoom = 20 // can over-zoom it just get pixelated
+  const start_position = [44.566464, -123.283263];
+  const start_zoom = 19;
+  const max_tile_zoom = 19;
+  const max_zoom = 20;
 
   const [markers, setMarkers] = useState([]);
+  const [plants, setPlants] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/plants')
+      .then(response => {
+        setPlants(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching plant data:', error);
+      });
+  }, []);
 
   const addMarker = (coordinates) => {
     setMarkers([...markers, coordinates]);
   };
 
+  const handleAddPlant = (coordinates, plantData) => {
+    axios.post('/api/plants', plantData)
+      .then(response => {
+        setPlants([...plants, response.data]);
+        setMarkers(markers.filter(marker => marker !== coordinates));
+      })
+      .catch(error => {
+        console.error('Error adding plant:', error);
+      });
+  };
+
   function ClickHandler({ addMarker }) {
-    // handles clicks on the map itself, currently adds pins
     useMapEvents({
       click: (e) => {
         addMarker([e.latlng.lat, e.latlng.lng]);
@@ -37,71 +59,64 @@ function Map() {
   }
 
   return (
-      <MapContainer center={start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }} 
-    //   maxBounds={[ // can use this to keep it on campus
-    //     [44.572983170703004,-123.31099748611452],
-    //     [44.5572675290618, -123.26951980590822]
-    // ]}
-    >
-        <TileLayer
-          attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          maxNativeZoom={max_tile_zoom} // 19 is the max lvl that opensteetmaps supports
-          maxZoom={max_zoom} // can over-zoom it just get pixelated
-        />
-        <Marker // example use of the default pin
-          position={start_position}>
+    <MapContainer center={start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }}>
+      <TileLayer
+        attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        maxNativeZoom={max_tile_zoom}
+        maxZoom={max_zoom}
+      />
+      {plants.map((plant, idx) => (
+        <Marker key={`plant-${idx}`} position={[plant.x_coordinate, plant.y_coordinate]} icon={plant_icon}>
           <Popup>
-            this is the classroom
+            <strong>{plant.description}</strong><br />
+            Location: {plant.location}<br />
+            Season: {plant.season}<br />
+            Rating: {plant.avg_rating}
           </Popup>
         </Marker>
-
-        <Marker // example plant marker that shows off that we can add click events
-          position={[44.56660875784084,-123.28289061784747]}
-          eventHandlers={{
-            click: () => {
-              alert('you clicked on a plant\n(this can be coded to open the side bar)')
-              },
-          }}
-          icon={plant_icon}
-        />
-
-        {/* <LocationMarker /> this gets your current location when you click anywhere on the map, needs to be set to a button */}
-        
-        
-        {markers.map((position, idx) => ( // handles drawing the added pins
-          <Marker key={`marker-${idx}`} position={position} icon={plant_icon}>
+      ))}
+      {markers.map((position, idx) => (
+        <Marker key={`marker-${idx}`} position={position} icon={plant_icon}>
           <Popup>
-            {position[0]}<br/>{position[1]}
+            <PlantForm coordinates={position} onAddPlant={handleAddPlant} />
           </Popup>
-          </Marker>
-        ))}
-
-        <ClickHandler addMarker={addMarker} />
-      </MapContainer>
+        </Marker>
+      ))}
+      <ClickHandler addMarker={addMarker} />
+    </MapContainer>
   );
 }
 
+function PlantForm({ coordinates, onAddPlant }) {
+  const [description, setDescription] = useState('');
+  const [location, setLocation] = useState('');
+  const [season, setSeason] = useState('');
+  const [avg_rating, setAvgRating] = useState(0);
 
-function LocationMarker() {
-  // a function that puts a pin at your current location
-  // status: not in use right now
-  const [position, setPosition] = useState(null)
-  const map = useMapEvents({
-    click() {
-      map.locate()
-    },
-    locationfound(e) {
-      setPosition(e.latlng)
-      map.flyTo(e.latlng, map.getZoom())
-    },
-  })
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const plantData = {
+      description,
+      location,
+      season,
+      avg_rating,
+      date_added: new Date().toISOString().split('T')[0],
+      x_coordinate: coordinates[0],
+      y_coordinate: coordinates[1]
+    };
+    onAddPlant(coordinates, plantData);
+  };
 
-  return position === null ? null : (
-    <Marker position={position}>
-      <Popup>You are here</Popup>
-    </Marker>
-  )
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>Description: <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} /></label><br />
+      <label>Location: <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} /></label><br />
+      <label>Season: <input type="text" value={season} onChange={(e) => setSeason(e.target.value)} /></label><br />
+      <label>Rating: <input type="number" value={avg_rating} onChange={(e) => setAvgRating(e.target.value)} /></label><br />
+      <button type="submit">Add Plant</button>
+    </form>
+  );
 }
 
 export default Map;
