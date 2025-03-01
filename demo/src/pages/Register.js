@@ -65,9 +65,9 @@ function Register() {
   return (
     <div className="container">
       <h1>Register</h1>
-      {error && <div style={{ color: "red" }}>{error}</div>}
-      <form onSubmit={handleSubmit}>
-        <div>
+      {error && <div className="error-message">{error}</div>}
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form-group">
           <label>Email:</label>
           <input
             type="text"
@@ -76,7 +76,7 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Username:</label>
           <input
             type="text"
@@ -85,17 +85,17 @@ function Register() {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password:</label>
           <input
             type="password"
             name="password"
-            autocomplete="new-password"
+            autoComplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" className="submit-button">Register</button>
       </form>
     </div>
   );

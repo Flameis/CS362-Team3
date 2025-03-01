@@ -26,9 +26,9 @@ function DisplayPlants() {
   }
 
   return (
-    <div>
+    <div className="display-plants-container">
       <h1>Plants</h1>
-      <table>
+      <table className="plants-table">
         <thead>
           <tr>
             <th>Species ID</th>
