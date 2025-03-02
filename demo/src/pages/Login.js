@@ -64,6 +64,7 @@ function Login() {
         <button type="submit" className="submit-button">Login</button>
       </form>
       <button onClick={handleRegister} className="register-button">Register</button>
+      <a href="/forgot-password" className="forgot-password-link">Forgot Password?</a>
     </div>
   );
 }
