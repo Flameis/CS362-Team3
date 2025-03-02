@@ -81,6 +81,20 @@ function Map() {
     setSidebarOpen(!sidebarOpen);
   };
 
+  const sidebarStyle = {
+    position: 'absolute',
+    top: 0,
+    right: sidebarOpen ? 0 : '-100%',
+    width: '80%',
+    maxWidth: '300px',
+    height: '100%',
+    backgroundColor: 'white',
+    boxShadow: '0 0 10px rgba(0,0,0,0.5)',
+    transition: 'right 0.3s ease-in-out',
+    zIndex: 1000,
+    overflowY: 'auto',
+  };
+
   function ClickHandler({ addMarker }) {
     useMapEvents({
       click: (e) => {
@@ -92,7 +106,7 @@ function Map() {
 
   return (
     <div>
-      <button onClick={toggleSidebar}>
+      <button onClick={toggleSidebar} style={{ position: 'absolute', top: 10, right: 10, zIndex: 1001 }}>
         {sidebarOpen ? "Hide Sidebar" : "Show Sidebar"}
       </button>
       <MapContainer center={start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }}>
@@ -133,13 +147,15 @@ function Map() {
         ))}
         <ClickHandler addMarker={addMarker} />
       </MapContainer>
-      {sidebarOpen && (
-        <PlantSidebar
-          coordinates={selectedCoordinates}
-          onAddPlant={handleAddPlant}
-          onClose={() => setSidebarOpen(false)}
-        />
-      )}
+      <div style={sidebarStyle}>
+        {sidebarOpen && (
+          <PlantSidebar
+            coordinates={selectedCoordinates}
+            onAddPlant={handleAddPlant}
+            onClose={() => setSidebarOpen(false)}
+          />
+        )}
+      </div>
     </div>
   );
 }

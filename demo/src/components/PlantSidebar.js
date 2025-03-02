@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './PlantSidebar.css';
 
 function PlantSidebar({ coordinates, onAddPlant, onClose }) {
   const [description, setDescription] = useState('');
