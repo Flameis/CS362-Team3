@@ -4,6 +4,7 @@ import '../styles/general.css'; // Import the general CSS file
 function DisplayPlants() {
   const [plants, setPlants] = useState([]);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch('/api/plants')
@@ -21,6 +22,10 @@ function DisplayPlants() {
       });
   }, []);
 
+  const filteredPlants = plants.filter(plant =>
+    plant.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -28,6 +33,12 @@ function DisplayPlants() {
   return (
     <div className="display-plants-container">
       <h1>Plants</h1>
+      <input
+        type="text"
+        placeholder="Search plants..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <table className="plants-table">
         <thead>
           <tr>
@@ -44,7 +55,7 @@ function DisplayPlants() {
           </tr>
         </thead>
         <tbody>
-          {plants.map(plant => (
+          {filteredPlants.map(plant => (
             <tr key={plant.species_id}>
               <td>{plant.species_id}</td>
               <td>{plant.image_id}</td>
