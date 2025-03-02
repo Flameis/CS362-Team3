@@ -25,27 +25,60 @@ function Map() {
   const [plants, setPlants] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedCoordinates, setSelectedCoordinates] = useState(null);
+  const [showPlacePlantButton, setShowPlacePlantButton] = useState(false);
+  const [userLocation, setUserLocation] = useState(null);
 
   useEffect(() => {
     fetch('/api/plants')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json; // Parse response as JSON
+      })
       .then(data => {
+        console.log('API response:', data); // Debugging line
         if (Array.isArray(data.data)) {
           setPlants(data.data);
         } else {
-          console.error('API response data is not an array:', data.data);
+          console.error('API response data is not an array:', data);
         }
       })
       .catch(error => {
         console.error('Error fetching plant data:', error);
       });
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation([position.coords.latitude, position.coords.longitude]);
+        },
+        (error) => {
+          console.error('Error getting user location:', error);
+        }
+      );
+    } else {
+      fetch('https://nominatim.openstreetmap.org/search?format=json&q=your+location')
+        .then(response => response.json())
+        .then(data => {
+          if (data.length > 0) {
+            setUserLocation([data[0].lat, data[0].lon]);
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching location from OpenStreetMap:', error);
+        });
+    }
   }, []);
 
   const addMarker = (coordinates) => {
     if (coordinates && coordinates.length === 2 && coordinates[0] !== undefined && coordinates[1] !== undefined) {
-      setMarkers([...markers, coordinates]);
+      if (markers.length > 0) {
+        setMarkers([]);
+      }
+      setMarkers([coordinates]);
       setSelectedCoordinates(coordinates);
-      setSidebarOpen(true);
+      setShowPlacePlantButton(true);
     } else {
       console.error('Invalid coordinates:', coordinates);
     }
@@ -77,6 +110,11 @@ function Map() {
       });
   };
 
+  const handlePlacePlant = () => {
+    setSidebarOpen(true);
+    setShowPlacePlantButton(false);
+  };
+
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
@@ -106,16 +144,20 @@ function Map() {
 
   return (
     <div>
-      <button onClick={toggleSidebar} style={{ position: 'absolute', top: 10, right: 10, zIndex: 1001 }}>
-        {sidebarOpen ? "Hide Sidebar" : "Show Sidebar"}
-      </button>
-      <MapContainer center={start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }}>
+      <MapContainer center={userLocation || start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }}>
         <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           maxNativeZoom={max_tile_zoom}
           maxZoom={max_zoom}
         />
+        {userLocation && (
+          <Marker position={userLocation} icon={L.icon({ iconUrl: 'user-location.png', iconSize: [25, 25], iconAnchor: [12, 12] })}>
+            <Popup>
+              You are here
+            </Popup>
+          </Marker>
+        )}
         {plants.map((plant, idx) => (
           plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
             <Marker
@@ -147,6 +189,20 @@ function Map() {
         ))}
         <ClickHandler addMarker={addMarker} />
       </MapContainer>
+      {showPlacePlantButton && (
+        <button
+          onClick={handlePlacePlant}
+          style={{
+            position: 'absolute',
+            bottom: 10,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1001,
+          }}
+        >
+          Place Plant
+        </button>
+      )}
       <div style={sidebarStyle}>
         {sidebarOpen && (
           <PlantSidebar
