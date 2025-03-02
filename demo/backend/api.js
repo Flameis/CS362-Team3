@@ -1,7 +1,6 @@
 const express = require("express");
 const cookieParser = require('cookie-parser');
-// const fs = require('fs');
-// const https = require('https');
+const db = require('./db'); // Ensure the database connection is imported
 const app = express();
 
 // Middleware to parse JSON bodies
@@ -16,6 +15,7 @@ const commentRoutes = require('./routes/comments');
 const imageRoutes = require('./routes/images');
 const speciesRoutes = require('./routes/species');
 
+// Use routes
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);

@@ -6,6 +6,7 @@ import '../styles/general.css'; // Import the general CSS file
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -37,6 +38,10 @@ function Register() {
       setError("Password must be at least 6 characters long");
       return;
     }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
     try {
       const response = await fetch('/api/users', {
         method: 'POST',
@@ -65,9 +70,9 @@ function Register() {
   return (
     <div className="container">
       <h1>Register</h1>
-      {error && <div style={{ color: "red" }}>{error}</div>}
-      <form onSubmit={handleSubmit}>
-        <div>
+      {error && <div className="error-message">{error}</div>}
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form-group">
           <label>Email:</label>
           <input
             type="text"
@@ -76,7 +81,7 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Username:</label>
           <input
             type="text"
@@ -85,17 +90,26 @@ function Register() {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password:</label>
           <input
             type="password"
             name="password"
-            autocomplete="new-password"
+            autoComplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Register</button>
+        <div className="form-group">
+          <label>Confirm Password:</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit" className="submit-button">Register</button>
       </form>
     </div>
   );

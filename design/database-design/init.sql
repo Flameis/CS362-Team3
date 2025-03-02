@@ -5,16 +5,15 @@ DROP TABLE IF EXISTS Comments;
 DROP TABLE IF EXISTS Images;
 DROP TABLE IF EXISTS Plants;
 DROP TABLE IF EXISTS Species;
-DROP TABLE IF EXISTS Users;
 
-CREATE TABLE Users (
+/* CREATE TABLE Users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(255) NOT NULL UNIQUE,
     username VARCHAR(255) NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
     date_joined DATE NOT NULL,
     role TEXT NOT NULL
-)ENGINE=InnoDB;
+)ENGINE=InnoDB; */
 
 CREATE TABLE Species (
     species_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -29,16 +28,16 @@ CREATE TABLE Species (
 
 CREATE TABLE Plants (
     plant_id INT PRIMARY KEY AUTO_INCREMENT,
-    species_id INT,
-    image_id INT,
+    species_id INT NOT NULL,
+    image_id INT NOT NULL,
     description TEXT,
-    location TEXT NOT NULL,
-    season TEXT,
+    location TEXT,
+    season TEXT NOT NULL,
     avg_rating REAL,
     date_added DATE NOT NULL,
     date_updated DATE,
-    x_coordinate INT NOT NULL,
-    y_coordinate INT NOT NULL,
+    x_coordinate FLOAT NOT NULL,
+    y_coordinate FLOAT NOT NULL,
     FOREIGN KEY (species_id) REFERENCES Species(species_id)
 );
 
@@ -69,14 +68,33 @@ CREATE TABLE Ratings (
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
+-- Trigger to update avg_rating in Plants table
+DELIMITER //
+CREATE TRIGGER update_avg_rating
+AFTER INSERT ON Ratings
+FOR EACH ROW
+BEGIN
+    DECLARE new_avg_rating REAL;
+    SELECT AVG(rating) INTO new_avg_rating FROM Ratings WHERE plant_id = NEW.plant_id;
+    UPDATE Plants SET avg_rating = new_avg_rating WHERE plant_id = NEW.plant_id;
+END;
+//
+DELIMITER ;
+
+-- Trigger to update avg_rating in Plants table on update
+DELIMITER //
+CREATE TRIGGER update_avg_rating_on_update
+AFTER UPDATE ON Ratings
+FOR EACH ROW
+BEGIN
+    DECLARE new_avg_rating REAL;
+    SELECT AVG(rating) INTO new_avg_rating FROM Ratings WHERE plant_id = NEW.plant_id;
+    UPDATE Plants SET avg_rating = new_avg_rating WHERE plant_id = NEW.plant_id;
+END;
+//
+DELIMITER ;
+
 -- AI-Generated test data for now
--- Insert test data into Users table
-INSERT INTO Users (username, email, password_hash, date_joined, role) VALUES
-    ('user1', 'user1@bobmail', '$2b$10$N9qo8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-01', 'student'),
-    ('user2', 'user2@bobmail', '$2b$10$7Q7u8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-02', 'student'),
-    ('user3', 'user3@bobmail', '$2b$10$8Q8u8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-03', 'faculty'),
-    ('user4', 'user4@bobmail', '$2b$10$9Q9u8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-04', 'student'),
-    ('user5', 'user5@bobmail', '$2b$10$0Q0u8uLOickgx2ZMRZo5i.U7k8QW2k5s8p8a8p8a8p8a8p8a8p8a8', '2023-01-05', 'student');
 
 -- Insert test data into Species table
 INSERT INTO Species (common_name, species, genus, family, ordo, class, division) VALUES

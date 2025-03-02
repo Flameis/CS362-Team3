@@ -41,17 +41,9 @@ function Login() {
   return (
     <div className="container">
       <h1>Login</h1>
-      {error && <div style={{ color: "red" }}>{error}</div>}
-      <form onSubmit={handleSubmit}>
-        {/* <div>
-          <label>Email:</label>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div> */}
-        <div>
+      {error && <div className="error-message">{error}</div>}
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form-group">
           <label>Username:</label>
           <input
             type="text"
@@ -60,7 +52,7 @@ function Login() {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password:</label>
           <input
             type="password"
@@ -69,9 +61,10 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="submit-button">Login</button>
       </form>
-      <button onClick={handleRegister}>Register</button> {/* Add a button to navigate to the registration page */}
+      <button onClick={handleRegister} className="register-button">Register</button>
+      <a href="/forgot-password" className="forgot-password-link">Forgot Password?</a>
     </div>
   );
 }
