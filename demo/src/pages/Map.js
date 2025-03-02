@@ -6,13 +6,19 @@ import PlantSidebar from '../components/PlantSidebar';
 
 let plant_icon = L.icon({
   iconUrl: 'plant-pin.png',
-  //todo make our own icon or make an attibution page
+  //todo make our own icon or make an attibution page (Also need a icon for user location)
   iconSize: [30, 41],
   iconAnchor: [15, 41],
   popupAnchor: [0, -41],
   shadowUrl: 'marker-shadow.png',
   shadowSize: [41, 41],
   shadowAnchor: [14, 41]
+});
+
+let user_icon = L.icon({
+  iconUrl: 'plant-pin.png',
+  iconSize: [25, 25],
+  iconAnchor: [12, 12]
 });
 
 function Map() {
@@ -30,22 +36,18 @@ function Map() {
 
   useEffect(() => {
     fetch('/api/plants')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json; // Parse response as JSON
-      })
+      .then(response => response.json())
       .then(data => {
-        console.log('API response:', data); // Debugging line
         if (Array.isArray(data.data)) {
           setPlants(data.data);
+          const plantMarkers = data.data.map(plant => [plant.x_coordinate, plant.y_coordinate]);
+          setMarkers(plantMarkers);
         } else {
-          console.error('API response data is not an array:', data);
+          throw new Error('Data format is incorrect');
         }
       })
       .catch(error => {
-        console.error('Error fetching plant data:', error);
+        console.error('Error fetching plants:', error);
       });
 
     if (navigator.geolocation) {
@@ -85,10 +87,10 @@ function Map() {
   };
 
   const handleAddPlant = (coordinates, plantData) => {
-    // Ensure all required fields are provided
-    const { species_id, image_id, description, location, season, avg_rating, date_added, x_coordinate, y_coordinate } = plantData;
-    if (!species_id || !image_id || !description || !location || !season || avg_rating === undefined || !date_added || x_coordinate === undefined || y_coordinate === undefined) {
+    const { species_id, image_urls, description, location, season, avg_rating, date_added, x_coordinate, y_coordinate } = plantData;
+    if (!species_id || !image_urls || !description || !location || !season || avg_rating === undefined || !date_added || x_coordinate === undefined || y_coordinate === undefined) {
       console.error('Missing required plant data:', plantData);
+      alert('Please fill in all required fields before submitting.');
       return;
     }
 
@@ -152,7 +154,7 @@ function Map() {
           maxZoom={max_zoom}
         />
         {userLocation && (
-          <Marker position={userLocation} icon={L.icon({ iconUrl: 'user-location.png', iconSize: [25, 25], iconAnchor: [12, 12] })}>
+          <Marker position={userLocation} icon={user_icon}>
             <Popup>
               You are here
             </Popup>
@@ -166,10 +168,12 @@ function Map() {
               icon={plant_icon}
             >
               <Popup>
-                <strong>{plant.description}</strong><br />
-                Location: {plant.location}<br />
-                Season: {plant.season}<br />
-                Rating: {plant.avg_rating}
+                <strong>{plant.common_name || 'Unknown'}</strong><br />
+                Description: {plant.description || 'No description'}<br />
+                Location: {plant.location || 'Unknown'}<br />
+                Season: {plant.season || 'Unknown'}<br />
+                Rating: {plant.avg_rating || 'No rating'}<br />
+                Posted by: {plant.user || 'Anonymous'}
               </Popup>
             </Marker>
           ) : null

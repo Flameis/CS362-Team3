@@ -36,8 +36,8 @@ CREATE TABLE Plants (
     avg_rating REAL,
     date_added DATE NOT NULL,
     date_updated DATE,
-    x_coordinate INT NOT NULL,
-    y_coordinate INT NOT NULL,
+    x_coordinate FLOAT NOT NULL,
+    y_coordinate FLOAT NOT NULL,
     FOREIGN KEY (species_id) REFERENCES Species(species_id)
 );
 

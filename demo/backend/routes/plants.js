@@ -19,11 +19,10 @@ router.get('/:id', (req, res) => {
 
 // Script to add a new plant
 router.post('/', (req, res) => {
-    const { species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
+    const { species_id, image_urls, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
     const sql = `
         INSERT INTO Plants (
             species_id,
-            image_id,
             description,
             location,
             season,
@@ -32,20 +31,27 @@ router.post('/', (req, res) => {
             date_updated,
             x_coordinate,
             y_coordinate
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
-    const params = [species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate];
-    executeInsertQuery(sql, params, res);
+    const params = [species_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate];
+    executeInsertQuery(sql, params, res, (result) => {
+        const plant_id = result.insertId;
+        const imageSql = `
+            INSERT INTO Images (plant_id, image_url, date_uploaded)
+            VALUES (?, ?, ?)
+        `;
+        const imageParams = image_urls.map(url => [plant_id, url, new Date().toISOString().split('T')[0]]);
+        imageParams.forEach(params => executeInsertQuery(imageSql, params, res));
+    });
 });
 
 // Script to update a plant
 router.put('/:id', verifyUserOrAdmin, (req, res) => {
-    const { species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
+    const { species_id, image_urls, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
     const sql = `
         UPDATE Plants
         SET
             species_id = ?,
-            image_id = ?,
             description = ?,
             location = ?,
             season = ?,
@@ -57,8 +63,21 @@ router.put('/:id', verifyUserOrAdmin, (req, res) => {
         WHERE
             plant_id = ?
     `;
-    const params = [species_id, image_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate, req.params.id];
-    executeUpdateQuery(sql, params, res);
+    const params = [species_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate, req.params.id];
+    executeUpdateQuery(sql, params, res, () => {
+        const deleteImageSql = `
+            DELETE FROM Images
+            WHERE plant_id = ?
+        `;
+        executeDeleteQuery(deleteImageSql, [req.params.id], res, () => {
+            const imageSql = `
+                INSERT INTO Images (plant_id, image_url, date_uploaded)
+                VALUES (?, ?, ?)
+            `;
+            const imageParams = image_urls.map(url => [req.params.id, url, new Date().toISOString().split('T')[0]]);
+            imageParams.forEach(params => executeInsertQuery(imageSql, params, res));
+        });
+    });
 });
 
 // Script to delete a plant
