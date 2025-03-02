@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "options": {
-    "allowedHosts": "localhost",
+    "allowedHosts": ["localhost", ".localhost"],
     "proxy": "http://localhost:8081"
   },
   "dependencies": {
