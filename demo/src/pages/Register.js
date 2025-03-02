@@ -6,6 +6,7 @@ import '../styles/general.css'; // Import the general CSS file
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -35,6 +36,10 @@ function Register() {
     }
     if (!validatePassword(password)) {
       setError("Password must be at least 6 characters long");
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
       return;
     }
     try {
@@ -93,6 +98,15 @@ function Register() {
             autoComplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label>Confirm Password:</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
         <button type="submit" className="submit-button">Register</button>

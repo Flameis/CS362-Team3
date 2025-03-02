@@ -11,6 +11,7 @@ function SiteMap() {
         <a href="/register">/register</a><br />
         <a href="/display-plants">/display-plants</a><br />
         <a href="/sitemap">/sitemap</a><br />
+        <a href="/about">/about</a><br />
       </p>
     </div>
   );

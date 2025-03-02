@@ -77,6 +77,10 @@ function Map() {
       });
   };
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   function ClickHandler({ addMarker }) {
     useMapEvents({
       click: (e) => {
@@ -88,6 +92,9 @@ function Map() {
 
   return (
     <div>
+      <button onClick={toggleSidebar}>
+        {sidebarOpen ? "Hide Sidebar" : "Show Sidebar"}
+      </button>
       <MapContainer center={start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }}>
         <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
