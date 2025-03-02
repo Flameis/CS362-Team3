@@ -7,6 +7,7 @@ function PlantSidebar({ coordinates, onAddPlant, onClose }) {
   const [avg_rating, setAvgRating] = useState(0);
   const [species_id, setSpeciesId] = useState('');
   const [image_id, setImageId] = useState('');
+  const [imageFile, setImageFile] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,8 +22,26 @@ function PlantSidebar({ coordinates, onAddPlant, onClose }) {
       x_coordinate: coordinates[0],
       y_coordinate: coordinates[1]
     };
-    onAddPlant(coordinates, plantData);
-    onClose();
+    if (imageFile) {
+      const formData = new FormData();
+      formData.append('image', imageFile);
+      fetch('/api/upload', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          plantData.image_id = data.image_id;
+          onAddPlant(coordinates, plantData);
+          onClose();
+        })
+        .catch(error => {
+          console.error('Error uploading image:', error);
+        });
+    } else {
+      onAddPlant(coordinates, plantData);
+      onClose();
+    }
   };
 
   return (
@@ -35,6 +54,7 @@ function PlantSidebar({ coordinates, onAddPlant, onClose }) {
         <label>Location: <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} /></label><br />
         <label>Season: <input type="text" value={season} onChange={(e) => setSeason(e.target.value)} /></label><br />
         <label>Rating: <input type="number" value={avg_rating} onChange={(e) => setAvgRating(e.target.value)} /></label><br />
+        <label>Image: <input type="file" onChange={(e) => setImageFile(e.target.files[0])} /></label><br />
         <button type="submit">Add Plant</button>
       </form>
     </div>
