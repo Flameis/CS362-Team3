@@ -90,6 +90,7 @@ function Map() {
     };
   }, []);
 
+  //! Markers are not accurate enough to be used for plant placement
   const addMarker = (coordinates) => {
     if (coordinates && coordinates.length === 2 && coordinates[0] !== undefined && coordinates[1] !== undefined) {
       setMarkers([coordinates]); // Clear previous markers and set the new marker

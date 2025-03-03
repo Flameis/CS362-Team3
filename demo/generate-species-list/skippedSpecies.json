@@ -1,0 +1,1824 @@
+{
+  "skippedSpecies": [
+    {
+      "genus": "abelia",
+      "cultivars": [
+        {
+          "cultivar": "Edward Goucher",
+          "hybrid": true,
+          "common_name": "Edward Goucher Abelia",
+          "href": "/plants/abelia-edward-goucher"
+        }
+      ]
+    },
+    {
+      "genus": "acer",
+      "common_name": "Pacific Sunset Maple",
+      "href": "/plants/acer-pacific-sunset"
+    },
+    {
+      "genus": "acer",
+      "species": "opalus",
+      "subspecies": [
+        {
+          "subspecies": "obtusatum",
+          "common_name": "Bosnian Maple",
+          "href": "/node/2118"
+        }
+      ]
+    },
+    {
+      "genus": "alnus",
+      "species": "incana",
+      "subspecies": [
+        {
+          "subspecies": "rugosa",
+          "common_name": "Speckled Alder",
+          "href": "/plants/alnus-incana-subsp-rugosa"
+        },
+        {
+          "subspecies": "tenuifolia",
+          "common_name": "Thinleaf Alder",
+          "href": "/plants/alnus-incana-subsp-tenuifolia"
+        }
+      ]
+    },
+    {
+      "genus": "ampelopsis",
+      "species": "brevipendiculata",
+      "cultivars": [
+        {
+          "cultivar": "Elegans",
+          "common_name": "Elegans Porcelain Berry",
+          "href": "/plants/ampelopsis-brevipendiculata-elegans"
+        }
+      ]
+    },
+    {
+      "genus": "arctostaphylos",
+      "cultivars": [
+        {
+          "cultivar": "Austin Griffiths",
+          "hybrid": true,
+          "common_name": "Austin Griffiths Manzanita",
+          "href": "/plants/arctostaphylos-austin-griffiths"
+        },
+        {
+          "cultivar": "White Lanterns",
+          "common_name": "White Lanterns Manzanita",
+          "href": "/plants/arctostaphylos-white-lanterns"
+        }
+      ]
+    },
+    {
+      "genus": "arctostaphylos",
+      "species": "bakeri",
+      "subspecies": [
+        {
+          "subspecies": "bakeri",
+          "common_name": "Baker Manzanita",
+          "href": "/plants/arctostaphylos-bakeri-subsp-bakeri"
+        },
+        {
+          "cultivar": "Louis Edmunds",
+          "subspecies": "bakeri",
+          "common_name": "Louis Edmunds Manzanita",
+          "href": "/plants/arctostaphylos-bakeri-subsp-bakeri-louis-edmunds"
+        }
+      ]
+    },
+    {
+      "genus": "arctostaphylos",
+      "species": "viridissima",
+      "cultivars": [
+        {
+          "cultivar": "White Cloud",
+          "common_name": "White Cloud McMinn's Manzanita",
+          "href": "/plants/arctostaphylos-viridissima-white-cloud"
+        }
+      ]
+    },
+    {
+      "genus": "berberis",
+      "species": "buxifolia",
+      "cultivars": [
+        {
+          "cultivar": "Nana",
+          "common_name": "Dwarf Magellan Barberry",
+          "href": "/plants/berberis-buxifolia-nana"
+        }
+      ]
+    },
+    {
+      "genus": "berberis",
+      "common_name": "Emerald Carousel Barberry",
+      "href": "/plants/berberis-emerald-carousel"
+    },
+    {
+      "genus": "berberis",
+      "species": "gladwynensis",
+      "cultivars": [
+        {
+          "cultivar": "William Penn",
+          "hybrid": true,
+          "common_name": "William Penn Barberry",
+          "href": "/plants/berberis-gladwynensis-william-penn"
+        }
+      ]
+    },
+    {
+      "genus": "buddleia",
+      "cultivars": [
+        {
+          "cultivar": "Blue Chip",
+          "hybrid": true,
+          "common_name": "Blue Chip Buddleia",
+          "href": "/plants/buddleia-blue-chip"
+        }
+      ]
+    },
+    {
+      "genus": "buddleia",
+      "species": "weyeriana",
+      "cultivars": [
+        {
+          "cultivar": "Honeycomb",
+          "hybrid": true,
+          "common_name": "Honeycomb Butterfly Bush",
+          "href": "/plants/buddleia-weyeriana-honeycomb"
+        }
+      ]
+    },
+    {
+      "genus": "buxus",
+      "species": "microphylla",
+      "cultivars": [
+        {
+          "cultivar": "Compacta",
+          "common_name": "Kingsville Dwarf",
+          "href": "/plants/buxus-microphylla-compacta"
+        }
+      ],
+      "variety": [
+        {
+          "variety": "koreana",
+          "common_name": "Korean Littleleaf Boxwood",
+          "href": "/plants/buxus-microphylla-var-koreana"
+        },
+        {
+          "cultivar": "Winter Gem",
+          "variety": "koreana",
+          "common_name": "Winter Gem Boxwood",
+          "href": "/plants/buxus-microphylla-var-koreana-winter-gem"
+        },
+        {
+          "cultivar": "Wintergreen",
+          "variety": "koreana",
+          "common_name": "Wintergreen Boxwood",
+          "href": "/plants/buxus-microphylla-var-koreana-wintergreen"
+        }
+      ]
+    },
+    {
+      "genus": "callicarpa",
+      "species": "bodinieri",
+      "cultivars": [
+        {
+          "cultivar": "Profusion",
+          "common_name": "Profusion Beautyberry",
+          "href": "/plants/callicarpa-bodinieri-profusion"
+        }
+      ]
+    },
+    {
+      "genus": "calycanthus",
+      "cultivars": [
+        {
+          "cultivar": "Aphrodite",
+          "hybrid": true,
+          "common_name": "Aphrodite Sweetshrub",
+          "href": "/plants/calycanthus-aphrodite"
+        }
+      ]
+    },
+    {
+      "genus": "calycanthus",
+      "species": "raulstonii",
+      "cultivars": [
+        {
+          "cultivar": "Hartlage Wine",
+          "hybrid": true,
+          "common_name": "Hartlage Wine Sweetbush",
+          "href": "/plants/calycanthus-raulstonii-hartlage-wine"
+        }
+      ]
+    },
+    {
+      "genus": "camellia",
+      "common_name": "Camellia",
+      "href": "/plants/camellia"
+    },
+    {
+      "genus": "caragana",
+      "species": "frutex",
+      "cultivars": [
+        {
+          "cultivar": "Globosa",
+          "common_name": "Globe Russian Peashrub",
+          "href": "/plants/caragana-frutex-globosa"
+        }
+      ]
+    },
+    {
+      "genus": "catalpa",
+      "species": "erubescens",
+      "cultivars": [
+        {
+          "cultivar": "Purpurea",
+          "hybrid": true,
+          "common_name": "Purple Catalpa",
+          "href": "/plants/catalpa-erubescens-purpurea"
+        }
+      ]
+    },
+    {
+      "genus": "ceanothus",
+      "cultivars": [
+        {
+          "cultivar": "Centennial",
+          "common_name": "Centennial Ceanothus",
+          "href": "/plants/ceanothus-centennial"
+        },
+        {
+          "cultivar": "Concha",
+          "common_name": "Concha Ceanothus",
+          "href": "/plants/ceanothus-concha"
+        },
+        {
+          "cultivar": "Dark Star",
+          "common_name": "Dark Star Ceanothus",
+          "href": "/plants/ceanothus-dark-star"
+        }
+      ]
+    },
+    {
+      "genus": "ceanothus",
+      "species": "delilianus",
+      "cultivars": [
+        {
+          "cultivar": "Henri Desfosse",
+          "hybrid": true,
+          "common_name": "Henri Desfosse Ceanothus",
+          "href": "/plants/ceanothus-delilianus-henri-desfosse"
+        }
+      ]
+    },
+    {
+      "genus": "ceanothus",
+      "species": "griseus",
+      "variety": [
+        {
+          "variety": "horizontalis",
+          "common_name": "Carmel Creeper Ceanothus",
+          "href": "/plants/ceanothus-griseus-var-horizontalis"
+        },
+        {
+          "cultivar": "Yankee Point",
+          "variety": "horizontalis",
+          "common_name": "Yankee Point Ceanothus",
+          "href": "/plants/ceanothus-griseus-var-horizontalis-yankee-point"
+        }
+      ]
+    },
+    {
+      "genus": "chitalpa",
+      "species": "tashkentensis",
+      "cultivars": [
+        {
+          "cultivar": "Pink Dawn",
+          "common_name": "Pink Dawn Chitalpa",
+          "href": "/plants/chitalpa-tashkentensis-pink-dawn"
+        }
+      ]
+    },
+    {
+      "genus": "choisya",
+      "species": "dewitteana",
+      "cultivars": [
+        {
+          "cultivar": "Aztec Pearl",
+          "hybrid": true,
+          "common_name": "Aztec Pearl Choisya",
+          "href": "/plants/choisya-dewitteana-aztec-pearl"
+        }
+      ]
+    },
+    {
+      "genus": "cistus",
+      "cultivars": [
+        {
+          "cultivar": "Ann Palmer",
+          "common_name": "Ann Palmer Rockrose",
+          "href": "/plants/cistus-ann-palmer"
+        },
+        {
+          "cultivar": "Doris Hibberson",
+          "common_name": "Doris Hibberson Rockrose",
+          "href": "/plants/cistus-doris-hibberson"
+        },
+        {
+          "cultivar": "Elma",
+          "common_name": "Elma Rockrose",
+          "href": "/plants/cistus-elma"
+        },
+        {
+          "cultivar": "Grayswood Pink",
+          "common_name": "Grayswood Pink Rockrose",
+          "href": "/plants/cistus-grayswood-pink"
+        },
+        {
+          "cultivar": "Snow Fire",
+          "common_name": "Snow Fire Rockrose",
+          "href": "/plants/cistus-snow-fire"
+        },
+        {
+          "cultivar": "Victor Reiter",
+          "common_name": "Victor Reiter Rockrose",
+          "href": "/plants/cistus-victor-reiter"
+        }
+      ]
+    },
+    {
+      "genus": "cistus",
+      "species": "crispatus",
+      "cultivars": [
+        {
+          "cultivar": "Warley Rose",
+          "hybrid": true,
+          "common_name": "Warley Rose Rockrose",
+          "href": "/plants/cistus-crispatus-warley-rose"
+        }
+      ]
+    },
+    {
+      "genus": "cistus",
+      "species": "dansereaui",
+      "cultivars": [
+        {
+          "cultivar": "Decumbens",
+          "hybrid": true,
+          "common_name": "Decumbens Rockrose",
+          "href": "/plants/cistus-dansereaui-decumbens"
+        }
+      ]
+    },
+    {
+      "genus": "cistus",
+      "species": "florentinus",
+      "cultivars": [
+        {
+          "cultivar": "Fontfroide",
+          "hybrid": true,
+          "common_name": "Fontfroide Rockrose",
+          "href": "/plants/cistus-florentinus-fontfroide"
+        }
+      ]
+    },
+    {
+      "genus": "cistus",
+      "species": "pulverulentus",
+      "cultivars": [
+        {
+          "cultivar": "Sunset",
+          "hybrid": true,
+          "common_name": "Sunset Rockrose",
+          "href": "/plants/cistus-pulverulentus-sunset"
+        }
+      ]
+    },
+    {
+      "genus": "clematis",
+      "species": "cirrhosa",
+      "variety": [
+        {
+          "variety": "balearica",
+          "common_name": "Fern-leaved Clematis",
+          "href": "/plants/clematis-cirrhosa-var-balearica"
+        }
+      ]
+    },
+    {
+      "genus": "clematis",
+      "species": "montana",
+      "variety": [
+        {
+          "variety": "rubens",
+          "common_name": "Pink Anemone Clematis",
+          "href": "/plants/clematis-montana-var-rubens"
+        }
+      ]
+    },
+    {
+      "genus": "cornus",
+      "common_name": "Venus Dogwood",
+      "href": "/plants/cornus-venus",
+      "cultivars": [
+        {
+          "cultivar": "Eddies White Wonder",
+          "common_name": "Eddie's White Wonder Dogwood",
+          "href": "/plants/cornus-eddies-white-wonder"
+        },
+        {
+          "cultivar": "Porlock",
+          "common_name": "Porlock Dogwood",
+          "href": "/plants/cornus-porlock"
+        }
+      ]
+    },
+    {
+      "genus": "corylopsis",
+      "common_name": "Winterhazel",
+      "href": "/plants/corylopsis"
+    },
+    {
+      "genus": "corylus",
+      "species": "cornuta",
+      "variety": [
+        {
+          "variety": "californica",
+          "common_name": "Western Hazel",
+          "href": "/plants/corylus-cornuta-var-californica"
+        }
+      ]
+    },
+    {
+      "genus": "cotoneaster",
+      "species": "suecicus",
+      "cultivars": [
+        {
+          "cultivar": "Coral Beauty",
+          "hybrid": true,
+          "common_name": "Coral Beauty Cotoneaster",
+          "href": "/plants/cotoneaster-suecicus-coral-beauty"
+        }
+      ]
+    },
+    {
+      "genus": "crataegus",
+      "cultivars": [
+        {
+          "cultivar": "Autumn Glory",
+          "common_name": "Autumn Glory Hawthorn",
+          "href": "/plants/crataegus-autumn-glory"
+        }
+      ]
+    },
+    {
+      "genus": "daphne",
+      "cultivars": [
+        {
+          "cultivar": "Lawrence Crocker",
+          "common_name": "Lawrence Crocker Daphne",
+          "href": "/plants/daphne-lawrence-crocker"
+        }
+      ]
+    },
+    {
+      "genus": "deutzia",
+      "species": "paviflora",
+      "variety": [
+        {
+          "variety": "amurensis",
+          "common_name": "Amur Deutzia",
+          "href": "/node/2114"
+        }
+      ]
+    },
+    {
+      "genus": "distylium",
+      "cultivars": [
+        {
+          "cultivar": "Vintage Jade",
+          "hybrid": true,
+          "common_name": "Vintage Jade Evergreen Witch Hazel",
+          "href": "/plants/distylium-vintage-jade"
+        }
+      ]
+    },
+    {
+      "genus": "escallonia",
+      "cultivars": [
+        {
+          "cultivar": "Compakta",
+          "common_name": "Compakta Escallonia",
+          "href": "/plants/escallonia-compakta"
+        }
+      ]
+    },
+    {
+      "genus": "eucalyptus",
+      "species": "pauciflora",
+      "subspecies": [
+        {
+          "subspecies": "niphophila",
+          "common_name": "Alpine Snow Gum",
+          "href": "/plants/eucalyptus-pauciflora-subsp-niphophila"
+        }
+      ]
+    },
+    {
+      "genus": "euonymus",
+      "species": "alatus",
+      "cultivars": [
+        {
+          "cultivar": "Compactus",
+          "common_name": "Burning Bush",
+          "href": "/plants/euonymus-alatus-compactus"
+        }
+      ]
+    },
+    {
+      "genus": "euonymus",
+      "species": "kiautschovicus",
+      "cultivars": [
+        {
+          "cultivar": "Manhattan",
+          "hybrid": true,
+          "common_name": "Manhattan Spreading Euonymus",
+          "href": "/plants/euonymus-kiautschovicus-manhattan"
+        }
+      ]
+    },
+    {
+      "genus": "exochorda",
+      "species": "macrantha",
+      "cultivars": [
+        {
+          "cultivar": "The Bride",
+          "hybrid": true,
+          "common_name": "The Bride Pearlbush",
+          "href": "/plants/exochorda-macrantha-bride"
+        }
+      ]
+    },
+    {
+      "genus": "fontanesia",
+      "species": "philliraeoides",
+      "subspecies": [
+        {
+          "subspecies": "fortunei",
+          "common_name": "Fontanesia",
+          "href": "/plants/fontanesia-philliraeoides-subsp-fortunei"
+        }
+      ]
+    },
+    {
+      "genus": "fraxinus",
+      "species": "oxycarpa",
+      "cultivars": [
+        {
+          "cultivar": "Raywood",
+          "common_name": "Raywood Ash",
+          "href": "/plants/fraxinus-oxycarpa-raywood"
+        }
+      ]
+    },
+    {
+      "genus": "fremontodendron",
+      "common_name": "Flannel Bush",
+      "href": "/plants/fremontodendron"
+    },
+    {
+      "genus": "grevillea",
+      "cultivars": [
+        {
+          "cultivar": "Pink Pearl",
+          "hybrid": true,
+          "common_name": "Pink Pearl Grevillea",
+          "href": "/plants/grevillea-pink-pearl"
+        }
+      ]
+    },
+    {
+      "genus": "hebe",
+      "cultivars": [
+        {
+          "cultivar": "Emerald Gem",
+          "common_name": "Emerald Gem Hebe",
+          "href": "/plants/hebe-emerald-gem"
+        },
+        {
+          "cultivar": "Hinerua",
+          "common_name": "Hinerua Hebe",
+          "href": "/plants/hebe-hinerua"
+        },
+        {
+          "cultivar": "Karo Golden Esk",
+          "common_name": "Karo Golden Esk Hebe",
+          "href": "/plants/hebe-karo-golden-esk"
+        },
+        {
+          "cultivar": "Pattys Purple",
+          "common_name": "Patty's Purple Boxleaf Hebe,",
+          "href": "/plants/hebe-pattys-purple"
+        },
+        {
+          "cultivar": "Wiri Joy",
+          "common_name": "Wiri Joy Hebe",
+          "href": "/plants/hebe-wiri-joy"
+        }
+      ]
+    },
+    {
+      "genus": "hebe",
+      "species": "pinguifolia",
+      "cultivars": [
+        {
+          "cultivar": "Pagei",
+          "common_name": "Pagei Hebe",
+          "href": "/plants/hebe-pinguifolia-pagei"
+        }
+      ]
+    },
+    {
+      "genus": "hydrangea",
+      "species": "anomala",
+      "variety": [
+        {
+          "variety": "petiolaris",
+          "common_name": "Climbing Hydrangea",
+          "href": "/plants/hydrangea-anomala-var-petiolaris"
+        }
+      ]
+    },
+    {
+      "genus": "hydrangea",
+      "species": "arborescens",
+      "cultivars": [
+        {
+          "cultivar": "Annabelle",
+          "common_name": "Smooth Hydrangea",
+          "href": "/plants/hydrangea-arborescens-annabelle"
+        }
+      ]
+    },
+    {
+      "genus": "hypericum",
+      "cultivars": [
+        {
+          "cultivar": "Hidcote",
+          "common_name": "Hidcote Hypericum",
+          "href": "/plants/hypericum-hidcote"
+        }
+      ]
+    },
+    {
+      "genus": "ilex",
+      "species": "attenuata",
+      "cultivars": [
+        {
+          "cultivar": "Foster #2",
+          "hybrid": true,
+          "common_name": "Foster's #2 Holly",
+          "href": "/plants/ilex-attenuata-foster-2"
+        }
+      ]
+    },
+    {
+      "genus": "juniperus",
+      "cultivars": [
+        {
+          "cultivar": "Grey Owl",
+          "common_name": "Grey Owl Juniper",
+          "href": "/plants/juniperus-grey-owl"
+        }
+      ]
+    },
+    {
+      "genus": "lagerstroemia",
+      "cultivars": [
+        {
+          "cultivar": "Acoma",
+          "common_name": "Acoma Crape Myrtle",
+          "href": "/plants/lagerstroemia-acoma"
+        },
+        {
+          "cultivar": "Zuni",
+          "common_name": "Zuni Crape Myrtle",
+          "href": "/plants/lagerstroemia-zuni"
+        }
+      ]
+    },
+    {
+      "genus": "ligustrum",
+      "species": "ovalifolium",
+      "cultivars": [
+        {
+          "cultivar": "Aureum",
+          "common_name": "Golden Privet",
+          "href": "/plants/ligustrum-ovalifolium-aureum"
+        }
+      ]
+    },
+    {
+      "genus": "magnolia",
+      "common_name": "Black Tulip Magnolia",
+      "href": "/plants/magnolia-black-tulip",
+      "cultivars": [
+        {
+          "cultivar": "Butterflies",
+          "common_name": "Butterflies Magnolia",
+          "href": "/plants/magnolia-butterflies"
+        },
+        {
+          "cultivar": "Caerhays Belle",
+          "common_name": "Caerhays Belle Magnolia",
+          "href": "/plants/magnolia-caerhays-belle"
+        },
+        {
+          "cultivar": "Elizabeth",
+          "common_name": "Elizabeth Magnolia",
+          "href": "/plants/magnolia-elizabeth"
+        },
+        {
+          "cultivar": "Galaxy",
+          "common_name": "Galaxy Magnolia",
+          "href": "/plants/magnolia-galaxy"
+        },
+        {
+          "cultivar": "Randy",
+          "common_name": "Randy Magnolia",
+          "href": "/plants/magnolia-randy"
+        },
+        {
+          "cultivar": "Star Wars",
+          "common_name": "Star Wars Magnolia",
+          "href": "/plants/magnolia-star-wars"
+        }
+      ]
+    },
+    {
+      "genus": "magnolia",
+      "species": "sargentiana",
+      "variety": [
+        {
+          "variety": "robusta",
+          "common_name": "Sargent's Magnolia",
+          "href": "/plants/magnolia-sargentiana-var-robusta"
+        }
+      ]
+    },
+    {
+      "genus": "mahonia",
+      "species": "media",
+      "cultivars": [
+        {
+          "cultivar": "Arthur Menzies",
+          "hybrid": true,
+          "common_name": "Arthur Menzies Mahonia",
+          "href": "/plants/mahonia-media-arthur-menzies"
+        }
+      ]
+    },
+    {
+      "genus": "malus",
+      "common_name": "Brandywine Crabapple",
+      "href": "/plants/malus-brandywine",
+      "cultivars": [
+        {
+          "cultivar": "Indian Summer",
+          "common_name": "Indian Summer Crabapple",
+          "href": "/plants/malus-indian-summer"
+        },
+        {
+          "cultivar": "Prairifire",
+          "common_name": "Prairifire Crabapple",
+          "href": "/plants/malus-prairifire"
+        },
+        {
+          "cultivar": "Snowdrift",
+          "common_name": "Snowdrift Crabapple",
+          "href": "/plants/malus-snowdrift"
+        }
+      ]
+    },
+    {
+      "genus": "menziesia",
+      "species": "ciliicalyx",
+      "variety": [
+        {
+          "variety": "multiflora",
+          "common_name": "Mock Azalea",
+          "href": "/plants/menziesia-ciliicalyx-var-multiflora"
+        }
+      ]
+    },
+    {
+      "genus": "paeonia",
+      "species": "lutea",
+      "subspecies": [
+        {
+          "subspecies": "ludlowii",
+          "common_name": "Tibetan Peony",
+          "href": "/plants/paeonia-lutea-subsp-ludlowii"
+        }
+      ]
+    },
+    {
+      "genus": "phellodendron",
+      "common_name": "His Majesty Corktree",
+      "href": "/plants/phellodendron-his-majesty"
+    },
+    {
+      "genus": "philadelphus",
+      "cultivars": [
+        {
+          "cultivar": "Buckleys Quill",
+          "common_name": "Buckley's Quill Mockorange",
+          "href": "/plants/philadelphus-buckleys-quill"
+        },
+        {
+          "cultivar": "Snowdwarf",
+          "common_name": "Snowdwarf Mockorange",
+          "href": "/node/2119"
+        }
+      ]
+    },
+    {
+      "genus": "pieris",
+      "species": "formosa",
+      "variety": [
+        {
+          "variety": "forrestii",
+          "common_name": "Chinese Pieris",
+          "href": "/plants/pieris-formosa-var-forrestii"
+        }
+      ]
+    },
+    {
+      "genus": "pinus",
+      "species": "parvifola",
+      "cultivars": [
+        {
+          "cultivar": "Catherine Elizabeth",
+          "common_name": "Catherine Elizabeth Japanese White Pine",
+          "href": "/plants/pinus-parvifola-catherine-elizabeth"
+        }
+      ]
+    },
+    {
+      "genus": "podocarpus",
+      "species": "alpinus",
+      "cultivars": [
+        {
+          "cultivar": "Blue Gem",
+          "common_name": "Blue Gem Podocarpus",
+          "href": "/plants/podocarpus-alpinus-blue-gem"
+        }
+      ]
+    },
+    {
+      "genus": "prunus",
+      "common_name": "Snow Fountains Weeping Cherry",
+      "href": "/plants/prunus-snow-fountains",
+      "cultivars": [
+        {
+          "cultivar": "Accolade",
+          "common_name": "Accolade Flowering Cherry",
+          "href": "/plants/prunus-accolade"
+        },
+        {
+          "cultivar": "Dream Catcher",
+          "common_name": "Dream Catcher Flowering Cherry",
+          "href": "/plants/prunus-dream-catcher"
+        },
+        {
+          "cultivar": "First Lady",
+          "common_name": "First Lady Flowering Cherry",
+          "href": "/plants/prunus-first-lady"
+        },
+        {
+          "cultivar": "Newport",
+          "common_name": "Newport Flowering Plum",
+          "href": "/plants/prunus-newport"
+        },
+        {
+          "cultivar": "Okame",
+          "common_name": "Okame Flowering Cherry",
+          "href": "/plants/prunus-okame"
+        },
+        {
+          "cultivar": "Snow Goose",
+          "common_name": "Snow Goose Flowering Cherry",
+          "href": "/plants/prunus-snow-goose"
+        },
+        {
+          "cultivar": "Tai-Haku",
+          "common_name": "Tai-Haku Flowering Cherry",
+          "href": "/plants/prunus-tai-haku"
+        }
+      ]
+    },
+    {
+      "genus": "prunus",
+      "species": "virginiana",
+      "cultivars": [
+        {
+          "cultivar": "Canada Red",
+          "common_name": "Canada Red Chokecherry",
+          "href": "/plants/prunus-virginiana-canada-red"
+        }
+      ],
+      "variety": [
+        {
+          "variety": "demissa",
+          "common_name": "Western Chokecherry",
+          "href": "/plants/prunus-virginiana-var-demissa"
+        },
+        {
+          "variety": "virginiana",
+          "common_name": "Common Chokecherry",
+          "href": "/plants/prunus-virginiana-var-virginiana"
+        }
+      ]
+    },
+    {
+      "genus": "pyracantha",
+      "common_name": "Firethorn",
+      "href": "/plants/pyracantha"
+    },
+    {
+      "genus": "pyrus",
+      "species": "salicifolia",
+      "cultivars": [
+        {
+          "cultivar": "Pendula",
+          "common_name": "Weeping Willow-leaved Pear",
+          "href": "/plants/pyrus-salicifolia-pendula"
+        }
+      ]
+    },
+    {
+      "genus": "rhaphiolepis",
+      "cultivars": [
+        {
+          "cultivar": "Majestic Beauty",
+          "common_name": "Majestic Beauty Rhaphiolepis",
+          "href": "/plants/rhaphiolepis-majestic-beauty"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "common_name": "Tri-Lights Azalea",
+      "href": "/plants/rhododendron-tri-lights",
+      "cultivars": [
+        {
+          "cultivar": "-  deciduous azalea, examples",
+          "common_name": "Deciduous Azalea",
+          "href": "/plants/rhododendron-deciduous-azalea-examples"
+        },
+        {
+          "cultivar": "Airy Fairy",
+          "common_name": "Airy Fairy Rhododendron",
+          "href": "/plants/rhododendron-airy-fairy"
+        },
+        {
+          "cultivar": "Alice",
+          "common_name": "Alice Rhododendron",
+          "href": "/plants/rhododendron-alice"
+        },
+        {
+          "cultivar": "Anah Kruschke",
+          "common_name": "Anah Kruschke Rhododendron",
+          "href": "/plants/rhododendron-anah-kruschke"
+        },
+        {
+          "cultivar": "Anna Rose Whitney",
+          "common_name": "Anna Rose Whitney Rhododendron",
+          "href": "/plants/rhododendron-anna-rose-whitney"
+        },
+        {
+          "cultivar": "April Glow",
+          "common_name": "April Glow Rhododendron",
+          "href": "/plants/rhododendron-april-glow"
+        },
+        {
+          "cultivar": "Argosy",
+          "common_name": "Argosy Rhododendron",
+          "href": "/plants/rhododendron-argosy"
+        },
+        {
+          "cultivar": "Beauty of Littleworth",
+          "common_name": "Beauty of Littleworth Rhododendron",
+          "href": "/plants/rhododendron-beauty-littleworth"
+        },
+        {
+          "cultivar": "Bibiani",
+          "common_name": "Bibiani Rhododendron",
+          "href": "/plants/rhododendron-bibiani"
+        },
+        {
+          "cultivar": "Blue Diamond",
+          "common_name": "Blue Diamond Rhododendron",
+          "href": "/plants/rhododendron-blue-diamond"
+        },
+        {
+          "cultivar": "Blue Peter",
+          "common_name": "Blue Peter Rhododendron",
+          "href": "/plants/rhododendron-blue-peter"
+        },
+        {
+          "cultivar": "Boule de Neige",
+          "common_name": "Boule de Neige Rhododendron",
+          "href": "/plants/rhododendron-boule-de-neige"
+        },
+        {
+          "cultivar": "Bow Bells",
+          "common_name": "Bow Bells Rhododendron",
+          "href": "/plants/rhododendron-bow-bells"
+        },
+        {
+          "cultivar": "Bric-a-brac",
+          "common_name": "Bric-a-brac Rhododendron",
+          "href": "/plants/rhododendron-bric-brac"
+        },
+        {
+          "cultivar": "Catawbiense Boursault",
+          "common_name": "Catawbiense Boursault Rhododendron",
+          "href": "/plants/rhododendron-catawbiense-boursault"
+        },
+        {
+          "cultivar": "Cheer",
+          "common_name": "Cheer Rhododendron",
+          "href": "/plants/rhododendron-cheer"
+        },
+        {
+          "cultivar": "Chevalier Felix de Sauvage",
+          "common_name": "Chevalier Felix de Sauvage Rhododendron",
+          "href": "/plants/rhododendron-chevalier-felix-de-sauvage"
+        },
+        {
+          "cultivar": "Christmas Cheer",
+          "common_name": "Christmas Cheer Rhododendron",
+          "href": "/plants/rhododendron-christmas-cheer"
+        },
+        {
+          "cultivar": "Cotton Candy",
+          "common_name": "Cotton Candy Rhododendron",
+          "href": "/plants/rhododendron-cotton-candy"
+        },
+        {
+          "cultivar": "Crater Lake",
+          "common_name": "Crater Lake Rhododendron",
+          "href": "/plants/rhododendron-crater-lake"
+        },
+        {
+          "cultivar": "Crest",
+          "common_name": "Crest Rhododendron",
+          "href": "/plants/rhododendron-crest"
+        },
+        {
+          "cultivar": "Cunningham's White",
+          "common_name": "Cunningham's White Rhododendron",
+          "href": "/plants/rhododendron-cunninghams-white"
+        },
+        {
+          "cultivar": "Cynthia",
+          "common_name": "Cynthia Rhododendron",
+          "href": "/plants/rhododendron-cynthia"
+        },
+        {
+          "cultivar": "Daphnoides",
+          "common_name": "Daphnoides Rhododendron",
+          "href": "/plants/rhododendron-daphnoides"
+        },
+        {
+          "cultivar": "Day Dream",
+          "common_name": "Day Dream Rhododendron, Biscuit form",
+          "href": "/plants/rhododendron-day-dream"
+        },
+        {
+          "cultivar": "Delaware Valley White",
+          "common_name": "Delaware Valley White Azalea",
+          "href": "/plants/rhododendron-delaware-valley-white"
+        },
+        {
+          "cultivar": "Dora Amateis",
+          "common_name": "Dora Amateis Rhododendron",
+          "href": "/plants/rhododendron-dora-amateis"
+        },
+        {
+          "cultivar": "Dreamland",
+          "common_name": "Dreamland Rhrododendron",
+          "href": "/plants/rhododendron-dreamland"
+        },
+        {
+          "cultivar": "El Camino",
+          "common_name": "El Camino Rhododendron",
+          "href": "/plants/rhododendron-el-camino"
+        },
+        {
+          "cultivar": "Elisabeth Hobbie",
+          "common_name": "Elisabeth Hobbie Rhododendron",
+          "href": "/plants/rhododendron-elisabeth-hobbie"
+        },
+        {
+          "cultivar": "Elizabeth",
+          "common_name": "Elizabeth Rhododendron",
+          "href": "/plants/rhododendron-elizabeth"
+        },
+        {
+          "cultivar": "Fantastic",
+          "common_name": "Fantastic Rhododendron",
+          "href": "/plants/rhododendron-fantastic"
+        },
+        {
+          "cultivar": "Frilly Lemon",
+          "common_name": "Frilly Lemon Azalea",
+          "href": "/plants/rhododendron-frilly-lemon"
+        },
+        {
+          "cultivar": "Gartendirektor Rieger",
+          "common_name": "Gartendirektor Rieger Rhododendron",
+          "href": "/plants/rhododendron-gartendirektor-rieger"
+        },
+        {
+          "cultivar": "Girard's Purple",
+          "common_name": "Girard's Purple Azalea",
+          "href": "/plants/rhododendron-girards-purple"
+        },
+        {
+          "cultivar": "Goldflimmer",
+          "common_name": "Goldflimmer Rhododendron",
+          "href": "/plants/rhododendron-goldflimmer"
+        },
+        {
+          "cultivar": "Grace Seabrook",
+          "common_name": "Grace Seabrook Rhododendron",
+          "href": "/plants/rhododendron-grace-seabrook"
+        },
+        {
+          "cultivar": "Hallelujha",
+          "common_name": "Hallelujah Rhododendron",
+          "href": "/plants/rhododendron-hallelujha"
+        },
+        {
+          "cultivar": "Hardijzer Beauty",
+          "common_name": "Hardijzer Beauty Azaleodendron",
+          "href": "/plants/rhododendron-hardijzer-beauty"
+        },
+        {
+          "cultivar": "Harry Carter",
+          "common_name": "Harry Carter Rhododendron",
+          "href": "/plants/rhododendron-harry-carter"
+        },
+        {
+          "cultivar": "Hino Crimson",
+          "common_name": "Hino Crimson Azalea",
+          "href": "/plants/rhododendron-hino-crimson"
+        },
+        {
+          "cultivar": "Hinode Giri",
+          "common_name": "Hinode Giri Azalea",
+          "href": "/plants/rhododendron-hinode-giri"
+        },
+        {
+          "cultivar": "Horizon Monarch",
+          "common_name": "Horizon Monarch Rhododendron",
+          "href": "/plants/rhododendron-horizon-monarch"
+        },
+        {
+          "cultivar": "Hotei",
+          "common_name": "Hotei Rhododendron",
+          "href": "/plants/rhododendron-hotei"
+        },
+        {
+          "cultivar": "Jock",
+          "common_name": "Jock Rhododendron",
+          "href": "/plants/rhododendron-jock"
+        },
+        {
+          "cultivar": "Ken Janeck",
+          "common_name": "Ken Janeck Rhododendron",
+          "href": "/plants/rhododendron-ken-janeck"
+        },
+        {
+          "cultivar": "Lee's Dark Purple",
+          "common_name": "Lee's Dark Purple Rhododendron",
+          "href": "/plants/rhododendron-lees-dark-purple"
+        },
+        {
+          "cultivar": "Lem's Cameo",
+          "common_name": "Lem's Cameo Rhododendron",
+          "href": "/plants/rhododendron-lems-cameo"
+        },
+        {
+          "cultivar": "Lights Azalea Hybrid Series",
+          "common_name": "Lights Azalea Hybrids Series",
+          "href": "/node/2040"
+        },
+        {
+          "cultivar": "Loderi hybrid",
+          "common_name": "Loderi Hybrid Rhododendron",
+          "href": "/plants/rhododendron-loderi-hybrid"
+        },
+        {
+          "cultivar": "Moonstone",
+          "common_name": "Moonstone Rhododendron",
+          "href": "/plants/rhododendron-moonstone"
+        },
+        {
+          "cultivar": "Mrs. Furnival",
+          "common_name": "Mrs. Furnival Rhododendron",
+          "href": "/plants/rhododendron-mrs-furnival"
+        },
+        {
+          "cultivar": "Mrs. G.W. Leak",
+          "common_name": "Mrs. G.W. Leak Rhododendron",
+          "href": "/plants/rhododendron-mrs-gw-leak"
+        },
+        {
+          "cultivar": "Myrtifolium",
+          "common_name": "Myrtifolium Rhododendron",
+          "href": "/plants/rhododendron-myrtifolium"
+        },
+        {
+          "cultivar": "Northern Lights",
+          "common_name": "Northen Lights Azalea",
+          "href": "/plants/rhododendron-northern-lights"
+        },
+        {
+          "cultivar": "Orchid Lights",
+          "common_name": "Orchid Lights Azalea",
+          "href": "/plants/rhododendron-orchid-lights"
+        },
+        {
+          "cultivar": "Oudijks Sensation",
+          "common_name": "Oudijk's Sensation Rhododendron",
+          "href": "/plants/rhododendron-oudijks-sensation"
+        },
+        {
+          "cultivar": "P.J.M.",
+          "common_name": "P.J.M. Rhododendron",
+          "href": "/plants/rhododendron-pjm"
+        },
+        {
+          "cultivar": "Peekaboo",
+          "common_name": "Peekaboo Rhododendron",
+          "href": "/plants/rhododendron-peekaboo"
+        },
+        {
+          "cultivar": "Pink Pearl",
+          "common_name": "Pink Pearl Rhododendron",
+          "href": "/plants/rhododendron-pink-pearl"
+        },
+        {
+          "cultivar": "Pink Walloper",
+          "common_name": "Pink Walloper Rhododendron",
+          "href": "/plants/rhododendron-pink-walloper"
+        },
+        {
+          "cultivar": "Pioneer Silvery Pink",
+          "common_name": "Pioneer Silvery Pink Rhododendron",
+          "href": "/plants/rhododendron-pioneer-silvery-pink"
+        },
+        {
+          "cultivar": "Point Defiance",
+          "common_name": "Point Defiance Rhododendron",
+          "href": "/plants/rhododendron-point-defiance"
+        },
+        {
+          "cultivar": "President Roosevelt",
+          "common_name": "President Roosevelt Rhododendron",
+          "href": "/plants/rhododendron-president-roosevelt"
+        },
+        {
+          "cultivar": "Purple Splendor",
+          "common_name": "Purple Splendor Azalea",
+          "href": "/plants/rhododendron-purple-splendor"
+        },
+        {
+          "cultivar": "Purple Splendour",
+          "common_name": "Purple Splendour Rhododendron",
+          "href": "/plants/rhododendron-purple-splendour"
+        },
+        {
+          "cultivar": "Ramapo",
+          "common_name": "Ramapo Rhododendron",
+          "href": "/plants/rhododendron-ramapo"
+        },
+        {
+          "cultivar": "Rosamundi",
+          "common_name": "Rosamundi Rhododendron",
+          "href": "/plants/rhododendron-rosamundi"
+        },
+        {
+          "cultivar": "Roseum Elegans",
+          "common_name": "Roseum Elegans Rhododendron",
+          "href": "/plants/rhododendron-roseum-elegans"
+        },
+        {
+          "cultivar": "Rosy Lights",
+          "common_name": "Rosy Lights Azalea",
+          "href": "/plants/rhododendron-rosy-lights"
+        },
+        {
+          "cultivar": "Sappho",
+          "common_name": "Sappho Rhododendron",
+          "href": "/plants/rhododendron-sappho"
+        },
+        {
+          "cultivar": "Scarlet Wonder",
+          "common_name": "Scarlet Wonder Rhododendron",
+          "href": "/plants/rhododendron-scarlet-wonder"
+        },
+        {
+          "cultivar": "Snow Lady",
+          "common_name": "Snow Lady Rhododendron",
+          "href": "/plants/rhododendron-snow-lady"
+        },
+        {
+          "cultivar": "Taurus",
+          "common_name": "Taurus Rhododendron",
+          "href": "/plants/rhododendron-taurus"
+        },
+        {
+          "cultivar": "Temple Belle",
+          "common_name": "Temple Belle Rhododendron",
+          "href": "/plants/rhododendron-temple-belle"
+        },
+        {
+          "cultivar": "The Honourable Jean Marie de Montague",
+          "common_name": "Jean Marie Rhododendron",
+          "href": "/plants/rhododendron-honourable-jean-marie-de-montague"
+        },
+        {
+          "cultivar": "Trilby",
+          "common_name": "Trilby Rhododendron",
+          "href": "/plants/rhododendron-trilby"
+        },
+        {
+          "cultivar": "Unique",
+          "common_name": "Unique Rhododendron",
+          "href": "/plants/rhododendron-unique"
+        },
+        {
+          "cultivar": "Vulcan",
+          "common_name": "Vulcan Rhododendron",
+          "href": "/plants/rhododendron-vulcan"
+        },
+        {
+          "cultivar": "White Lights",
+          "common_name": "White Lights Azalea",
+          "href": "/plants/rhododendron-white-lights"
+        },
+        {
+          "cultivar": "Winsome",
+          "common_name": "Winsome Rhododendron",
+          "href": "/plants/rhododendron-winsome"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron (defines evaluations)",
+      "cultivars": [
+        {
+          "cultivar": "Bruce Brechtbill",
+          "common_name": "Bruce Brechtbill Rhododendron",
+          "href": "/plants/rhododendron-defines-evaluations-bruce-brechtbill"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "arboreum",
+      "subspecies": [
+        {
+          "subspecies": "cinnamomeum",
+          "common_name": "Cinnamon Rhododendron",
+          "href": "/plants/rhododendron-arboreum-subsp-cinnamomeum"
+        },
+        {
+          "variety": "roseum",
+          "subspecies": "cinnamomeum",
+          "common_name": "R. a. ssp. c. var. roseum (no commnon name)",
+          "href": "/plants/rhododendron-arboreum-var-roseum-subsp-cinnamomeum"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "argyrophyllum",
+      "subspecies": [
+        {
+          "cultivar": "Chinese Silver",
+          "subspecies": "nankingense",
+          "common_name": "Chinese Silver Rhododendron",
+          "href": "/plants/rhododendron-argyrophyllum-subsp-nankingense-chinese-silver"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "campylocarpum",
+      "subspecies": [
+        {
+          "subspecies": "coloxanthum",
+          "common_name": "Coloxanthum Rhododendron",
+          "href": "/plants/rhododendron-campylocarpum-subsp-coloxanthum"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "falconeri",
+      "subspecies": [
+        {
+          "subspecies": "falconeri",
+          "common_name": "Falconer Rhododendron",
+          "href": "/plants/rhododendron-falconeri-subsp-falconeri"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "formosum",
+      "variety": [
+        {
+          "variety": "formosum",
+          "common_name": "Formosum Rhododendron",
+          "href": "/plants/rhododendron-formosum-var-formosum"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "forrestii",
+      "subspecies": [
+        {
+          "subspecies": "forrestii",
+          "common_name": "Forrest Rhododendron",
+          "href": "/plants/rhododendron-forrestii-subsp-forrestii"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "fortunei",
+      "subspecies": [
+        {
+          "subspecies": "discolor",
+          "common_name": "Fortune Discolor",
+          "href": "/plants/rhododendron-fortunei-subsp-discolor"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "haematodes",
+      "subspecies": [
+        {
+          "subspecies": "haematodes",
+          "common_name": "Haematodes Rhododendron",
+          "href": "/plants/rhododendron-haematodes-subsp-haematodes"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "hippophaeoides",
+      "variety": [
+        {
+          "variety": "hippophaeoides",
+          "common_name": "Hippophaeoides Rhododendron",
+          "href": "/plants/rhododendron-hippophaeoides-var-hippophaeoides"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "johnstoneanum",
+      "cultivars": [
+        {
+          "cultivar": "Double Diamond",
+          "common_name": "Double Diamond (Johnstone) Rhododendron",
+          "href": "/plants/rhododendron-johnstoneanum-double-diamond"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "mucronulatum",
+      "cultivars": [
+        {
+          "cultivar": "Cornell Pink",
+          "common_name": "Cornell Pink Azalea",
+          "href": "/plants/rhododendron-mucronulatum-cornell-pink"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "orbiculare",
+      "subspecies": [
+        {
+          "subspecies": "orbiculare",
+          "common_name": "Obiculare Rhododendron",
+          "href": "/plants/rhododendron-orbiculare-subsp-orbiculare"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "roxieanum",
+      "variety": [
+        {
+          "variety": "oreonasters",
+          "common_name": "No common name",
+          "href": "/plants/rhododendron-roxieanum-var-oreonasters"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "stenopetalum",
+      "cultivars": [
+        {
+          "cultivar": "Linearifolium",
+          "common_name": "Spider Azalea",
+          "href": "/plants/rhododendron-stenopetalum-linearifolium"
+        }
+      ]
+    },
+    {
+      "genus": "rhododendron",
+      "species": "thomsonii",
+      "subspecies": [
+        {
+          "subspecies": "thomsonii",
+          "common_name": "Thomson Rhododendron",
+          "href": "/plants/rhododendron-thomsonii-subsp-thomsonii"
+        }
+      ]
+    },
+    {
+      "genus": "robinia",
+      "common_name": "Purple Robe Locust",
+      "href": "/plants/robinia-purple-robe"
+    },
+    {
+      "genus": "salix",
+      "species": "alba",
+      "cultivars": [
+        {
+          "cultivar": "Tristis",
+          "common_name": "Golden Weeping Willow",
+          "href": "/node/2111"
+        }
+      ]
+    },
+    {
+      "genus": "salix",
+      "species": "caprea",
+      "cultivars": [
+        {
+          "cultivar": "Kilmarnock",
+          "common_name": "Kilmarnock Willow",
+          "href": "/plants/salix-caprea-kilmarnock"
+        }
+      ]
+    },
+    {
+      "genus": "salix",
+      "cultivars": [
+        {
+          "cultivar": "Golden Curls",
+          "common_name": "Golden Curls Corkscrew Willow",
+          "href": "/plants/salix-golden-curls"
+        }
+      ]
+    },
+    {
+      "genus": "salix",
+      "species": "integra",
+      "cultivars": [
+        {
+          "cultivar": "Hakuro Nishiki",
+          "common_name": "Dapple Willow",
+          "href": "/plants/salix-integra-hakuro-nishiki"
+        }
+      ]
+    },
+    {
+      "genus": "salix",
+      "species": "matsudana",
+      "cultivars": [
+        {
+          "cultivar": "Tortuosa",
+          "common_name": "Corkscrew Willow",
+          "href": "/plants/salix-matsudana-tortuosa"
+        }
+      ]
+    },
+    {
+      "genus": "sarcococca",
+      "species": "hookeriana",
+      "variety": [
+        {
+          "variety": "humilis",
+          "common_name": "Himalayan Sarcococca",
+          "href": "/plants/sarcococca-hookeriana-var-humilis"
+        }
+      ]
+    },
+    {
+      "genus": "spiraea",
+      "species": "prunifolia",
+      "cultivars": [
+        {
+          "cultivar": "Plena",
+          "common_name": "Bridalwreath Spirea",
+          "href": "/plants/spiraea-prunifolia-plena"
+        }
+      ]
+    },
+    {
+      "genus": "syringa",
+      "species": "meyeri",
+      "cultivars": [
+        {
+          "cultivar": "Palibin",
+          "common_name": "Palibin Meyer Lilac",
+          "href": "/plants/syringa-meyeri-palibin"
+        }
+      ]
+    },
+    {
+      "genus": "syringa",
+      "species": "microphylla",
+      "cultivars": [
+        {
+          "cultivar": "Superba",
+          "common_name": "Superba Littleleaf Lilac",
+          "href": "/plants/syringa-microphylla-superba"
+        }
+      ]
+    },
+    {
+      "genus": "syringa",
+      "species": "patula",
+      "cultivars": [
+        {
+          "cultivar": "Miss Kim",
+          "common_name": "Miss Kim Lilac",
+          "href": "/plants/syringa-patula-miss-kim"
+        }
+      ]
+    },
+    {
+      "genus": "ulmus",
+      "common_name": "Triumph Elm",
+      "href": "/node/2117",
+      "cultivars": [
+        {
+          "cultivar": "Frontier",
+          "hybrid": true,
+          "common_name": "Frontier Elm",
+          "href": "/plants/ulmus-frontier"
+        },
+        {
+          "cultivar": "Homestead",
+          "common_name": "Homestead Elm",
+          "href": "/plants/ulmus-homestead"
+        }
+      ]
+    },
+    {
+      "genus": "ulmus",
+      "species": "glabra",
+      "cultivars": [
+        {
+          "cultivar": "Camperdownii",
+          "common_name": "Camperdown Scotch Elm",
+          "href": "/plants/ulmus-glabra-camperdownii"
+        }
+      ]
+    },
+    {
+      "genus": "viburnum",
+      "species": "bodnantense",
+      "cultivars": [
+        {
+          "cultivar": "Dawn",
+          "hybrid": true,
+          "common_name": "Dawn Bodnantense Viburnum",
+          "href": "/plants/viburnum-bodnantense-dawn"
+        }
+      ]
+    },
+    {
+      "genus": "viburnum",
+      "species": "opulus",
+      "variety": [
+        {
+          "variety": "americanum",
+          "common_name": "American Cranberrybush Viburnum",
+          "href": "/plants/viburnum-opulus-var-americanum"
+        },
+        {
+          "cultivar": "Compactum",
+          "variety": "americanum",
+          "common_name": "Dwarf American Cranberry Viburnum",
+          "href": "/plants/viburnum-opulus-var-americanum-compactum"
+        },
+        {
+          "variety": "opulus",
+          "common_name": "European Cranberrybush Viburnum",
+          "href": "/plants/viburnum-opulus-var-opulus"
+        },
+        {
+          "cultivar": "Compactum",
+          "variety": "opulus",
+          "common_name": "Compact European Viburnum",
+          "href": "/plants/viburnum-opulus-var-opulus-compactum"
+        },
+        {
+          "cultivar": "Nanum",
+          "variety": "opulus",
+          "common_name": "Dwarf European Cranberry Bush Viburnum",
+          "href": "/plants/viburnum-opulus-var-opulus-nanum"
+        },
+        {
+          "cultivar": "Roseum",
+          "variety": "opulus",
+          "common_name": "European Snowball Viburnum",
+          "href": "/plants/viburnum-opulus-var-opulus-roseum"
+        },
+        {
+          "cultivar": "Xanthocarpum",
+          "variety": "opulus",
+          "common_name": "Yellow-fruited European Cranberrybush Viburnum",
+          "href": "/plants/viburnum-opulus-var-opulus-xanthocarpum"
+        },
+        {
+          "variety": "sargentii",
+          "common_name": "Sargent Viburnum",
+          "href": "/plants/viburnum-opulus-var-sargentii"
+        },
+        {
+          "cultivar": "Onondaga",
+          "variety": "sargentii",
+          "common_name": "Onondaga Viburnum",
+          "href": "/plants/viburnum-opulus-var-sargentii-onondaga"
+        }
+      ]
+    },
+    {
+      "genus": "viburnum",
+      "species": "plicatum",
+      "variety": [
+        {
+          "variety": "plicatum",
+          "common_name": "Japanese Snowball Viburnum",
+          "href": "/plants/viburnum-plicatum-var-plicatum"
+        },
+        {
+          "variety": "plicatum",
+          "trademarked_name": "Newport™",
+          "common_name": "Newport Japanese Snowball",
+          "href": "/plants/viburnum-plicatum-var-plicatum-newport"
+        },
+        {
+          "cultivar": "Pink Sensation",
+          "variety": "plicatum",
+          "common_name": "Pink Sensation Japanese Snowball",
+          "href": "/plants/viburnum-plicatum-var-plicatum-pink-sensation"
+        },
+        {
+          "variety": "tomentosum",
+          "common_name": "Doublefile Viburnum",
+          "href": "/plants/viburnum-plicatum-var-tomentosum"
+        },
+        {
+          "cultivar": "Pink Beauty",
+          "variety": "tomentosum",
+          "common_name": "Pink Beauty Doublefile Viburnum",
+          "href": "/plants/viburnum-plicatum-var-tomentosum-pink-beauty"
+        }
+      ]
+    },
+    {
+      "genus": "vitis",
+      "species": "californica × vinifera",
+      "cultivars": [
+        {
+          "cultivar": " Rogers Red",
+          "hybrid": true,
+          "common_name": "Rogers Red Grape",
+          "href": "/plants/vitis-californica-vinifera-rogers-red"
+        }
+      ]
+    }
+  ]
+}
