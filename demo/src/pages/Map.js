@@ -16,9 +16,10 @@ let plant_icon = L.icon({
 });
 
 let user_icon = L.icon({
-  iconUrl: 'plant-pin.png',
-  iconSize: [25, 25],
-  iconAnchor: [12, 12]
+  iconUrl: 'marker-icon.png',
+  shadowUrl: 'marker-shadow.png',
+  // iconSize: [25, 25],
+  // iconAnchor: [12, 12]
 });
 
 function Map() {
@@ -35,6 +36,7 @@ function Map() {
   const [userLocation, setUserLocation] = useState(null);
 
   useEffect(() => {
+    console.log('api-fetch')
     fetch('/api/plants')
       .then(response => response.json())
       .then(data => {
@@ -186,6 +188,20 @@ function Map() {
             </Popup>
           </Marker>
         )}
+        {markers.map((position, idx) => (
+          position[0] !== undefined && position[1] !== undefined ? (
+            <Marker
+              key={`marker-${idx}`}
+              position={position}
+              icon={plant_icon}
+            >
+              <Popup>
+                {/* Remove PlantForm reference */}
+              </Popup>
+            </Marker>
+          ) : null
+        ))}
+        
         {plants.map((plant, idx) => (
           plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
             <Marker
@@ -200,19 +216,6 @@ function Map() {
                 Season: {plant.season || 'Unknown'}<br />
                 Rating: {plant.avg_rating || 'No rating'}<br />
                 Posted by: {plant.user || 'Anonymous'}
-              </Popup>
-            </Marker>
-          ) : null
-        ))}
-        {markers.map((position, idx) => (
-          position[0] !== undefined && position[1] !== undefined ? (
-            <Marker
-              key={`marker-${idx}`}
-              position={position}
-              icon={plant_icon}
-            >
-              <Popup>
-                {/* Remove PlantForm reference */}
               </Popup>
             </Marker>
           ) : null
