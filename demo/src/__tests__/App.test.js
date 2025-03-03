@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Map from '../pages/Map';
+import App from '../App';
 
-test('renders Map component', () => {
+test('renders App component', () => {
   render(
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <Map />
+      <App />
     </BrowserRouter>
   );
-  expect(screen.getByText(/Map/i)).toBeInTheDocument();
+  expect(screen.getByText(/Welcome to Beaver Botanica!/i)).toBeInTheDocument();
 });

@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import SiteMap from '../pages/SiteMap';
 
 test('renders SiteMap component', () => {
   render(
-    <Router>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <SiteMap />
-    </Router>
+    </BrowserRouter>
   );
   expect(screen.getByText(/\/map/i)).toBeInTheDocument();
   expect(screen.getByText(/\/login/i)).toBeInTheDocument();

@@ -44,8 +44,9 @@ function Login() {
       {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">
-          <label>Username:</label>
+          <label htmlFor="username">Username:</label>
           <input
+            id="username"
             type="text"
             name="username"
             value={username}
@@ -53,8 +54,9 @@ function Login() {
           />
         </div>
         <div className="form-group">
-          <label>Password:</label>
+          <label htmlFor="password">Password:</label>
           <input
+            id="password"
             type="password"
             name="password"
             value={password}

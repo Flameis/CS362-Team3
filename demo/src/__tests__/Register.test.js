@@ -1,28 +1,28 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Register from '../pages/Register';
 
 test('renders Register component', () => {
   render(
-    <Router>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Register />
-    </Router>
+    </BrowserRouter>
   );
-  expect(screen.getByText(/Register/i)).toBeInTheDocument();
+  expect(screen.getAllByText(/Register/i)[0]).toBeInTheDocument();
 });
 
 test('allows user to input registration details', () => {
   render(
-    <Router>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Register />
-    </Router>
+    </BrowserRouter>
   );
   fireEvent.change(screen.getByLabelText(/Email:/i), { target: { value: 'test@example.com' } });
   fireEvent.change(screen.getByLabelText(/Username:/i), { target: { value: 'testuser' } });
-  fireEvent.change(screen.getByLabelText(/Password:/i), { target: { value: 'password' } });
-  fireEvent.change(screen.getByLabelText(/Confirm Password:/i), { target: { value: 'password' } });
+  fireEvent.change(screen.getAllByLabelText(/Password:/i)[0], { target: { value: 'password' } });
+  fireEvent.change(screen.getAllByLabelText(/Password:/i)[1], { target: { value: 'password' } });
   expect(screen.getByDisplayValue(/test@example.com/i)).toBeInTheDocument();
   expect(screen.getByDisplayValue(/testuser/i)).toBeInTheDocument();
-  expect(screen.getByDisplayValue(/password/i)).toBeInTheDocument();
+  expect(screen.getAllByDisplayValue(/password/i).length).toBe(2);
 });
