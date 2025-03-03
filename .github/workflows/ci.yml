@@ -21,8 +21,13 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Change to demo directory
+        run: cd demo
+
       - name: Install dependencies
         run: npm install
+        working-directory: demo
 
       - name: Run tests
         run: npm test
+        working-directory: demo
