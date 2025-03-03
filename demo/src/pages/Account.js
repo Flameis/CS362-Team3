@@ -40,6 +40,27 @@ function Account() {
     navigate("/login");
   };
 
+  const handleDeleteAccount = async () => {
+    try {
+      const token = Cookies.get('token');
+      const response = await fetch(`/api/users/${accountInfo?.id}`, { // Ensure accountInfo is not null
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+      });
+      if (response.ok) {
+        Cookies.remove('token', { path: '/' });
+        navigate("/register");
+      } else {
+        setError("Failed to delete account");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again.");
+    }
+  };
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -49,13 +70,14 @@ function Account() {
   }
 
   return (
-    <div>
+    <div className="account-container">
       <h1>Account Page</h1>
       <p>Welcome, {accountInfo.username}!</p>
       <p>Email: {accountInfo.email}</p>
       <p>Role: {accountInfo.role}</p>
       <p>Date Joined: {accountInfo.date_joined}</p>
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleLogout} className="logout-button">Logout</button>
+      <button onClick={handleDeleteAccount} className="delete-account-button">Delete Account</button>
     </div>
   );
 }

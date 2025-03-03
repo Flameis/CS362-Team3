@@ -1,8 +1,11 @@
 const db = require('../db'); // Adjust the path as needed
 
-//! Should be changed
-function verifyUserOrAdmin(req, res, next) {
-    const userId = req.user.id; // Access the authenticated user's ID
+const verifyUserOrAdmin = (req, res, next) => {
+  try {
+    const userId = req.user?.id; // Ensure req.user is not null
+    if (!userId) {
+      return res.status(401).json({ error: "Unauthorized: User ID is missing" });
+    }
     const userRole = req.user.role; // Access the authenticated user's role
     const resourceId = req.params.id; // Access the resource ID from the request parameters
 
@@ -20,6 +23,9 @@ function verifyUserOrAdmin(req, res, next) {
         }
         next(); // Allow access if the user owns the resource
     });
-}
+  } catch (error) {
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 module.exports = verifyUserOrAdmin;

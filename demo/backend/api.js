@@ -1,7 +1,6 @@
 const express = require("express");
 const cookieParser = require('cookie-parser');
-// const fs = require('fs');
-// const https = require('https');
+const db = require('./db'); // Ensure the database connection is imported
 const app = express();
 
 // Middleware to parse JSON bodies

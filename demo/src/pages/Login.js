@@ -39,39 +39,35 @@ function Login() {
   };
 
   return (
-    <div className="container">
-      <h1>Login</h1>
-      {error && <div style={{ color: "red" }}>{error}</div>}
-      <form onSubmit={handleSubmit}>
-        {/* <div>
-          <label>Email:</label>
+    <div className="container loginBox">
+      <h1 className="title">Welcome to Beaver Botanica!</h1>
+      {error && <div className="error-message">{error}</div>}
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form-group">
+          <label htmlFor="username">Username:</label>
           <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div> */}
-        <div>
-          <label>Username:</label>
-          <input
+            id="username"
             type="text"
             name="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div>
-          <label>Password:</label>
+        <div className="form-group">
+          <label htmlFor="password">Password:</label>
           <input
+            id="password"
             type="password"
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="submit-button">Login</button>
       </form>
-      <button onClick={handleRegister}>Register</button> {/* Add a button to navigate to the registration page */}
+      <button onClick={handleRegister} className="register-button">Register</button>
+      <br />
+      <a href="/forgot-password" className="forgot-password-link">Forgot Password?</a>
     </div>
   );
 }

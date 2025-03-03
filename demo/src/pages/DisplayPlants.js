@@ -4,11 +4,13 @@ import '../styles/general.css'; // Import the general CSS file
 function DisplayPlants() {
   const [plants, setPlants] = useState([]);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch('/api/plants')
       .then(response => response.json())
       .then(data => {
+        console.log('Fetched plants data:', data); // Print the JSON data in console
         if (Array.isArray(data.data)) {
           setPlants(data.data);
         } else {
@@ -21,16 +23,27 @@ function DisplayPlants() {
       });
   }, []);
 
+  const filteredPlants = plants.filter(plant =>
+    plant.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   if (error) {
     return <div>Error: {error}</div>;
   }
 
   return (
-    <div>
+    <div className="display-plants-container">
       <h1>Plants</h1>
-      <table>
+      <input
+        type="text"
+        placeholder="Search plants..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <table className="plants-table">
         <thead>
           <tr>
+            <th>Plant ID</th>
             <th>Species ID</th>
             <th>Image ID</th>
             <th>Description</th>
@@ -44,8 +57,9 @@ function DisplayPlants() {
           </tr>
         </thead>
         <tbody>
-          {plants.map(plant => (
-            <tr key={plant.species_id}>
+          {filteredPlants.map(plant => (
+            <tr key={plant.plant_id}>
+              <td>{plant.plant_id}</td>
               <td>{plant.species_id}</td>
               <td>{plant.image_id}</td>
               <td>{plant.description}</td>

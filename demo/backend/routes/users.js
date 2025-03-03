@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const db = require('../db'); // Adjust the path as needed
+const generateToken = require('../utils/generateToken'); // Import the generateToken function
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
 const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
 
@@ -20,7 +21,8 @@ router.get('/:id', (req, res) => {
 
 // Script to add a new user with hashed password
 router.post('/', async (req, res) => {
-    const { username, email, password, date_joined, role } = req.body;
+    const { username, email, password, date_joined } = req.body;
+    const role = 'user'; // Set default role to 'user'
 
     // Check if the username or email already exists
     const checkUserSql = 'SELECT * FROM Users WHERE username = ? OR email = ?';
@@ -43,7 +45,14 @@ router.post('/', async (req, res) => {
 
         // Insert the new user into the database
         const insertUserSql = 'INSERT INTO Users (username, email, password_hash, date_joined, role) VALUES (?, ?, ?, ?, ?)';
-        executeInsertQuery(insertUserSql, [username, email, hashedPassword, date_joined, role], res);
+        db.query(insertUserSql, [username, email, hashedPassword, date_joined, role], (err, result) => {
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            const user = { id: result.insertId, username, role };
+            const token = generateToken(user); // Generate a token for the new user
+            res.json({ token }); // Include the token in the response
+        });
     });
 });
 
