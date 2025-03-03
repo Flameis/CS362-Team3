@@ -53,6 +53,28 @@ body {
   margin-bottom: 15px;
 }
 
+.registerBox {  
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+  border-radius: 8px;
+  width: 20%;
+  height: fit-content;
+  text-align: center;
+}
+
+.registerBox label {
+  display: flex;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.registerBox input {
+  display: flex;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
 .header{
   overflow: overlay;
 }
