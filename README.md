@@ -60,13 +60,11 @@
 5. To see the raw plant data, navigate to `http://localhost:8081/api/plants`.
 
 # How to Test
-1. Ensure the server is running by following the "How to Run" instructions.
-2. Open a terminal and navigate to the `demo` directory.
-3. Run the test suite:
-    ```sh
-    npm test
-    ```
-4. Review the test results in the terminal to ensure all tests pass (They don't currently because of compatibility issues with jest itself).
+1. Go to `http://localhost:8070/register` and create a new account.
+2. Log in to the account.
+3. Click on the map to add a plant.
+4. Click on the plant icon to view the plant details.
+
 
 # Operational Use Case
 The current operational use case allows a user to add a known plant to the database and see it on the map. The user can also view the plant details by clicking on the plant icon on the map.
