@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "options": {
-    "allowedHosts": ["localhost", ".localhost"],
+    "allowedHosts": ["localhost", ".localhost", "flip2.engr.oregonstate.edu", "127.0.0.1", "flip1.engr.oregonstate.edu"],
     "proxy": "https://localhost:8081/"
   },
   "dependencies": {
