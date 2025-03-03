@@ -21,18 +21,51 @@
 * Finlay Curtiss - Technical Documentation and Front End Developer
 * Jake Thompson - Back End Developer
 
+# How to Install
+1. Ensure you have Node.js and npm installed. You can download them from [Node.js](https://nodejs.org/).
+2. Clone the repository from GitHub:
+    ```sh
+    git clone https://github.com/Flameis/CS362-Team3.git
+    ```
+3. Navigate to the project directory:
+    ```sh
+    cd CS362-Team3
+    ```
+4. Insert the `.env` file into the `./demo` directory. The `.env` file should contain the following variables:
+    ```
+    DB_HOST="67.222.47.90"
+    DB_USER="mthopeac_OSU_Beta_Test"
+    DB_PASSWORD="YG?)6YEe@R95pr."
+    DB_NAME="mthopeac_OSU_PlantMap"
+    API_PORT=8081
+    PORT=8070
+    JWT_SECRET_KEY="Test_Secret_Key"
+    ```
+
 # How to Run
-1. Clone the repository from GitHub
-2. Insert the `.env` file into the ./demo directory
-3. Run `npm install` and `npm update` in the demo directory
-4. Run `npm start` in the demo directory
-5. React should start the server and open a browser window to `http://localhost:8070`
-6. To see the raw plant data, navigate to `http://localhost:8081/api/plants`
+1. Navigate to the `demo` directory:
+    ```sh
+    cd demo
+    ```
+2. Install the dependencies:
+    ```sh
+    npm install
+    npm update
+    ```
+3. Start the server:
+    ```sh
+    npm start
+    ```
+4. React should start the server and open a browser window to `http://localhost:8070`.
+5. To see the raw plant data, navigate to `http://localhost:8081/api/plants`.
 
 # How to Test
 1. Ensure the server is running by following the "How to Run" instructions.
 2. Open a terminal and navigate to the `demo` directory.
-3. Run `npm test` to execute the test suite.
+3. Run the test suite:
+    ```sh
+    npm test
+    ```
 4. Review the test results in the terminal to ensure all tests pass (They don't currently because of compatibility issues with jest itself).
 
 # Operational Use Case
