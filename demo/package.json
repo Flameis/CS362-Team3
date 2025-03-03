@@ -2,9 +2,9 @@
   "name": "demo",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8081",
   "options": {
-    "allowedHosts": ["localhost", ".localhost", "flip2.engr.oregonstate.edu", "127.0.0.1", "flip1.engr.oregonstate.edu"],
-    "proxy": "https://localhost:8081/"
+    "allowedHosts": ["localhost"]
   },
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
