@@ -50,13 +50,19 @@ function Map() {
         console.error('Error fetching plants:', error);
       });
 
+    let watchId;
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
+      watchId = navigator.geolocation.watchPosition(
         (position) => {
           setUserLocation([position.coords.latitude, position.coords.longitude]);
         },
         (error) => {
           console.error('Error getting user location:', error);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
         }
       );
     } else {
@@ -71,6 +77,12 @@ function Map() {
           console.error('Error fetching location from OpenStreetMap:', error);
         });
     }
+
+    return () => {
+      if (watchId) {
+        navigator.geolocation.clearWatch(watchId);
+      }
+    };
   }, []);
 
   const addMarker = (coordinates) => {
