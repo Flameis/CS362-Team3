@@ -52,20 +52,24 @@ function Map() {
 
     let watchId;
     if (navigator.geolocation) {
-      watchId = navigator.geolocation.watchPosition(
-        (position) => {
-          setUserLocation([position.coords.latitude, position.coords.longitude]);
-          console.log(`Position accuracy: ${position.coords.accuracy} meters`);
-        },
-        (error) => {
-          console.error('Error getting user location:', error);
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 10000, // Increase timeout to 10 seconds
-          maximumAge: 0 // Do not use cached positions
-        }
-      );
+      if (window.isSecureContext) {
+        watchId = navigator.geolocation.watchPosition(
+          (position) => {
+            setUserLocation([position.coords.latitude, position.coords.longitude]);
+            console.log(`Position accuracy: ${position.coords.accuracy} meters`);
+          },
+          (error) => {
+            console.error('Error getting user location:', error);
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 10000, // Increase timeout to 10 seconds
+            maximumAge: 0 // Do not use cached positions
+          }
+        );
+      } else {
+        console.error('Geolocation requires a secure context (HTTPS).');
+      }
     } else {
       fetch('https://nominatim.openstreetmap.org/search?format=json&q=your+location')
         .then(response => response.json())
