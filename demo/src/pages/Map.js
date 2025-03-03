@@ -26,11 +26,12 @@ function Map() {
   const start_position = [44.566464, -123.283263];
   const start_zoom = 19;
   const max_tile_zoom = 19;
-  const max_zoom = 20;
+  const max_zoom = 30;
 
   const [markers, setMarkers] = useState([]);
   const [plants, setPlants] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarEditMode, setSidebarEditMode] = useState(false);
   const [selectedCoordinates, setSelectedCoordinates] = useState(null);
   const [showPlacePlantButton, setShowPlacePlantButton] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
@@ -97,12 +98,23 @@ function Map() {
     if (coordinates && coordinates.length === 2 && coordinates[0] !== undefined && coordinates[1] !== undefined) {
       setMarkers([coordinates]); // Clear previous markers and set the new marker
       setSelectedCoordinates(coordinates);
+      setSidebarEditMode(false);
       setShowPlacePlantButton(true);
     } else {
       console.error('Invalid coordinates:', coordinates);
     }
   };
 
+  function PopupOpenHandler() {
+    const map = useMapEvents({
+      popupopen: (e) => {
+        // console.log('Popup opened', e);
+        // setSidebarEditMode(true);
+        // setSidebarOpen(true);
+      }
+    });
+    return null;
+  }
   const handleAddPlant = (coordinates, plantData) => {
     const {species_id, image_urls, description, location, season, date_added, x_coordinate, y_coordinate } = plantData;
     const missingFields = [];
@@ -121,34 +133,62 @@ function Map() {
       alert(`Please fill in all required fields before submitting: ${missingFields.join(', ')}`);
       return;
     }
+    if (sidebarEditMode) {
+      fetch('/api/plants/:id', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(plantData)
+      })
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(error => { throw new Error(error.message); });
+          }
+          return response.json();
+        })
+        .then(data => {
 
-    fetch('/api/plants', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(plantData)
-    })
-      .then(response => {
-        if (!response.ok) {
-          return response.json().then(error => { throw new Error(error.message); });
-        }
-        return response.json();
+          setPlants([...plants.filter(x=>x.plant_id!=data.plant_id), data]);
+          setMarkers([...markers]); // Keep the new plant marker on the map
+          setSidebarOpen(false);
+          setShowPlacePlantButton(true);
+        })
+        .catch(error => {
+          console.error('Error adding plant:', error);
+        });
+      onCloseSidebar();
+    } else {
+      fetch('/api/plants', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(plantData)
       })
-      .then(data => {
-        setPlants([...plants, data]);
-        setMarkers([...markers, coordinates]); // Keep the new plant marker on the map
-        setSidebarOpen(false);
-        setShowPlacePlantButton(true);
-      })
-      .catch(error => {
-        console.error('Error adding plant:', error);
-      });
-    onCloseSidebar();
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(error => { throw new Error(error.message); });
+          }
+          return response.json();
+        })
+        .then(data => {
+          setPlants([...plants, data]);
+          setMarkers([...markers, coordinates]); // Keep the new plant marker on the map
+          setSidebarOpen(false);
+          setShowPlacePlantButton(true);
+        })
+        .catch(error => {
+          console.error('Error adding plant:', error);
+        });
+      onCloseSidebar();
+    }
   };
 
   const handlePlacePlant = () => {
+    setSidebarEditMode(false);
     setSidebarOpen(true);
+    
     setShowPlacePlantButton(false);
   };
 
@@ -174,7 +214,7 @@ function Map() {
 
   return (
     <div>
-      <MapContainer center={userLocation || start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }}>
+      <MapContainer center={userLocation || start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }} >
         <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -209,7 +249,9 @@ function Map() {
               position={[plant.x_coordinate, plant.y_coordinate]}
               icon={plant_icon}
             >
-              <Popup>
+              <Popup
+              key={`plant-${idx}`}
+              >
                 <strong>{plant.common_name || 'Unknown'}</strong><br />
                 Description: {plant.description || 'No description'}<br />
                 Location: {plant.location || 'Unknown'}<br />
@@ -221,6 +263,7 @@ function Map() {
           ) : null
         ))}
         <ClickHandler addMarker={addMarker} />
+        <PopupOpenHandler />
       </MapContainer>
       {showPlacePlantButton && (
         <button
@@ -242,6 +285,7 @@ function Map() {
             coordinates={selectedCoordinates}
             onAddPlant={handleAddPlant}
             onClose={onCloseSidebar}
+            isEditMode={sidebarEditMode}
           />
         </div>
       )}

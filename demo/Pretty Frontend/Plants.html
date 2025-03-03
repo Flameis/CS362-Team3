@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    
+    <style>
+      /* Add this CSS to style the dropdown */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {background-color: #f1f1f1;}
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1 class="title">Plants</h1>
+    <div class="side-nav">
+      <ul>
+        <button class="back">Back</button>
+        <li><img src="home-regular-24.png" />Identify</li>
+        <li><img src="user-account-solid-24.png" /><a href="Account.html">Account</a></li>
+         <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Location</a>
+            <a href="#">Flowering</a>
+            <a href="#">Plant</a>
+          </div>
+        </div> 
+      </ul>
+    </div>
+    <div class="content">
+      <!---this will just be a general viewing of the database--->
+      <script>
+        // Add this JavaScript to toggle the dropdown
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+      </script>
+      <script src="script.jsx"></script>
+    </div>
+  </body>
+</html>

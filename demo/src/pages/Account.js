@@ -71,13 +71,29 @@ function Account() {
 
   return (
     <div className="container account-container">
-      <h1>Account Page</h1>
-      <p>Welcome, {accountInfo.username}!</p>
-      <p>Email: {accountInfo.email}</p>
-      <p>Role: {accountInfo.role}</p>
-      <p>Date Joined: {accountInfo.date_joined}</p>
-      <button onClick={handleLogout} className="logout-button">Logout</button>
-      <button onClick={handleDeleteAccount} className="delete-account-button">Delete Account</button>
+      <h1 className="title">Account</h1>
+      <div className="side-nav">
+        <ul>
+          <button className="back">Back</button>
+          <li><img src="compass.svg" alt="Identify"/><a href="#">Identify</a></li>
+          <li><img src="mongodb-logo-24.png" alt="Plants"/><a href="#">Plants</a></li>
+        </ul>
+      </div>
+      <div className="content">
+        <h3>More coming soon</h3>
+        <ul>
+          <li><p>Settings</p></li>
+          <li><p onClick={handleLogout}>Log Out</p></li>
+        </ul>
+        <div className="account-details">
+          <p>Welcome, {accountInfo.username}!</p>
+          <p>Email: {accountInfo.email}</p>
+          <p>Role: {accountInfo.role}</p>
+          <p>Date Joined: {accountInfo.date_joined}</p>
+          <button onClick={handleLogout} className="logout-button">Logout</button>
+          <button onClick={handleDeleteAccount} className="delete-account-button">Delete Account</button>
+        </div>
+      </div>
     </div>
   );
 }

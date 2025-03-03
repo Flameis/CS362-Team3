@@ -3,7 +3,7 @@ import './PlantSidebar.css';
 import '../styles/general.css';
 import SpeciesDropdown from './SpeciesDropdown';
 
-function PlantSidebar({ coordinates, onAddPlant, onClose }) {
+function PlantSidebar({ coordinates, onAddPlant, onClose, isEditMode }) {
   const [description, setDescription] = useState('');
   const [location, setLocation] = useState('');
   const [season, setSeason] = useState('');
@@ -53,7 +53,11 @@ function PlantSidebar({ coordinates, onAddPlant, onClose }) {
         ))}
         <button type="button" onClick={addImageUrlField}>Add Another Image</button><br />
         {/* <label>Image: <input type="file" onChange={(e) => setImageFile(e.target.files[0])} /></label><br /> */}
-        <button type="submit">Add Plant</button>
+        {isEditMode ? (
+          <button type="submit">Edit Plant</button>
+        ) : (
+          <button type="submit">Add Plant</button>
+        )}
       </form>
     </div>
   );
