@@ -13,9 +13,9 @@ Thankfully, all the code is located right here in GitHub! To obtain it, navigate
 ### Home
 The home directory contains the design, project-docs, src, and weekly-reports folders, which are elaborated on below. It also contains the .gitignore file, the README.md file, package-lock.json, and package.json. The .gitignore file conteins files that git should ignore when committing and pushing, in order to save data across multiple workspaces.
 
-The README.md file contains 0000.
+The README.md file contains general developer information and instructions on both how to test the software and how to run it locally. We also include how to install the websites dependencies and how to run it on the local host.
 
-The package-lock.json and package.json files do 0000.
+The package-lock.json and package.json files do (0000).
 
 
 ### Demo / Design
@@ -28,9 +28,9 @@ Our generate-species-list folder includes our landscapeplants.json file, various
 
 The src folder contains all of the React pages and style sheets. It will contain everything needed to display the pages on the client.
 
-Our pages folder contains display-plants.html, 0000 and other files. The display_plants.html file displays a table of plants and their respective attributes. 0000 there's probably a lot more files that will be added here.
+Our pages folder contains Login.html, Register.html, Map.html, Plants.html, and other files. The Plants.html file displays a table of plants and the ability to filter through them. Login and Register are the general log in and acocunt registration features. Map is our main menu and hub for acitivity, you will be able to place a plant onto the map and fill out the needed information for it. Account is the general settings page and includes the function to log out. 
 
-In our styles folder, we have styles.css. This provides style guidelines for our platform, and includes details for the body, the sidebar, and various navigation buttons. 0000 there's going to be more styles here.
+In our styles folder, we have style.css. This provides style guidelines for our platform, and includes details for the body, the sidebar, and various navigation buttons. It is the main file that contains all of our styling for our webiste. 
 
 
 ### Project-Docs

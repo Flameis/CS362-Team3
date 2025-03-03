@@ -65,6 +65,11 @@
 3. Click on the map to add a plant.
 4. Click on the plant icon to view the plant details.
 
+# Known Bugs
+- User position does not work well since it requires HTTPS
+- Placing plant markers only records 4 decimal places for the coordinates
+- User authentication sometimes messes up, many issues with this so it may be simplified
+- Plant markers just placed are removed if another spot is marked unless page is refreshed
 
 # Operational Use Case
 The current operational use case allows a user to add a known plant to the database and see it on the map. The user can also view the plant details by clicking on the plant icon on the map.
