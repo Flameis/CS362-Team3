@@ -32,7 +32,7 @@ function DisplayPlants() {
   }
 
   return (
-    <div className="display-plants-container">
+    <div className="container display-plants-container">
       <h1>Plants</h1>
       <input
         type="text"
