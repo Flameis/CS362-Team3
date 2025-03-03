@@ -70,7 +70,7 @@ function Account() {
   }
 
   return (
-    <div className="account-container">
+    <div className="container account-container">
       <h1>Account Page</h1>
       <p>Welcome, {accountInfo.username}!</p>
       <p>Email: {accountInfo.email}</p>
