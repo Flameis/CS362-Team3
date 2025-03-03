@@ -13,13 +13,13 @@ So, dive in, explore the map, and let Beaver Botanica guide you through OSU’s 
 
 
 ## How to Install Beaver Botanica
-Luckily for you, there's no need to install any software! All you need to do is navigate to our website, [BeaverBotanica.com](#).
+Luckily for you, there's no need to install any software! All you need to do is navigate to our website, [BeaverBotanica.com](http://flip2.engr.oregonstate.edu:8070/map).
 
-(0000 replace the name of the website with the actual website)
+(http://flip2.engr.oregonstate.edu:8070/map)
 
 
 ## How to Run Beaver Botanica
-Beaver Botanica can be accessed by going to this URL: [BeaverBotanica.com](about:blank)
+Beaver Botanica can be accessed by going to this URL: [BeaverBotanica.com](http://flip2.engr.oregonstate.edu:8070/map)
 
 (0000 replace the URL and name of website above when we have a URL!)
 
