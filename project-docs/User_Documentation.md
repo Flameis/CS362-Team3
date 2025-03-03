@@ -58,7 +58,8 @@ This will open Beaver Botanica in your browser! Happy plant hunting!!!!!!!!!!!!!
 How to use the software. You can assume that your user is familiar with your particular platform (e.g., use of a Web browser, desktop applications, or mobile applications). For missing functionality, your documentation should simply indicate that this functionality is work in progress.
 
 <Work in progress>
-To add or view plant entries from the main menu, then select the "Map" options. 
+To add or view plant entries from the main menu, then select the "Map" options:
+
 ![Homepage Menu with Map option highlighted](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/images/map_option.png?raw=true)
 
 Navigate to your location on the map and click/press on the location of the plant. A marker will appear like below:
