@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "CS362 Team 3 Demo Project",
   "main": "index.js",
+  "proxy": "http://localhost:8081",
+  "options": {
+    "allowedHosts": ["localhost", ".localhost", "flip2.engr.oregonstate.edu", "127.0.0.1", "flip1.engr.oregonstate.edu"]
+  },
   "scripts": {
     "start": "concurrently \"npm run api\" \"npm run react\"",
     "api": "nodemon ./backend/api.js",
