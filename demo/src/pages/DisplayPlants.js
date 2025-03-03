@@ -10,6 +10,7 @@ function DisplayPlants() {
     fetch('/api/plants')
       .then(response => response.json())
       .then(data => {
+        console.log('Fetched plants data:', data); // Print the JSON data in console
         if (Array.isArray(data.data)) {
           setPlants(data.data);
         } else {
@@ -42,6 +43,7 @@ function DisplayPlants() {
       <table className="plants-table">
         <thead>
           <tr>
+            <th>Plant ID</th>
             <th>Species ID</th>
             <th>Image ID</th>
             <th>Description</th>
@@ -56,7 +58,8 @@ function DisplayPlants() {
         </thead>
         <tbody>
           {filteredPlants.map(plant => (
-            <tr key={plant.species_id}>
+            <tr key={plant.plant_id}>
+              <td>{plant.plant_id}</td>
               <td>{plant.species_id}</td>
               <td>{plant.image_id}</td>
               <td>{plant.description}</td>

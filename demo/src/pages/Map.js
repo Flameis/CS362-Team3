@@ -87,10 +87,21 @@ function Map() {
   };
 
   const handleAddPlant = (coordinates, plantData) => {
-    const { species_id, image_urls, description, location, season, avg_rating, date_added, x_coordinate, y_coordinate } = plantData;
-    if (!species_id || !image_urls || !description || !location || !season || avg_rating === undefined || !date_added || x_coordinate === undefined || y_coordinate === undefined) {
-      console.error('Missing required plant data:', plantData);
-      alert('Please fill in all required fields before submitting.');
+    const {species_id, image_urls, description, location, season, date_added, x_coordinate, y_coordinate } = plantData;
+    const missingFields = [];
+
+    if (!species_id) missingFields.push('species_id');
+    if (!image_urls || image_urls.length === 0) missingFields.push('image_urls');
+    if (!description) missingFields.push('description');
+    if (!location) missingFields.push('location');
+    if (!season) missingFields.push('season');
+    if (!date_added) missingFields.push('date_added');
+    if (x_coordinate === undefined) missingFields.push('x_coordinate');
+    if (y_coordinate === undefined) missingFields.push('y_coordinate');
+
+    if (missingFields.length > 0) {
+      console.error('Missing required plant data:', missingFields.join(', '));
+      alert(`Please fill in all required fields before submitting: ${missingFields.join(', ')}`);
       return;
     }
 
@@ -101,15 +112,22 @@ function Map() {
       },
       body: JSON.stringify(plantData)
     })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(error => { throw new Error(error.message); });
+        }
+        return response.json();
+      })
       .then(data => {
         setPlants([...plants, data]);
         setMarkers(markers.filter(marker => marker !== coordinates));
         setSidebarOpen(false);
+        setShowPlacePlantButton(true);
       })
       .catch(error => {
         console.error('Error adding plant:', error);
       });
+    onCloseSidebar();
   };
 
   const handlePlacePlant = () => {
@@ -121,24 +139,17 @@ function Map() {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const sidebarStyle = {
-    position: 'absolute',
-    top: 0,
-    right: sidebarOpen ? 0 : '-100%',
-    width: '80%',
-    maxWidth: '300px',
-    height: '100%',
-    backgroundColor: 'white',
-    boxShadow: '0 0 10px rgba(0,0,0,0.5)',
-    transition: 'right 0.3s ease-in-out',
-    zIndex: 1000,
-    overflowY: 'auto',
+  const onCloseSidebar = () => {
+    setSidebarOpen(false);
+    setShowPlacePlantButton(true);
   };
 
   function ClickHandler({ addMarker }) {
     useMapEvents({
       click: (e) => {
         addMarker([e.latlng.lat, e.latlng.lng]);
+        onCloseSidebar();
+        setShowPlacePlantButton(true);
       },
     });
     return null;
@@ -207,15 +218,15 @@ function Map() {
           Place Plant
         </button>
       )}
-      <div style={sidebarStyle}>
-        {sidebarOpen && (
+      {sidebarOpen && (
+        <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
           <PlantSidebar
             coordinates={selectedCoordinates}
             onAddPlant={handleAddPlant}
-            onClose={() => setSidebarOpen(false)}
+            onClose={onCloseSidebar}
           />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

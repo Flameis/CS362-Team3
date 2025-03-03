@@ -39,8 +39,8 @@ function Login() {
   };
 
   return (
-    <div className="container">
-      <h1>Login</h1>
+    <div className="container loginBox">
+      <h1 className="title">Welcome to Beaver Botanica!</h1>
       {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">
@@ -64,6 +64,7 @@ function Login() {
         <button type="submit" className="submit-button">Login</button>
       </form>
       <button onClick={handleRegister} className="register-button">Register</button>
+      <br />
       <a href="/forgot-password" className="forgot-password-link">Forgot Password?</a>
     </div>
   );

@@ -68,8 +68,8 @@ function Register() {
   };
 
   return (
-    <div className="container">
-      <h1>Register</h1>
+    <div className="container loginBox">
+      <h1 className="title">Register</h1>
       {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">

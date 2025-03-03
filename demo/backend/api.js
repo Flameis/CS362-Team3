@@ -16,7 +16,6 @@ const imageRoutes = require('./routes/images');
 const speciesRoutes = require('./routes/species');
 
 // Use routes
-// Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/plants', plantRoutes);

@@ -2,9 +2,9 @@
   "name": "demo",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8081",
   "options": {
-    "allowedHosts": "all",
-    "proxy": "http://localhost:8081"
+    "allowedHosts": "localhost"
   },
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

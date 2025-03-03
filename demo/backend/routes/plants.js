@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db'); // Adjust the path as needed
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
 const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
 
@@ -19,21 +18,19 @@ router.get('/:id', (req, res) => {
 
 // Script to add a new plant
 router.post('/', (req, res) => {
-    const { species_id, image_urls, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
+    const { species_id, image_urls, description, location, season, date_added, x_coordinate, y_coordinate } = req.body;
     const sql = `
         INSERT INTO Plants (
             species_id,
             description,
             location,
             season,
-            avg_rating,
             date_added,
-            date_updated,
             x_coordinate,
             y_coordinate
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
-    const params = [species_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate];
+    const params = [species_id, description, location, season, date_added, x_coordinate, y_coordinate];
     executeInsertQuery(sql, params, res, (result) => {
         const plant_id = result.insertId;
         const imageSql = `
