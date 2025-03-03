@@ -43,7 +43,7 @@ function Account() {
   const handleDeleteAccount = async () => {
     try {
       const token = Cookies.get('token');
-      const response = await fetch(`/api/users/${accountInfo.id}`, {
+      const response = await fetch(`/api/users/${accountInfo?.id}`, { // Ensure accountInfo is not null
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

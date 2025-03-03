@@ -10,14 +10,17 @@ router.post('/', (req, res) => {
     const sql = 'SELECT * FROM Users WHERE username = ?';
     db.query(sql, [username], async (err, results) => {
         if (err) {
-            return res.status(500).json({ error: err.message });
+            console.error('Database query error:', err.message);
+            return res.status(500).json({ error: 'Internal server error' });
         }
         if (results.length === 0) {
+            console.error('Invalid credentials: username not found');
             return res.status(401).json({ error: 'Invalid credentials' });
         }
         const user = results[0];
         const passwordMatch = await bcrypt.compare(password, user.password_hash);
         if (!passwordMatch) {
+            console.error('Invalid credentials: password does not match');
             return res.status(401).json({ error: 'Invalid credentials' });
         }
         const token = generateToken(user);

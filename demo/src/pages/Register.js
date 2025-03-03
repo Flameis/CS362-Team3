@@ -19,16 +19,17 @@ function Register() {
       return;
     }
     try {
+      const date_joined = new Date().toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
       const response = await fetch('/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, username, password }),
+        body: JSON.stringify({ email, username, password, date_joined }), // Include date_joined in the request body
       });
       const data = await response.json();
       if (response.ok) {
-        Cookies.set('token', data.token, { expires: 7, path: '/' }); // Set the token as a cookie with expiration
+        Cookies.set('token', data.token, { path: '/' }); // Set the token as a cookie with expiration
         navigate("/account");
       } else {
         setError(data.error || "Registration failed");
