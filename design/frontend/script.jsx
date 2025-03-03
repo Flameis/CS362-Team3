@@ -11,6 +11,6 @@
         const confirmation = confirm("Are you sure you want to log out?");
     if (confirmation) {
       //log out functionality
-        window.location.href = "login.html";
+        window.location.href = "Login.html";
     }
   });
