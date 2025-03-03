@@ -4,34 +4,29 @@
     <title>Hello, World!</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+  
   <body>
     <h1 class="title">Plants</h1>
     <div class="side-nav">
       <ul>
         <button class="back">Back</button>
-        <li><img src="home-regular-24.png">Identify</li>
-        <li><img src="user-account-solid-24.png"><a href="Account.html">Account</a></li>
-        
-        <!-- Dropdown Container -->
-        <li class="dropdown">
-          <div class="dropdown-toggle">
-            <img src="filter.svg"> Filter <img src="arrow-down.svg">
+        <li><img src="home-regular-24.png" />Identify</li>
+        <li><img src="user-account-solid-24.png" /><a href="Account.html">Account</a></li>
+         <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Location</a>
+            <a href="#">Flowering</a>
+            <a href="#">Plant</a>
           </div>
-          <ul class="dropdown-menu">
-            <li><a href="#">Location</a></li>
-            <li><a href="#">Fruit</a></li>
-            <li><a href="#">Flower</a></li>
-            <li><a href="#">Conifer</a></li>
-            <li><a href="#">Tree</a></li>
-          </ul>
-        </li>
+        </div> 
       </ul>
     </div>
-
     <div class="content">
       <h3>Plant viewing repository</h3>
+      <!---this will just be a general viewing of the database--->
+      <script src="script.jsx"></script>
     </div>
-
-    <script src="script.jsx"></script>
   </body>
 </html>
+
