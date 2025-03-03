@@ -75,10 +75,7 @@ function Map() {
 
   const addMarker = (coordinates) => {
     if (coordinates && coordinates.length === 2 && coordinates[0] !== undefined && coordinates[1] !== undefined) {
-      if (markers.length > 0) {
-        setMarkers([]);
-      }
-      setMarkers([coordinates]);
+      setMarkers([coordinates]); // Clear previous markers and set the new marker
       setSelectedCoordinates(coordinates);
       setShowPlacePlantButton(true);
     } else {
@@ -120,7 +117,7 @@ function Map() {
       })
       .then(data => {
         setPlants([...plants, data]);
-        setMarkers(markers.filter(marker => marker !== coordinates));
+        setMarkers([...markers, coordinates]); // Keep the new plant marker on the map
         setSidebarOpen(false);
         setShowPlacePlantButton(true);
       })
