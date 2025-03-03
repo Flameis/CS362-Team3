@@ -13,21 +13,39 @@ So, dive in, explore the map, and let Beaver Botanica guide you through OSU’s 
 
 
 ## How to Install Beaver Botanica
-Luckily for you, there's no need to install any software! All you need to do is navigate to our website, [BeaverBotanica.com](#).
-
-(0000 replace the name of the website with the actual website)
+Luckily for you, there's no need to install any software! All you need to do is navigate to our website, [BeaverBotanica.com](http://flip2.engr.oregonstate.edu:8070/map).
 
 
 ## How to Run Beaver Botanica
-Beaver Botanica can be accessed by going to this URL: [BeaverBotanica.com](about:blank)
 
-(0000 replace the URL and name of website above when we have a URL!)
+Beaver Botanica can be accessed by going to this URL: [BeaverBotanica.com](http://flip2.engr.oregonstate.edu:8070/map)
 
-## How to Use Beaver Botanica (Finlay)
+
+###If you installed Beaver Botanica locally, you can run it with the following
+Open two of your operating system's terminal window and navigate to <parent-path>/CS362-Team3/demo in both. 
+Run the following command in one window:
+
+```npm install```
+
+Once this finishes running, you're almost ready to view Beaver Botanica! Make sure you are on the OSU WiFi or connected to the OSU VPN before continuing.
+
+Run the following command in one window:
+
+```npm run api```
+
+And wait for it to finish running executing.
+In the other terminal window run:
+
+```npm run react```
+
+This will open Beaver Botanica in your browser! Happy plant hunting!!!!!!!!!!!!!!!
+
+## How to Use Beaver Botanica
 How to use the software. You can assume that your user is familiar with your particular platform (e.g., use of a Web browser, desktop applications, or mobile applications). For missing functionality, your documentation should simply indicate that this functionality is work in progress.
 
 <Work in progress>
-(I'll add screenshots and a step-by-step guide as we get the front end implemented)
+To add or view plant entries from the main menu, then select the "Map" options. 
+<ADDING PICTURES SOON!!!>
 
 ## How to Report a Bug
 To report a bug, you can access the [Issues section of the Beaver Botanica Github repository](https://github.com/Flameis/CS362-Team3/issues). Once at this page, press the “New issue” button in the top right of the page. 
