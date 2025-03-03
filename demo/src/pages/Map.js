@@ -26,7 +26,7 @@ function Map() {
   const start_position = [44.566464, -123.283263];
   const start_zoom = 19;
   const max_tile_zoom = 19;
-  const max_zoom = 20;
+  const max_zoom = 30;
 
   const [markers, setMarkers] = useState([]);
   const [plants, setPlants] = useState([]);
