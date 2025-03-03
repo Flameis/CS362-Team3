@@ -55,14 +55,15 @@ function Map() {
       watchId = navigator.geolocation.watchPosition(
         (position) => {
           setUserLocation([position.coords.latitude, position.coords.longitude]);
+          console.log(`Position accuracy: ${position.coords.accuracy} meters`);
         },
         (error) => {
           console.error('Error getting user location:', error);
         },
         {
           enableHighAccuracy: true,
-          timeout: 5000,
-          maximumAge: 0
+          timeout: 10000, // Increase timeout to 10 seconds
+          maximumAge: 0 // Do not use cached positions
         }
       );
     } else {
