@@ -71,5 +71,12 @@
 - User authentication sometimes messes up, many issues with this so it may be simplified
 - Plant markers just placed are removed if another spot is marked unless page is refreshed
 
+# Features in-progress
+- Image upload
+- Full plant post with images, comments, and ratings
+- Moderation by admins
+- Redesign of frontend
+- Account settings
+
 # Operational Use Case
 The current operational use case allows a user to add a known plant to the database and see it on the map. The user can also view the plant details by clicking on the plant icon on the map.
