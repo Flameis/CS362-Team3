@@ -72,10 +72,15 @@ A menu will appear on the left side of the screen where you can enter the plant'
 ![A menu where a user can input the plant's species, description, location, season, and a link to an image of a plant](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/images/plant_info_menu.png?raw=true)
 
 When entering data for a plant, you can begin typing the plant's species in the text box, then press the dropdown menu underneath it to select the species from the list. 
+
 Description: this should include any information or observations about the plant.
+
 Location: this can be used to provide additional information about where the plant is. For example, something like "this plant is next to the bike racks, right by the pavement" will help other users find this plant more easily.
+
 Season: enter the season you found the plant in.
+
 Image URL: if you have an image that you can upload to a webserver to get a URL to the image (Github repos can do this), enter a link to the URL here.
+
 Add Another Image: If you have additional images, press this and another "Image URL" entry box will appear.
 
 

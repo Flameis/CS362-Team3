@@ -274,6 +274,12 @@ function Map() {
             left: '50%',
             transform: 'translateX(-50%)',
             zIndex: 1001,
+            padding: '10px 20px',
+            backgroundColor: '#7bb578',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
           }}
         >
           Place Plant
