@@ -1,7 +1,5 @@
 # Beaver Botanica: The OSU Plant Map
 
-[OSU Engr Website Link](http://flip1.engr.oregonstate.edu:8070/)
-
 ## Documentation
 [User Documentation](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/User_Documentation.md)
 
@@ -60,6 +58,9 @@
     ```
 4. React should start the server and open a browser window to `http://localhost:8070`.
 5. To see the raw plant data, navigate to `http://localhost:8081/api/plants`.
+
+Alternatively, it should be currently hoste on the engr flip1 server here:
+[OSU Engr Website Link](http://flip1.engr.oregonstate.edu:8070/)
 
 # How to Test
 1. Go to `http://localhost:8070/register` and create a new account.
