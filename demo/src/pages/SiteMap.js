@@ -3,7 +3,7 @@ import '../styles/general.css'; // Import the general CSS file
 function SiteMap() {
   return (
     <div className="container sitemap-container">
-      <img src='silly-logo/Logo-no-circle.png' className="sitemap-logo"/><br />
+      <img src='silly-logo/Logo-no-circle.v2.png' className="sitemap-logo"/><br />
       <p className="sitemap-links">
         <a href="/map">/map</a><br />
         <a href="/login">/login</a><br />
