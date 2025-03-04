@@ -1,5 +1,7 @@
 # Beaver Botanica: The OSU Plant Map
 
+[OSU Engr Website Link](http://flip1.engr.oregonstate.edu:8070/)
+
 ## Documentation
 [User Documentation](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/User_Documentation.md)
 
