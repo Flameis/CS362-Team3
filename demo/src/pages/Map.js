@@ -222,7 +222,7 @@ function Map() {
           maxZoom={max_zoom}
         />
         {userLocation && (
-          <Marker position={userLocation} icon={user_icon}>
+          <Marker position={userLocation}>
             <Popup>
               You are here
             </Popup>
