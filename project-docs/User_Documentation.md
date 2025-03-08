@@ -13,11 +13,11 @@ So, dive in, explore the map, and let Beaver Botanica guide you through OSU’s 
 
 
 ## How to Install Beaver Botanica
-Luckily for you, there's no need to install any software! All you need to do is navigate to our website, [BeaverBotanica.com](http://flip1.engr.oregonstate.edu:8070/).
+Luckily for you, there's no need to install any software! All you need to do is navigate to our website, [flip2.engr.oregonstate.edu:8070/map](http://flip1.engr.oregonstate.edu:8070/).
 
 
 ### Local Installation
-You can install Beaver Botanica locally by cloning the Github which can be found at [this link](https://github.com/Flameis/CS362-Team3/tree/main)
+You can install Beaver Botanica locally by cloning from our [Github repository](https://github.com/Flameis/CS362-Team3/tree/main).
 
 Once installed on your machine, in the /demo/ folder, create a .env file and enter this information
     ```
@@ -32,7 +32,7 @@ Once installed on your machine, in the /demo/ folder, create a .env file and ent
 
 ## How to Run Beaver Botanica
 
-Beaver Botanica can be accessed by going to this URL: [BeaverBotanica.com](http://flip2.engr.oregonstate.edu:8070/map)
+Beaver Botanica can be accessed by navigating to [flip2.engr.oregonstate.edu:8070/map](http://flip2.engr.oregonstate.edu:8070/map). No installations necessary!
 
 
 ### Running Locally
