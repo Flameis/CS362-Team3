@@ -49,7 +49,8 @@ CREATE TABLE Images (
     plant_id INT,
     image_url TEXT NOT NULL,
     date_uploaded DATE NOT NULL,
-    FOREIGN KEY (plant_id) REFERENCES Plants(plant_id)
+    FOREIGN KEY (plant_id) REFERENCES Plants(plant_id) ON DELETE CASCADE
+    -- ON DELETE SET NULL
 );
 
 CREATE TABLE Comments (

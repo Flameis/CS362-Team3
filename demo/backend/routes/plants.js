@@ -122,13 +122,13 @@ router.put('/:id', authenticate, (req, res) => { // warn: ignore privlages for n
             DELETE FROM Images
             WHERE plant_id = ?
         `;
-        executeDeleteQuery(deleteImageSql, [req.params.id], res, () => {
+        executeDeleteQuery(deleteImageSql, [req.params.id], res, (result) => {
             const imageSql = `
                 INSERT INTO Images (plant_id, image_url, date_uploaded)
                 VALUES (?, ?, ?)
             `;
             const imageParams = image_urls.map(url => [req.params.id, url, new Date().toISOString().split('T')[0]]);
-            imageParams.forEach(params => executeInsertQuery(imageSql, params, res));
+            imageParams.forEach(params => executeInsertQuery(imageSql, params, res, (result2) => {result.result2=result2;res.json(result)}));
         });
     });
 });
