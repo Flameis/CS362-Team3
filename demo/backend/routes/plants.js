@@ -3,18 +3,33 @@ const router = express.Router();
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
 const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
 
+
+
 // Script to get all plants
-router.get('/', (req, res) => {
+router.get('/raw', (req, res) => {
     const sql = 'SELECT * FROM Plants';
     executeSelectQuery(sql, [], res);
 });
 
 // Script to get a specific plant by ID
-router.get('/:id', (req, res) => {
+router.get('/raw/:id', (req, res) => {
     const sql = 'SELECT * FROM Plants WHERE plant_id = ?';
     const params = [req.params.id];
     executeSelectQuery(sql, params, res);
 });
+
+router.get('/', (req, res) => {
+    const sql = 'SELECT * FROM Plants JOIN Species ON Plants.species_id = Species.species_id';
+    executeSelectQuery(sql, [], res);
+});
+
+// Script to get a specific plant by ID
+router.get('/:id', (req, res) => {
+    const sql = 'SELECT * FROM Plants JOIN Species ON Plants.species_id = Species.species_id WHERE plant_id = ?';
+    const params = [req.params.id];
+    executeSelectQuery(sql, params, res);
+});
+
 
 // Script to add a new plant
 router.post('/', (req, res) => {
