@@ -110,7 +110,6 @@ function Map() {
   }, []);
 
   const addMarker = (coordinates) => {
-    console.log('xxxx')
     if (coordinates && coordinates.length === 2 && coordinates[0] !== undefined && coordinates[1] !== undefined) {
       setTmpMarker({x_coordinate:coordinates[0], y_coordinate:coordinates[1]});
       setSidebarEditMode(false);
