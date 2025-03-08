@@ -1,1 +1,19 @@
-Create a file SETUP.md. and provide instructions for a system administrator to setup or deploy your software. This should describe what all libraries and software need to be installed to deploy your software. This document will vary significantly based on the kind of software you are developing. For example, for desktop or mobile applications, this document will provide instructions on how to download the source package while for web applications it will tell us how to host the website in a server and setup a database.
+# Setting Up Beaver Botanica
+
+Open two of your operating system's terminal windows, and navigate to <parent-path>/CS362-Team3/demo in both. 
+Run the following command in one window:
+
+```npm install```
+
+Once this finishes running, you're almost ready to view Beaver Botanica! Make sure you are on the OSU WiFi or connected to the OSU VPN before continuing.
+
+Run the following command in one window:
+
+```npm run api```
+
+And wait for it to finish running executing.
+In the other terminal window run:
+
+```npm run react```
+
+This will open Beaver Botanica in your browser! Happy plant hunting!
