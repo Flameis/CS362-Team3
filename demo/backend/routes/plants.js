@@ -59,7 +59,7 @@ router.get('/:id', (req, res) => {
     LEFT JOIN 
         Users 
     ON 
-        Plants.created_by = Users.user_id;
+        Plants.created_by = Users.user_id
     WHERE plant_id = ?
     `;
     const params = [req.params.id];
@@ -94,7 +94,8 @@ router.post('/', (req, res) => {
 });
 
 // Script to update a plant
-router.put('/:id', authenticate, verifyUserOrAdmin, (req, res) => {
+router.put('/:id', authenticate, (req, res) => { // warn: ignore privlages for now
+// router.put('/:id', authenticate, verifyUserOrAdmin, (req, res) => {
     const { species_id, image_urls, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
     const sql = `
         UPDATE Plants
