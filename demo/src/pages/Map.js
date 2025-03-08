@@ -285,11 +285,11 @@ function Map() {
     setSidebarOpen(!sidebarOpen);
   };
 
-  useEffect(() => {
-    if (plants.length > 0) {
-      console.log(plants)
-    }
-  }) 
+  // useEffect(() => {
+  //   if (plants.length > 0) {
+  //     console.log(plants)
+  //   }
+  // }) 
 
   const onCloseSidebar = () => {
     setSidebarOpen(false);
