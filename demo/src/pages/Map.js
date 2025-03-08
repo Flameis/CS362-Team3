@@ -6,7 +6,7 @@ import PlantSidebar from '../components/PlantSidebar';
 import { useNavigate } from 'react-router-dom';
 
 let plant_icon = L.icon({
-  iconUrl: 'plant-pin.png',
+  iconUrl: 'plant-pin.png', // <a href="https://www.flaticon.com/free-icons/smart-farm" title="smart farm icons">Smart farm icons created by Vector Stall - Flaticon</a>
   //todo make our own icon or make an attibution page (Also need a icon for user location)
   iconSize: [30, 41],
   iconAnchor: [15, 41],
@@ -309,7 +309,7 @@ function Map() {
     <div>
       <MapContainer center={userLocation || start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }} >
         <TileLayer
-          attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.flaticon.com/free-icon/location-pin_7360068" title="Smart farm icons created by Vector Stall - Flaticon">Plant Pin</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           maxNativeZoom={max_tile_zoom}
           maxZoom={max_zoom}
