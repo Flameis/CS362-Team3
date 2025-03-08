@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
 const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
+const authenticate = require('../middleware/authenticate');
 
 // Script to get all comments
 router.get('/', (req, res) => {
@@ -24,13 +25,13 @@ router.get('/comments/plant/:id', (req, res) => {
 });
 
 // Script to add a new comment
-router.post('/', (req, res) => {
-    const { plant_id, user_id, comment, date_posted } = req.body;
+router.post('/', authenticate, (req, res) => {
+    const { plant_id, comment} = req.body;
     const sql = `
         INSERT INTO Comments (plant_id, user_id, comment, date_posted)
         VALUES (?, ?, ?, ?)
     `;
-    const params = [plant_id, user_id, comment, date_posted];
+    const params = [plant_id, req.user.id, comment, new Date().toISOString().split('T')[0]];
     executeInsertQuery(sql, params, res);
 });
 
