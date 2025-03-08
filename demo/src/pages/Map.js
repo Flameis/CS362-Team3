@@ -133,7 +133,6 @@ function Map() {
       setTmpMarker(null);
       setCurrentMarker({key:key,data:plants[Number(key.match(/\d+/))]});
       const plantId = plants[Number(key.match(/\d+/))].plant_id;
-      navigate(`/plant/${plantId}`);
     }
   };
 
@@ -383,7 +382,7 @@ function Map() {
                 Season: {plant.season || 'Unknown'}<br />
                 Rating: {plant.avg_rating || 'No rating'}<br />
                 Posted by: {plant.user || 'Anonymous'}<br />
-              <button onClick={(e) => handleEditPlant(`plant-${idx}`,e)}>Edit</button><button key={`plant-${idx}`} onClick={(e) => handleDeletePlant(`plant-${idx}`,e)}>Delete</button>
+                <button onClick={(e) => handleEditPlant(`plant-${idx}`,e)}>Edit</button><button key={`plant-${idx}`} onClick={(e) => handleDeletePlant(`plant-${idx}`,e)}>Delete</button><br/><button onClick={(e) => navigate(`/plant/${currentMarker.data.plant_id}`)}>Comments</button>
               </Popup>
             </Marker>
           ) : null
