@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import '../styles/general.css'; // Import the general CSS file
 
 function DisplayPlants() {
   const [plants, setPlants] = useState([]);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('/api/plants')
@@ -26,6 +28,10 @@ function DisplayPlants() {
   const filteredPlants = plants.filter(plant =>
     plant.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleGoToPlantPage = (plantId) => {
+    navigate(`/plant/${plantId}`);
+  };
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -54,6 +60,7 @@ function DisplayPlants() {
             <th>Date Updated</th>
             <th>X Coordinate</th>
             <th>Y Coordinate</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -70,6 +77,9 @@ function DisplayPlants() {
               <td>{plant.date_updated}</td>
               <td>{plant.x_coordinate}</td>
               <td>{plant.y_coordinate}</td>
+              <td>
+                <button onClick={() => handleGoToPlantPage(plant.plant_id)}>View</button>
+              </td>
             </tr>
           ))}
         </tbody>
