@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import PlantSidebar from '../components/PlantSidebar';
@@ -34,6 +34,8 @@ let user_icon = L.icon({
 });
 
 function Map() {
+  const popupRef = useRef(null);
+  const markerRef = useRef(null);
   const start_position = [44.566464, -123.283263];
   const start_zoom = 19;
   const max_tile_zoom = 19;
@@ -48,6 +50,7 @@ function Map() {
   const [showPlacePlantButton, setShowPlacePlantButton] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
   const [currentMarker, setCurrentMarker] = useState(null); //type: [key:string,plant:Object ]
+  const [popUpRefresher, setPopUpRefresher] = useState(0);
 
   useEffect(() => {
     console.log('api-fetch')
@@ -143,6 +146,7 @@ function Map() {
   const handleAddPlant = (plantData) => {
     const {species_id, image_urls, description, location, season, date_added, x_coordinate, y_coordinate } = plantData;
     const missingFields = [];
+    const current_data = currentMarker.data;
 
     if (!species_id) missingFields.push('species_id');
     if (!image_urls || image_urls.length === 0) missingFields.push('image_urls');
@@ -159,7 +163,7 @@ function Map() {
       return;
     }
     if (sidebarEditMode) {
-      fetch('/api/plants/:id', {
+      fetch(`/api/plants/${current_data.plant_id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -173,12 +177,36 @@ function Map() {
           return response.json();
         })
         .then(data => {
-
-          setPlants([...plants.filter(x=>x.plant_id!=data.plant_id), data]);
+          
+          // setPlants([, data]);
           // setMarkers([...markers]); // Keep the new plant marker on the map
-          setTmpMarker(null);
-          setSidebarOpen(false);
-          setShowPlacePlantButton(true);
+          fetch(`/api/plants/${current_data.plant_id}`)
+          .then(response => response.json())
+          .then(data => {
+            if (Array.isArray(data.data)) {
+              Object.assign(current_data,data.data[0]);
+              setSidebarOpen(false);
+              setShowPlacePlantButton(false);
+              setPopUpRefresher(popUpRefresher+1);
+            } else {
+              throw new Error('Data format is incorrect');
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching plants:', error);
+          });
+          
+          
+          // console.debug(popupRef);
+          // console.debug(markerRef);
+          // let z = markerRef.current;
+          // console.debug(markerRef.current.options.children.key);
+          // popupRef.current.update();
+          // z.closePopup(); //  i cant make it update so ill just
+          // console.debug(markerRef.current.options.children.key);
+          // z.openPopup();
+          // console.debug(popupRef.current.getPopup());
+          // popupRef.current.openOn();
         })
         .catch(error => {
           console.error('Error adding plant:', error);
@@ -315,6 +343,7 @@ function Map() {
         ))} */}
         { (tmpMarker && tmpMarker.x_coordinate) ? (
         <Marker
+              refresher={popUpRefresher}
               key={`tmp-marker`}
               position={[tmpMarker.x_coordinate, tmpMarker.y_coordinate]}
               icon={plant_icon_new}
@@ -332,6 +361,7 @@ function Map() {
         {plants.map((plant, idx) => (
           plant !== null && plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
             <Marker 
+              ref={markerRef}
               key={`plant-${idx}`}
               position={[plant.x_coordinate, plant.y_coordinate]}
               icon={plant_icon}
@@ -340,6 +370,7 @@ function Map() {
               }}
             >
               <Popup
+              ref={popupRef}
               key={`plant-${idx}`}
               >
                 <strong>{plant.common_name || 'Unknown'}</strong><br />
