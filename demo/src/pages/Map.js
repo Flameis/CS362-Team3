@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import PlantSidebar from '../components/PlantSidebar';
+import { useNavigate } from 'react-router-dom';
 
 let plant_icon = L.icon({
   iconUrl: 'plant-pin.png',
@@ -51,6 +52,7 @@ function Map() {
   const [userLocation, setUserLocation] = useState(null);
   const [currentMarker, setCurrentMarker] = useState(null); //type: [key:string,plant:Object ]
   const [popUpRefresher, setPopUpRefresher] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log('api-fetch')
@@ -130,6 +132,8 @@ function Map() {
       setShowPlacePlantButton(false);
       setTmpMarker(null);
       setCurrentMarker({key:key,data:plants[Number(key.match(/\d+/))]});
+      const plantId = plants[Number(key.match(/\d+/))].plant_id;
+      navigate(`/plant/${plantId}`);
     }
   };
 

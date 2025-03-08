@@ -6,6 +6,8 @@ import Account from "./pages/Account";
 import Register from "./pages/Register";
 import SiteMap from "./pages/SiteMap";
 import Map from "./pages/Map";
+import PlantDetails from "./pages/PlantDetails";
+import "./App.css";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/sitemap" element={<SiteMap />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/plant/:plantId" element={<PlantDetails />} />
       </Routes>
     </div>
   );
