@@ -13,17 +13,22 @@ const executeSelectQuery = (sql, params, res) => {
     });
 };
 
-const executeInsertQuery = (sql, params, res) => {
+const executeInsertQuery = (sql, params, res, next=null) => {
     db.query(sql, params, (err, results) => {
         if (err) {
             res.status(400).json({ error: err.message });
             return;
         }
-        res.json({
+        let result = {
             message: 'success',
             data: results,
             insertedId: results.insertId
-        });
+        }
+        if (next === null) {
+            res.json(result);
+            return;
+        }
+        next(result);
     });
 };
 

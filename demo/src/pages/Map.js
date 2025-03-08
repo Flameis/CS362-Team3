@@ -149,7 +149,7 @@ function Map() {
     const current_data = currentMarker.data;
 
     if (!species_id) missingFields.push('species_id');
-    if (!image_urls || image_urls.length === 0) missingFields.push('image_urls');
+    if (!sidebarEditMode) {if (!image_urls || image_urls.length === 0) missingFields.push('image_urls');} // warn: this is a temp fix to make edit work as image_urls are currently not saved to db
     if (!description) missingFields.push('description');
     if (!location) missingFields.push('location');
     if (!season) missingFields.push('season');
@@ -212,6 +212,7 @@ function Map() {
           return response.json();
         })
         .then(data => {
+          console.debug('add res: ',data)
           fetch(`/api/plants/${data.insertedId}`)
           .then(response => response.json())
           .then(data => {
@@ -270,9 +271,10 @@ function Map() {
         // } else {
         //   throw new Error('Data format is incorrect');
         // }
-        setSidebarOpen(false);
+        
         plants[Number(plantKey.match(/\d+/))] = null; // dont remove just clear or it could mess up the indexing
         setCurrentMarker(null);
+        setSidebarOpen(false);
       })
       .catch(error => {
         console.error('Error deleting plant:', error);
@@ -344,7 +346,7 @@ function Map() {
               }}
             >
               <Popup>
-                new
+                <button onClick={handlePlacePlant}>Place Plant</button>
               </Popup>
         </Marker>) : null
         }

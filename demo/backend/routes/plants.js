@@ -71,7 +71,7 @@ router.get('/:id', (req, res) => {
 
 
 // Script to add a new plant
-router.post('/', (req, res) => {
+router.post('/', authenticate, (req, res) => {
     const { species_id, image_urls, description, location, season, date_added, x_coordinate, y_coordinate } = req.body;
     const sql = `
         INSERT INTO Plants (
@@ -81,18 +81,19 @@ router.post('/', (req, res) => {
             season,
             date_added,
             x_coordinate,
-            y_coordinate
-        ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            y_coordinate,
+            created_by
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
-    const params = [species_id, description, location, season, date_added, x_coordinate, y_coordinate];
+    const params = [species_id, description, location, season, date_added, x_coordinate, y_coordinate,req.user?.id];
     executeInsertQuery(sql, params, res, (result) => {
-        const plant_id = result.insertId;
+        const plant_id = result.insertedId;
         const imageSql = `
             INSERT INTO Images (plant_id, image_url, date_uploaded)
             VALUES (?, ?, ?)
         `;
         const imageParams = image_urls.map(url => [plant_id, url, new Date().toISOString().split('T')[0]]);
-        imageParams.forEach(params => executeInsertQuery(imageSql, params, res));
+        imageParams.forEach(params => executeInsertQuery(imageSql, params, res, (result2) => {result.result2=result2;res.json(result)}));
     });
 });
 
