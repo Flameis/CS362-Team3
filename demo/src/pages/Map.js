@@ -15,6 +15,17 @@ let plant_icon = L.icon({
   shadowAnchor: [14, 41]
 });
 
+let plant_icon_new = L.icon({
+  iconUrl: 'plant-pin_new.png',
+  //todo make our own icon or make an attibution page (Also need a icon for user location)
+  iconSize: [30, 41],
+  iconAnchor: [15, 41],
+  popupAnchor: [0, -41],
+  shadowUrl: 'marker-shadow.png',
+  shadowSize: [41, 41],
+  shadowAnchor: [14, 41]
+});
+
 let user_icon = L.icon({
   iconUrl: 'marker-icon.png',
   shadowUrl: 'marker-shadow.png',
@@ -28,13 +39,15 @@ function Map() {
   const max_tile_zoom = 19;
   const max_zoom = 30;
 
-  const [markers, setMarkers] = useState([]);
+  // const [markers, setMarkerssetMarkers] = useState([]);
+  const [tmpMarker, setTmpMarker] = useState(null);
   const [plants, setPlants] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarEditMode, setSidebarEditMode] = useState(false);
   const [selectedCoordinates, setSelectedCoordinates] = useState(null);
   const [showPlacePlantButton, setShowPlacePlantButton] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
+  const [currentMarker, setCurrentMarker] = useState(null); //type: [key:string,plant:Object ]
 
   useEffect(() => {
     console.log('api-fetch')
@@ -44,7 +57,7 @@ function Map() {
         if (Array.isArray(data.data)) {
           setPlants(data.data);
           const plantMarkers = data.data.map(plant => [plant.x_coordinate, plant.y_coordinate]);
-          setMarkers(plantMarkers);
+          // setMarkers(plantMarkers);
         } else {
           throw new Error('Data format is incorrect');
         }
@@ -95,13 +108,25 @@ function Map() {
 
   //! Markers are not accurate enough to be used for plant placement
   const addMarker = (coordinates) => {
+    console.log('xxxx')
     if (coordinates && coordinates.length === 2 && coordinates[0] !== undefined && coordinates[1] !== undefined) {
-      setMarkers([coordinates]); // Clear previous markers and set the new marker
-      setSelectedCoordinates(coordinates);
+      setTmpMarker({x_coordinate:coordinates[0], y_coordinate:coordinates[1]});
       setSidebarEditMode(false);
       setShowPlacePlantButton(true);
+      setCurrentMarker({key:'tmp-marker',data:{x_coordinate:coordinates[0], y_coordinate:coordinates[1]}});
     } else {
       console.error('Invalid coordinates:', coordinates);
+    }
+  };
+
+  const handleMarkerClick = (key) => {
+    console.log('Current Marker Key:', key);
+    if (key == "tmp-marker") {
+      setCurrentMarker({key:key,data:tmpMarker});
+    } else {
+      setShowPlacePlantButton(false);
+      setTmpMarker(null);
+      setCurrentMarker({key:key,data:plants[Number(key.match(/\d+/))]});
     }
   };
 
@@ -115,7 +140,7 @@ function Map() {
     });
     return null;
   }
-  const handleAddPlant = (coordinates, plantData) => {
+  const handleAddPlant = (plantData) => {
     const {species_id, image_urls, description, location, season, date_added, x_coordinate, y_coordinate } = plantData;
     const missingFields = [];
 
@@ -150,7 +175,8 @@ function Map() {
         .then(data => {
 
           setPlants([...plants.filter(x=>x.plant_id!=data.plant_id), data]);
-          setMarkers([...markers]); // Keep the new plant marker on the map
+          // setMarkers([...markers]); // Keep the new plant marker on the map
+          setTmpMarker(null);
           setSidebarOpen(false);
           setShowPlacePlantButton(true);
         })
@@ -173,10 +199,22 @@ function Map() {
           return response.json();
         })
         .then(data => {
-          setPlants([...plants, data]);
-          setMarkers([...markers, coordinates]); // Keep the new plant marker on the map
-          setSidebarOpen(false);
-          setShowPlacePlantButton(true);
+          fetch(`/api/plants/${data.insertedId}`)
+          .then(response => response.json())
+          .then(data => {
+            if (Array.isArray(data.data)) {
+              setPlants([...plants, data.data[0]]);
+              setTmpMarker(null);
+              setSidebarOpen(false);
+              setShowPlacePlantButton(false);
+            } else {
+              throw new Error('Data format is incorrect');
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching plants:', error);
+          });
+          
         })
         .catch(error => {
           console.error('Error adding plant:', error);
@@ -191,10 +229,43 @@ function Map() {
     
     setShowPlacePlantButton(false);
   };
+  const handleEditPlant = (key) => {
+    console.debug(key)
+    setSidebarEditMode(true);
+    setSidebarOpen(true);
+    
+  };
+  const handleDeletePlant = (plantKey) => {
+    if (currentMarker.key != plantKey) {
+      throw new Error('Delete Error: wrong plant selected');
+    }
+    fetch(`/api/plants/${currentMarker.data.plant_id}`,{method: 'DELETE'})
+      .then(response => response.json())
+      .then(data => {
+        console.log("deleted:",data)
+        // if (Array.isArray(data.data)) {
+        //   setPlants([...plants, data.data[0]]);
+        //   setTmpMarker(null);
+        //   setSidebarOpen(false);
+        //   setShowPlacePlantButton(false);
+        // } else {
+        //   throw new Error('Data format is incorrect');
+        // }
+      })
+      .catch(error => {
+        console.error('Error deleting plant:', error);
+      });
+  };
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
+  useEffect(() => {
+    if (plants.length > 0) {
+      console.log(plants)
+    }
+  }) 
 
   const onCloseSidebar = () => {
     setSidebarOpen(false);
@@ -206,7 +277,6 @@ function Map() {
       click: (e) => {
         addMarker([e.latlng.lat, e.latlng.lng]);
         onCloseSidebar();
-        setShowPlacePlantButton(true);
       },
     });
     return null;
@@ -228,26 +298,44 @@ function Map() {
             </Popup>
           </Marker>
         )}
-        {markers.map((position, idx) => (
+        {/* {markers.map((position, idx) => (
           position[0] !== undefined && position[1] !== undefined ? (
             <Marker
-              key={`marker-${idx}`}
+              key={`tmp-${idx}`}
               position={position}
               icon={plant_icon}
             >
               <Popup>
-                {/* Remove PlantForm reference */}
+                new
               </Popup>
             </Marker>
           ) : null
-        ))}
+        ))} */}
+        { (tmpMarker) ? (
+        <Marker
+              key={`tmp-marker`}
+              position={[tmpMarker.x_coordinate, tmpMarker.y_coordinate]}
+              icon={plant_icon_new}
+              eventHandlers={{
+                click: () => handleMarkerClick(`tmp-marker`)
+              }}
+            >
+              <Popup>
+                new
+              </Popup>
+        </Marker>) : null
+        }
+        
         
         {plants.map((plant, idx) => (
           plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
-            <Marker
+            <Marker 
               key={`plant-${idx}`}
               position={[plant.x_coordinate, plant.y_coordinate]}
               icon={plant_icon}
+              eventHandlers={{
+                click: () => handleMarkerClick(`plant-${idx}`)
+              }}
             >
               <Popup
               key={`plant-${idx}`}
@@ -257,7 +345,8 @@ function Map() {
                 Location: {plant.location || 'Unknown'}<br />
                 Season: {plant.season || 'Unknown'}<br />
                 Rating: {plant.avg_rating || 'No rating'}<br />
-                Posted by: {plant.user || 'Anonymous'}
+                Posted by: {plant.user || 'Anonymous'}<br />
+              <button onClick={(e) => handleEditPlant(`plant-${idx}`,e)}>Edit</button><button key={`plant-${idx}`} onClick={(e) => handleDeletePlant(`plant-${idx}`,e)}>Delete</button>
               </Popup>
             </Marker>
           ) : null
@@ -288,10 +377,11 @@ function Map() {
       {sidebarOpen && (
         <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
           <PlantSidebar
-            coordinates={selectedCoordinates}
+            currentMarker={currentMarker}
             onAddPlant={handleAddPlant}
             onClose={onCloseSidebar}
             isEditMode={sidebarEditMode}
+            
           />
         </div>
       )}

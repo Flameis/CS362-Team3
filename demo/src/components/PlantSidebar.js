@@ -3,7 +3,7 @@ import './PlantSidebar.css';
 import '../styles/general.css';
 import SpeciesDropdown from './SpeciesDropdown';
 
-function PlantSidebar({ coordinates, onAddPlant, onClose, isEditMode }) {
+function PlantSidebar({ currentMarker, onAddPlant, onClose, isEditMode }) {
   const [description, setDescription] = useState('');
   const [location, setLocation] = useState('');
   const [season, setSeason] = useState('');
@@ -23,6 +23,7 @@ function PlantSidebar({ coordinates, onAddPlant, onClose, isEditMode }) {
   };
 
   const handleSubmit = (e) => {
+    console.debug(currentMarker);
     e.preventDefault();
     const plantData = {
       species_id,
@@ -30,11 +31,11 @@ function PlantSidebar({ coordinates, onAddPlant, onClose, isEditMode }) {
       location,
       season,
       date_added: new Date().toISOString().split('T')[0],
-      x_coordinate: coordinates[0],
-      y_coordinate: coordinates[1],
+      x_coordinate: currentMarker.data.x_coordinate,
+      y_coordinate: currentMarker.data.y_coordinate,
       image_urls: imageUrls.filter(url => url !== '')
     };
-    onAddPlant(coordinates, plantData);
+    onAddPlant(plantData);
     onClose();
   };
 
