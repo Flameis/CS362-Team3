@@ -239,10 +239,10 @@ function Map() {
     if (currentMarker.key != plantKey) {
       throw new Error('Delete Error: wrong plant selected');
     }
-    fetch(`/api/plants/${currentMarker.data.plant_id}`,{method: 'DELETE'})
+    fetch(`/api/plants/${currentMarker.data.plant_id}`,{method: 'DELETE', body: {user:{user_id:0,role:'admin'}}})
       .then(response => response.json())
       .then(data => {
-        console.log("deleted:",data)
+        console.log("deleted:",data);
         // if (Array.isArray(data.data)) {
         //   setPlants([...plants, data.data[0]]);
         //   setTmpMarker(null);
@@ -251,6 +251,8 @@ function Map() {
         // } else {
         //   throw new Error('Data format is incorrect');
         // }
+        plants[Number(plantKey.match(/\d+/))] = null; // dont remove just clear or it could mess up the indexing
+        setCurrentMarker(null);
       })
       .catch(error => {
         console.error('Error deleting plant:', error);
@@ -311,7 +313,7 @@ function Map() {
             </Marker>
           ) : null
         ))} */}
-        { (tmpMarker) ? (
+        { (tmpMarker && tmpMarker.x_coordinate) ? (
         <Marker
               key={`tmp-marker`}
               position={[tmpMarker.x_coordinate, tmpMarker.y_coordinate]}
@@ -328,7 +330,7 @@ function Map() {
         
         
         {plants.map((plant, idx) => (
-          plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
+          plant !== null && plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
             <Marker 
               key={`plant-${idx}`}
               position={[plant.x_coordinate, plant.y_coordinate]}

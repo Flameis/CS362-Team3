@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust the path as needed
+const authenticate = require('../middleware/authenticate'); // Adjust the path as needed
 const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
 
 
@@ -19,13 +20,48 @@ router.get('/raw/:id', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    const sql = 'SELECT * FROM Plants JOIN Species ON Plants.species_id = Species.species_id';
+    // const sql = 'SELECT * FROM Plants JOIN Species ON Plants.species_id = Species.species_id ';
+    const sql = `
+    SELECT 
+        Plants.*, 
+        Users.username AS user, 
+        Users.role AS user_role, 
+        Species.* 
+    FROM 
+        Plants 
+    JOIN 
+        Species 
+    ON 
+        Plants.species_id = Species.species_id 
+    LEFT JOIN 
+        Users 
+    ON 
+        Plants.created_by = Users.user_id;
+    `;
     executeSelectQuery(sql, [], res);
 });
 
 // Script to get a specific plant by ID
 router.get('/:id', (req, res) => {
-    const sql = 'SELECT * FROM Plants JOIN Species ON Plants.species_id = Species.species_id WHERE plant_id = ?';
+    // const sql = 'SELECT * FROM Plants JOIN Species ON Plants.species_id = Species.species_id WHERE plant_id = ?';
+    const sql = `
+    SELECT 
+        Plants.*, 
+        Users.username AS user, 
+        Users.role AS user_role, 
+        Species.* 
+    FROM 
+        Plants 
+    JOIN 
+        Species 
+    ON 
+        Plants.species_id = Species.species_id 
+    LEFT JOIN 
+        Users 
+    ON 
+        Plants.created_by = Users.user_id;
+    WHERE plant_id = ?
+    `;
     const params = [req.params.id];
     executeSelectQuery(sql, params, res);
 });
@@ -58,7 +94,7 @@ router.post('/', (req, res) => {
 });
 
 // Script to update a plant
-router.put('/:id', verifyUserOrAdmin, (req, res) => {
+router.put('/:id', authenticate, verifyUserOrAdmin, (req, res) => {
     const { species_id, image_urls, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate } = req.body;
     const sql = `
         UPDATE Plants
@@ -93,7 +129,7 @@ router.put('/:id', verifyUserOrAdmin, (req, res) => {
 });
 
 // Script to delete a plant
-router.delete('/:id', verifyUserOrAdmin, (req, res) => {
+router.delete('/:id', authenticate, verifyUserOrAdmin, (req, res) => {
     const sql = `
         DELETE FROM Plants
         WHERE plant_id = ?

@@ -1,9 +1,10 @@
 const db = require('../db'); // Adjust the path as needed
 
 const verifyUserOrAdmin = (req, res, next) => {
+  console.log(req.user);
   try {
     const userId = req.user?.id; // Ensure req.user is not null
-    if (!userId) {
+    if (userId === null) {
       return res.status(401).json({ error: "Unauthorized: User ID is missing" });
     }
     const userRole = req.user.role; // Access the authenticated user's role
