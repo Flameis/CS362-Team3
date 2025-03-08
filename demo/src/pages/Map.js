@@ -35,8 +35,6 @@ let user_icon = L.icon({
 });
 
 function Map() {
-  const popupRef = useRef(null);
-  const markerRef = useRef(null);
   const start_position = [44.566464, -123.283263];
   const start_zoom = 19;
   const max_tile_zoom = 19;
@@ -47,12 +45,12 @@ function Map() {
   const [plants, setPlants] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarEditMode, setSidebarEditMode] = useState(false);
-  const [selectedCoordinates, setSelectedCoordinates] = useState(null);
   const [showPlacePlantButton, setShowPlacePlantButton] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
   const [currentMarker, setCurrentMarker] = useState(null); //type: [key:string,plant:Object ]
   const [popUpRefresher, setPopUpRefresher] = useState(0);
   const navigate = useNavigate();
+  const plantSidebarRef = useRef();
 
   useEffect(() => {
     console.log('api-fetch')
@@ -111,7 +109,6 @@ function Map() {
     };
   }, []);
 
-  //! Markers are not accurate enough to be used for plant placement
   const addMarker = (coordinates) => {
     console.log('xxxx')
     if (coordinates && coordinates.length === 2 && coordinates[0] !== undefined && coordinates[1] !== undefined) {
@@ -129,10 +126,10 @@ function Map() {
     if (key == "tmp-marker") {
       setCurrentMarker({key:key,data:tmpMarker});
     } else {
+      setSidebarOpen(false);
       setShowPlacePlantButton(false);
       setTmpMarker(null);
       setCurrentMarker({key:key,data:plants[Number(key.match(/\d+/))]});
-      const plantId = plants[Number(key.match(/\d+/))].plant_id;
     }
   };
 
@@ -180,9 +177,6 @@ function Map() {
           return response.json();
         })
         .then(data => {
-          
-          // setPlants([, data]);
-          // setMarkers([...markers]); // Keep the new plant marker on the map
           fetch(`/api/plants/${current_data.plant_id}`)
           .then(response => response.json())
           .then(data => {
@@ -198,18 +192,6 @@ function Map() {
           .catch(error => {
             console.error('Error fetching plants:', error);
           });
-          
-          
-          // console.debug(popupRef);
-          // console.debug(markerRef);
-          // let z = markerRef.current;
-          // console.debug(markerRef.current.options.children.key);
-          // popupRef.current.update();
-          // z.closePopup(); //  i cant make it update so ill just
-          // console.debug(markerRef.current.options.children.key);
-          // z.openPopup();
-          // console.debug(popupRef.current.getPopup());
-          // popupRef.current.openOn();
         })
         .catch(error => {
           console.error('Error adding plant:', error);
@@ -260,12 +242,18 @@ function Map() {
     
     setShowPlacePlantButton(false);
   };
+  useEffect(() => {
+    if (sidebarOpen && sidebarEditMode && plantSidebarRef.current) {
+      plantSidebarRef.current.populateForm(currentMarker.data);
+    }
+  }, [sidebarOpen]);
   const handleEditPlant = (key) => {
     console.debug(key)
     setSidebarEditMode(true);
     setSidebarOpen(true);
-    
-  };
+    // console.debug(plantSidebarRef)
+    // plantSidebarRef.current.populateForm(currentMarker.data);
+  }
   const handleDeletePlant = (plantKey) => {
     if (currentMarker.key != plantKey) {
       throw new Error('Delete Error: wrong plant selected');
@@ -282,6 +270,7 @@ function Map() {
         // } else {
         //   throw new Error('Data format is incorrect');
         // }
+        setSidebarOpen(false);
         plants[Number(plantKey.match(/\d+/))] = null; // dont remove just clear or it could mess up the indexing
         setCurrentMarker(null);
       })
@@ -364,7 +353,6 @@ function Map() {
         {plants.map((plant, idx) => (
           plant !== null && plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
             <Marker 
-              ref={markerRef}
               key={`plant-${idx}`}
               position={[plant.x_coordinate, plant.y_coordinate]}
               icon={plant_icon}
@@ -373,7 +361,6 @@ function Map() {
               }}
             >
               <Popup
-              ref={popupRef}
               key={`plant-${idx}`}
               >
                 <strong>{plant.common_name || 'Unknown'}</strong><br />
@@ -413,11 +400,11 @@ function Map() {
       {sidebarOpen && (
         <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
           <PlantSidebar
+            ref={plantSidebarRef}
             currentMarker={currentMarker}
             onAddPlant={handleAddPlant}
             onClose={onCloseSidebar}
             isEditMode={sidebarEditMode}
-            
           />
         </div>
       )}

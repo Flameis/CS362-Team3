@@ -19,25 +19,40 @@ router.get('/raw/:id', (req, res) => {
     executeSelectQuery(sql, params, res);
 });
 
+
+const select_plants_sql = `
+SELECT 
+    Plants.*, 
+    Users.username AS user, 
+    Users.role AS user_role, 
+    Species.*, 
+    -- (SELECT JSON_ARRAYAGG(JSON_OBJECT('image_id', Images.image_id, 'image_url', Images.image_url))
+    --  FROM 
+    --     Images 
+    --  WHERE 
+    --     Images.plant_id = Plants.plant_id
+    --  ORDER BY 
+    --     Images.image_id) AS images 
+    (SELECT JSON_OBJECTAGG(Images.image_id, Images.image_url)
+     FROM 
+        Images 
+     WHERE 
+        Images.plant_id = Plants.plant_id) AS images
+FROM 
+    Plants 
+JOIN 
+    Species 
+ON 
+    Plants.species_id = Species.species_id 
+LEFT JOIN 
+    Users 
+ON 
+    Plants.created_by = Users.user_id
+`
+
 router.get('/', (req, res) => {
     // const sql = 'SELECT * FROM Plants JOIN Species ON Plants.species_id = Species.species_id ';
-    const sql = `
-    SELECT 
-        Plants.*, 
-        Users.username AS user, 
-        Users.role AS user_role, 
-        Species.* 
-    FROM 
-        Plants 
-    JOIN 
-        Species 
-    ON 
-        Plants.species_id = Species.species_id 
-    LEFT JOIN 
-        Users 
-    ON 
-        Plants.created_by = Users.user_id;
-    `;
+    const sql = select_plants_sql;
     executeSelectQuery(sql, [], res);
 });
 
@@ -45,22 +60,10 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     // const sql = 'SELECT * FROM Plants JOIN Species ON Plants.species_id = Species.species_id WHERE plant_id = ?';
     const sql = `
-    SELECT 
-        Plants.*, 
-        Users.username AS user, 
-        Users.role AS user_role, 
-        Species.* 
-    FROM 
-        Plants 
-    JOIN 
-        Species 
-    ON 
-        Plants.species_id = Species.species_id 
-    LEFT JOIN 
-        Users 
-    ON 
-        Plants.created_by = Users.user_id
-    WHERE plant_id = ?
+    ${select_plants_sql}
+    WHERE 
+        Plants.plant_id = ?;
+
     `;
     const params = [req.params.id];
     executeSelectQuery(sql, params, res);

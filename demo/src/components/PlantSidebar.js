@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useImperativeHandle, forwardRef} from 'react';
 import './PlantSidebar.css';
 import '../styles/general.css';
 import SpeciesDropdown from './SpeciesDropdown';
 
-function PlantSidebar({ currentMarker, onAddPlant, onClose, isEditMode }) {
+const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMode}, ref) => {
+  useImperativeHandle(ref, () => ({
+    populateForm(data) {
+      setDescription(data.description);
+      setLocation(data.location);
+      setSeason(data.season);
+      setSpeciesId(data.species_id);
+      setImageUrls(Object.values(JSON.parse(data.images ?? "{}")));
+    },
+  }));
   const [description, setDescription] = useState('');
   const [location, setLocation] = useState('');
   const [season, setSeason] = useState('');
@@ -62,6 +71,6 @@ function PlantSidebar({ currentMarker, onAddPlant, onClose, isEditMode }) {
       </form>
     </div>
   );
-}
+});
 
 export default PlantSidebar;
