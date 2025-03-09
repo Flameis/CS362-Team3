@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #d7d6c2ff; /* Added background color */
+  min-height: 100vh; /* Ensure the background color covers the whole page */
 }
 
 code {
@@ -28,7 +30,7 @@ code {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #484e32ff; /* Updated color */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -39,7 +41,7 @@ code {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #859c8cff; /* Updated color */
 }
 
 @keyframes App-logo-spin {
@@ -61,6 +63,7 @@ body {
 
 .container {
   padding: 10px;
+  background-color: #d7d6c2ff; /* Added background color */
 }
 
 .menuBtn {
@@ -68,7 +71,7 @@ body {
 }
 
 .title {
-  color: #7bb578;
+  color: #859c8cff; /* Updated color */
   text-align: center;
   margin-top: 0;
   margin-bottom: 33px;
@@ -102,7 +105,7 @@ ul li img {
 }
 
 ul li:hover {
-  background: #ac948f;
+  background: #d7d6c2ff; /* Updated color */
 }
 
 .comment.comment-user {

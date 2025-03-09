@@ -1,6 +1,7 @@
 .map-container {
   height: 100vh;
   width: 100vw;
+  background-color: #d7d6c2ff; /* Added background color */
 }
 
 .place-plant-button {
@@ -10,7 +11,7 @@
   transform: translateX(-50%);
   z-index: 1001;
   padding: 10px 20px;
-  background-color: #7bb578;
+  background-color: #859c8cff; /* Updated color */
   color: white;
   border: none;
   border-radius: 5px;
@@ -18,5 +19,5 @@
 }
 
 .place-plant-button:hover {
-  background-color: #6aa467;
+  background-color: #484e32ff; /* Updated color */
 }
