@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import '../styles/general.css'; // Import the general CSS file
 
 function PlantDetails() {
   const { plantId } = useParams();
@@ -14,7 +15,7 @@ function PlantDetails() {
       try {
         const plantResponse = await fetch(`/api/plants/${plantId}`);
         const plantData = await plantResponse.json();
-        setPlant(plantData.data);
+        setPlant(plantData.data[0]);
 
         const commentsResponse = await fetch(`/api/comments/plant/${plantId}`);
         const commentsData = await commentsResponse.json();
@@ -61,15 +62,15 @@ function PlantDetails() {
     <div>
       {plant ? (
         <div>
-          <h1>{plant.common_name}</h1>
-          <p>{plant.description}</p>
-          <p>Location: {plant.location}</p>
-          <p>Season: {plant.season}</p>
-          <p>Posted by: {plant.user}</p>
+          <h1>{plant.common_name || 'Unknown'}</h1>
+          <p>{plant.description || 'No description'}</p>
+          <p>Location: {plant.location || 'Unknown'}</p>
+          <p>Season: {plant.season || 'Unknown'}</p>
+          <p>Posted by: {plant.user || 'Anonymous'}</p>
           <h2>Comments</h2>
           <ul>
             {comments.map(comment => (
-              <li key={comment.comment_id}>{comment.comment}</li>
+              <li key={comment.comment_id}><b className='comment user-admin'>{comment.username}:</b>&nbsp;{comment.comment}</li>
             ))}
           </ul>
           <form onSubmit={handleCommentSubmit}>

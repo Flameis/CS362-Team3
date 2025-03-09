@@ -171,3 +171,7 @@ a {
 .logout-button:hover, .delete-account-button:hover {
   background-color: #6aa467;
 }
+
+.comment .user-admin {
+  color:darkred
+}

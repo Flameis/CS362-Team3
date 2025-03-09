@@ -11,15 +11,15 @@ router.get('/', (req, res) => {
 });
 
 // Script to get a user's comments
-router.get('/comments/user/:id', (req, res) => {
+router.get('/user/:id', (req, res) => {
     const sql = 'SELECT * FROM Comments WHERE user_id = ?';
     const params = [req.params.id];
     executeSelectQuery(sql, params, res);
 });
 
 // Script to get a plant's comments
-router.get('/comments/plant/:id', (req, res) => {
-    const sql = 'SELECT * FROM Comments WHERE plant_id = ?';
+router.get('/plant/:id', (req, res) => {
+    const sql = 'SELECT Comments.*, Users.username, Users.role FROM Comments JOIN Users ON Comments.user_id=Users.user_id WHERE plant_id = ?';
     const params = [req.params.id];
     executeSelectQuery(sql, params, res);
 });
