@@ -112,5 +112,13 @@ ul li:hover {
 }
 
 .comment.comment-user.user-admin {
-  color: darkred;
+  color:darkred;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+.rating {
+    color: grey;
+}
+.rating .checked {
+  color: orange;
 }

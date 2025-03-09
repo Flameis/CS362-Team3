@@ -69,7 +69,8 @@ CREATE TABLE Ratings (
     user_id INT,
     rating INT NOT NULL,
     FOREIGN KEY (plant_id) REFERENCES Plants(plant_id),
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    CONSTRAINT unique_rating_per_user_plant UNIQUE (plant_id, user_id)
 );
 
 -- Trigger to update avg_rating in Plants table

@@ -14,6 +14,7 @@ const plantRoutes = require('./routes/plants');
 const commentRoutes = require('./routes/comments');
 const imageRoutes = require('./routes/images');
 const speciesRoutes = require('./routes/species');
+const ratingsRoutes = require('./routes/ratings');
 
 // Use routes
 app.use('/api/auth', authRoutes);
@@ -22,6 +23,7 @@ app.use('/api/plants', plantRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/images', imageRoutes);
 app.use('/api/species', speciesRoutes);
+app.use('/api/ratings', ratingsRoutes);
 
 // Root route
 app.get('/api', (req, res) => {
