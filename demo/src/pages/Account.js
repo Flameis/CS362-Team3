@@ -24,7 +24,8 @@ function Account() {
         if (response.ok) {
           setAccountInfo(res_data.data);
         } else {
-          setError(res_data.error || "Failed to fetch account information");
+          navigate('/login')
+          // setError(res_data.error || "Failed to fetch account information");
         }
       } catch (err) {
         setError("An error occurred. Please try again.");
@@ -32,7 +33,7 @@ function Account() {
     };
 
     fetchAccountInfo();
-  }, []);
+  }, [navigate]);
 
   const handleLogout = async () => {
     const response = await fetch(`/api/auth/logout`, {

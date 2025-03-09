@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
 import '../styles/general.css'; // Import the general CSS file
@@ -10,7 +10,23 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [loginCheck, setLoginCheck] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        const response = await fetch('/api/auth/me');
+        if (response.ok) {
+          navigate("/account");
+        }
+      } catch (error) {
+        // console.error("Failed to check authentication status", error);
+      }
+      setLoginCheck(false);
+    };
+    checkAuthStatus();
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,6 +54,10 @@ function Register() {
       setError("An error occurred. Please try again.");
     }
   };
+
+  if (loginCheck) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="container loginBox">
