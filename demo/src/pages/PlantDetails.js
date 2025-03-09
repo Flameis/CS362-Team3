@@ -70,7 +70,7 @@ function PlantDetails() {
           <h2>Comments</h2>
           <ul>
             {comments.map(comment => (
-              <li key={comment.comment_id}><b className='comment user-admin'>{comment.username}:</b>&nbsp;{comment.comment}</li>
+              <li key={comment.comment_id}><span className={comment.role=='admin' ? 'comment comment-user user-admin' : 'comment comment-user user-normal'}>{comment.username}:</span>&nbsp;{comment.comment}</li>
             ))}
           </ul>
           <form onSubmit={handleCommentSubmit}>

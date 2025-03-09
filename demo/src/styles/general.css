@@ -172,6 +172,11 @@ a {
   background-color: #6aa467;
 }
 
-.comment .user-admin {
-  color:darkred
+.comment.comment-user {
+  color:darkblue;
+  font-weight: bold;
+}
+
+.comment.comment-user.user-admin {
+  color:darkred;
 }
