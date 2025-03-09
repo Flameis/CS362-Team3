@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  position: relative;
+  z-index: 1; /* Ensure App content is below the navbar */
 }
 
 .App-logo {
@@ -113,8 +115,8 @@
 .navbar-toggle {
   position: fixed;
   top: 10px;
-  left: 10px;
-  z-index: 1001;
+  right: 10px;
+  z-index: 5000; /* Ensure the toggle button is on top */
   cursor: pointer;
 }
 
@@ -127,7 +129,7 @@
   background-color: #333;
   overflow-x: hidden;
   transition: 0.3s;
-  z-index: 1000;
+  z-index: 5000; /* Ensure the navbar is on top of other elements */
 }
 
 .navbar.open {
