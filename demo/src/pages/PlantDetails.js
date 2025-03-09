@@ -9,6 +9,7 @@ function PlantDetails() {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [error, setError] = useState('');
+  const [userRating, setUserRating] = useState(null);
 
   useEffect(() => {
     const fetchPlantData = async () => {
@@ -58,6 +59,46 @@ function PlantDetails() {
     navigate(-1);
   };
 
+  useEffect(() => {
+    const fetchUserRating = async () => {
+      try {
+        const response = await fetch(`/api/ratings/plant/${plantId}/user`);
+        const data = await response.json();
+        console.log(data)
+        setUserRating(data.data.rating);
+      } catch (err) {
+        console.error('Error fetching user rating:', err);
+      }
+    };
+
+    fetchUserRating();
+  }, [plantId]);
+
+
+  const handleRating = async (event) => {
+    // console.debug(event)
+    const rating = Number(event.target.getAttribute('value'));
+    let url = '/api/ratings'
+    const parms = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ plant_id: plantId, rating: rating})
+    }
+    if (userRating !== null) {
+      url += `/plant/${plantId}/user`;
+      parms.method = 'PUT';
+      parms.body = JSON.stringify({ rating: rating});
+    }
+    const response = await fetch(url, parms);
+    if (!response.ok) {
+      throw new Error('Failed to set rating');
+    }
+    // const data = await response.json();
+    setUserRating(rating);
+  }
+
   return (
     <div>
       {plant ? (
@@ -67,6 +108,24 @@ function PlantDetails() {
           <p>Location: {plant.location || 'Unknown'}</p>
           <p>Season: {plant.season || 'Unknown'}</p>
           <p>Posted by: {plant.user || 'Anonymous'}</p>
+          <p>Average Rating: <span class="rating">
+              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 1 ? 'checked' : null}`}/>
+              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 2 ? 'checked' : null}`}/>
+              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 3 ? 'checked' : null}`}/>
+              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 4 ? 'checked' : null}`}/>
+              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 5 ? 'checked' : null}`}/>
+              <span class="number">&nbsp;{plant.avg_rating || 'N/A'}</span>
+            </span>
+          </p>
+          <p>Your Rating: <span class="rating user-rating" onClick={handleRating}>
+              <span id='rating1' value='1' className={`fa fa-star ${Math.round(userRating) >= 1 ? 'checked' : null}`}/>
+              <span id='rating2' value='2' className={`fa fa-star ${Math.round(userRating) >= 2 ? 'checked' : null}`}/>
+              <span id='rating3' value='3' className={`fa fa-star ${Math.round(userRating) >= 3 ? 'checked' : null}`}/>
+              <span id='rating4' value='4' className={`fa fa-star ${Math.round(userRating) >= 4 ? 'checked' : null}`}/>
+              <span id='rating5' value='5' className={`fa fa-star ${Math.round(userRating) >= 5 ? 'checked' : null}`}/>
+            </span>
+          </p>
+
           <h2>Comments</h2>
           <ul>
             {comments.map(comment => (
