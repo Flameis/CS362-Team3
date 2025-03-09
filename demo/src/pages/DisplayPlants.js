@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../styles/general.css'; // Import the general CSS file
+import '../styles/displayplants.css'; // Corrected import statement
 
 function DisplayPlants() {
   const [plants, setPlants] = useState([]);

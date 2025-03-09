@@ -4,6 +4,8 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import PlantSidebar from '../components/PlantSidebar';
 import { useNavigate } from 'react-router-dom';
+import '../styles/general.css'; // Import the general CSS file
+import '../styles/map.css'; // Import the Map CSS file
 
 let plant_icon = L.icon({
   iconUrl: 'plant-pin.png', // <a href="https://www.flaticon.com/free-icons/smart-farm" title="smart farm icons">Smart farm icons created by Vector Stall - Flaticon</a>
@@ -307,7 +309,7 @@ function Map() {
 
   return (
     <div>
-      <MapContainer center={userLocation || start_position} zoom={start_zoom} scrollWheelZoom={true} style={{ height: '100vh', width: '100vw' }} >
+      <MapContainer center={userLocation || start_position} zoom={start_zoom} scrollWheelZoom={true} className="map-container">
         <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.flaticon.com/free-icon/location-pin_7360068" title="Smart farm icons created by Vector Stall - Flaticon">Plant Pin</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -381,19 +383,7 @@ function Map() {
       {showPlacePlantButton && (
         <button
           onClick={handlePlacePlant}
-          style={{
-            position: 'absolute',
-            bottom: 10,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 1001,
-            padding: '10px 20px',
-            backgroundColor: '#7bb578',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-          }}
+          className="place-plant-button"
         >
           Place Plant
         </button>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function SpeciesDropdown({ selectedSpecies, onSpeciesChange }) {
+function SpeciesDropdown({ selectedSpecies, onSpeciesChange, onClick }) {
   const [species, setSpecies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -24,7 +24,7 @@ function SpeciesDropdown({ selectedSpecies, onSpeciesChange }) {
   );
 
   return (
-    <div>
+    <div onClick={onClick}>
       <input
         type="text"
         placeholder="Search species..."

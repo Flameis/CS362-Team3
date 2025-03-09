@@ -1,0 +1,35 @@
+.account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.account-details {
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.account-details p {
+  margin: 10px 0;
+}
+
+.logout-button, .delete-account-button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #7bb578;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover, .delete-account-button:hover {
+  background-color: #6aa467;
+}
