@@ -1,8 +1,8 @@
 .navbar-toggle {
   position: fixed;
   top: 10px;
-  right: 10px;
-  z-index: 5000; /* Ensure the toggle button is on top */
+  right: 10px; /* Change from left to right */
+  z-index: 1001;
   cursor: pointer;
 }
 
@@ -15,7 +15,7 @@
   background-color: #333;
   overflow-x: hidden;
   transition: 0.3s;
-  z-index: 1001; /* Ensure the navbar is on top of other elements */
+  z-index: 1000;
 }
 
 .navbar.open {
