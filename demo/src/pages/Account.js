@@ -33,7 +33,11 @@ function Account() {
     fetchAccountInfo();
   }, []);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    const response = await fetch(`/api/auth/logout`, {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json'}});
+    const res_data = await response.json();
     console.debug("Token before removal:", Cookies.get('token'));
     Cookies.remove('token', { path: '/' });
     console.debug("Token after removal:", Cookies.get('token'));

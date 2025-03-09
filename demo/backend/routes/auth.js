@@ -48,4 +48,9 @@ router.get('/me', authenticate, (req, res) => {
     });
 });
 
+router.get('/logout', (req, res) => {
+    res.clearCookie('token', { httpOnly: true });
+    res.json({ message: "token cleared" });
+});
+
 module.exports = router;
