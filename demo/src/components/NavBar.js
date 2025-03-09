@@ -56,13 +56,11 @@ function NavBar() {
       </div>
       <nav className={`navbar ${isOpen ? 'open' : ''}`} onClick={stopPropagation}>
         <ul>
-          <li><Link to="/" onClick={toggleSidebar}>Home</Link></li>
+        <li><Link to="/map" onClick={toggleSidebar}>Map</Link></li>
+          <li><Link to="/display-plants" onClick={toggleSidebar}>Plants</Link></li>
           <li><Link to="/Login" onClick={toggleSidebar}>Login</Link></li>
           <li><Link to="/register" onClick={toggleSidebar}>Register</Link></li>
           <li><Link to="/account" onClick={toggleSidebar}>Account</Link></li>
-          <li><Link to="/map" onClick={toggleSidebar}>Map</Link></li>
-          <li><Link to="/display-plants" onClick={toggleSidebar}>Plants</Link></li>
-          <li><Link to="/sitemap" onClick={toggleSidebar}>Site Map</Link></li>
           <li><Link to="/about" onClick={toggleSidebar}>About</Link></li>
         </ul>
       </nav>
