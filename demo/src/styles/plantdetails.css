@@ -1,9 +1,10 @@
 .plant-details-container {
   padding: 10px;
+  background-color: #d7d6c2ff; /* Added background color */
 }
 
 .plant-details h1 {
-  color: #7bb578;
+  color: #859c8cff; /* Updated color */
 }
 
 .plant-details p {
@@ -28,7 +29,7 @@
 .comments button {
   padding: 10px 20px;
   margin: 5px;
-  background-color: #7bb578;
+  background-color: #859c8cff; /* Updated color */
   color: white;
   border: none;
   border-radius: 5px;
@@ -36,5 +37,5 @@
 }
 
 .comments button:hover {
-  background-color: #6aa467;
+  background-color: #484e32ff; /* Updated color */
 }

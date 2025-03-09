@@ -1,5 +1,6 @@
 .about-container {
   padding: 10px;
+  background-color: #d7d6c2ff; /* Added background color */
 }
 
 .about-container p {
@@ -7,7 +8,7 @@
 }
 
 .about-container a {
-  color: #61dafb;
+  color: #859c8cff; /* Updated color */
   text-decoration: none;
 }
 

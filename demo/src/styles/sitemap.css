@@ -1,5 +1,6 @@
 .sitemap-container {
   padding: 10px;
+  background-color: #d7d6c2ff; /* Added background color */
 }
 
 .sitemap-logo {
@@ -8,7 +9,7 @@
 }
 
 .sitemap-links a {
-  color: #61dafb;
+  color: #859c8cff; /* Updated color */
   text-decoration: none;
 }
 

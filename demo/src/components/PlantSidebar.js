@@ -19,6 +19,7 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
   const [season, setSeason] = useState('');
   const [species_id, setSpeciesId] = useState('');
   const [imageUrls, setImageUrls] = useState(['']);
+  const [imageFiles, setImageFiles] = useState([]);
 
   const handleImageUrlChange = (index, value) => {
     const newImageUrls = [...imageUrls];
@@ -28,6 +29,10 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
 
   const addImageUrlField = () => {
     setImageUrls([...imageUrls, '']);
+  };
+
+  const handleImageFileChange = (e) => {
+    setImageFiles([...imageFiles, ...e.target.files]);
   };
 
   const handleSubmit = (e) => {
@@ -41,7 +46,8 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
       date_added: new Date().toISOString().split('T')[0],
       x_coordinate: currentMarker.data.x_coordinate,
       y_coordinate: currentMarker.data.y_coordinate,
-      image_urls: imageUrls.filter(url => url !== '')
+      image_urls: imageUrls.filter(url => url !== ''),
+      image_files: imageFiles
     };
     onAddPlant(plantData);
     onClose();
@@ -61,7 +67,7 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
           </div>
         ))}
         <button type="button" onClick={addImageUrlField}>Add Another Image</button><br />
-{/* <label>Image: <input type="file" onChange={(e) => setImageFile(e.target.files[0])} /></label><br /> */}
+        <label>Upload Images: <input type="file" multiple onChange={handleImageFileChange} /></label><br />
         {isEditMode ? (
           <button type="submit">Edit Plant</button>
         ) : (
