@@ -30,6 +30,15 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!email || !username || !password || !confirmPassword) {
+      setError("All fields are required");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Invalid email address");
+      return;
+    }
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
