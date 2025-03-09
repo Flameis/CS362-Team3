@@ -127,6 +127,16 @@ function PlantDetails() {
             </span>
           </p>
 
+          <div className="plant-images">
+            {plant.image_urls && plant.image_urls.length > 0 ? (
+              plant.image_urls.map((url, index) => (
+                <img key={index} src={`${process.env.FTP_BASE_URL}${url}`} alt={`Plant ${index + 1}`} />
+              ))
+            ) : (
+              <p>No images available</p>
+            )}
+          </div>
+
           <div className="comments">
             <h2>Comments</h2>
             <ul>
