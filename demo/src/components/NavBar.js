@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/general.css'; // Import the general CSS file
 import './NavBar.css'; // Import the NavBar CSS file
@@ -11,9 +11,41 @@ function NavBar() {
     setIsOpen(!isOpen);
   };
 
+  const closeSidebar = () => {
+    setIsOpen(false);
+  };
+  
+  const openSidebar = () => {
+    setIsOpen(true);
+  };
+
   const stopPropagation = (e) => {
     e.stopPropagation();
   };
+
+  
+
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      if (event.clientX < 1) { // Change this value to adjust the detection area
+        openSidebar();
+      } else if (!event.target.closest('.navbar')) {
+        // closeSidebar();
+      }
+    };
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest('.navbar')) {
+        closeSidebar();
+      }
+    };
+
+    // document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      // document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <>

@@ -1,7 +1,7 @@
 .navbar-toggle-container {
   position: fixed;
   top: 10px;
-  right: 10px; /* Ensure the logo is fixed at the top right */
+  left: 10px; /* Ensure the logo is fixed at the top right */
   z-index: 1001;
 }
 

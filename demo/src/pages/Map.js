@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents,ZoomControl  } from 'react-leaflet';
 import { useState, useEffect, useRef } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -309,7 +309,7 @@ function Map() {
 
   return (
     <div>
-      <MapContainer center={userLocation || start_position} zoom={start_zoom} scrollWheelZoom={true} className="map-container">
+      <MapContainer center={userLocation || start_position} zoom={start_zoom} scrollWheelZoom={true} className="map-container" zoomControl={false}>
         <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.flaticon.com/free-icon/location-pin_7360068" title="Smart farm icons created by Vector Stall - Flaticon">Plant Pin</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -379,6 +379,7 @@ function Map() {
         ))}
         <ClickHandler addMarker={addMarker} />
         <PopupOpenHandler />
+        <ZoomControl position="bottomright" />
       </MapContainer>
       {showPlacePlantButton && (
         <button
