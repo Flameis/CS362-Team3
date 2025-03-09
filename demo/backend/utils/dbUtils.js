@@ -65,7 +65,8 @@ const executeDeleteQuery = (sql, params, res, next=null) => {
         let result = {
             message: 'success',
             data: results,
-            deletedId: params[0]
+            // deletedId: params[0] // this is not accurate (if i delete all images based on plant_id this returns plant_id); use affectedRows instead
+            affectedRows: results.affectedRows
         };
         if (next === null) {
             res.json(result);

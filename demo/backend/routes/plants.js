@@ -34,9 +34,9 @@ SELECT
     --  ORDER BY 
     --     Images.image_id) AS images 
     (SELECT JSON_OBJECTAGG(Images.image_id, Images.image_url)
-     FROM 
+    FROM 
         Images 
-     WHERE 
+    WHERE 
         Images.plant_id = Plants.plant_id) AS images
 FROM 
     Plants 
@@ -59,12 +59,7 @@ router.get('/', (req, res) => {
 // Script to get a specific plant by ID
 router.get('/:id', (req, res) => {
     // const sql = 'SELECT * FROM Plants JOIN Species ON Plants.species_id = Species.species_id WHERE plant_id = ?';
-    const sql = `
-    ${select_plants_sql}
-    WHERE 
-        Plants.plant_id = ?;
-
-    `;
+    const sql = `${select_plants_sql} WHERE Plants.plant_id = ?`;
     const params = [req.params.id];
     executeSelectQuery(sql, params, res);
 });
@@ -93,7 +88,11 @@ router.post('/', authenticate, (req, res) => {
             VALUES (?, ?, ?)
         `;
         const imageParams = image_urls.map(url => [plant_id, url, new Date().toISOString().split('T')[0]]);
-        imageParams.forEach(params => executeInsertQuery(imageSql, params, res, (result2) => {result.result2=result2;res.json(result)}));
+        // imageParams.forEach(params => executeInsertQuery(imageSql, params, res, (result2) => {result.result2=result2;res.json(result)}));
+        let image_results = []
+        imageParams.forEach(params => executeInsertQuery(imageSql, params, res, (result2) => {image_results.push(result2)}));
+        result.image_inserts=image_results; // warn: ugggh to acually make this work i would need promises. will probably be blank every time.
+        res.json(result);
     });
 });
 
@@ -117,18 +116,23 @@ router.put('/:id', authenticate, (req, res) => { // warn: ignore privlages for n
             plant_id = ?
     `;
     const params = [species_id, description, location, season, avg_rating, date_added, date_updated, x_coordinate, y_coordinate, req.params.id];
-    executeUpdateQuery(sql, params, res, () => {
+    executeUpdateQuery(sql, params, res, (result) => {
+        // warn: this is a hack to prevent doubble img adds (might be vonerable to race conditions)
         const deleteImageSql = `
             DELETE FROM Images
             WHERE plant_id = ?
         `;
-        executeDeleteQuery(deleteImageSql, [req.params.id], res, (result) => {
+        executeDeleteQuery(deleteImageSql, [req.params.id], res, (result2) => {
             const imageSql = `
                 INSERT INTO Images (plant_id, image_url, date_uploaded)
                 VALUES (?, ?, ?)
             `;
             const imageParams = image_urls.map(url => [req.params.id, url, new Date().toISOString().split('T')[0]]);
-            imageParams.forEach(params => executeInsertQuery(imageSql, params, res, (result2) => {result.result2=result2;res.json(result)}));
+            let image_results = []
+            imageParams.forEach(params => executeInsertQuery(imageSql, params, res, (result3) => {image_results.push(result3)}));
+            result.image_deletes=result2;
+            result.image_inserts=image_results; // warn: ugggh to acually make this work i would need promises. will probably be blank every time.
+            res.json(result);
         });
     });
 });
