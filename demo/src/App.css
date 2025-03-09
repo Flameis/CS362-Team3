@@ -109,3 +109,48 @@
 .sitemap-links a:hover {
   text-decoration: underline;
 }
+
+.navbar-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.navbar.open {
+  left: 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  padding: 8px 16px;
+  text-align: left;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar li a:hover {
+  background-color: #575757;
+}

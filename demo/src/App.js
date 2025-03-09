@@ -8,11 +8,13 @@ import SiteMap from "./pages/SiteMap";
 import Map from "./pages/Map";
 import About from "./pages/About";
 import PlantDetails from "./pages/PlantDetails";
+import NavBar from "./components/NavBar";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <Routes>
         <Route path="/" element={<SiteMap />} />
         <Route path="/display-plants" element={<DisplayPlants />} />
