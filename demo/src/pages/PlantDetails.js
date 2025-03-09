@@ -11,6 +11,8 @@ function PlantDetails() {
   const [newComment, setNewComment] = useState('');
   const [error, setError] = useState('');
   const [userRating, setUserRating] = useState(null);
+  const [avgRating, setAvgRating] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     const fetchPlantData = async () => {
@@ -18,7 +20,7 @@ function PlantDetails() {
         const plantResponse = await fetch(`/api/plants/${plantId}`);
         const plantData = await plantResponse.json();
         setPlant(plantData.data[0]);
-
+        setAvgRating(plantData.data[0].avg_rating);
         const commentsResponse = await fetch(`/api/comments/plant/${plantId}`);
         const commentsData = await commentsResponse.json();
         setComments(commentsData.data);
@@ -26,8 +28,22 @@ function PlantDetails() {
         console.error('Error fetching plant details or comments:', err);
       }
     };
-
+    const fetchUserRating = async () => {
+      
+      try {
+        const res = await fetch(`/api/auth/me`)
+        if (!res.ok) return;
+        setLoggedIn(true);
+        const response = await fetch(`/api/ratings/plant/${plantId}/user`);
+        const data = await response.json();
+        console.log(data)
+        setUserRating(data.data.rating);
+      } catch (err) {
+        console.error('Error fetching user rating:', err);
+      }
+    };
     fetchPlantData();
+    fetchUserRating();
   }, [plantId]);
 
   const handleCommentSubmit = async (e) => {
@@ -60,21 +76,6 @@ function PlantDetails() {
     navigate(-1);
   };
 
-  useEffect(() => {
-    const fetchUserRating = async () => {
-      try {
-        const response = await fetch(`/api/ratings/plant/${plantId}/user`);
-        const data = await response.json();
-        console.log(data)
-        setUserRating(data.data.rating);
-      } catch (err) {
-        console.error('Error fetching user rating:', err);
-      }
-    };
-
-    fetchUserRating();
-  }, [plantId]);
-
 
   const handleRating = async (event) => {
     // console.debug(event)
@@ -96,8 +97,9 @@ function PlantDetails() {
     if (!response.ok) {
       throw new Error('Failed to set rating');
     }
-    // const data = await response.json();
+    const data = await response.json();
     setUserRating(rating);
+    setAvgRating(data.new_avg);
   }
 
   return (
@@ -109,24 +111,23 @@ function PlantDetails() {
           <p>Location: {plant.location || 'Unknown'}</p>
           <p>Season: {plant.season || 'Unknown'}</p>
           <p>Posted by: {plant.user || 'Anonymous'}</p>
-          <p>Average Rating: <span class="rating">
-              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 1 ? 'checked' : null}`}/>
-              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 2 ? 'checked' : null}`}/>
-              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 3 ? 'checked' : null}`}/>
-              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 4 ? 'checked' : null}`}/>
-              <span className={`fa fa-star ${Math.round(plant.avg_rating) >= 5 ? 'checked' : null}`}/>
-              <span class="number">&nbsp;{plant.avg_rating || 'N/A'}</span>
+          <p>Average Rating: <span className="rating">
+              <span className={`fa fa-star ${Math.round(avgRating) >= 1 ? 'checked' : null}`}/>
+              <span className={`fa fa-star ${Math.round(avgRating) >= 2 ? 'checked' : null}`}/>
+              <span className={`fa fa-star ${Math.round(avgRating) >= 3 ? 'checked' : null}`}/>
+              <span className={`fa fa-star ${Math.round(avgRating) >= 4 ? 'checked' : null}`}/>
+              <span className={`fa fa-star ${Math.round(avgRating) >= 5 ? 'checked' : null}`}/>
+              <span className="rating-number">&nbsp;{avgRating || 'N/A'}</span>
             </span>
           </p>
-          <p>Your Rating: <span class="rating user-rating" onClick={handleRating}>
+          {loggedIn ? (<p>Your Rating: <span className="rating user-rating" onClick={handleRating}>
               <span id='rating1' value='1' className={`fa fa-star ${Math.round(userRating) >= 1 ? 'checked' : null}`}/>
               <span id='rating2' value='2' className={`fa fa-star ${Math.round(userRating) >= 2 ? 'checked' : null}`}/>
               <span id='rating3' value='3' className={`fa fa-star ${Math.round(userRating) >= 3 ? 'checked' : null}`}/>
               <span id='rating4' value='4' className={`fa fa-star ${Math.round(userRating) >= 4 ? 'checked' : null}`}/>
               <span id='rating5' value='5' className={`fa fa-star ${Math.round(userRating) >= 5 ? 'checked' : null}`}/>
             </span>
-          </p>
-
+          </p>):<p className='login-to-messages'>login to rate</p>}
           <div className="comments">
             <h2>Comments</h2>
             <ul>

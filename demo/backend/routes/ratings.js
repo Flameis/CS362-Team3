@@ -72,11 +72,18 @@ router.put('/plant/:id/user', authenticate, (req, res) => {
         AND user_id = ?
     `;
     const params = [rating, req.params.id, req.user.id];
-    executeUpdateQuery(sql, params, res);
+    executeUpdateQuery(sql, params, res,
+        result => executeSelectQuery('SELECT avg_rating from Plants where plant_id = ?', [req.params.id], res, // get new avg
+        result2=> {
+            result.new_avg = result2.data[0].avg_rating;
+            res.json(result);
+        } 
+    ));
+    
 });
 
 // Script to update a rating
-// warn: not very useful as when seting rating your more likely to know user_id and plant_id
+// warn: not very useful as when seting rating your more likely to know user_id and plant_id. use the above one instead
 router.put('/:id', authenticate, (req, res) => { // warn: should have verifyUserOrAdmin but that does not work yet
     //todo: could do a quick check here if user_id == req.user.id, but that would mess with admin
     const { plant_id, user_id, rating } = req.body;

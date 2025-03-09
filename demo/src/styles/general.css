@@ -121,3 +121,8 @@ ul li:hover {
 .rating .checked {
   color: orange;
 }
+
+.login-to-messages {
+  color: grey;
+  
+}
