@@ -1,6 +1,6 @@
 import React, { useState, useImperativeHandle, forwardRef} from 'react';
 import './PlantSidebar.css';
-import '../styles/general.css';
+import '../styles/general.css'; // Import the general CSS file
 import SpeciesDropdown from './SpeciesDropdown';
 
 const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMode}, ref) => {

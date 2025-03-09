@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import PlantSidebar from '../components/PlantSidebar';
 import { useNavigate } from 'react-router-dom';
+import '../styles/general.css'; // Import the general CSS file
 
 let plant_icon = L.icon({
   iconUrl: 'plant-pin.png', // <a href="https://www.flaticon.com/free-icons/smart-farm" title="smart farm icons">Smart farm icons created by Vector Stall - Flaticon</a>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
+import '../styles/general.css'; // Corrected import
 import logo from '../Logo-circle.v2.120px.png';
 
 function NavBar() {
@@ -10,6 +11,10 @@ function NavBar() {
     setIsOpen(!isOpen);
   };
 
+  const stopPropagation = (e) => {
+    e.stopPropagation();
+  };
+
   return (
     <>
       <div className="navbar-toggle-container">
@@ -17,7 +22,7 @@ function NavBar() {
           <img src={logo} alt="Toggle Sidebar" />
         </div>
       </div>
-      <nav className={`navbar ${isOpen ? 'open' : ''}`}>
+      <nav className={`navbar ${isOpen ? 'open' : ''}`} onClick={stopPropagation}>
         <ul>
           <li><Link to="/" onClick={toggleSidebar}>Home</Link></li>
           <li><Link to="/Login" onClick={toggleSidebar}>Login</Link></li>

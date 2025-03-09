@@ -1,9 +1,17 @@
-.navbar-toggle {
+.navbar-toggle-container {
   position: fixed;
   top: 10px;
-  right: 10px; /* Change from left to right */
+  right: 10px; /* Ensure the logo is fixed at the top right */
   z-index: 1001;
+}
+
+.navbar-toggle {
   cursor: pointer;
+  display: inline-block; /* Ensure only the logo is clickable */
+}
+
+.navbar-toggle img {
+  display: block;
 }
 
 .navbar {

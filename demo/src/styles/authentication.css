@@ -1,0 +1,52 @@
+.loginBox {  
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  height: fit-content;
+  text-align: center;
+}
+
+.loginBox label {
+  display: flex;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.loginBox input {
+  display: flex;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+}
+
+.error-message {
+  color: red;
+}
+
+.register-button {
+  padding: 10px 20px;
+  background-color: #7bb578;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #6aa467;
+}
+
+.forgot-password-link {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
