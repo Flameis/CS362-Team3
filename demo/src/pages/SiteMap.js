@@ -1,4 +1,5 @@
 import '../styles/general.css'; // Import the general CSS file
+import '../styles/sitemap.css'; // Import the SiteMap CSS file
 
 function SiteMap() {
   return (

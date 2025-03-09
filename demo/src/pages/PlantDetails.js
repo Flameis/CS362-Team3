@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/general.css'; // Import the general CSS file
+import '../styles/plantdetails.css'; // Corrected import statement
 
 function PlantDetails() {
   const { plantId } = useParams();
@@ -59,30 +60,32 @@ function PlantDetails() {
   };
 
   return (
-    <div>
+    <div className="plant-details-container">
       {plant ? (
-        <div>
+        <div className="plant-details">
           <h1>{plant.common_name || 'Unknown'}</h1>
           <p>{plant.description || 'No description'}</p>
           <p>Location: {plant.location || 'Unknown'}</p>
           <p>Season: {plant.season || 'Unknown'}</p>
           <p>Posted by: {plant.user || 'Anonymous'}</p>
-          <h2>Comments</h2>
-          <ul>
-            {comments.map(comment => (
-              <li key={comment.comment_id}><span className={comment.role=='admin' ? 'comment comment-user user-admin' : 'comment comment-user user-normal'}>{comment.username}:</span>&nbsp;{comment.comment}</li>
-            ))}
-          </ul>
-          <form onSubmit={handleCommentSubmit}>
-            <textarea
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-              placeholder="Add a comment"
-            />
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <button type="submit">Submit</button>
-            <button type="button" onClick={handleCancel}>Cancel</button>
-          </form>
+          <div className="comments">
+            <h2>Comments</h2>
+            <ul>
+              {comments.map(comment => (
+                <li key={comment.comment_id}><span className={comment.role=='admin' ? 'comment comment-user user-admin' : 'comment comment-user user-normal'}>{comment.username}:</span>&nbsp;{comment.comment}</li>
+              ))}
+            </ul>
+            <form onSubmit={handleCommentSubmit}>
+              <textarea
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                placeholder="Add a comment"
+              />
+              {error && <p style={{ color: 'red' }}>{error}</p>}
+              <button type="submit">Submit</button>
+              <button type="button" onClick={handleCancel}>Cancel</button>
+            </form>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>

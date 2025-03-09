@@ -1,0 +1,22 @@
+.map-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.place-plant-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  padding: 10px 20px;
+  background-color: #7bb578;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.place-plant-button:hover {
+  background-color: #6aa467;
+}

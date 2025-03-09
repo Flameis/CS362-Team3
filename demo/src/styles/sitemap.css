@@ -1,0 +1,17 @@
+.sitemap-container {
+  padding: 10px;
+}
+
+.sitemap-logo {
+  width: 100px;
+  height: auto;
+}
+
+.sitemap-links a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.sitemap-links a:hover {
+  text-decoration: underline;
+}

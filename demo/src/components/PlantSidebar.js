@@ -1,9 +1,9 @@
-import React, { useState, useImperativeHandle, forwardRef} from 'react';
-import './PlantSidebar.css';
+import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import '../styles/general.css'; // Import the general CSS file
+import './PlantSidebar.css'; // Import the PlantSidebar CSS file
 import SpeciesDropdown from './SpeciesDropdown';
 
-const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMode}, ref) => {
+const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMode }, ref) => {
   useImperativeHandle(ref, () => ({
     populateForm(data) {
       setDescription(data.description);
@@ -13,12 +13,11 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
       setImageUrls(Object.values(JSON.parse(data.images ?? "{}")));
     },
   }));
+
   const [description, setDescription] = useState('');
   const [location, setLocation] = useState('');
   const [season, setSeason] = useState('');
-  // const [avg_rating, setAvgRating] = useState(0);
   const [species_id, setSpeciesId] = useState('');
-  // const [imageFile, setImageFile] = useState(null);
   const [imageUrls, setImageUrls] = useState(['']);
 
   const handleImageUrlChange = (index, value) => {
@@ -62,7 +61,7 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
           </div>
         ))}
         <button type="button" onClick={addImageUrlField}>Add Another Image</button><br />
-        {/* <label>Image: <input type="file" onChange={(e) => setImageFile(e.target.files[0])} /></label><br /> */}
+{/* <label>Image: <input type="file" onChange={(e) => setImageFile(e.target.files[0])} /></label><br /> */}
         {isEditMode ? (
           <button type="submit">Edit Plant</button>
         ) : (

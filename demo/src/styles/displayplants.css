@@ -1,0 +1,35 @@
+.display-plants-container {
+  padding: 10px;
+}
+
+.plants-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.plants-table th, .plants-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.plants-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.plants-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.plants-table button {
+  padding: 5px 10px;
+  background-color: #7bb578;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.plants-table button:hover {
+  background-color: #6aa467;
+}

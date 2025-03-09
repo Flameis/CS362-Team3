@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
-import '../styles/authentication.css'; // Import the authentication CSS file
 import '../styles/general.css'; // Import the general CSS file
+import '../styles/authentication.css'; // Import the authentication CSS file
 
 function Register() {
   const [email, setEmail] = useState("");

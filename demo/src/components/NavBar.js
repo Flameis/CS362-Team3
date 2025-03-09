@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
-import '../styles/general.css'; // Corrected import
+import '../styles/general.css'; // Import the general CSS file
+import './NavBar.css'; // Import the NavBar CSS file
 import logo from '../Logo-circle.v2.120px.png';
 
 function NavBar() {
