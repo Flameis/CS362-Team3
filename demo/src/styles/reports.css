@@ -1,0 +1,57 @@
+.reports-container {
+  padding: 10px;
+  background-color: #d7d6c2ff; /* Added background color */
+}
+
+.reports-container .title {
+  color: #333;
+}
+
+.reports-container .content {
+  margin-top: 20px;
+}
+
+.reports-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.reports-container li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reports-table th, .reports-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.reports-table th {
+  background-color: #d7d6c2ff; /* Updated color */
+  text-align: left;
+}
+
+.reports-table tr:hover {
+  background-color: #d7d6c2ff; /* Updated color */
+}
+
+.reports-table button {
+  padding: 5px 10px;
+  background-color: #859c8cff; /* Updated color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reports-table button:hover {
+  background-color: #484e32ff; /* Updated color */
+}

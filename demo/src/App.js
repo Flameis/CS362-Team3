@@ -9,6 +9,7 @@ import Map from "./pages/Map";
 import About from "./pages/About";
 import PlantDetails from "./pages/PlantDetails";
 import NavBar from "./components/NavBar";
+import Reports from "./pages/Reports";
 import "./App.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/map" element={<Map />} />
         <Route path="/plant/:plantId" element={<PlantDetails />} />
         <Route path="/about" element={<About />} />
+        <Route path="/reports" element={<Reports />} />
       </Routes>
     </div>
   );

@@ -73,6 +73,17 @@ CREATE TABLE Ratings (
     CONSTRAINT unique_rating_per_user_plant UNIQUE (plant_id, user_id)
 );
 
+CREATE TABLE Reports (
+    report_id INT PRIMARY KEY AUTO_INCREMENT,
+    plant_id INT,
+    user_id INT,
+    description TEXT NOT NULL,
+    date_reported DATE NOT NULL,
+    FOREIGN KEY (plant_id) REFERENCES Plants(plant_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    CONSTRAINT unique_report_per_user_plant UNIQUE (plant_id, user_id)
+);
+
 -- Trigger to update avg_rating in Plants table
 DELIMITER //
 CREATE TRIGGER update_avg_rating

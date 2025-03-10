@@ -13,6 +13,9 @@ function PlantDetails() {
   const [userRating, setUserRating] = useState(null);
   const [avgRating, setAvgRating] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [reportSubmitted, setReportSubmitted] = useState(false);
+  const [reportDescription, setReportDescription] = useState('');
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     const fetchPlantData = async () => {
@@ -28,22 +31,22 @@ function PlantDetails() {
         console.error('Error fetching plant details or comments:', err);
       }
     };
-    const fetchUserRating = async () => {
-      
+    const fetchUserData = async () => {
       try {
-        const res = await fetch(`/api/auth/me`)
+        const res = await fetch(`/api/auth/me`);
         if (!res.ok) return;
+        const data = await res.json();
         setLoggedIn(true);
+        setUserId(data.data.id);
         const response = await fetch(`/api/ratings/plant/${plantId}/user`);
-        const data = await response.json();
-        console.log(data)
-        setUserRating(data.data.rating);
+        const ratingData = await response.json();
+        setUserRating(ratingData.data.rating);
       } catch (err) {
-        console.error('Error fetching user rating:', err);
+        console.error('Error fetching user data:', err);
       }
     };
     fetchPlantData();
-    fetchUserRating();
+    fetchUserData();
   }, [plantId]);
 
   const handleCommentSubmit = async (e) => {
@@ -102,6 +105,30 @@ function PlantDetails() {
     setAvgRating(data.new_avg);
   }
 
+  const handleReport = async () => {
+    if (reportSubmitted) {
+      alert('You have already reported this plant.');
+      return;
+    }
+    try {
+      const currentTime = new Date().toISOString();
+      const response = await fetch(`/api/reports`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ plant_id: plantId, user_id: userId, description: reportDescription, date_reported: currentTime })
+      });
+      if (!response.ok) {
+        throw new Error('Failed to submit report');
+      }
+      setReportSubmitted(true);
+      alert('Report submitted successfully.');
+    } catch (err) {
+      console.error('Error submitting report:', err);
+    }
+  };
+
   return (
     <div className="plant-details-container">
       {plant ? (
@@ -120,14 +147,25 @@ function PlantDetails() {
               <span className="rating-number">&nbsp;{avgRating || 'N/A'}</span>
             </span>
           </p>
-          {loggedIn ? (<p>Your Rating: <span className="rating user-rating" onClick={handleRating}>
-              <span id='rating1' value='1' className={`fa fa-star ${Math.round(userRating) >= 1 ? 'checked' : null}`}/>
-              <span id='rating2' value='2' className={`fa fa-star ${Math.round(userRating) >= 2 ? 'checked' : null}`}/>
-              <span id='rating3' value='3' className={`fa fa-star ${Math.round(userRating) >= 3 ? 'checked' : null}`}/>
-              <span id='rating4' value='4' className={`fa fa-star ${Math.round(userRating) >= 4 ? 'checked' : null}`}/>
-              <span id='rating5' value='5' className={`fa fa-star ${Math.round(userRating) >= 5 ? 'checked' : null}`}/>
-            </span>
-          </p>):<p className='login-to-messages'>login to rate</p>}
+          {loggedIn ? (
+            <>
+              <p>Your Rating: <span className="rating user-rating" onClick={handleRating}>
+                <span id='rating1' value='1' className={`fa fa-star ${Math.round(userRating) >= 1 ? 'checked' : null}`}/>
+                <span id='rating2' value='2' className={`fa fa-star ${Math.round(userRating) >= 2 ? 'checked' : null}`}/>
+                <span id='rating3' value='3' className={`fa fa-star ${Math.round(userRating) >= 3 ? 'checked' : null}`}/>
+                <span id='rating4' value='4' className={`fa fa-star ${Math.round(userRating) >= 4 ? 'checked' : null}`}/>
+                <span id='rating5' value='5' className={`fa fa-star ${Math.round(userRating) >= 5 ? 'checked' : null}`}/>
+              </span></p>
+              <textarea
+                value={reportDescription}
+                onChange={(e) => setReportDescription(e.target.value)}
+                placeholder="Describe the issue"
+              />
+              <button onClick={handleReport} disabled={reportSubmitted}>Report Plant</button>
+            </>
+          ) : (
+            <p className='login-to-messages'>login to rate and report</p>
+          )}
           <div className="plant-images">
             {plant.image_urls && plant.image_urls.length > 0 ? (
               plant.image_urls.map((url, index) => (
