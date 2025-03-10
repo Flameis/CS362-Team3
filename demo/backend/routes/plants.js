@@ -137,6 +137,23 @@ router.put('/:id', authenticate, (req, res) => { // warn: ignore privlages for n
     });
 });
 
+// Script to verify a plant
+router.post('/:id/verify', authenticate, verifyUserOrAdmin, (req, res) => {
+    const sql = `
+        UPDATE Plants
+        SET verified = 1
+        WHERE plant_id = ?
+    `;
+    const params = [req.params.id];
+    executeUpdateQuery(sql, params, res, (result) => {
+        if (result.affectedRows === 0) {
+            res.status(404).json({ error: 'Plant not found' });
+        } else {
+            res.json({ message: 'Plant verified successfully' });
+        }
+    });
+});
+
 // Script to delete a plant
 router.delete('/:id', authenticate, verifyUserOrAdmin, (req, res) => {
     const sql = `

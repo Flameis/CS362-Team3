@@ -40,7 +40,8 @@ CREATE TABLE Plants (
     x_coordinate DECIMAL(17, 14) NOT NULL,
     y_coordinate DECIMAL(17, 14) NOT NULL,
     created_by INT NOT NULL,
-    FOREIGN KEY (species_id) REFERENCES Species(species_id)
+    verified BOOLEAN DEFAULT 0,
+    FOREIGN KEY (species_id) REFERENCES Species(species_id),
     FOREIGN KEY (created_by) REFERENCES Users(user_id)
 );
 

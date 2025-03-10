@@ -39,3 +39,30 @@
 .comments button:hover {
   background-color: #484e32ff; /* Updated color */
 }
+
+.report-button, .verify-button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #859c8cff; /* Updated color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.report-button:hover, .verify-button:hover {
+  background-color: #484e32ff; /* Updated color */
+}
+
+.verified-badge {
+  color: green;
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+
+.plant-images img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}

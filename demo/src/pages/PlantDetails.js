@@ -16,6 +16,7 @@ function PlantDetails() {
   const [reportSubmitted, setReportSubmitted] = useState(false);
   const [reportDescription, setReportDescription] = useState('');
   const [userId, setUserId] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     const fetchPlantData = async () => {
@@ -34,26 +35,22 @@ function PlantDetails() {
           ...prevPlant,
           images: Array.isArray(imagesData.data) ? imagesData.data : []
         }));
+
+        const res = await fetch(`/api/auth/me`);
+        if (res.ok) {
+          const data = await res.json();
+          setLoggedIn(true);
+          setUserId(data.data.id);
+          setIsAdmin(data.data.role === 'admin');
+          const response = await fetch(`/api/ratings/plant/${plantId}/user`);
+          const ratingData = await response.json();
+          setUserRating(ratingData.data.rating);
+        }
       } catch (err) {
         console.error('Error fetching plant details or comments:', err);
       }
     };
-    const fetchUserData = async () => {
-      try {
-        const res = await fetch(`/api/auth/me`);
-        if (!res.ok) return;
-        const data = await res.json();
-        setLoggedIn(true);
-        setUserId(data.data.id);
-        const response = await fetch(`/api/ratings/plant/${plantId}/user`);
-        const ratingData = await response.json();
-        setUserRating(ratingData.data.rating);
-      } catch (err) {
-        console.error('Error fetching user data:', err);
-      }
-    };
     fetchPlantData();
-    fetchUserData();
   }, [plantId]);
 
   const handleCommentSubmit = async (e) => {
@@ -136,11 +133,31 @@ function PlantDetails() {
     }
   };
 
+  const handleVerify = async () => {
+    try {
+      const response = await fetch(`/api/plants/${plantId}/verify`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      if (!response.ok) {
+        throw new Error('Failed to verify plant');
+      }
+      setPlant(prevPlant => ({
+        ...prevPlant,
+        verified: true
+      }));
+    } catch (err) {
+      console.error('Error verifying plant:', err);
+    }
+  };
+
   return (
     <div className="plant-details-container">
       {plant ? (
         <div className="plant-details">
-          <h1>{plant.common_name || 'Unknown'}</h1>
+          <h1>{plant.common_name || 'Unknown'} {plant.verified && <span className="verified-badge">✔️</span>}</h1>
           <p>{plant.description || 'No description'}</p>
           <p>Location: {plant.location || 'Unknown'}</p>
           <p>Season: {plant.season || 'Unknown'}</p>
@@ -163,15 +180,20 @@ function PlantDetails() {
                 <span id='rating4' value='4' className={`fa fa-star ${Math.round(userRating) >= 4 ? 'checked' : null}`}/>
                 <span id='rating5' value='5' className={`fa fa-star ${Math.round(userRating) >= 5 ? 'checked' : null}`}/>
               </span></p>
+              <p>
               <textarea
                 value={reportDescription}
                 onChange={(e) => setReportDescription(e.target.value)}
                 placeholder="Describe the issue"
               />
-              <button onClick={handleReport} disabled={reportSubmitted}>Report Plant</button>
+              </p>
+              <button onClick={handleReport} disabled={reportSubmitted} className="report-button">Report Plant</button>
             </>
           ) : (
             <p className='login-to-messages'>login to rate and report</p>
+          )}
+          {isAdmin && !plant.verified && (
+            <button onClick={handleVerify} className="verify-button">Verify Plant</button>
           )}
           <div className="plant-images">
             {Array.isArray(plant.images) && plant.images.length > 0 ? (
