@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import PlantSidebar from '../components/PlantSidebar';
+import PlantFilterBar from '../components/PlantFilterBar';
 import { useNavigate } from 'react-router-dom';
 import '../styles/general.css'; // Import the general CSS file
 import '../styles/map.css'; // Import the Map CSS file
@@ -53,6 +54,8 @@ function Map() {
   const [popUpRefresher, setPopUpRefresher] = useState(0);
   const navigate = useNavigate();
   const plantSidebarRef = useRef();
+  const [filterBarOpen, setFilterBarOpen] = useState(true);
+  const [plantsFilter, setPlantsFilter] = useState({});
 
   useEffect(() => {
     console.log('api-fetch')
@@ -122,15 +125,20 @@ function Map() {
     }
   };
 
-  const filterPlants = (filter) => {
-    setPlants(plants.map((plant) => {
-      if (Object.keys(filter).every(key => {return plant[key] === filter[key]})) {
-        plant._hide = false
-      } else {
-        plant._hide = true
-      }
-    }));
-  }
+  // const filterPlants = (filter) => {
+  //   setPlants(
+  //     plants.map(
+  //       (plant) => {
+  //         if (Object.keys(filter).every(key => {return plant[key] === filter[key]})) {
+  //           plant._hide = false
+  //         } else {
+  //           plant._hide = true
+  //         }
+  //         return plant;
+  //       }
+  //     )
+  //   );
+  // }
 
   const handleMarkerClick = (key) => {
     console.log('Current Marker Key:', key);
@@ -364,7 +372,7 @@ function Map() {
         
         
         {plants.map((plant, idx) => (
-          plant !== null && !plant._hide && plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
+          plant !== null && Object.keys(plantsFilter).every(key => {return plant[key] === plantsFilter[key]}) && plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
             <Marker 
               key={`plant-${idx}`}
               position={[plant.x_coordinate, plant.y_coordinate]}
@@ -407,6 +415,15 @@ function Map() {
             onAddPlant={handleAddPlant}
             onClose={onCloseSidebar}
             isEditMode={sidebarEditMode}
+          />
+        </div>
+      )}
+      {filterBarOpen && (
+        <div className={`bottom-bar ${filterBarOpen ? 'open' : ''}`}>
+          <PlantFilterBar
+            filter={plantsFilter}
+            setFilter={setPlantsFilter}
+            onClose={()=>{setFilterBarOpen(false)}}
           />
         </div>
       )}
