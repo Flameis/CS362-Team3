@@ -9,7 +9,9 @@ function GenusDropdown({ selected, onChange, onClick }) {
       .then(response => response.json())
       .then(data => {
         if (Array.isArray(data.data)) {
-          setSpecies(data.data);
+          const uniqueSpecies = Array.from(new Set(data.data.map(item => item.genus)))
+            .map(genus => data.data.find(item => item.genus === genus));
+          setSpecies(uniqueSpecies);
         } else {
           throw new Error('Data format is incorrect');
         }
@@ -19,9 +21,16 @@ function GenusDropdown({ selected, onChange, onClick }) {
       });
   }, []);
 
+  
   const filteredSpecies = species.filter(species =>
     species.genus.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  useEffect(() => {
+    if (selected === null) {
+      setSearchTerm('');
+    }
+  }, [selected]);
 
   return (
     <div onClick={onClick}>
