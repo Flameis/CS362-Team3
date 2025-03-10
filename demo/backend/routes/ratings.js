@@ -52,13 +52,11 @@ router.post('/', authenticate, (req, res) => {
     `;
     const params = [plant_id, req.user.id, rating];
     executeInsertQuery(sql, params, res, 
-        result=>executeSelectQuery(`${select_ratings_sql} WHERE rating_id = ?`, [result.insertedId], res, 
-        result2=>{res.json({
-            message:result2.message,
-            data:result2.data[0],
-            insertedId:result.insertedId,
-            insert_result:result
-        })}
+        result => executeSelectQuery('SELECT avg_rating from Plants where plant_id = ?', [plant_id], res, // get new avg
+        result2=> {
+            result.new_avg = result2.data[0].avg_rating;
+            res.json(result);
+        }
     ));
 });
 

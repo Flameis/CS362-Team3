@@ -372,7 +372,7 @@ function Map() {
                 Season: {plant.season || 'Unknown'}<br />
                 Rating: {plant.avg_rating || 'No rating'}<br />
                 Posted by: {plant.user || 'Anonymous'}<br />
-                <button onClick={(e) => handleEditPlant(`plant-${idx}`,e)}>Edit</button><button key={`plant-${idx}`} onClick={(e) => handleDeletePlant(`plant-${idx}`,e)}>Delete</button><br/><button onClick={(e) => navigate(`/plant/${currentMarker.data.plant_id}`)}>Comments</button>
+                <button onClick={(e) => handleEditPlant(`plant-${idx}`,e)}>Edit</button><button key={`plant-${idx}`} onClick={(e) => handleDeletePlant(`plant-${idx}`,e)}>Delete</button><br/><button onClick={(e) => navigate(`/plant/${currentMarker.data.plant_id}`)}>Details</button>
               </Popup>
             </Marker>
           ) : null
