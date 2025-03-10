@@ -10,20 +10,31 @@ function DisplayPlants() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('/api/plants')
-      .then(response => response.json())
-      .then(data => {
+    const fetchPlants = async () => {
+      try {
+        const response = await fetch('/api/plants');
+        const data = await response.json();
         console.log('Fetched plants data:', data); // Print the JSON data in console
         if (Array.isArray(data.data)) {
-          setPlants(data.data);
+          const plantsWithImages = await Promise.all(data.data.map(async (plant) => {
+            const imagesResponse = await fetch(`/api/images?plant_id=${plant.plant_id}`);
+            const imagesData = await imagesResponse.json();
+            return {
+              ...plant,
+              images: imagesData.data || []
+            };
+          }));
+          setPlants(plantsWithImages);
         } else {
           throw new Error('Data format is incorrect');
         }
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error fetching plants:', error);
         setError(error.message);
-      });
+      }
+    };
+
+    fetchPlants();
   }, []);
 
   const filteredPlants = plants.filter(plant =>
@@ -69,7 +80,13 @@ function DisplayPlants() {
             <tr key={plant.plant_id}>
               <td>{plant.plant_id}</td>
               <td>{plant.species_id}</td>
-              <td>{plant.image_id}</td>
+              <td>
+                {plant.images && plant.images.length > 0 ? (
+                  <img src={plant.images[0].image_url} alt="Plant" style={{ width: '50px', height: '50px' }} />
+                ) : (
+                  'No image'
+                )}
+              </td>
               <td>{plant.description}</td>
               <td>{plant.location}</td>
               <td>{plant.season}</td>

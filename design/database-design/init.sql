@@ -40,7 +40,8 @@ CREATE TABLE Plants (
     x_coordinate DECIMAL(17, 14) NOT NULL,
     y_coordinate DECIMAL(17, 14) NOT NULL,
     created_by INT NOT NULL,
-    FOREIGN KEY (species_id) REFERENCES Species(species_id)
+    verified BOOLEAN DEFAULT 0,
+    FOREIGN KEY (species_id) REFERENCES Species(species_id),
     FOREIGN KEY (created_by) REFERENCES Users(user_id)
 );
 
@@ -71,6 +72,17 @@ CREATE TABLE Ratings (
     FOREIGN KEY (plant_id) REFERENCES Plants(plant_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     CONSTRAINT unique_rating_per_user_plant UNIQUE (plant_id, user_id)
+);
+
+CREATE TABLE Reports (
+    report_id INT PRIMARY KEY AUTO_INCREMENT,
+    plant_id INT,
+    user_id INT,
+    description TEXT NOT NULL,
+    date_reported DATE NOT NULL,
+    FOREIGN KEY (plant_id) REFERENCES Plants(plant_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    CONSTRAINT unique_report_per_user_plant UNIQUE (plant_id, user_id)
 );
 
 -- Trigger to update avg_rating in Plants table

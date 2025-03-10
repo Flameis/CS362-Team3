@@ -4,7 +4,7 @@ const verifyUserOrAdmin = require('../middleware/verifyUserOrAdmin'); // Adjust 
 const { executeSelectQuery, executeInsertQuery, executeUpdateQuery, executeDeleteQuery } = require('../utils/dbUtils'); // Import the utility functions
 
 // Script to get all images
-router.get('/', (req, res) => {
+router.get('/all', (req, res) => {
     const sql = 'SELECT * FROM Images';
     executeSelectQuery(sql, [], res);
 });
@@ -13,6 +13,17 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     const sql = 'SELECT * FROM Images WHERE image_id = ?';
     const params = [req.params.id];
+    executeSelectQuery(sql, params, res);
+});
+
+// Script to get images by plant ID
+router.get('/', (req, res) => {
+    const { plant_id } = req.query;
+    if (!plant_id) {
+        return res.status(400).json({ error: 'plant_id query parameter is required' });
+    }
+    const sql = 'SELECT * FROM Images WHERE plant_id = ?';
+    const params = [plant_id];
     executeSelectQuery(sql, params, res);
 });
 
