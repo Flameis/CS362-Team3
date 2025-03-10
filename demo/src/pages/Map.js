@@ -122,6 +122,20 @@ function Map() {
     }
   };
 
+  const filter_pins = (filter) => {
+    plants.map((plant) => {
+      if (Object.keys(filter).every(key => {return plant[key] === filter[key]})) {
+        plant._hide = false
+      } else {
+        plant._hide = true
+      }
+    });
+  }
+
+  function filterPlants(plants, filter) {
+    
+  }
+
   const handleMarkerClick = (key) => {
     console.log('Current Marker Key:', key);
     if (key == "tmp-marker") {
@@ -354,7 +368,7 @@ function Map() {
         
         
         {plants.map((plant, idx) => (
-          plant !== null && plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
+          plant !== null && !plant._hide && plant.x_coordinate !== undefined && plant.y_coordinate !== undefined ? (
             <Marker 
               key={`plant-${idx}`}
               position={[plant.x_coordinate, plant.y_coordinate]}
