@@ -31,16 +31,7 @@
     ```sh
     cd CS362-Team3
     ```
-4. Insert the `.env` file into the `./demo` directory. The `.env` file should contain the following variables:
-    ```
-    DB_HOST="67.222.47.90"
-    DB_USER="mthopeac_OSU_Beta_Test"
-    DB_PASSWORD="YG?)6YEe@R95pr."
-    DB_NAME="mthopeac_OSU_PlantMap"
-    API_PORT=8081
-    PORT=8070
-    JWT_SECRET_KEY="Test_Secret_Key"
-    ```
+4. Insert the `.env` file (provided upon request from Luke Scovel) into the `./demo` directory.
 
 # How to Run
 1. Navigate to the `demo` directory:
