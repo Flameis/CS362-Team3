@@ -122,18 +122,14 @@ function Map() {
     }
   };
 
-  const filter_pins = (filter) => {
-    plants.map((plant) => {
+  const filterPlants = (filter) => {
+    setPlants(plants.map((plant) => {
       if (Object.keys(filter).every(key => {return plant[key] === filter[key]})) {
         plant._hide = false
       } else {
         plant._hide = true
       }
-    });
-  }
-
-  function filterPlants(plants, filter) {
-    
+    }));
   }
 
   const handleMarkerClick = (key) => {
