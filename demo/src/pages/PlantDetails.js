@@ -27,6 +27,13 @@ function PlantDetails() {
         const commentsResponse = await fetch(`/api/comments/plant/${plantId}`);
         const commentsData = await commentsResponse.json();
         setComments(commentsData.data);
+
+        const imagesResponse = await fetch(`/api/images?plant_id=${plantId}`);
+        const imagesData = await imagesResponse.json();
+        setPlant(prevPlant => ({
+          ...prevPlant,
+          images: Array.isArray(imagesData.data) ? imagesData.data : []
+        }));
       } catch (err) {
         console.error('Error fetching plant details or comments:', err);
       }
@@ -167,9 +174,9 @@ function PlantDetails() {
             <p className='login-to-messages'>login to rate and report</p>
           )}
           <div className="plant-images">
-            {plant.image_urls && plant.image_urls.length > 0 ? (
-              plant.image_urls.map((url, index) => (
-                <img key={index} src={`${process.env.FTP_BASE_URL}${url}`} alt={`Plant ${index + 1}`} />
+            {Array.isArray(plant.images) && plant.images.length > 0 ? (
+              plant.images.map((image, index) => (
+                <img key={index} src={image.image_url} alt={`Plant ${index + 1}`} />
               ))
             ) : (
               <p>No images available</p>

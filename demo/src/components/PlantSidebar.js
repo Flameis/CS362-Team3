@@ -67,7 +67,7 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
           </div>
         ))}
         <button type="button" onClick={addImageUrlField}>Add Another Image</button><br />
-        <label>Upload Images: <input type="file" multiple onChange={handleImageFileChange} /></label><br />
+        {/* <label>Upload Images: <input type="file" multiple onChange={handleImageFileChange} /></label><br /> */}
         {isEditMode ? (
           <button type="submit">Edit Plant</button>
         ) : (

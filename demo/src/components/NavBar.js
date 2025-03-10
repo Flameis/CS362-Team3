@@ -61,7 +61,7 @@ function NavBar() {
     <>
       <div className="navbar-toggle-container">
         <div className="navbar-toggle" onClick={toggleSidebar}>
-          <img src={logo} alt="Toggle Sidebar" />
+          <img src={logo} alt="Toggle Sidebar" style={{ width: '75%' }} />
         </div>
       </div>
       <nav className={`navbar ${isOpen ? 'open' : ''}`} onClick={stopPropagation}>
