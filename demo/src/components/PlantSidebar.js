@@ -20,6 +20,7 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
   const [species_id, setSpeciesId] = useState('');
   const [imageUrls, setImageUrls] = useState(['']);
   const [imageFiles, setImageFiles] = useState([]);
+  const [error, setError] = useState('');
 
   const isValidImageUrl = (url) => {
     const regex = /\.(jpeg|jpg|gif|png|webp|svg)$/i;
@@ -41,9 +42,16 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
   };
 
   const handleSubmit = (e) => {
-    console.debug(currentMarker);
     e.preventDefault();
     const validImageUrls = imageUrls.filter(url => url !== '' && isValidImageUrl(url));
+    if (validImageUrls.length !== imageUrls.length) {
+      setError('Please provide valid image URLs.');
+      return;
+    }
+    if (!species_id || !description || !location || !season || !currentMarker.data.x_coordinate || !currentMarker.data.y_coordinate) {
+      setError('Please fill in all required fields.');
+      return;
+    }
     const plantData = {
       species_id,
       description,
@@ -73,7 +81,7 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
           </div>
         ))}
         <button type="button" onClick={addImageUrlField}>Add Another Image</button><br />
-        {/* <label>Upload Images: <input type="file" multiple onChange={handleImageFileChange} /></label><br /> */}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         {isEditMode ? (
           <button type="submit">Edit Plant</button>
         ) : (
