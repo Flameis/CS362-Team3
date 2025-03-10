@@ -15,7 +15,7 @@
 ## Members
 * Adison Daggett - Front End Designer and Developer
 * Kathryn Butler - Technical Documentation and Front End Developer
-* Luke Scovel - Back End Developer
+* Luke Scovel - Back End Developer and Server Manager
 * William Brennan - Back End Developer
 * Anshu Avinash - Front End Designer and Developer
 * Finlay Curtiss - Technical Documentation and Front End Developer
@@ -59,17 +59,13 @@ Alternatively, it should be currently hoste on the engr flip1 server here:
 3. Click on the map to add a plant.
 4. Click on the plant icon to view the plant details.
 
-# Known Bugs
+# Known Issues
 - User position does not work well since it requires HTTPS
-- Placing plant markers only records 4 decimal places for the coordinates
-- User authentication sometimes messes up, many issues with this so it may be simplified
-- Plant markers just placed are removed if another spot is marked unless page is refreshed
 
 # Features in-progress
 - Image upload
 - Full plant post with images, comments, and ratings
 - Moderation by admins
-- Redesign of frontend
 - Account settings
 
 # Operational Use Case
