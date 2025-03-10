@@ -54,7 +54,7 @@ function Map() {
   const [popUpRefresher, setPopUpRefresher] = useState(0);
   const navigate = useNavigate();
   const plantSidebarRef = useRef();
-  const [filterBarOpen, setFilterBarOpen] = useState(true);
+  const [filterBarOpen, setFilterBarOpen] = useState(false);
   const [plantsFilter, setPlantsFilter] = useState({});
 
   useEffect(() => {
@@ -399,6 +399,7 @@ function Map() {
         <PopupOpenHandler />
         <ZoomControl position="bottomright" />
       </MapContainer>
+      <button className="show-filters-button" onClick={()=>setFilterBarOpen(true)}>Filter</button>
       {showPlacePlantButton && (
         <button
           onClick={handlePlacePlant}

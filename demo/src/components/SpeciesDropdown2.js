@@ -23,6 +23,13 @@ function SpeciesDropdown({ selected, onChange, onClick }) {
     species.species.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+    useEffect(() => {
+      if (selected === null) {
+        setSearchTerm('');
+        onChange('')
+      }
+    }, [selected]);
+
   return (
     <div onClick={onClick}>
       <input

@@ -31,7 +31,7 @@ const PlantFilterBar = ({ filter, setFilter, onClose }) => {
         <GenusDropdown selected={genus} onChange={setGenus} /><button onClick={()=>setGenus(null)}>clear</button>
         <SpeciesDropdown selected={species} onChange={setSpecies} /><button onClick={()=>setSpecies(null)}>clear</button>
         <CommonNameDropdown selected={common_name} onChange={setCommonName} /><button onClick={()=>setCommonName(null)}>clear</button>
-        {/* <button onClick={()=>{setGenus(null);setSpecies(null);setCommonName(null)}}>Clear All</button> */}
+        <button onClick={()=>{setGenus(null);setSpecies(null);setCommonName(null)}}>Clear All</button>
         {/* <button type="submit">Apply Filter</button> */}
       </form>
     </div>

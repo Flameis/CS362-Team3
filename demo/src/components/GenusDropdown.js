@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function GenusDropdown({ selected, onChange, onClick }) {
   const [species, setSpecies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [filteredSpecies, setFilteredSpecies] = useState([]);
 
   useEffect(() => {
     fetch('/api/species')
@@ -21,14 +22,17 @@ function GenusDropdown({ selected, onChange, onClick }) {
       });
   }, []);
 
-  
-  const filteredSpecies = species.filter(species =>
-    species.genus.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+
+  useEffect(() => {
+    setFilteredSpecies(species.filter(species =>
+      species.genus.toLowerCase().includes(searchTerm.toLowerCase())
+    ));
+  }, [species, searchTerm]);
 
   useEffect(() => {
     if (selected === null) {
       setSearchTerm('');
+      onChange('')
     }
   }, [selected]);
 

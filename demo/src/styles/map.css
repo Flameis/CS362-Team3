@@ -21,3 +21,20 @@
 .place-plant-button:hover {
   background-color: #484e32ff; /* Updated color */
 }
+
+.show-filters-button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1001;
+  padding: 10px 20px;
+  background-color: rgb(98, 152, 164); /* Updated color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.show-filters-button:hover {
+  background-color: rgb(50, 78, 77); /* Updated color */
+}
