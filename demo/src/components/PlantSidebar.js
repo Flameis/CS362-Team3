@@ -21,6 +21,11 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
   const [imageUrls, setImageUrls] = useState(['']);
   const [imageFiles, setImageFiles] = useState([]);
 
+  const isValidImageUrl = (url) => {
+    const regex = /\.(jpeg|jpg|gif|png|webp|svg)$/i;
+    return regex.test(url);
+  };
+
   const handleImageUrlChange = (index, value) => {
     const newImageUrls = [...imageUrls];
     newImageUrls[index] = value;
@@ -38,6 +43,7 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
   const handleSubmit = (e) => {
     console.debug(currentMarker);
     e.preventDefault();
+    const validImageUrls = imageUrls.filter(url => url !== '' && isValidImageUrl(url));
     const plantData = {
       species_id,
       description,
@@ -46,7 +52,7 @@ const PlantSidebar = forwardRef(({ currentMarker, onAddPlant, onClose, isEditMod
       date_added: new Date().toISOString().split('T')[0],
       x_coordinate: currentMarker.data.x_coordinate,
       y_coordinate: currentMarker.data.y_coordinate,
-      image_urls: imageUrls.filter(url => url !== ''),
+      image_urls: validImageUrls,
       image_files: imageFiles
     };
     onAddPlant(plantData);
