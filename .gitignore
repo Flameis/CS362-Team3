@@ -173,3 +173,6 @@ cython_debug/
 # Node.js
 node_modules
 demo/package-lock.json
+
+# VSCode
+.vscode/
