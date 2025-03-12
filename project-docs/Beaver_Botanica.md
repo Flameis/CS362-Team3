@@ -771,6 +771,27 @@ Result: Test passed successfully. The plant details were added to the map and di
 
 
 ### Finlay Curtiss
+#### Unit Test: Filtering Map
+**Description:** Test the filter feature on the map to make sure it only displays the desired plants.
+**Test Steps:**
+1. Open the Map page on Beaver Botanica.
+2. Enter a genus, species, or common name.
+3. Ensure only pins for plants of the chosen genus, species, or common name appear on the map.
+4. Clear the filter.
+5. Confirm that more plant pins appear.
+
+*Result:* The test passed successfully. Only pins of the specific common name chosen were displayed.
+
+#### Integration Tests: Filtering Map Correctly Updates
+**Description:** Test that the filter feature will properly display new pins and display all pins correctly.
+**Test Steps:**
+1. Login to Beaver Botanica.
+2. Open the Map page on Beaver Botanica.
+3. Enter a genus, species, or common name.
+4. Create a new plant entry of that chosen genus, species, or common name.
+5. Check if the new pin is displayed.
+
+*Result:* The test passed successfully. New pins for plants that match the filter criteria will appear.
 
 ### Jake Thompson
 
