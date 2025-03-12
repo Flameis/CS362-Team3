@@ -58,18 +58,32 @@ This will open Beaver Botanica in your browser! Happy plant hunting!!!!!!!!!!!!!
 How to use the software. You can assume that your user is familiar with your particular platform (e.g., use of a Web browser, desktop applications, or mobile applications). For missing functionality, your documentation should simply indicate that this functionality is work in progress.
 
 <Work in progress>
+
+### Registration and Login
+Navigate to the login page by clicking on the navbar icon in the top left corner of the screen. 
+
+![alt text](<../srceen-shots/Screenshot 2025-03-11 225029.png>)
+
+![alt text](<../srceen-shots/Screenshot 2025-03-11 225038.png>)
+
+To register an account with Beaver Botanica, enter an email address, then set a username and password. Once you have an account, you can sign in and view your details.
+![alt text](<../srceen-shots/Screenshot 2025-03-11 224912.png>)
+![alt text](<../srceen-shots/Screenshot 2025-03-11 224954.png>)
+
 To add or view plant entries from the main menu, then select the "Map" options:
 
-![Homepage Menu with Map option highlighted](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/images/map_option.png?raw=true)
+![alt text](<../srceen-shots/Screenshot 2025-03-11 225038.png>)
 
 Navigate to your location on the map and click/press on the location of the plant. A marker will appear like below:
 ![Image of map with a plant marker](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/images/example_marker.png?raw=true)
 
-A button to place the plant will appear in the bottom middle of the screen, which you can press to enter the plant's information.
+A button to place the plant will appear in the top middle of the screen or by clicking on the green plant icon, which you can press to enter the plant's information.
+
 ![A button on the map that says "Place Plant"](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/images/place_plant_button.png?raw=true)
 
 A menu will appear on the left side of the screen where you can enter the plant's information.
-![A menu where a user can input the plant's species, description, location, season, and a link to an image of a plant](https://github.com/Flameis/CS362-Team3/blob/main/project-docs/images/plant_info_menu.png?raw=true)
+
+![alt text](<../srceen-shots/Screenshot 2025-03-11 225250.png>)
 
 When entering data for a plant, you can begin typing the plant's species in the text box, then press the dropdown menu underneath it to select the species from the list. 
 
@@ -83,6 +97,20 @@ Image URL: if you have an image that you can upload to a webserver to get a URL 
 
 Add Another Image: If you have additional images, press this and another "Image URL" entry box will appear.
 
+Once you have entered all the information, press the "Submit" button at the bottom of the menu. The plant will be added to the map and you can view it by clicking on the marker.
+
+![alt text](<../srceen-shots/Screenshot 2025-03-11 225419.png>)
+
+To see a plants details, click on the marker on the map. This will bring up a menu with the plant's information.
+
+![alt text](<../srceen-shots/Screenshot 2025-03-11 225532.png>)
+
+Click on the "Details" button to see more information about the plant, images, and comments.
+
+![alt text](<../srceen-shots/Screenshot 2025-03-11 225630.png>)
+![alt text](<../srceen-shots/Screenshot 2025-03-11 225721.png>)
+
+To navigate to the plants location, click on the "Get Directions" button. This will open Google Maps in a new tab with the location of the plant.
 
 ## How to Report a Bug
 To report a bug, you can access the [Issues section of the Beaver Botanica Github repository](https://github.com/Flameis/CS362-Team3/issues). Once at this page, press the “New issue” button in the top right of the page. 
