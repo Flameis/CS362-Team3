@@ -46,9 +46,12 @@ The weekly reports folder contains our weekly reports and progress updates from 
 
 
 ## Building Beaver Botanica
-### This is currently a work in progress and is subject to change. The information here works as of 2/17/2025.
 Before beginning, ensure that you have Node and npm installed, which can be done by following [this guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 Clone the Github repository to your local machine, open a command line and navigate to the demo directory inside of directory you created.
+
+First get the .env file from the team (provided upon request) and place it in the /demo/ folder. This file contains the DB connection information.
+
+### Installing the website's dependencies
 
 Enter the following command to install all needed modules:
 
@@ -74,6 +77,7 @@ The system will now automatically open up a webpage on your default browser to l
    ```
 4. Review the test results in the terminal to ensure all tests pass.
 
+We have had issues getting the tests to run properly, so currrently manual testing is required. Please see the living document for test results.
 
 ## Test-Automation and CI
 

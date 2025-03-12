@@ -13,26 +13,16 @@ So, dive in, explore the map, and let Beaver Botanica guide you through OSU’s 
 
 
 ## How to Install Beaver Botanica
-Luckily for you, there's no need to install any software! All you need to do is navigate to our website, [flip2.engr.oregonstate.edu:8070/map](http://flip1.engr.oregonstate.edu:8070/).
-
+Luckily for you, there's no need to install any software! All you need to do is navigate to our website, [flip1.engr.oregonstate.edu:8070/map](http://flip1.engr.oregonstate.edu:8070/map).
 
 ### Local Installation
 You can install Beaver Botanica locally by cloning from our [Github repository](https://github.com/Flameis/CS362-Team3/tree/main).
 
-Once installed on your machine, in the /demo/ folder, create a .env file and enter this information
-    ```
-    DB_HOST="67.222.47.90"
-    DB_USER="mthopeac_OSU_Beta_Test"
-    DB_PASSWORD="YG?)6YEe@R95pr."
-    DB_NAME="mthopeac_OSU_PlantMap"
-    API_PORT=8081
-    PORT=8070
-    JWT_SECRET_KEY="Test_Secret_Key"
-    ```
+Once installed on your machine, in the /demo/ folder, put the .env file provided upon request from the team. This file contains the DB connection information.
 
 ## How to Run Beaver Botanica
 
-Beaver Botanica can be accessed by navigating to [flip2.engr.oregonstate.edu:8070/map](http://flip2.engr.oregonstate.edu:8070/map). No installations necessary!
+Beaver Botanica can be accessed by navigating to [flip1.engr.oregonstate.edu:8070/map](http://flip1.engr.oregonstate.edu:8070/map). No installations necessary!
 
 
 ### Running Locally
@@ -52,12 +42,14 @@ In the other terminal window run:
 
 ```npm run react```
 
+Or alternatively run both using the following command:
+
+```npm start```
+
 This will open Beaver Botanica in your browser! Happy plant hunting!!!!!!!!!!!!!!!
 
 ## How to Use Beaver Botanica
 How to use the software. You can assume that your user is familiar with your particular platform (e.g., use of a Web browser, desktop applications, or mobile applications). For missing functionality, your documentation should simply indicate that this functionality is work in progress.
-
-<Work in progress>
 
 ### Registration and Login
 Navigate to the login page by clicking on the navbar icon in the top left corner of the screen. 
@@ -147,3 +139,5 @@ Description of error: I got an error pop-up: "Error: Undefined reference (readin
 
 ### Known Bugs
 As bugs are found, we will update this list to include them.
+
+1. Deleting plants from the map does not remove the plant from the database.
