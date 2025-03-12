@@ -1,0 +1,11 @@
+{
+    "name": "md2html",
+    "version": "1.0.0",
+    "description": "",
+    "main": "",
+    "author": "",
+    "license": "",
+    "dependencies": {
+        "marked": "^15.0.7"
+    }
+}
