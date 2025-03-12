@@ -93,6 +93,12 @@ Once you have entered all the information, press the "Submit" button at the bott
 
 ![alt text](<../srceen-shots/Screenshot 2025-03-11 225419.png>)
 
+To filter the plants on the map, click on the "Filter" button in the bottom left corner of the screen. This will bring up a menu where you can filter the plants by season, species, and rating.
+
+![alt text](<../srceen-shots/Screenshot 2025-03-11 231124.png>)
+
+![alt text](<../srceen-shots/Screenshot 2025-03-11 231224.png>)
+
 To see a plants details, click on the marker on the map. This will bring up a menu with the plant's information.
 
 ![alt text](<../srceen-shots/Screenshot 2025-03-11 225532.png>)
