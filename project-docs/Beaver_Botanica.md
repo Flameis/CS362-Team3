@@ -773,7 +773,9 @@ We will be getting external feedback in week 6. All of the core features will be
 3) Never take a class like this ever again. It's too much.
 
 ### Kathryn Butler
-
+1) I learned that frequent meetings with customers and users is a great way to get feedback on the implementation of the project.
+2) I developed a deeper understanding of the link between technical documentation and implementation.
+3) I found out that assigning a team with minimal project experience a large project is an interesting idea, and should likely be handled with caution and perhaps more involvement from mentors.
 
 ### Luke Scovel
 1) I learned that planning is crucial. We had a more of a vague plan at the beginning of the project and it caused some confusion. At the end we had to crunch to get everything done.
