@@ -715,7 +715,9 @@ We will be getting external feedback in week 6. All of the core features will be
 
 # Reflections
 ### Adison Daggett
-
+1) I learned that communication is key when designing a front end that suits the vision of both the front and back end teams.
+2) I learned how to properly use Github on a level that I had yet to use it before in previous classes.
+3) Never take a class like this ever again. It's too much.
 
 ### Kathryn Butler
 
