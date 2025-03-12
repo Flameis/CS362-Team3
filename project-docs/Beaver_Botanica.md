@@ -741,6 +741,7 @@ We will be getting external feedback in week 6. All of the core features will be
 
 
 ### Jake Thompson
-1) 
-2) 
-3) 
+
+1) Learned that we needed to have a more thorough plan early on. As this caused some issues when implementing. this caused me to learn how to manage working together on backend development when we have different ideas on how to implement something.
+2) I learned how to use React for the first time. Now that I have more experience with it i would change how we did certain things in the code.
+3) I learned how to better manage git commits by: using branches, letting others know that your working on a section (to prevent merge conflicts), and just managing the merge conflicts when needed.
