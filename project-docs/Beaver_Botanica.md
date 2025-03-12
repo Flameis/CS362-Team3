@@ -722,6 +722,56 @@ We will conduct usability testing to ensure our website is both informative and 
 
 ### Jake Thompson
 
+#### Unit Test: Delete a plant
+
+**Description:** Verify that deleting plant from the map works.
+**Test Steps:**
+
+1. Log in as an admin.
+2. Navigate to the map.
+3. Click on an existing pin.
+4. Click the delete button.
+5. Verify that the pin has been removed (refresh the page tio check).
+
+*Result:* The test passed successfully. The comment was submitted and displayed as expected.
+
+#### Validation Test: Validate the user has privaleges to Delete a plant
+
+**Description:** Verify that adding a need plant to the map works.
+**Test Steps:**
+
+1. Log in as a non admin.
+2. Navigate to the map.
+3. Click on an existing pin.
+4. Click the delete button.
+5. Verify that the pin has not been removed (refresh the page to check (never fixed the error message)).
+6. the plant should still exist.
+
+*Result:* The test passed successfully. The comment was submitted and displayed as expected.
+
+#### Integration Test: Verify that a plant having a rating does not prevent delete.
+
+**Description:** Verify that a plant having a rating does not prevent delete. (check that db fk on delete is correct).
+**Test Steps:**
+
+1. Log in as an admin.
+2. Navigate to the map.
+3. Click on a plant with no ratings (or make a new one)
+4. Click on the details button.
+5. Rate the plant.
+6. click the back button.
+7. click on the same plant again.
+8. click delete.
+9. Verify that the pin has been removed (refresh the page to check).
+
+*Result:* Initial Result The test Failed. There was a foreign key error.
+
+*Resolved:* changed the plant_id fk in ratings to have ON DELETE CASCADE
+
+Retested
+
+*Result:* The test completed successfully. The plant and its rating were deleted.
+
 ### Adison Daggett
 
 ### Kathryn Butler
