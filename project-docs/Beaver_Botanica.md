@@ -716,6 +716,36 @@ We will conduct usability testing to ensure our website is both informative and 
 
 ### William Brennan
 
+#### Unit Test: Image Submission
+**Description:** Verify that an image can be attached to a plant.
+**Test Steps:**
+1. Log in as a user.
+2. Click on a plant icon on the map.
+3. Click on edit plant.
+4. Click on the choose files button.
+5. Navigate to the plant image in your computer's directory.
+6. Click the open button.
+7. Click the edit plant button.
+
+*Result:* The image was attached to the plant successfully. The image displays as expected when viewing the plant's details.
+
+#### Integration Tests: Image Integration
+**Description:** Test the integration of the image with the backend.
+**Test Steps:**
+1. Log in as a user.
+2. Click on a plant icon on the map.
+3. Click on edit plant.
+4. Click on the choose files button.
+5. Navigate to the plant image in your computer's directory.
+6. Click the open button.
+7. Click the edit plant button.
+8. Stop the npm server.
+9. Run the npm server.
+
+*Result:* The test passed successfully. The image was stored and displayed as expected.
+
+
+
 ### Anshu Avinash
 
 ### Finlay Curtiss
