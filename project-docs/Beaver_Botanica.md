@@ -810,7 +810,7 @@ Result: Test passed successfully. The plant details were added to the map and di
 
 #### Validation Test: Validate the user has privaleges to Delete a plant
 
-**Description:** Verify that adding a need plant to the map works.
+**Description:** Verify that deleting plant fails for a non admin user.
 **Test Steps:**
 
 1. Log in as a non admin.
