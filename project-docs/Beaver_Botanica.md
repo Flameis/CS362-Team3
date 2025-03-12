@@ -682,8 +682,8 @@ We will conduct usability testing to ensure our website is both informative and 
 #### Unit Test: Comment Submission
 **Description:** Verify that a comment can be successfully submitted.
 **Test Steps:**
-1. Mock a logged-in user.
-2. Navigate to the plant details page.
+1. Log in as a user.
+2. Navigate to the plant details page through a plant icon on the map.
 3. Enter text into the comment box.
 4. Click the submit button.
 5. Verify that the comment appears at the end of the comment chain.
@@ -693,8 +693,8 @@ We will conduct usability testing to ensure our website is both informative and 
 #### Validation Test: Comment Box Validation
 **Description:** Ensure that the comment box validates input correctly.
 **Test Steps:**
-1. Mock a logged-in user.
-2. Navigate to the plant details page.
+1. Log in as a user.
+2. Navigate to the plant details page through a plant icon on the map.
 3. Leave the comment box empty.
 4. Click the submit button.
 5. Verify that an error message is displayed indicating that text is required.
@@ -704,11 +704,11 @@ We will conduct usability testing to ensure our website is both informative and 
 #### Integration Tests: Comment Submission Integration
 **Description:** Test the integration of the comment submission with the backend.
 **Test Steps:**
-1. Mock a logged-in user.
-2. Navigate to the plant details page.
+1. Log in as a user.
+2. Navigate to the plant details page through a plant icon on the map.
 3. Enter text into the comment box.
 4. Click the submit button.
-5. Verify that the comment is stored in the database and displayed on the page.
+5. Verify that the comment is stored in the database and displayed on the page by manually checking the database.
 
 *Result:* The test passed successfully. The comment was stored and displayed as expected.
 
