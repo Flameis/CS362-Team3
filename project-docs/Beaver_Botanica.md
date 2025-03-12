@@ -739,3 +739,6 @@ We will be getting external feedback in week 6. All of the core features will be
 
 
 ### Jake Thompson
+1) 
+2) 
+3) 
