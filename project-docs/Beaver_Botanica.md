@@ -48,9 +48,9 @@ Beyond being functional, Beaver Botanica should be engaging and easy to use. To 
 
 ## Major Features
 * Movable map interface that displays plant locations
-* Seasonal layers on the map
+* Filterable map 
 * Plant descriptions and details
-* Social media features such as commenting and liking plants
+* Features such as commenting and liking plants
 
 ## Stretch Goals
 * User profiles and leaderboards
@@ -72,7 +72,7 @@ The website serves as an interface with the server, which in turn interfaces wit
 ## Data
 The Beaver Botanica database will store information about individual plants, taxonomies of plants, images of plants, user profiles, post ratings, and comments. This structure will ensure that all plant data and user interactions are organized efficiently.
 
-![Schema of the Beaver Botanica Database, showing the tables and their interactions](https://github.com/Flameis/CS362-Team3/blob/main/database-design/beaver_botanica_db.png?raw=true)
+![alt text](../design/database-design/beaver_botanica_db.png)
 
 ## Assumptions
 We will assume that our architecture will later be built upon and updated in the future.
@@ -110,6 +110,9 @@ We will be using MySQL to set up and run the database. The database will be host
 * Ratings: Stores user ratings for plants with rating ID, plant ID, user ID, and rating value.
  * Many-to-One relationship with Plants
  * Many-to-One relationship with Users
+* Reports: Stores reports for plants with report ID, plant ID, user ID, and report text.
+ * Many-to-One relationship with Plants
+ * Many-to-One relationship with Users
 
 The SQL server will be responsible for storing, receiving, and delivering data to and from the server when prompted through SQL CRUD operations.
 
@@ -123,23 +126,80 @@ We chose the Google Style Guidelines because the majority of us already use a si
 
 
 # Process Description
-0000 Your test-automation infrastructure (e.g., JUnit, Mocha, Pytest, etc).
+## Test-Automation and CI
 
-0000 A brief justification for why you chose that test-automation infrastructure.
+### Test-Automation Infrastructure
+We use Jest as our test-automation infrastructure. Jest is a JavaScript testing framework maintained by Facebook, designed to ensure correctness of any JavaScript codebase.
 
-0000 How to add a new test to the code base.
+**Justification:**
+- Jest is easy to set up and has a simple API.
+- It provides a great developer experience with features like snapshot testing and a powerful mocking library.
+- Jest is widely used in the industry and has good community support.
 
-0000 Your CI service and how your project repository is linked to it.
+### Adding a New Test
+1. Create a new test file in the `__tests__` directory inside the `demo/src` directory.
+2. Write your test cases using the Jest framework.
+3. Run the tests locally using:
+   ```sh
+   npm test
+   ```
 
-A brief justification for why you chose that CI service.
+### Continuous Integration (CI) Service
+We use GitHub Actions as our CI service. GitHub Actions allows us to automate workflows directly from our GitHub repository.
 
-0000 A pros/cons matrix for at least three CI services that you considered.
+**Justification:**
+- GitHub Actions is tightly integrated with GitHub, making it easy to set up and use.
+- It provides a generous free tier for open-source projects.
+- GitHub Actions supports a wide range of CI/CD workflows and has a large number of pre-built actions available.
 
-0000 Which tests will be executed in a CI build.
+### Pros/Cons Matrix for CI Services
 
-0000 Which development actions trigger a CI build.
+| CI Service       | Pros                                                                 | Cons                                                      |
+|------------------|----------------------------------------------------------------------|-----------------------------------------------------------|
+| GitHub Actions   | Easy integration with GitHub, generous free tier, flexible workflows | Limited to GitHub repositories                            |
+| Travis CI        | Supports multiple languages, good documentation                      | Limited free tier, slower build times                     |
+| CircleCI         | Fast builds, good Docker support                                     | Complex configuration, limited free tier for open-source  |
 
-The following are the top five risks to the successful completion of our project:
+### CI Build Execution
+- **Tests Executed:** All unit tests, integration tests, and system tests.
+- **Triggers:** CI builds are triggered on every push to the `main` branch and on every pull request.
+
+### Setting Up CI with GitHub Actions
+1. Create a `.github/workflows` directory in the root of your repository.
+2. Add a new workflow file (e.g., `ci.yml`) with the following content:
+   ```yaml
+   name: CI
+
+   on:
+     push:
+       branches:
+         - main
+     pull_request:
+       branches:
+         - main
+
+   jobs:
+     build:
+       runs-on: ubuntu-latest
+
+       steps:
+         - name: Checkout code
+           uses: actions/checkout@v2
+
+         - name: Set up Node.js
+           uses: actions/setup-node@v2
+           with:
+             node-version: '14'
+
+         - name: Install dependencies
+           run: npm install
+
+         - name: Run tests
+           run: npm test
+   ```
+3. Commit and push the workflow file to your repository. GitHub Actions will automatically run the CI workflow on every push and pull request to the `main` branch.
+
+## The following are the top five risks to the successful completion of our project:
 ## 1. Scalability
 One of the largest risks with developing Beaver Botanica is in making sure the system is scalable. As a seven-person team, we will not be able to map out all the plants spanning the whole OSU campus. Our solution is to allow users of OSU Plant Map to upload pictures and information to the database.
 
