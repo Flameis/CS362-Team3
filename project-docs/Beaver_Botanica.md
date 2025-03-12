@@ -673,7 +673,7 @@ We plan to use unit testing to verify that individual components are working in 
 ### System Testing
 Our system testing will verify that each component works together correctly. This includes database interaction with the front end, Google Maps API integration, and user authentication and sessions. We will likely use the free version of [Postman API testing](https://www.postman.com/) to validate our API usage. We will also try out [Cypress](https://www.cypress.io/) to conduct end-to-end testing and frontend-backend interactions. We will also test how the website handles large-scale plant data uploads.
 ### Usability Testing
-We will conduct usability testing to ensure our website is both informative and engaging. This includes UI/UX design, accessibility compliance, and ease of use. An easy way to test if a user enjoys our website is to conduct beta testing with students and faculty at OSU. We also can use Google Lighthouse to test performance and accessibility. From this testing, we can ensure the website works smoothly on desktop and mobile, and identify any confusing UI elements that need to be fixed. For each of these tests, we will use GitHub to log, track, and resolve bugs.
+We will conduct usability testing to ensure our website is both informative and engaging. This includes UI/UX design, accessibility compliance, and ease of use. An easy way to test if a user enjoys our website is to conduct beta testing with students and faculty at OSU. We can also use Google Lighthouse to test performance and accessibility. From this testing, we can ensure the website works smoothly on desktop and mobile and identify any confusing UI elements that need to be fixed. For each of these tests, we will use GitHub to log, track, and resolve bugs.
 
 ## Documentation Plan
 ### User Documentation
@@ -684,10 +684,10 @@ The purpose of user documentation is to teach users how to navigate through the 
 * How to upload and identify plants.
 * How to use social features (liking, flagging, commenting).
 
-We will also implement a small help guide within the website itself. It will contain contextual help within the site, tooltips that explain features, and an FAQ section explaining common issues.
+We will also implement a small help guide on the website itself. It will contain contextual help, tooltips explaining features, and an FAQ section explaining common issues.
 
 ### Admin Documentation
-Admin documentation is important to include to assist administrators in managing data, moderating content, and overseeing system security. We will provide a PDF or website version of an Admin Guide, which will include:
+It is important to include administrative documentation to assist administrators in managing data, moderating content, and overseeing system security. We will provide a PDF or website version of an Admin Guide, which will include:
 * How to verify and moderate user submissions.
 * How to handle flagged content.
 * Managing user roles and permissions.
@@ -695,8 +695,8 @@ Admin documentation is important to include to assist administrators in managing
 * How to troubleshoot common system issues.
 
 ### Developer Documentation
-We plan to include developer documentation so future developers can maintain and expand the website. This includes a Developer Guide, which will include:
-* API Documentation - expected inputs/outputs, and authentication details.
+We plan to include developer documentation so that future developers can maintain and expand the website. This includes a Developer Guide, which will include:
+* API Documentation - expected inputs/outputs and authentication details.
 * Example API calls and responses.
 * Project architecture overview.
 * Code structure and key files/modules.
@@ -733,7 +733,9 @@ We will be getting external feedback in week 6. All of the core features will be
 3) I learned that working on the project early helps with getting familiar on how to use the necessary tools/languages.
 
 ### Anshu Avinash
-
+1) I learned that communication is important in terms of working with the team as well as with the TA.
+2) I learned how to use Figma for UI and GitHub for code implementation
+3) Allocating time for unexpected tasks/changes and participating more in frontend implementation.
 
 ### Finlay Curtiss
 
