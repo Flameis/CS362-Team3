@@ -315,6 +315,16 @@ function Map() {
     setShowPlacePlantButton(true);
   };
 
+  const handleGetDirections = (coordinates) => {
+    if (coordinates && coordinates.length === 2) {
+      const [lat, lng] = coordinates;
+      const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`;
+      window.open(url, '_blank');
+    } else {
+      console.error('Invalid coordinates for directions:', coordinates);
+    }
+  };
+
   function ClickHandler({ addMarker }) {
     useMapEvents({
       click: (e) => {
@@ -390,7 +400,10 @@ function Map() {
                 Season: {plant.season || 'Unknown'}<br />
                 Rating: {plant.avg_rating || 'No rating'}<br />
                 Posted by: {plant.user || 'Anonymous'}<br />
-                <button onClick={(e) => handleEditPlant(`plant-${idx}`,e)}>Edit</button><button key={`plant-${idx}`} onClick={(e) => handleDeletePlant(`plant-${idx}`,e)}>Delete</button><br/><button onClick={(e) => navigate(`/plant/${currentMarker.data.plant_id}`)}>Details</button>
+                <button onClick={(e) => handleEditPlant(`plant-${idx}`,e)}>Edit</button>
+                <button key={`plant-${idx}`} onClick={(e) => handleDeletePlant(`plant-${idx}`,e)}>Delete</button><br/>
+                <button onClick={(e) => navigate(`/plant/${currentMarker.data.plant_id}`)}>Details</button>
+                <button onClick={() => handleGetDirections([plant.x_coordinate, plant.y_coordinate])}>Get Directions</button>
               </Popup>
             </Marker>
           ) : null
