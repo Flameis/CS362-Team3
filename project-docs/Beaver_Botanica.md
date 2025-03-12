@@ -747,6 +747,28 @@ We will conduct usability testing to ensure our website is both informative and 
 
 
 ### Anshu Avinash
+Integration Test: User registration
+Description: Test the user registration process.
+Test Steps:
+- Register as user
+- Enter valid information into the registration form fields (email,lusername, password, confirm password).
+- Verify that the user is successfully registered and redirected to the login 
+- Check the database manually to confirm that the user’s details are correctly stored
+
+Result: Test passed successfully. The user was registered and redirected
+
+
+Integration test: Adding a plant on the map
+Description: Test adding plant details on the map 
+Test steps
+- Log in as user
+- Click anywhere on the map 
+- Click on add place plant
+- Enter the required details for the plant (such as search species description, locotion, season, image URL 
+- Verify that the plant is added to the map at the correct location.
+- Verify the plant appears on the map with the correct details.
+Result: Test passed successfully. The plant details were added to the map and displayed as expected. 
+
 
 ### Finlay Curtiss
 
