@@ -1205,7 +1205,7 @@ We will be getting external feedback in week 6. All of the core features will be
 3) Allocating time for unexpected tasks/changes and participating more in frontend implementation.
 
 ### Finlay Curtiss
-
+I am happy about the group that I had to work on this project with. Everyone contributed to the project and I think we worked well together. Most of the work I did wasn't technical, as I mainly worked on documentation. I was glad to work on the documentation side because it's a skill I have learned a lot about from my job and I think I do well. I think contributing more to the actual code development would have helped me learn a lot more about coding, but it might have been difficult for me to contribute a whole lot.
 
 ### Jake Thompson
 
