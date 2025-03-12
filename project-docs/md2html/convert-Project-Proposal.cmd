@@ -1,1 +1,1 @@
-node marked/bin/marked -i "../Project Proposal.md" -o "../Project Proposal.html"
+node marked/bin/marked -i "../Beaver_Botanica.md" -o "../Beaver_Botanica.html"
