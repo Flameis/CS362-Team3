@@ -723,7 +723,9 @@ We will be getting external feedback in week 6. All of the core features will be
 
 
 ### Luke Scovel
-
+1) I learned that planning is crucial. We had a more of a vague plan at the beginning of the project and it caused some confusion. At the end we had to crunch to get everything done.
+2) I discovered that effective communication is crucial. Initially we faced some challenges, but improving our communication made a difference.
+3) I learned that understanding the tools and technologies beforehand is essential. Early in the project I struggled with integrating the React app with the backend which showcased the need for better preparation.
 
 ### William Brennan
 1) I learned that a constant feedback loop is required in order to deliver a product that meets customer expectations. Meetings with teachers and TA's can help clarify project requirements and reduce grading confusion.
