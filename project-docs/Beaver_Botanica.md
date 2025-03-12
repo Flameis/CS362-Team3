@@ -688,6 +688,8 @@ We will conduct usability testing to ensure our website is both informative and 
 4. Click the submit button.
 5. Verify that the comment appears at the end of the comment chain.
 
+*Result:* The test passed successfully. The comment was submitted and displayed as expected.
+
 #### Validation Test: Comment Box Validation
 **Description:** Ensure that the comment box validates input correctly.
 **Test Steps:**
@@ -697,6 +699,8 @@ We will conduct usability testing to ensure our website is both informative and 
 4. Click the submit button.
 5. Verify that an error message is displayed indicating that text is required.
 
+*Result:* The test passed successfully. An error message appeared as expected.
+
 #### Integration Tests: Comment Submission Integration
 **Description:** Test the integration of the comment submission with the backend.
 **Test Steps:**
@@ -705,6 +709,9 @@ We will conduct usability testing to ensure our website is both informative and 
 3. Enter text into the comment box.
 4. Click the submit button.
 5. Verify that the comment is stored in the database and displayed on the page.
+
+*Result:* The test passed successfully. The comment was stored and displayed as expected.
+
 
 
 ### William Brennan
