@@ -712,3 +712,26 @@ We will be getting external feedback in week 6. All of the core features will be
 * What would you like to see added or removed from Beaver Botanica?
 * If there was one change you could make to Beaver Botanica, what would it be?
 * Did you find Beaver Botanica useful and will you use Beaver Botanica in the future?
+
+# Reflections
+### Adison Daggett
+
+
+### Kathryn Butler
+
+
+### Luke Scovel
+
+
+### William Brennan
+1) I learned that a constant feedback loop is required in order to deliver a product that meets customer expectations. Meetings with teachers and TA's can help clarify project requirements and reduce grading confusion.
+2) I learned that frequent communication between members of the group helps a lot in reducing ambiguity and increasing efficiency. It's a good idea to communicate what features you're working on.
+3) I learned that working on the project early helps with getting familiar on how to use the necessary tools/languages.
+
+### Anshu Avinash
+
+
+### Finlay Curtiss
+
+
+### Jake Thompson
