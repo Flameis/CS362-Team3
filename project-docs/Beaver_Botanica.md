@@ -716,9 +716,82 @@ We will conduct usability testing to ensure our website is both informative and 
 
 ### William Brennan
 
+#### Unit Test: Image Submission
+**Description:** Verify that an image can be attached to a plant.
+**Test Steps:**
+1. Log in as a user.
+2. Click on a plant icon on the map.
+3. Click on edit plant.
+4. Click on the choose files button.
+5. Navigate to the plant image in your computer's directory.
+6. Click the open button.
+7. Click the edit plant button.
+
+*Result:* The image was attached to the plant successfully. The image displays as expected when viewing the plant's details.
+
+#### Integration Tests: Image Integration
+**Description:** Test the integration of the image with the backend.
+**Test Steps:**
+1. Log in as a user.
+2. Click on a plant icon on the map.
+3. Click on edit plant.
+4. Click on the choose files button.
+5. Navigate to the plant image in your computer's directory.
+6. Click the open button.
+7. Click the edit plant button.
+8. Stop the npm server.
+9. Run the npm server.
+
+*Result:* The test passed successfully. The image was stored and displayed as expected.
+
+
+
 ### Anshu Avinash
+Integration Test: User registration
+Description: Test the user registration process.
+Test Steps:
+- Register as user
+- Enter valid information into the registration form fields (email,lusername, password, confirm password).
+- Verify that the user is successfully registered and redirected to the login 
+- Check the database manually to confirm that the user’s details are correctly stored
+
+Result: Test passed successfully. The user was registered and redirected
+
+
+Integration test: Adding a plant on the map
+Description: Test adding plant details on the map 
+Test steps
+- Log in as user
+- Click anywhere on the map 
+- Click on add place plant
+- Enter the required details for the plant (such as search species description, locotion, season, image URL 
+- Verify that the plant is added to the map at the correct location.
+- Verify the plant appears on the map with the correct details.
+Result: Test passed successfully. The plant details were added to the map and displayed as expected. 
+
 
 ### Finlay Curtiss
+#### Unit Test: Filtering Map
+**Description:** Test the filter feature on the map to make sure it only displays the desired plants.
+**Test Steps:**
+1. Open the Map page on Beaver Botanica.
+2. Enter a genus, species, or common name.
+3. Ensure only pins for plants of the chosen genus, species, or common name appear on the map.
+4. Clear the filter.
+5. Confirm that more plant pins appear.
+
+*Result:* The test passed successfully. Only pins of the specific common name chosen were displayed.
+
+#### Integration Tests: Filtering Map Correctly Updates
+**Description:** Test that the filter feature will properly display new pins and display all pins correctly.
+**Test Steps:**
+1. Login to Beaver Botanica.
+2. Open the Map page on Beaver Botanica.
+3. Enter a genus, species, or common name.
+4. Create a new plant entry of that chosen genus, species, or common name.
+5. Check if the new pin is displayed.
+
+*Result:* The test passed successfully. New pins for plants that match the filter criteria will appear.
 
 ### Jake Thompson
 
@@ -823,7 +896,9 @@ We will be getting external feedback in week 6. All of the core features will be
 3) Never take a class like this ever again. It's too much.
 
 ### Kathryn Butler
-
+1) I learned that frequent meetings with customers and users is a great way to get feedback on the implementation of the project.
+2) I developed a deeper understanding of the link between technical documentation and implementation.
+3) I found out that assigning a team with minimal project experience a large project is an interesting idea, and should likely be handled with caution and perhaps more involvement from mentors.
 
 ### Luke Scovel
 1) I learned that planning is crucial. We had a more of a vague plan at the beginning of the project and it caused some confusion. At the end we had to crunch to get everything done.

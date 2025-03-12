@@ -61,12 +61,3 @@ Alternatively, it should be currently hoste on the engr flip1 server here:
 
 # Known Issues
 - User position does not work well since it requires HTTPS
-
-# Features in-progress
-- Image upload
-- Full plant post with images, comments, and ratings
-- Moderation by admins
-- Account settings
-
-# Operational Use Case
-The current operational use case allows a user to add a known plant to the database and see it on the map. The user can also view the plant details by clicking on the plant icon on the map.
