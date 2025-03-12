@@ -144,6 +144,4 @@ I'm using a Samsung Galaxy Note 9, and I'm running your website on Google Chrome
 Description of error: I got an error pop-up: "Error: Undefined reference (reading NULL)". I'm not a programmer, so I don't know what that means. Is the plant trying to hack my phone?? :(
 
 ### Known Bugs
-As bugs are found, we will update this list to include them.
-
-1. Deleting plants from the map does not remove the plant from the database.
+As bugs are found, we will update this list to include them. If you encounter a bug that is not listed here, please report it using the steps above.
