@@ -675,6 +675,52 @@ Our system testing will verify that each component works together correctly. Thi
 ### Usability Testing
 We will conduct usability testing to ensure our website is both informative and engaging. This includes UI/UX design, accessibility compliance, and ease of use. An easy way to test if a user enjoys our website is to conduct beta testing with students and faculty at OSU. We can also use Google Lighthouse to test performance and accessibility. From this testing, we can ensure the website works smoothly on desktop and mobile and identify any confusing UI elements that need to be fixed. For each of these tests, we will use GitHub to log, track, and resolve bugs.
 
+## Testing Results
+
+### Luke Scovel
+
+#### Unit Test: Comment Submission
+**Description:** Verify that a comment can be successfully submitted.
+**Test Steps:**
+1. Mock a logged-in user.
+2. Navigate to the plant details page.
+3. Enter text into the comment box.
+4. Click the submit button.
+5. Verify that the comment appears at the end of the comment chain.
+
+#### Validation Test: Comment Box Validation
+**Description:** Ensure that the comment box validates input correctly.
+**Test Steps:**
+1. Mock a logged-in user.
+2. Navigate to the plant details page.
+3. Leave the comment box empty.
+4. Click the submit button.
+5. Verify that an error message is displayed indicating that text is required.
+
+#### Integration Tests: Comment Submission Integration
+**Description:** Test the integration of the comment submission with the backend.
+**Test Steps:**
+1. Mock a logged-in user.
+2. Navigate to the plant details page.
+3. Enter text into the comment box.
+4. Click the submit button.
+5. Verify that the comment is stored in the database and displayed on the page.
+
+
+### William Brennan
+
+### Anshu Avinash
+
+### Finlay Curtiss
+
+### Jake Thompson
+
+### Adison Daggett
+
+### Kathryn Butler
+
+
+
 ## Documentation Plan
 ### User Documentation
 The purpose of user documentation is to teach users how to navigate through the website effectively. This includes a User Guide, either in PDF or as a web version. It will include: 
